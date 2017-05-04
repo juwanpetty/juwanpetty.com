@@ -95,7 +95,7 @@ nav {
   display: none; }
   @media screen and (min-width: 770px) {
     nav {
-      width: 630px;
+      width: 330px;
       margin: 0 auto;
       margin-bottom: 10rem;
       display: flex;

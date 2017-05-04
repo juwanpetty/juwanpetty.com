@@ -1,6 +1,6 @@
 $main:        #363C45;
 $secondary:   #666666;
-$accent:       #9BA9BB;
+$accent:      #9BA9BB;
 $border:      #E2E6EE;
 $highlight_1: #2F58FC;
 $highlight_2: #5245ED;
@@ -11,7 +11,7 @@ $highlight_6: #FF3840;
 $highlight_7: #FF6239;
 $highlight_8: #FE7F30;
 $highlight_9: #FFBB49;
-$highlight_10: #FFE28C;
+$highlight_10:#FFE28C;
 
 
 @font-face {
@@ -146,7 +146,7 @@ nav {
     display: none;
 
     @media screen and (min-width: 770px) {
-        width: 630px;
+        width: 330px;
         margin: 0 auto;
         margin-bottom: 10rem;
         display: flex;
