@@ -1,0 +1,29 @@
+.wrapper {
+    padding-top: 4rem;
+
+    section {
+        margin: 0 auto;
+        padding-bottom: 6rem;
+
+        h3 {color: #999;}
+        h1 {margin-bottom: 5rem;}
+
+        .social {
+            justify-content: center;
+            
+            a:not(:last-child) {margin-right: 2rem;}
+
+            .mail svg {
+                fill: none;
+                stroke-width: 2;
+            }
+        }
+
+        &.maxwidth-1 {max-width: 900px;}
+        &.align-c {text-align: center;}
+        &.padding-1 {
+            padding-top: 7rem;
+            padding-bottom: 7rem;
+        } 
+    }
+}

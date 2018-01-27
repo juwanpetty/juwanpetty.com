@@ -1,0 +1,65 @@
+$black: rgb(0, 0, 0);
+
+@import 'normalize';
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+@import 'typography';
+
+body {
+    ol,ul,li {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+   
+    a {text-decoration: none;}
+}
+
+.button {
+    padding: 0.5rem 1rem;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 4px;
+    color: #363C45;
+    font-weight: 500;
+
+    &.color {
+        background: #007AFF;
+        color: #FFFFFF;
+    }
+
+    svg {
+        margin-right: 1rem;
+        stroke-width: 0;
+        fill: currentColor;
+    }
+}
+
+svg {
+    width: 18px;
+    height: 18px;
+}
+
+.divider {
+    width: 2px;
+    height: 18px;
+    background: #999;
+}
+
+@import 'nav';
+@import 'section';
