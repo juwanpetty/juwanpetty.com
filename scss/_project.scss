@@ -1,0 +1,121 @@
+.projects-list {
+    width: 100%;
+
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-row-gap: 4rem;
+    grid-template-columns: repeat( auto-fit, minmax(175px, 1fr));
+
+    @media screen and (max-width: 930px) {
+        grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+        justify-self: center;
+        align-self: center;
+    }
+
+    .project-listitem {
+        a {
+            width: 100%;
+            display: inline-block;
+            margin-right: 1.5rem;
+    
+            img {
+                width: 100%;
+                height: 250px;
+                border-radius: 3px;
+    
+                object-fit: cover;
+
+                @media screen and (max-width: 930px) {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        .details {
+            .category {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+
+            .title {
+                margin-top: 0;
+                
+                font-size: 1rem;
+                color: $black;
+            }
+        }
+
+        @media screen and (min-width: 930px) {
+            flex-direction: column;
+
+            a {
+                margin: 0;
+
+                img {
+                    width: 175px;
+                    height: 150px;
+                }
+            }
+
+            .details {
+                .category {
+                    margin-top: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+.videos-list {
+    width: 100%;
+
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-row-gap: 4rem;
+    grid-template-columns: repeat( auto-fit, minmax(175px, 1fr));
+
+    .video-listitem {
+        a {
+            width: 100%;
+            display: inline-block;
+    
+            img {
+                width: 100%;
+                height: 325px;
+                border-radius: 3px;
+    
+                object-fit: cover;
+
+                @media screen and (max-width: 930px) {
+                    margin-bottom: 1rem;
+                    height: 250px;
+                }
+            }
+        }
+
+        .details {
+            .category {
+                margin-top: 0;
+
+                text-transform: none;
+                font-weight: 500;
+            }
+            
+            .title {
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+                color: $black;
+            }
+
+            @media screen and (max-width: 930px) {
+                .title {
+                    font-size: 1rem;
+                    
+                    margin: 0;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

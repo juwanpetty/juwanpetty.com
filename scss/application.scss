@@ -38,15 +38,27 @@ body {
     color: #363C45;
     font-weight: 500;
 
+    svg.left {
+        margin-right: 1rem;
+        stroke-width: 0;
+        fill: currentColor;
+    }
+
+    svg.right {margin-left: 1rem;}
+
     &.color {
         background: #007AFF;
         color: #FFFFFF;
     }
 
-    svg {
-        margin-right: 1rem;
-        stroke-width: 0;
-        fill: currentColor;
+    &.nocolor {
+        background: transparent;
+        color: #363C45;
+
+        svg {
+            fill: none;
+            stroke-width: 2;
+        }
     }
 }
 
@@ -55,11 +67,6 @@ svg {
     height: 18px;
 }
 
-.divider {
-    width: 2px;
-    height: 18px;
-    background: #999;
-}
-
 @import 'nav';
 @import 'section';
+@import 'project';

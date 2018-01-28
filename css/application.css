@@ -421,7 +421,6 @@ h2 {
   font-size: 24px;
   font-weight: 500;
   line-height: 105%;
-  margin-top: 30px;
   margin-bottom: 5px;
   text-transform: none; }
 
@@ -457,22 +456,25 @@ body a {
   border-radius: 4px;
   color: #363C45;
   font-weight: 500; }
-  .button.color {
-    background: #007AFF;
-    color: #FFFFFF; }
-  .button svg {
+  .button svg.left {
     margin-right: 1rem;
     stroke-width: 0;
     fill: currentColor; }
+  .button svg.right {
+    margin-left: 1rem; }
+  .button.color {
+    background: #007AFF;
+    color: #FFFFFF; }
+  .button.nocolor {
+    background: transparent;
+    color: #363C45; }
+    .button.nocolor svg {
+      fill: none;
+      stroke-width: 2; }
 
 svg {
   width: 18px;
   height: 18px; }
-
-.divider {
-  width: 2px;
-  height: 18px;
-  background: #999; }
 
 nav {
   width: 100%;
@@ -481,11 +483,23 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  background: black; }
   nav a {
-    color: #999; }
+    color: #FFFFFF; }
+  @media screen and (max-width: 430px) {
+    nav .button.color {
+      color: #007AFF;
+      font-weight: 400;
+      background: none;
+      padding: 0; }
+      nav .button.color svg {
+        fill: #007AFF; } }
+  nav .social {
+    padding-left: 2rem; }
 
 .nav-left {
   display: flex;
@@ -496,27 +510,12 @@ nav {
 .social {
   position: relative;
   display: flex;
-  align-items: center;
-  padding-left: 2rem; }
-  .social .divider {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0; }
-  @media screen and (max-width: 770px) {
-    .social .divider {
-      display: block; }
-    .social .button.color {
-      color: #007AFF;
-      font-weight: 400;
-      background: none;
-      padding: 0; }
-      .social .button.color svg {
-        fill: #007AFF; } }
+  align-items: center; }
 
 .wrapper {
   padding-top: 4rem; }
   .wrapper section {
+    width: 90%;
     margin: 0 auto;
     padding-bottom: 6rem; }
     .wrapper section h3 {
@@ -527,15 +526,133 @@ nav {
       justify-content: center; }
       .wrapper section .social a:not(:last-child) {
         margin-right: 2rem; }
-      .wrapper section .social .mail svg {
-        fill: none;
-        stroke-width: 2; }
     .wrapper section.maxwidth-1 {
       max-width: 900px; }
+    .wrapper section.maxwidth-2 {
+      max-width: 1280px; }
     .wrapper section.align-c {
       text-align: center; }
     .wrapper section.padding-1 {
       padding-top: 7rem;
       padding-bottom: 7rem; }
+    .wrapper section.padding-2 {
+      padding-bottom: 3rem; }
+    .wrapper section.splitscreen {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 4rem; }
+      @media screen and (max-width: 930px) {
+        .wrapper section.splitscreen {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto; } }
+
+section .section-header {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 2rem; }
+  section .section-header h2 {
+    margin-bottom: 1rem; }
+  section .section-header p {
+    line-height: 155%;
+    margin-bottom: 2rem; }
+  section .section-header > a {
+    text-transform: uppercase;
+    color: gray; }
+  section .section-header .social {
+    display: flex;
+    justify-content: flex-start; }
+  section .section-header.text-c {
+    text-align: center; }
+  @media screen and (max-width: 930px) {
+    section .section-header {
+      margin-bottom: 4rem;
+      text-align: center; }
+      section .section-header p {
+        margin: 0 auto;
+        margin-bottom: 2rem; }
+      section .section-header .social {
+        margin-top: 2rem;
+        justify-content: center; } }
+section.splitscreen p {
+  width: 80%; }
+
+footer {
+  width: 100%;
+  background: #ebebeb; }
+
+.projects-list {
+  width: 100%;
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-row-gap: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); }
+  @media screen and (max-width: 930px) {
+    .projects-list {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      justify-self: center;
+      align-self: center; } }
+  .projects-list .project-listitem a {
+    width: 100%;
+    display: inline-block;
+    margin-right: 1.5rem; }
+    .projects-list .project-listitem a img {
+      width: 100%;
+      height: 250px;
+      border-radius: 3px;
+      object-fit: cover; }
+      @media screen and (max-width: 930px) {
+        .projects-list .project-listitem a img {
+          margin-bottom: 1rem; } }
+  .projects-list .project-listitem .details .category {
+    margin-top: 0;
+    margin-bottom: 1rem; }
+  .projects-list .project-listitem .details .title {
+    margin-top: 0;
+    font-size: 1rem;
+    color: black; }
+  @media screen and (min-width: 930px) {
+    .projects-list .project-listitem {
+      flex-direction: column; }
+      .projects-list .project-listitem a {
+        margin: 0; }
+        .projects-list .project-listitem a img {
+          width: 175px;
+          height: 150px; }
+      .projects-list .project-listitem .details .category {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem; } }
+
+.videos-list {
+  width: 100%;
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-row-gap: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); }
+  .videos-list .video-listitem a {
+    width: 100%;
+    display: inline-block; }
+    .videos-list .video-listitem a img {
+      width: 100%;
+      height: 325px;
+      border-radius: 3px;
+      object-fit: cover; }
+      @media screen and (max-width: 930px) {
+        .videos-list .video-listitem a img {
+          margin-bottom: 1rem;
+          height: 250px; } }
+  .videos-list .video-listitem .details .category {
+    margin-top: 0;
+    text-transform: none;
+    font-weight: 500; }
+  .videos-list .video-listitem .details .title {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: black; }
+  @media screen and (max-width: 930px) {
+    .videos-list .video-listitem .details .title {
+      font-size: 1rem;
+      margin: 0;
+      margin-bottom: 1rem; } }
 
 /*# sourceMappingURL=application.css.map */
