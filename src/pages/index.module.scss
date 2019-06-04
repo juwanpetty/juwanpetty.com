@@ -1,0 +1,52 @@
+.Projects {
+  margin-top: 17.5rem;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .Project {
+    list-style-type: none;
+    margin-bottom: 6rem;
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 96px;
+      line-height: 100%;
+
+      /* identical to box height, or 96px */
+      display: inline-block;
+      letter-spacing: -0.03em;
+
+      -webkit-text-stroke: 2px #040c19;
+      text-stroke: 2px #040c19;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      color: transparent;
+
+      transition: 200ms;
+
+      &:hover {
+        -webkit-text-fill-color: #040c19;
+        text-fill-color: #040c19;
+        color: #040c19;
+      }
+    }
+  }
+}
+
+.SelectedProjects {
+  width: 95%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.05;
+}
