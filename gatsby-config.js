@@ -5,6 +5,15 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: "Juwan Petty | Front End Developer — Designer",
+    author: "Juwan Petty",
+    description: `A place to showcase all my projects.`,
+    siteUrl: `www.juwanpetty.com`,
+    social: {
+      twitter: `juwanpetty`,
+    },
+  },
   plugins: [
     "gatsby-plugin-sass",
     {
