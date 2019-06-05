@@ -9,8 +9,8 @@ const Footer = () => {
       <Link to="/about" data-cursor className={styles.FooterLink}>
         About
       </Link>
-      <Link to="/work" data-cursor className={styles.Archive}>
-        Archive <span>23</span>
+      <Link to="/" data-cursor className={styles.FooterLink}>
+        CV
       </Link>
     </footer>
   )

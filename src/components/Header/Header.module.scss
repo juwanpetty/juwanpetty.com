@@ -1,4 +1,5 @@
 .Header {
+  pointer-events: none;
   display: flex;
   justify-content: flex-end;
   position: fixed;
@@ -9,6 +10,7 @@
 }
 
 .Contact {
+  pointer-events: all;
   transform: rotate(90deg);
   transform-origin: left top 0;
   position: absolute;

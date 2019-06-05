@@ -9,7 +9,7 @@ module.exports = {
     title: "Juwan Petty | Front End Developer — Designer",
     author: "Juwan Petty",
     description: `A place to showcase all my projects.`,
-    siteUrl: `www.juwanpetty.com`,
+    siteUrl: `https://www.juwanpetty.com`,
     social: {
       twitter: `juwanpetty`,
     },
@@ -24,12 +24,12 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: "gatsby-source-contentful",
-      options: {
-        spaceId: "21ccrnc3lpf1",
-        accessToken: "k4AQ8pDKhko_3gWu5hkqPMliZ1l8ri228lnnbEmCPz4",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-contentful",
+    //   options: {
+    //     spaceId: "21ccrnc3lpf1",
+    //     accessToken: "k4AQ8pDKhko_3gWu5hkqPMliZ1l8ri228lnnbEmCPz4",
+    //   },
+    // },
   ],
 }
