@@ -29,7 +29,9 @@ const Index = () => {
             <li className={styles.Project}>
               <div className={styles.Image} />
               <div className={styles.Meta}>
-                <h1 className={styles.Title}>Headlines</h1>
+                <h1 className={styles.Title}>
+                  <a href="">Headlines</a>
+                </h1>
                 <p className={styles.Description}>
                   Love Instax Mini photos? We like them too. That's what
                   inspired us to create Tookapic Mini Prints! Cute little cards

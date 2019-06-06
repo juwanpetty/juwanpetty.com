@@ -95,8 +95,14 @@
 
   .Title {
     margin: 0;
-    font-size: 24px;
     margin-bottom: 16px;
+
+    a {
+      font-size: 24px;
+
+      color: #000000;
+      text-decoration: none;
+    }
   }
 
   .Description {
@@ -108,7 +114,7 @@
 
   .Detail {
     font-size: 14px;
-    line-height: 1.75;
+    line-height: 1.5;
     margin: 0;
     margin-bottom: 24px;
     color: #646464;
