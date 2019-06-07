@@ -19,6 +19,15 @@ const Index = () => {
           }
         }
       }
+      allContentfulWork {
+        edges {
+          node {
+            url
+            title
+            description
+          }
+        }
+      }
     }
   `)
 
@@ -55,12 +64,14 @@ const Index = () => {
         <section className={styles.Section}>
           <h1 className={styles.SectionHeader}>Work</h1>
           <ul className={styles.Jobs}>
-            <li className={styles.Job}>
-              <a href="/">
-                <p className={styles.Description}>September 2018 — May 2019</p>
-                <p className={styles.Title}>Shopify</p>
-              </a>
-            </li>
+            {data.allContentfulWork.edges.map(edge => (
+              <li className={styles.Job}>
+                <a href={edge.node.url}>
+                  <p className={styles.Description}>{edge.node.description}</p>
+                  <p className={styles.Title}>{edge.node.title}</p>
+                </a>
+              </li>
+            ))}
           </ul>
         </section>
       </div>
