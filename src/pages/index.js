@@ -6,19 +6,21 @@ import { Layout } from "../components"
 import styles from "./index.module.scss"
 
 const Index = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allContentfulProject {
-  //       edges {
-  //         node {
-  //           url
-  //           title
-  //           description
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulProject {
+        edges {
+          node {
+            url
+            title
+            description
+            type
+            date
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <Layout>
@@ -26,30 +28,28 @@ const Index = () => {
         <section className={styles.Section}>
           <h1 className={styles.SectionHeader}>Selected Projects</h1>
           <ul className={styles.Projects}>
-            <li className={styles.Project}>
-              <div className={styles.Image} />
-              <div className={styles.Meta}>
-                <h1 className={styles.Title}>
-                  <a href="">Headlines</a>
-                </h1>
-                <p className={styles.Description}>
-                  Love Instax Mini photos? We like them too. That's what
-                  inspired us to create Tookapic Mini Prints! Cute little cards
-                  with your photos and a short note.
-                </p>
-                <p className={styles.Detail}>
-                  March 2018
-                  <br />
-                  Chrome Extension
-                </p>
-                <a className={styles.Link} href="">
-                  Link to project
-                  <ArrowRight className={styles.LinkIcon} size={20} />
-                </a>
-              </div>
-              <div className={styles.Image} />
-              <div className={styles.Image} />
-            </li>
+            {data.allContentfulProject.edges.map(edge => (
+              <li className={styles.Project}>
+                <div className={styles.Meta}>
+                  <h1 className={styles.Title}>
+                    <a href={edge.node.url}>{edge.node.title}</a>
+                  </h1>
+                  <p className={styles.Description}>{edge.node.description}</p>
+                  <p className={styles.Detail}>
+                    {edge.node.date}
+                    <br />
+                    {edge.node.type}
+                  </p>
+                  <a className={styles.Link} href={edge.node.url}>
+                    Link to project
+                    <ArrowRight className={styles.LinkIcon} size={20} />
+                  </a>
+                </div>
+                <div className={styles.Image} />
+                <div className={styles.Image} />
+                <div className={styles.Image} />
+              </li>
+            ))}
           </ul>
         </section>
         <section className={styles.Section}>

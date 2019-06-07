@@ -16,12 +16,12 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-sass",
-    // {
-    //   resolve: "gatsby-source-contentful",
-    //   options: {
-    //     spaceId: "21ccrnc3lpf1",
-    //     accessToken: "k4AQ8pDKhko_3gWu5hkqPMliZ1l8ri228lnnbEmCPz4",
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        spaceId: "21ccrnc3lpf1",
+        accessToken: "k4AQ8pDKhko_3gWu5hkqPMliZ1l8ri228lnnbEmCPz4",
+      },
+    },
   ],
 }
