@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:700&display=swap");
+
 .IndexContainer {
   padding-top: 15rem;
 }
@@ -12,7 +14,7 @@
   }
 
   .SectionHeader {
-    font-family: Barlow Condensed;
+    font-family: "Barlow Condensed", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 54px;
@@ -75,6 +77,18 @@
     grid-auto-rows: 350px;
     width: 100%;
     grid-gap: 36px;
+
+    @media only screen and (max-width: 1045px) {
+      & {
+        grid-template-columns: 1fr;
+
+        .Meta {
+          padding-left: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+
     .Image {
       background: #f1f3f4;
       border-radius: 3px;
