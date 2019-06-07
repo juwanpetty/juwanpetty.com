@@ -43,6 +43,12 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 150px;
 
+  @media only screen and (max-width: 950px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .Job a {
     text-decoration: none;
 
