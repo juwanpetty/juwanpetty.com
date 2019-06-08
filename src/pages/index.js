@@ -16,6 +16,11 @@ const Index = () => {
             description
             type
             date
+            images {
+              fluid {
+                src
+              }
+            }
           }
         }
       }
@@ -54,9 +59,18 @@ const Index = () => {
                     <ArrowRight className={styles.LinkIcon} size={20} />
                   </a>
                 </div>
-                <div className={styles.Image} />
-                <div className={styles.Image} />
-                <div className={styles.Image} />
+                {edge.node.images.map(image => (
+                  <div className={styles.ImageContainer}>
+                    <img
+                      src={image.fluid.src}
+                      alt={image.title}
+                      className={styles.Image}
+                    />
+                  </div>
+                ))}
+
+                {/* <div className={styles.Image} />
+                <div className={styles.Image} /> */}
               </li>
             ))}
           </ul>
