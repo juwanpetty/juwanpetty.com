@@ -23,5 +23,13 @@ module.exports = {
         accessToken: "k4AQ8pDKhko_3gWu5hkqPMliZ1l8ri228lnnbEmCPz4",
       },
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/, // See below to configure properly
+        },
+      },
+    },
   ],
 }

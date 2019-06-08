@@ -164,3 +164,20 @@
     }
   }
 }
+
+.Social {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  a {
+    margin-right: 40px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      fill: #000000;
+    }
+  }
+}

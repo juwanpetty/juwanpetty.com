@@ -3,6 +3,13 @@ import { useStaticQuery, graphql } from "gatsby"
 import { ArrowRight } from "react-feather"
 import { Layout } from "../components"
 
+import CodeSandbox from "../assets/codesandbox.svg"
+import Dribbble from "../assets/dribbble.svg"
+import Github from "../assets/github.svg"
+import Instagram from "../assets/instagram.svg"
+import Twitter from "../assets/twitter.svg"
+import YouTube from "../assets/youtube.svg"
+
 import styles from "./index.module.scss"
 
 const Index = () => {
@@ -68,9 +75,6 @@ const Index = () => {
                     />
                   </div>
                 ))}
-
-                {/* <div className={styles.Image} />
-                <div className={styles.Image} /> */}
               </li>
             ))}
           </ul>
@@ -86,6 +90,29 @@ const Index = () => {
                 </a>
               </li>
             ))}
+          </ul>
+        </section>
+        <section className={styles.Section}>
+          <h1 className={styles.SectionHeader}>Social</h1>
+          <ul className={styles.Social}>
+            <a href="">
+              <Instagram />
+            </a>
+            <a href="">
+              <Twitter />
+            </a>
+            <a href="">
+              <Dribbble />
+            </a>
+            <a href="">
+              <YouTube />
+            </a>
+            <a href="">
+              <Github />
+            </a>
+            <a href="">
+              <CodeSandbox />
+            </a>
           </ul>
         </section>
       </div>
