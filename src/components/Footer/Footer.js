@@ -14,7 +14,7 @@ const Footer = () => {
         download
         alt="Juwan Petty Resume"
       >
-        CV
+        Resume
       </a>
     </footer>
   )
