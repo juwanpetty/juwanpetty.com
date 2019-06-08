@@ -7,7 +7,13 @@ const Footer = () => {
 
   return (
     <footer className={styles.Footer}>
-      <a href={Resume} data-cursor className={styles.FooterLink} download>
+      <a
+        href={Resume}
+        data-cursor
+        className={styles.FooterLink}
+        download
+        alt="Juwan Petty Resume"
+      >
         CV
       </a>
     </footer>
