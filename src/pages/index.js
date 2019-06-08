@@ -95,22 +95,22 @@ const Index = () => {
         <section className={styles.Section}>
           <h1 className={styles.SectionHeader}>Social</h1>
           <ul className={styles.Social}>
-            <a href="">
+            <a href="http://instagram.com/juwanpetty/">
               <Instagram />
             </a>
-            <a href="">
+            <a href="http://twitter.com/juwanpetty">
               <Twitter />
             </a>
-            <a href="">
+            <a href="http://dribbble.com/juwanpetty">
               <Dribbble />
             </a>
-            <a href="">
+            <a href="http://youtube.com/juwanpetty">
               <YouTube />
             </a>
-            <a href="">
+            <a href="http://github.com/juwanpetty/">
               <Github />
             </a>
-            <a href="">
+            <a href="https://codesandbox.io/u/juwanpetty">
               <CodeSandbox />
             </a>
           </ul>
