@@ -1,0 +1,39 @@
+%text-page-heading {
+  font-size: 52px;
+  line-height: 44px;
+  font-weight: 500;
+}
+
+%text-heading {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+%text-subheading {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+%text-subheading-mono {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+%text-base {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+%text-caption {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+}

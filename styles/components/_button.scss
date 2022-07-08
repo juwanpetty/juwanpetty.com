@@ -1,0 +1,9 @@
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  :focus-visible {
+    outline: auto;
+  }
+}
