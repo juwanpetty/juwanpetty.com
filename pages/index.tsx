@@ -1,8 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
-
 import { Subscribe } from "components";
-import styled from "styled-components";
+import styles from "styles/pages/home.module.scss";
 
 const Index: NextPage = () => {
   return (
@@ -16,47 +15,22 @@ const Index: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Container>
-        <Title>Coming Soon</Title>
-        <Subtitle>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Coming Soon</h1>
+        <p className={styles.subtitle}>
           Something’s stirring in this corner of the internet. <br />
           Add your name to the email list to be notified when the site goes
           live.
-        </Subtitle>
+        </p>
 
         <Subscribe />
 
-        <Caption>I&apos;ll only use this for spam. Kidding.</Caption>
-      </Container>
+        <p className={styles.caption}>
+          I&apos;ll only use this for spam. Kidding.
+        </p>
+      </div>
     </>
   );
 };
 
 export default Index;
-
-const Container = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Title = styled.h1`
-  font-size: 96px;
-  font-weight: 700;
-`;
-
-const Subtitle = styled.p`
-  font-size: 18px;
-  text-align: center;
-  margin-bottom: 6rem;
-`;
-
-const Caption = styled.p`
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: rgb(107 114 128);
-  text-align: center;
-  margin-top: 0.75rem;
-`;

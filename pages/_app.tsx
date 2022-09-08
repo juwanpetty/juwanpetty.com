@@ -1,7 +1,7 @@
 import React from "react";
 import type { AppProps } from "next/app";
-import styled from "styled-components";
 
+import styles from "styles/pages/app.module.scss";
 import "../styles/styles.scss";
 
 if (typeof window !== "undefined" && process.env.NODE_ENV !== "production") {
@@ -12,26 +12,14 @@ if (typeof window !== "undefined" && process.env.NODE_ENV !== "production") {
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Wrapper>
+    <div className={styles.wrapper}>
       <header />
-      <Main>
+      <main className={styles.main}>
         <Component {...pageProps} />
-      </Main>
+      </main>
       <footer />
-    </Wrapper>
+    </div>
   );
 }
 
 export default MyApp;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`;
-
-const Main = styled.main`
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-`;
