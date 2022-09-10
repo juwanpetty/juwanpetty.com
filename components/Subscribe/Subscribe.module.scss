@@ -31,3 +31,22 @@
   top: 0.25rem;
   right: 0.25rem;
 }
+
+.loading {
+  .content {
+    opacity: 0;
+  }
+
+  .spinner {
+    opacity: 1;
+  }
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0;
+}

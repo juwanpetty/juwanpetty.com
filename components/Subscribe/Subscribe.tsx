@@ -1,6 +1,9 @@
 import React from "react";
+import { Spinner } from "components";
+
 import { Form } from "types/form";
 import { useSubscribeToNewsletter } from "hooks";
+import cs from "classnames";
 
 import styles from "./Subscribe.module.scss";
 
@@ -20,8 +23,16 @@ function Subscribe({}: Props) {
           autoComplete="email"
           required
         />
-        <button type="submit" className={styles.button}>
-          {form.state === Form.Loading ? <span>loading...</span> : "Notify Me"}
+        <button
+          type="submit"
+          className={cs(styles.button, {
+            [styles.loading]: form.state === Form.Loading,
+          })}
+        >
+          <span className={styles.content}>Notify Me</span>
+          <span className={styles.spinner}>
+            <Spinner />
+          </span>
         </button>
       </label>
     </form>

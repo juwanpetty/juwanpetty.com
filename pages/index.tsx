@@ -1,19 +1,14 @@
 import { NextPage } from "next";
-import Head from "next/head";
-import { Subscribe } from "components";
+import { Head, Subscribe } from "components";
 import styles from "styles/pages/home.module.scss";
 
 const Index: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Coming Soon | Juwan Petty</title>
-        <meta
-          name="description"
-          content="A personal website by Juwan Petty. Coming soon."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head
+        title="Coming Soon | Juwan Petty"
+        description="A personal website by Juwan Petty. Coming soon."
+      />
 
       <div className={styles.container}>
         <h1 className={styles.title}>Coming Soon</h1>
