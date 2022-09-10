@@ -3,15 +3,28 @@ import { FormState, Form } from "types/form";
 
 export default function useSubscribeToNewsletter() {
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
-  const inputEl = useRef<HTMLInputElement | null>(null);
+  const inputEl = useRef<HTMLInputElement>(null);
+
+  const emailCheck =
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  const isEmailValid = (email: string) => {
+    return emailCheck.test(email);
+  };
 
   async function subscribe(e: FormEvent) {
     e.preventDefault();
-    setForm({ state: Form.Loading });
+    const email = inputEl?.current?.value.trim().toLowerCase() as string;
+
+    if (email?.length > 0 && isEmailValid(email)) {
+      setForm({ state: Form.Loading });
+    } else {
+      return;
+    }
 
     const res = await fetch(`/api/subscribe`, {
       body: JSON.stringify({
-        email: inputEl?.current?.value,
+        email,
       }),
       headers: {
         "Content-Type": "application/json",
