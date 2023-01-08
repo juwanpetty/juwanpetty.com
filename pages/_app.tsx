@@ -1,8 +1,10 @@
 import React from "react";
-import type { AppProps } from "next/app";
+
 import localFont from "@next/font/local";
-import Layout from "@/components/layout";
-import cn from "classnames";
+import type { AppProps } from "next/app";
+
+import Layout from "@/components/Layout";
+import classNames from "classnames";
 
 import "../styles/globals.scss";
 
@@ -60,7 +62,7 @@ const grotesk = localFont({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className={cn("font-sans", grotesk.variable)}>
+    <div className={classNames("font-sans", grotesk.variable)}>
       <Layout>
         <Component {...pageProps} />
       </Layout>

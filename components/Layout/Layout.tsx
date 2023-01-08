@@ -1,4 +1,6 @@
-import Footer from "./footer";
+import React, { Fragment } from "react";
+
+import Navigation from "./Navigation";
 
 type Props = {
   children: React.ReactNode;
@@ -6,12 +8,12 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <>
+    <Fragment>
       <div className="min-h-screen">
+        <Navigation />
         <main>{children}</main>
       </div>
-      <Footer />
-    </>
+    </Fragment>
   );
 };
 
