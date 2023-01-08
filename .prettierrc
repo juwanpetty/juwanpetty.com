@@ -1,0 +1,17 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": false,
+  "importOrder": [
+    "^react(.*)",
+    "next(.*)",
+    "<THIRD_PARTY_MODULES>",
+    "@components(.*)",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ]
+}
