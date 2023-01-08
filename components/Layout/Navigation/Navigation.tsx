@@ -32,7 +32,7 @@ const Navigation = () => {
 
   return (
     <Disclosure as="div">
-      <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-8">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="relative z-10 flex px-2 md:px-0">
