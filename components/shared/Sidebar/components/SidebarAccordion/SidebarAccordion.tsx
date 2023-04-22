@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import * as Accordion from "@radix-ui/react-accordion";
+import { motion } from "framer-motion";
 
 import Icon from "@components/shared/Icon/Icon";
 
@@ -71,7 +72,17 @@ const SidebarAccordion = ({
         </Accordion.Header>
 
         <Accordion.Content className={styles.AccordionContent}>
-          <div className={styles.AccordionContentText}>{children}</div>
+          <motion.div
+            className={styles.AccordionContentText}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 0.1,
+              duration: 0.15,
+            }}
+          >
+            {children}
+          </motion.div>
         </Accordion.Content>
       </Accordion.Item>
     </Accordion.Root>
