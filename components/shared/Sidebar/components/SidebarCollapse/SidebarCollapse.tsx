@@ -56,6 +56,8 @@ const SidebarCollapse = () => {
         onClick={() => console.log("clicked")}
         ref={elementRef}
         animate={{ y: centerButton() }}
+        // transition={{ type: "tween", duration: 0.2, ease: "circOut" }}
+        layout
       >
         <Icon source={<ChevronLeft />} size="small" />
       </motion.button>
