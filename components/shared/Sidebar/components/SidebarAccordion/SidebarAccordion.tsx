@@ -77,7 +77,7 @@ const SidebarAccordion = ({
         <Accordion.Content className={styles.AccordionContent}>
           <div>
             <div className={styles.AccordionContentLinks}>
-              <span>Recent {resource}</span>
+              {/* <span>Recent {resource}</span> */}
               {children}
             </div>
           </div>
