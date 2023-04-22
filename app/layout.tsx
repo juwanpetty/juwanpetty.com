@@ -1,5 +1,7 @@
 import React from "react";
 
+import SidebarCollapse from "@components/shared/Sidebar/components/SidebarCollapse/SidebarCollapse";
+
 import Sidebar from "@shared/Sidebar/Sidebar";
 
 import "../styles/globals.scss";
@@ -22,7 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className={styles.Container}>
-          <Sidebar />
+          <div className={styles.SidebarWrapper}>
+            <Sidebar />
+            <SidebarCollapse />
+          </div>
           {children}
         </div>
       </body>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const News = ({ ...props }) => {
+const Bookmark = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,12 +10,11 @@ const News = ({ ...props }) => {
     >
       <path
         fillRule="evenodd"
-        d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+        d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
         clipRule="evenodd"
       />
-      <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
     </svg>
   );
 };
 
-export default News;
+export default Bookmark;

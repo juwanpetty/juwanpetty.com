@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import Badge from "@components/shared/Badge/Badge";
 
@@ -11,7 +12,7 @@ import External from "@icons/External";
 import styles from "./SidebarLink.module.scss";
 
 export interface SidebarLinkProps {
-  children: string;
+  children: React.ReactNode;
   icon: JSX.Element;
   url: string;
   onClick?: () => void;
@@ -29,15 +30,9 @@ const SidebarLink = ({
   isExternal,
   isNew,
 }: SidebarLinkProps) => {
-  console.log(`public/icons/home.svg`);
-
-  return (
-    <Link
-      className={styles.SidebarLink}
-      href={url}
-      onClick={onClick}
-      aria-label={accessibilityLabel}
-    >
+  const pathname = usePathname();
+  const linkContent = (
+    <>
       {icon && <Icon source={icon} size="small" />}
 
       <span className={styles.Content}>
@@ -46,6 +41,30 @@ const SidebarLink = ({
       </span>
 
       {isExternal && <Icon source={<External />} size="small" />}
+    </>
+  );
+
+  return isExternal ? (
+    <a
+      className={styles.SidebarLink}
+      href={url}
+      onClick={onClick}
+      aria-label={accessibilityLabel}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      aria-current={pathname === url ? "page" : undefined}
+    >
+      {linkContent}
+    </a>
+  ) : (
+    <Link
+      className={styles.SidebarLink}
+      href={url}
+      onClick={onClick}
+      aria-label={accessibilityLabel}
+      aria-current={pathname === url ? "page" : undefined}
+    >
+      {linkContent}
     </Link>
   );
 };

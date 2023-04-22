@@ -1,15 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { ReactElement } from "react";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import * as Accordion from "@radix-ui/react-accordion";
-import { ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 import Icon from "@components/shared/Icon/Icon";
 
-import SidebarLink from "../SidebarLink/SidebarLink";
+import ChevronRight from "@icons/ChevronRight";
+
 import styles from "./SidebarAccordion.module.scss";
 
 export interface SidebarAccordionProps {
@@ -25,11 +27,31 @@ const SidebarAccordion = ({
   icon,
   resource,
 }: SidebarAccordionProps) => {
+  const pathname = usePathname();
+
+  const StopClickEventPropagation = ({
+    children,
+  }: {
+    children: ReactElement | ReactElement[];
+  }) => {
+    return (
+      <div
+        className={styles.Root}
+        onClick={(event) => {
+          event.stopPropagation();
+          event.preventDefault();
+        }}
+      >
+        {children}
+      </div>
+    );
+  };
+
   return (
     <Accordion.Root
       className={styles.SidebarAccordion}
       type="single"
-      defaultValue={id}
+      collapsible
     >
       <Accordion.Item value={id}>
         <Accordion.Header asChild>
@@ -37,20 +59,27 @@ const SidebarAccordion = ({
             className={styles.AccordionHeader}
             href={`/${resource.toLowerCase()}`}
             aria-label={resource}
+            aria-current={
+              pathname === `/${resource.toLowerCase()}` ? "page" : undefined
+            }
           >
             <Icon source={icon} size="small" />
-
             <span className={styles.Header}>{resource}</span>
-
-            <Accordion.Trigger>
-              <Icon source={<ChevronRight />} size="small" />
-            </Accordion.Trigger>
+            <StopClickEventPropagation>
+              <Accordion.Trigger className={styles.AccordionTrigger}>
+                <div className={styles.AccordionChevron}>
+                  <Icon source={<ChevronRight />} size="small" />
+                </div>
+              </Accordion.Trigger>
+            </StopClickEventPropagation>
           </Link>
         </Accordion.Header>
-        <Accordion.Content asChild>
-          <div className={styles.Content}>
-            <span>Recent {resource}</span>
-            {children}
+        <Accordion.Content className={styles.AccordionContent}>
+          <div>
+            <div className={styles.AccordionContentLinks}>
+              <span>Recent {resource}</span>
+              {children}
+            </div>
           </div>
         </Accordion.Content>
       </Accordion.Item>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const News = ({ ...props }) => {
+const LightningBolt = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,12 +10,11 @@ const News = ({ ...props }) => {
     >
       <path
         fillRule="evenodd"
-        d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+        d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
         clipRule="evenodd"
       />
-      <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
     </svg>
   );
 };
 
-export default News;
+export default LightningBolt;

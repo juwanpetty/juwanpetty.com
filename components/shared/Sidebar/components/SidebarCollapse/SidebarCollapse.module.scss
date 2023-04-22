@@ -1,0 +1,47 @@
+.SidebarCollapse {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  height: 100%;
+  min-height: 100vh;
+
+  transition: all 200ms ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+
+  &[data-reveal="true"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.Background {
+  display: inline-block;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, blue, blue, transparent);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    #418bfe 10%,
+    #418bfe 90%,
+    transparent 100%
+  );
+}
+
+.Button {
+  position: absolute;
+  // top: 6rem;
+  right: -10.5px;
+  background-color: #418bfe;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    color: white;
+  }
+}
