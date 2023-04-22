@@ -2,17 +2,19 @@
 
 import React, { useState } from "react";
 
+import classNames from "classnames";
 import { motion } from "framer-motion";
 
 import BookOpen from "@icons/BookOpen";
 import Bookmark from "@icons/Bookmark";
 import ChatAlt from "@icons/ChatAlt";
+import Collapse from "@icons/Collapse";
 import Folder from "@icons/Folder";
 import Hashtag from "@icons/Hashtag";
 import Home from "@icons/Home";
 import LightningBolt from "@icons/LightningBolt";
-import Login from "@icons/Login";
 import News from "@icons/News";
+import RSS from "@icons/RSS";
 import Sun from "@icons/Sun";
 import Video from "@icons/Video";
 
@@ -32,7 +34,7 @@ const Sidebar = ({}: SidebarProps) => {
             <Icon source={<Sun />} size="small" />
           </button>
           <button className={styles.SidebarControl}>
-            <Icon source={<Login />} size="small" />
+            <Icon source={<Collapse />} size="small" />
           </button>
         </div>
       </div>
@@ -131,7 +133,7 @@ const Sidebar = ({}: SidebarProps) => {
         </SidebarLink>
       </div>
 
-      <div className={styles.SidebarGroup}>
+      <div className={classNames(styles.SidebarGroup, styles.Socials)}>
         <span className={styles.SidebarHeading}>Find me</span>
         <SidebarLink
           url="https://www.example.com/"
@@ -157,6 +159,12 @@ const Sidebar = ({}: SidebarProps) => {
         >
           GitHub
         </SidebarLink>
+      </div>
+      <div className={styles.SidebarFooter}>
+        <button className={styles.Subscribe}>
+          Subscribe to RSS
+          <Icon source={<RSS />} size="small" />
+        </button>
       </div>
     </div>
   );

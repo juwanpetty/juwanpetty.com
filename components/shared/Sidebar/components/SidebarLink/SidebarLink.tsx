@@ -35,11 +35,9 @@ const SidebarLink = ({
     <>
       {icon && <Icon source={icon} size="small" />}
 
-      <span className={styles.Content}>
-        {children}
-        {isNew && <Badge>New</Badge>}
-      </span>
+      <span className={styles.Content}>{children}</span>
 
+      {isNew && <Badge>New</Badge>}
       {isExternal && <Icon source={<External />} size="small" />}
     </>
   );

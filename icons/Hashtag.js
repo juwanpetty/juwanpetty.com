@@ -1,20 +1,22 @@
 import React from "react";
 
-const Bookmark = ({ ...props }) => {
+const Hashtag = ({ ...props }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
-      fill="currentColor"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path
-        fillRule="evenodd"
-        d="M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"
-        clipRule="evenodd"
+        d="M5.83333 16.6667L9.16666 3.33333M10.8333 16.6667L14.1667 3.33333M4.99999 7.5H16.6667M3.33333 12.5H15"
+        stroke="#666666"
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
 };
 
-export default Bookmark;
+export default Hashtag;
