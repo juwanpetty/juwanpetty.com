@@ -5,7 +5,6 @@ import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 
 import { Page } from "../../shared/Page";
-import { Aside } from "../../shared/Aside";
 import PostList from "../../components/PostList";
 
 const getWritingPosts = async () => {
