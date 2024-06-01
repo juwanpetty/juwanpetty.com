@@ -1,10 +1,89 @@
-@charset 'utf-8';
+@charset "utf-8";
 
-// Abstracts
-@import 'abstracts/abstracts';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-// Base Styles
-@import 'base/base';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-// Components
-@import 'components/components';
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-family:
+    var(--font-geist-sans),
+    -apple-system,
+    BlinkMacSystemFont,
+    avenir next,
+    avenir,
+    segoe ui,
+    helvetica neue,
+    helvetica,
+    Cantarell,
+    Ubuntu,
+    roboto,
+    noto,
+    arial,
+    sans-serif;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-family: var(--font-sans-serif);
+
+  :focus-visible {
+    outline: auto;
+  }
+}
