@@ -15,18 +15,24 @@ async function Home() {
 
   return (
     <Page breadcrumbs={breadcrumbs} aside={asideMarkup}>
-      <Text variant="headingLg" className="mb-4">
+      <Text variant="headingLg" className="mb-2">
         Intro
       </Text>
-      <Text variant="bodyMd" className="mb-4">
+      <Text variant="bodyMd" className="mb-6">
         Welcome to my corner of the internet.
       </Text>
 
-      <h2>Test Heading 2</h2>
-      <p>Test paragraph</p>
+      <Text variant="headingMd" className="mb-2">
+        Test Heading 2
+      </Text>
+      <Text variant="bodyMd" className="mb-6">
+        Test paragraph
+      </Text>
 
-      <h3>Test Heading 3</h3>
-      <p>Test paragraph</p>
+      <Text variant="headingSm" className="mb-2">
+        Test Heading 3
+      </Text>
+      <Text variant="bodyMd">Test paragraph</Text>
     </Page>
   );
 }

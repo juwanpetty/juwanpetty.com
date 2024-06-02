@@ -11,27 +11,43 @@ export function Text({ children, variant, className }: Props) {
   function getElementType() {
     switch (variant) {
       case "headingSm":
-        return "h3";
+        return { elementType: "h3", isHeader: true };
       case "headingMd":
-        return "h2";
+        return { elementType: "h2", isHeader: true };
       case "headingLg":
-        return "h1";
+        return { elementType: "h1", isHeader: true };
       default:
-        return "p";
+        return { elementType: "p", isHeader: false };
     }
   }
 
+  function generateIdFromText(text: React.ReactNode): string {
+    if (typeof text === "string") {
+      return text
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/[^\w-]+/g, "");
+    }
+    return "";
+  }
+
+  const { elementType, isHeader } = getElementType();
+  const id = isHeader ? generateIdFromText(children) : undefined;
+
   const variantClasses = {
-    bodySm: "text-base",
-    bodyMd: "text-base",
-    headingSm: "text-base font-medium",
-    headingMd: "text-base font-medium",
-    headingLg: "text-base font-medium",
+    bodySm: "text-sm",
+    bodyMd: "text-sm",
+    headingSm: "text-sm font-medium",
+    headingMd: "text-sm font-medium",
+    headingLg: "text-sm font-medium",
   };
 
   return createElement(
-    getElementType(),
-    { className: cn(variantClasses[variant], className) },
+    elementType,
+    {
+      className: cn(variantClasses[variant], className),
+      ...(isHeader && { id }),
+    },
     children
   );
 }
