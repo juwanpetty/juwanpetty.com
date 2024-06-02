@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/utilities/mergeClassNames";
 
 type Props = {
@@ -10,10 +9,7 @@ type Props = {
 };
 
 export function TableOfContentsItem({ id, activeId, children }: Props) {
-  const pathName = usePathname();
-  const router = useRouter();
-
-  const pathWithId = `${pathName}#${id}`;
+  const pathWithId = `#${id}`;
 
   return (
     <Link
@@ -21,13 +17,9 @@ export function TableOfContentsItem({ id, activeId, children }: Props) {
       className={cn("block py-1 pl-3 text-[13px] leading-4 text-stone-500", {
         "font-medium text-stone-800": id === activeId,
       })}
-      onClick={(e) => {
-        e.preventDefault();
-
-        router.push(pathWithId);
-
+      onClick={() => {
         document
-          ?.querySelector(`#${id}`)
+          ?.querySelector(pathWithId)
           ?.scrollIntoView({ behavior: "smooth" });
       }}
     >
