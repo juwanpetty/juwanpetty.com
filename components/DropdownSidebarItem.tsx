@@ -4,11 +4,10 @@ import React from "react";
 
 import { usePathname } from "next/navigation";
 import * as Accordion from "@radix-ui/react-accordion";
-
-import { Icons } from "../shared/Icons";
-import { SidebarItem } from "./SidebarItem";
-import { cn } from "../utilities/mergeClassNames";
-import { isCurrentPath } from "../utilities/isCurrentPath";
+import { Icons } from "@/shared/Icons";
+import { SidebarItem } from "@/components/SidebarItem";
+import { cn } from "@/utilities/mergeClassNames";
+import { isCurrentPath } from "@/utilities/isCurrentPath";
 
 type Props = {
   label: string;

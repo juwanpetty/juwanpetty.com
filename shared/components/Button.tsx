@@ -1,9 +1,7 @@
 import React, { ButtonHTMLAttributes, createElement } from "react";
 import { VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "../utilities/mergeClassNames";
-
-import { Icons } from "./Icons";
+import { Icons } from "@/shared/Icons";
+import { cn } from "@/utilities/mergeClassNames";
 
 export const buttonVariants = cva(
   "flex h-8 items-center gap-[2px] rounded-md px-[10px] text-sm font-medium shadow-sm transition-colors",

@@ -1,6 +1,6 @@
 import React from "react";
-import { ImagePlaceholder } from "../../shared/ImagePlaceholder";
-import { Page } from "../../shared/Page";
+import { Page } from "@/shared/Page";
+import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 
 const getBooks = async () => {
   const response = await fetch(

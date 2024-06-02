@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalSidebarItem } from "./ExternalSidebarItem";
+import { ExternalSidebarItem } from "@/components/ExternalSidebarItem";
 
 export function SidebarConnect() {
   return (

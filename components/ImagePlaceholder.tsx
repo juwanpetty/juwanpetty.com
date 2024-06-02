@@ -1,5 +1,5 @@
-import { cn } from "../utilities/mergeClassNames";
-import { Icons } from "./Icons";
+import { Icons } from "@/shared/Icons";
+import { cn } from "@/utilities/mergeClassNames";
 
 type Props = {
   className?: string;

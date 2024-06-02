@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import { cn } from "../utilities/mergeClassNames";
-import { isCurrentPath } from "../utilities/isCurrentPath";
+import { cn } from "@/utilities/mergeClassNames";
+import { isCurrentPath } from "@/utilities/isCurrentPath";
 
 type SidebarItemProps = {
   href: string;

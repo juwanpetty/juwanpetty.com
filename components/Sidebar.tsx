@@ -1,10 +1,10 @@
 "use client";
 
 import { useContext } from "react";
-import { SidebarConnect } from "./SidebarConnect";
-import { SidebarNavigation } from "./SidebarNavigation";
-import { SidebarContext } from "../context/SidebarProvider";
-import { cn } from "../utilities/mergeClassNames";
+import { SidebarConnect } from "@/components/SidebarConnect";
+import { SidebarNavigation } from "@/components/SidebarNavigation";
+import { SidebarContext } from "@/context/SidebarProvider";
+import { cn } from "@/utilities/mergeClassNames";
 
 export function Sidebar() {
   const { isSidebarOpen } = useContext(SidebarContext);

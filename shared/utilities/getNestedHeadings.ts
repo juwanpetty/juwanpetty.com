@@ -1,8 +1,7 @@
-import type { NestedHeading } from "../lib/types";
+import type { NestedHeading } from "@/components/TableOfContents";
 
 
 export function getNestedHeadings(headingElements: Element[]) {
-  // eslint-disable-next-line @typescript-eslint/no-shadow
   const nestedHeadings: NestedHeading[] = [];
 
   headingElements.forEach((heading) => {

@@ -1,7 +1,7 @@
 import React from "react";
-import { DropdownSidebarItem } from "./DropdownSidebarItem";
-import { ExternalSidebarItem } from "./ExternalSidebarItem";
-import { SidebarItem } from "./SidebarItem";
+import { DropdownSidebarItem } from "@/components/DropdownSidebarItem";
+import { ExternalSidebarItem } from "@/components/ExternalSidebarItem";
+import { SidebarItem } from "@/components/SidebarItem";
 
 export function SidebarNavigation() {
   return (

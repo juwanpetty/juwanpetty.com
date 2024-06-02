@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "../shared/Text";
+import { Text } from "@/shared/Text";
 
 type Props = {
   title?: string;
