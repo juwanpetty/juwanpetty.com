@@ -1,6 +1,6 @@
-import { format } from "date-fns";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import { format } from "date-fns";
 
 type Props = {
   year: string;
@@ -12,7 +12,7 @@ type Props = {
   }[];
 };
 
-function PostList({ year, posts }: Props) {
+export function PostList({ year, posts }: Props) {
   function formatPublishedDate(date: string) {
     return format(new Date(date), "MM/yy");
   }
@@ -40,5 +40,3 @@ function PostList({ year, posts }: Props) {
     </section>
   );
 }
-
-export default PostList;

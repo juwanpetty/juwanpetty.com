@@ -1,7 +1,7 @@
 import React from "react";
 import Markdown from "react-markdown";
-import { Page } from "../../../shared/Page";
-import { TableOfContents } from "../../../shared/TableOfContents";
+import { Page } from "@/shared/Page";
+import { TableOfContents } from "@/components/TableOfContents";
 
 const getPost = async (params: { slug: any }) => {
   const response = await fetch(

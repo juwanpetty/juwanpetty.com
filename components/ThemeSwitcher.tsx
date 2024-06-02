@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-
-import { Icons } from "../shared/Icons";
+import { Icons } from "@/shared/Icons";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);

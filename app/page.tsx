@@ -1,9 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
-
-import { Page } from "../shared/Page";
-import { TableOfContents } from "../shared/TableOfContents";
-import { Text } from "../shared/Text";
+import { Page } from "@/shared/Page";
+import { Text } from "@/shared/Text";
+import { TableOfContents } from "@/components/TableOfContents";
 
 export const metadata: Metadata = {
   title: "Juwan Petty",

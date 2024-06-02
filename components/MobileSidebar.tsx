@@ -7,10 +7,10 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
-import { SidebarNavigation } from "./SidebarNavigation";
-import { SidebarConnect } from "./SidebarConnect";
-import { Icons } from "../shared/Icons";
-import { useWindowWidth } from "../hooks/useWindowWidth";
+import { Icons } from "@/shared/Icons";
+import { SidebarNavigation } from "@/components/SidebarNavigation";
+import { SidebarConnect } from "@/components/SidebarConnect";
+import { useWindowWidth } from "@/hooks/useWindowWidth";
 
 const TAILWIND_SM = 768;
 

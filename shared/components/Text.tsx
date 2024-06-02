@@ -1,5 +1,5 @@
 import React, { createElement } from "react";
-import { cn } from "../utilities/mergeClassNames";
+import { cn } from "@/utilities/mergeClassNames";
 
 type Props = {
   children: React.ReactNode;

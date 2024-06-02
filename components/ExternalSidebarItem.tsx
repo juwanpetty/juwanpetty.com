@@ -1,6 +1,5 @@
 import React from "react";
-
-import { Icons } from "../shared/Icons";
+import { Icons } from "@/shared/Icons";
 
 type Props = {
   href: string;

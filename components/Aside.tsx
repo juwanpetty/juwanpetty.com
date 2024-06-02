@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useContext } from "react";
-import { ScrollToTop } from "../components/ScrollToTop";
-import { AsideContext } from "../context/AsideProvider";
-import { cn } from "../utilities/mergeClassNames";
+import { ScrollToTop } from "@/components/ScrollToTop";
+import { AsideContext } from "@/context/AsideProvider";
+import { cn } from "@/utilities/mergeClassNames";
 
 type Props = {
   children?: React.ReactNode;

@@ -3,13 +3,20 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useHeadingsData } from "@/hooks/useHeadingsData";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { cn } from "@/utilities/mergeClassNames";
 
-import { useHeadingsData } from "../hooks/useHeadingsData";
-import type { NestedHeading } from "../lib/types";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-import { cn } from "../utilities/mergeClassNames";
+export interface NestedHeading {
+  id: string;
+  title: string;
+  items: {
+    id: string;
+    title: string;
+  }[];
+}
 
-type HeadingsProps = {
+export type HeadingsProps = {
   headings: NestedHeading[];
   activeId: string;
 };

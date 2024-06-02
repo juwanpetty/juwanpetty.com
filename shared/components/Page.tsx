@@ -1,6 +1,6 @@
-import PageControls from "../components/PageControls";
-import { PageHeader } from "../components/PageHeader";
-import { Aside } from "./Aside";
+import { PageControls } from "@/components/PageControls";
+import { PageHeader } from "@/components/PageHeader";
+import { Aside } from "@/components/Aside";
 
 type PageProps = {
   title?: string;

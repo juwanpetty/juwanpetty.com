@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-
-import { getNestedHeadings } from "../utilities/getNestedHeadings";
+import { getNestedHeadings } from "@/utilities/getNestedHeadings";
 
 interface NestedHeading {
   id: string;

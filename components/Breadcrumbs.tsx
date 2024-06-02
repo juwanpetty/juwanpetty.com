@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Icons } from "./Icons";
+import { Icons } from "@/shared/Icons";
 
 type Props = {
   items: { label: string; href: string }[];

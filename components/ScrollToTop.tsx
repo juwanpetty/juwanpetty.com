@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 
-import { Icons } from "../shared/Icons";
-import { cn } from "../utilities/mergeClassNames";
+import { Icons } from "@/shared/Icons";
+import { cn } from "@/utilities/mergeClassNames";
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);

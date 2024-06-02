@@ -1,11 +1,9 @@
 import React from "react";
-
 import orderBy from "lodash.orderby";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
-
-import { Page } from "../../shared/Page";
-import PostList from "../../components/PostList";
+import { Page } from "@/shared/Page";
+import { PostList } from "@/components/PostList";
 
 const getWritingPosts = async () => {
   const response = await fetch(

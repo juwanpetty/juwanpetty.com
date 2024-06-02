@@ -2,8 +2,24 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@/shared/*": ["shared/*"],
+      "@/*": [
+        "./*"
+      ],
+      "@/shared/*": [
+        "shared/components/*"
+      ],
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/hooks/*": [
+        "shared/hooks/*"
+      ],
+      "@/context/*": [
+        "shared/context/*"
+      ],
+      "@/utilities/*": [
+        "shared/utilities/*"
+      ],
     },
     "target": "es5",
     "lib": [

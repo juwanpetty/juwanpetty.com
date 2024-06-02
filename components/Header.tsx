@@ -1,10 +1,10 @@
 "use client";
 
 import { useContext } from "react";
-import { AsideContext } from "../context/AsideProvider";
-import { SidebarContext } from "../context/SidebarProvider";
-import { Icons } from "../shared/Icons";
-import { ThemeSwitcher } from "./ThemeSwitcher";
+import { Icons } from "@/shared/Icons";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { AsideContext } from "@/context/AsideProvider";
+import { SidebarContext } from "@/context/SidebarProvider";
 
 export function Header() {
   const { toggleSidebarOpen } = useContext(SidebarContext);
