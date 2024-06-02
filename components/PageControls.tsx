@@ -1,7 +1,6 @@
 import React from "react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { MobileSidebar } from "@/components/MobileSidebar";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 type Props = {
   breadcrumbs?: { label: string; href: string }[];
@@ -16,11 +15,7 @@ export function PageControls({ breadcrumbs }: Props) {
 
       {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
 
-      <div className="flex items-center gap-2">
-        <span className="flex items-center justify-center md:hidden">
-          <ThemeSwitcher />
-        </span>
-      </div>
+      <div className="flex items-center gap-2" />
     </div>
   );
 }
