@@ -10,10 +10,9 @@ export function Sidebar() {
   const { isSidebarOpen } = useContext(SidebarContext);
 
   return (
-    // <nav className="sticky top-10 hidden h-min w-72 md:flex md:shrink-0 md:flex-col md:gap-14">
     <nav
       className={cn(
-        "hidden h-min w-72 overflow-x-hidden md:shrink-0 md:flex-col md:gap-14",
+        "hidden h-min w-56 overflow-x-hidden md:shrink-0 md:flex-col md:gap-14",
         { "md:flex": isSidebarOpen }
       )}
     >

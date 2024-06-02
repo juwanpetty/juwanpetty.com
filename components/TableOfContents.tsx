@@ -1,11 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useHeadingsData } from "@/hooks/useHeadingsData";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { cn } from "@/utilities/mergeClassNames";
+import { TableOfContentsItem } from "@/components/TableOfContentsItem";
 
 export interface NestedHeading {
   id: string;
@@ -22,47 +20,20 @@ export type HeadingsProps = {
 };
 
 function Headings({ headings, activeId }: HeadingsProps) {
-  const pathName = usePathname();
-
   return (
     <ul className="relative flex flex-col gap-1 before:absolute before:top-0 before:h-full before:border-l before:border-solid before:border-stone-200">
       {headings.map((heading) => (
         <li key={heading.id}>
-          <Link
-            href={`${pathName}#${heading.id}`}
-            className={cn(
-              "block py-1 pl-3 text-[13px] leading-4 text-stone-500",
-              { "font-medium text-stone-800": heading.id === activeId }
-            )}
-            onClick={(e) => {
-              e.preventDefault();
-
-              document
-                ?.querySelector(`#${heading.id}`)
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
+          <TableOfContentsItem id={heading.id} activeId={activeId}>
             {heading.title}
-          </Link>
+          </TableOfContentsItem>
           {heading.items.length > 0 && (
             <ul className="relative flex flex-col gap-1 pl-4 before:absolute before:top-0 before:h-full before:border-l before:border-solid before:border-stone-200">
               {heading.items.map((child) => (
                 <li key={child.id}>
-                  <Link
-                    href={`#${child.id}`}
-                    className={cn(
-                      "block py-1 pl-3 text-[13px] leading-4 text-stone-500",
-                      { "font-medium text-stone-800": child.id === activeId }
-                    )}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document?.querySelector(`#${child.id}`)?.scrollIntoView({
-                        behavior: "smooth",
-                      });
-                    }}
-                  >
+                  <TableOfContentsItem id={child.id} activeId={activeId}>
                     {child.title}
-                  </Link>
+                  </TableOfContentsItem>
                 </li>
               ))}
             </ul>
