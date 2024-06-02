@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { cn } from "@/utilities/mergeClassNames";
+import { useRouter } from "next/navigation";
 
 type Props = {
   id: string;
@@ -9,6 +10,7 @@ type Props = {
 };
 
 export function TableOfContentsItem({ id, activeId, children }: Props) {
+  const router = useRouter();
   const pathWithId = `#${id}`;
 
   return (
@@ -18,6 +20,7 @@ export function TableOfContentsItem({ id, activeId, children }: Props) {
         "font-medium text-stone-800": id === activeId,
       })}
       onClick={() => {
+        router.push(pathWithId);
         document
           ?.querySelector(pathWithId)
           ?.scrollIntoView({ behavior: "smooth" });
