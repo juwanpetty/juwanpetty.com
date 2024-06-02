@@ -2,11 +2,10 @@
 
 import { useContext } from "react";
 import { Icons } from "@/shared/Icons";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { AsideContext } from "@/context/AsideProvider";
 import { SidebarContext } from "@/context/SidebarProvider";
 
-export function Header() {
+export function SiteControls() {
   const { toggleSidebarOpen } = useContext(SidebarContext);
   const { toggleAsideOpen } = useContext(AsideContext);
 
@@ -26,14 +25,6 @@ export function Header() {
       {buttonMarkup}
 
       <div className="flex w-56 items-center justify-end gap-4">
-        <div className="flex items-center gap-4">
-          {/* <button type="button" className="text-stone-400">
-            <Icons.Placeholder size={20} />
-            <span className="sr-only">Toggle appearence</span>
-          </button> */}
-          {/* <ThemeSwitcher /> */}
-        </div>
-        <ThemeSwitcher />
         <button
           type="button"
           className="hidden text-stone-400 lg:flex"
