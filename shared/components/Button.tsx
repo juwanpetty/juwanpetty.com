@@ -22,7 +22,7 @@ export const buttonVariants = cva(
 interface Props
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  content: string;
+  children: React.ReactNode;
   className?: string;
   leadingIcon?: keyof typeof Icons;
   trailngIcon?: keyof typeof Icons;
@@ -30,7 +30,7 @@ interface Props
 
 export function Button({
   className,
-  content,
+  children,
   leadingIcon,
   trailngIcon,
   variant = "default",
@@ -51,7 +51,7 @@ export function Button({
       {...props}
     >
       {leadingIconMarkup}
-      <span className="px-1">{content}</span>
+      <span className="px-1">{children}</span>
       {trailngIconMarkup}
     </button>
   );

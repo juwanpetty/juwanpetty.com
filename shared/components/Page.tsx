@@ -1,3 +1,4 @@
+import { Text } from "@/shared/Text";
 import { PageHeader } from "@/components/PageHeader";
 import { Aside } from "@/components/Aside";
 
@@ -15,13 +16,18 @@ function Page({ title, subtitle, aside, children }: PageProps) {
         id="page-wrapper"
         className="relative flex min-h-[calc(100vh-3.5rem)] flex-grow flex-col pt-6"
       >
-        <article id="page" className="mx-auto w-full max-w-screen-sm grow px-4">
+        <article
+          id="page"
+          className="mx-auto w-full max-w-screen-sm grow px-4 pb-32"
+        >
           <PageHeader title={title} subtitle={subtitle} />
           {children}
         </article>
         <footer className="mx-auto w-full max-w-screen-sm px-4">
-          <div className="flex justify-start py-6 text-sm">
-            &copy; {new Date().getFullYear()} All rights reserved.
+          <div className="flex justify-start py-6">
+            <Text variant="bodyMd">
+              &copy; {new Date().getFullYear()} All rights reserved.
+            </Text>
           </div>
         </footer>
       </div>
