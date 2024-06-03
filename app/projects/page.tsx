@@ -53,7 +53,6 @@ async function Projects() {
       subtitle="Listed below are the projects in which I have participated, dedicating
          significant time and effort towards their creation, maintenance, and
          enhancement."
-      breadcrumbs={[{ label: "Projects", href: "/projects" }]}
     >
       <section className=" lex flex-col gap-8">
         <div className="flex flex-col gap-3">

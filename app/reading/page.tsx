@@ -56,7 +56,6 @@ async function Reading() {
     <Page
       title="Reading"
       subtitle="Each year, I select ten books that stuck with me most and place them here, where you'll find the last three years running. Every book listed here links to either my recommendation on my blog and newsletter, Trema, or to its corresponding page on Oku."
-      breadcrumbs={[{ label: "Reading", href: "/reading" }]}
     >
       <section className="mb-16">
         <h3 className="mb-2 text-base font-medium text-stone-900 transition-colors dark:text-stone-100">

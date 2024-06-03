@@ -54,12 +54,6 @@ async function Writing() {
     <Page
       title="Writing"
       subtitle="Writing allows me to express myself, learn, reflect, share my perspectives and build connections. I often write about design, product development, personal growth, and career experiences."
-      breadcrumbs={[
-        {
-          label: "Writing",
-          href: "/writing",
-        },
-      ]}
     >
       {postsMarkup}
     </Page>

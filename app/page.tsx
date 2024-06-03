@@ -11,10 +11,8 @@ export const metadata: Metadata = {
 async function Home() {
   const asideMarkup = <TableOfContents label="On this page" />;
 
-  const breadcrumbs = [{ label: "Home", href: "/" }];
-
   return (
-    <Page breadcrumbs={breadcrumbs} aside={asideMarkup}>
+    <Page aside={asideMarkup}>
       <Text variant="headingLg" className="mb-2">
         Intro
       </Text>
