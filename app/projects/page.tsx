@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Page } from "@/shared/Page";
+import { Text } from "@/shared/Text";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 
 export const metadata: Metadata = {
@@ -53,20 +54,21 @@ async function Projects() {
       subtitle="Listed below are the projects in which I have participated, dedicating
          significant time and effort towards their creation, maintenance, and
          enhancement."
-      breadcrumbs={[{ label: "Projects", href: "/projects" }]}
     >
       <section className=" lex flex-col gap-8">
         <div className="flex flex-col gap-3">
           <Link href="/projects/">
             <ImagePlaceholder className="aspect-video" />
           </Link>
-          <div className="px-4">
-            <Link href="/projects/" className="text-base font-medium">
-              GitHub Icons
+          <div className="flex flex-col gap-1 px-4">
+            <Link href="/projects/">
+              <Text variant="headingMd" className="font-medium">
+                GitHub Icons
+              </Text>
             </Link>
-            <p className="text-balance text-base text-stone-500">
+            <Text variant="bodyMd" className="text-balance">
               A GitHub file icon theme for Visual Studio Code.
-            </p>
+            </Text>
           </div>
         </div>
       </section>

@@ -9,7 +9,7 @@ export function Layout({ children }: Props) {
   return (
     <div className="relative mx-auto flex flex-col">
       <SiteControls />
-      <div className="flex gap-4 md:px-4 md:pt-4">
+      <div className="flex gap-4 pt-14">
         <Sidebar />
         {children}
       </div>

@@ -1,31 +1,35 @@
-import { PageControls } from "@/components/PageControls";
+import { Text } from "@/shared/Text";
 import { PageHeader } from "@/components/PageHeader";
 import { Aside } from "@/components/Aside";
 
 type PageProps = {
   title?: string;
   subtitle?: string;
-  breadcrumbs: { label: string; href: string }[];
   aside?: React.ReactNode;
   children: React.ReactNode;
 };
 
-function Page({ title, subtitle, breadcrumbs, aside, children }: PageProps) {
+function Page({ title, subtitle, aside, children }: PageProps) {
   return (
-    <div className="relative flex w-full gap-4">
+    <div className="relative flex w-full gap-4 md:pl-72">
       <div
         id="page-wrapper"
-        className="relative flex h-[calc(100vh-76px)] flex-grow flex-col overflow-hidden overflow-y-auto bg-stone-50 pt-12 md:rounded-lg md:border md:border-stone-200 md:pt-0"
+        className="relative flex min-h-[calc(100vh-3.5rem)] flex-grow flex-col pt-6"
       >
-        <PageControls breadcrumbs={breadcrumbs} />
-
         <article
           id="page"
-          className="mx-auto w-full max-w-screen-sm px-4 pt-12 md:pt-10"
+          className="mx-auto w-full max-w-screen-sm grow px-4 pb-32"
         >
           <PageHeader title={title} subtitle={subtitle} />
           {children}
         </article>
+        <footer className="mx-auto w-full max-w-screen-sm px-4">
+          <div className="flex justify-start py-6">
+            <Text variant="bodyMd">
+              &copy; {new Date().getFullYear()} All rights reserved.
+            </Text>
+          </div>
+        </footer>
       </div>
       <Aside>{aside}</Aside>
     </div>

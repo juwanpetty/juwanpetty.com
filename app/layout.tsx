@@ -4,8 +4,6 @@ import { GeistMono } from "geist/font/mono";
 import { Inter } from "next/font/google";
 import { Layout } from "@/components/Layout";
 import { ThemeProvider } from "@/context/ThemeProvider";
-import { SidebarProvider } from "@/context/SidebarProvider";
-import { AsideProvider } from "@/context/AsideProvider";
 
 import "../styles/styles.scss";
 
@@ -25,13 +23,9 @@ export default function RootLayout({
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable} ${inter.variable}`}
     >
-      <body className="bg-stone-50 text-stone-700 transition-colors md:bg-stone-100">
+      <body className="text-stone-700 transition-colors">
         <ThemeProvider>
-          <SidebarProvider>
-            <AsideProvider>
-              <Layout>{children}</Layout>
-            </AsideProvider>
-          </SidebarProvider>
+          <Layout>{children}</Layout>
         </ThemeProvider>
       </body>
     </html>

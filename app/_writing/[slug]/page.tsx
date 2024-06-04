@@ -37,17 +37,8 @@ async function WritingDetail({ params }: { params: any }) {
 
   const { title, content } = post;
 
-  const breadcrumbs = [
-    { label: "Home", href: "/" },
-    { label: "Writing", href: "/writing" },
-    { label: title, href: `/writing/${params.slug}` },
-  ];
-
   return (
-    <Page
-      breadcrumbs={breadcrumbs}
-      aside={<TableOfContents label="On this page" />}
-    >
+    <Page aside={<TableOfContents label="On this page" />}>
       <div className="prose-ston prose">
         <h1 className="text-xl font-medium">{title}</h1>
         <Markdown>{content.markdown}</Markdown>

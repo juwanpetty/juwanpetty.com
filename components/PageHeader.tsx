@@ -10,7 +10,7 @@ export function PageHeader({ title, subtitle }: Props) {
   const renderPageHeader = Boolean(title || subtitle);
 
   return renderPageHeader ? (
-    <section className="group mb-12 has-[p]:mb-24">
+    <section className="has-[p]:mb-18 group mb-12">
       <Text variant="headingMd" className="group-has-[p]:mb-4">
         {title}
       </Text>

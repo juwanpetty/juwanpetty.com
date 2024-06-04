@@ -35,8 +35,8 @@ export function Text({ children, variant, className }: Props) {
   const id = isHeader ? generateIdFromText(children) : undefined;
 
   const variantClasses = {
-    bodySm: "text-sm",
-    bodyMd: "text-sm",
+    bodySm: "text-sm text-stone-500",
+    bodyMd: "text-sm text-stone-500",
     headingSm: "text-sm font-medium",
     headingMd: "text-sm font-medium",
     headingLg: "text-sm font-medium",
