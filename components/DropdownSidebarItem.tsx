@@ -12,17 +12,18 @@ import { isCurrentPath } from "@/utilities/isCurrentPath";
 type Props = {
   label: string;
   href: string;
+  onClick?: () => void;
   children: React.ReactNode;
 };
 
-export function DropdownSidebarItem({ label, href, children }: Props) {
+export function DropdownSidebarItem({ label, href, onClick, children }: Props) {
   const pathName = usePathname();
 
   return (
     <Accordion.Root type="single" defaultValue="item-1" collapsible>
       <Accordion.Item className="overflow-hidden" value="item-1">
         <Accordion.Header className="mb-1 flex items-center justify-between">
-          <SidebarItem href={href} content={label} />
+          <SidebarItem href={href} content={label} onClick={onClick} />
           <Accordion.Trigger
             className={cn(
               "mr-2 rotate-0 text-stone-300 transition-transform duration-200 data-[state=open]:rotate-90",

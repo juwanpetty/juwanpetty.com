@@ -10,9 +10,15 @@ type SidebarItemProps = {
   href: string;
   content: string;
   isExternal?: boolean;
+  onClick?: () => void;
 };
 
-export function SidebarItem({ href, content, isExternal }: SidebarItemProps) {
+export function SidebarItem({
+  href,
+  content,
+  isExternal,
+  onClick,
+}: SidebarItemProps) {
   const pathName = usePathname();
 
   return isExternal ? (
@@ -31,6 +37,7 @@ export function SidebarItem({ href, content, isExternal }: SidebarItemProps) {
     <Link
       href={href}
       className="flex h-7 w-full items-center justify-start gap-2 px-2 text-stone-300"
+      onClick={onClick}
     >
       <span
         className={cn(

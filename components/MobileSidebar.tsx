@@ -1,37 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Description,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-} from "@headlessui/react";
+import { Dialog, DialogPanel } from "@headlessui/react";
 import { Icons } from "@/shared/Icons";
-import { SidebarNavigation } from "@/components/SidebarNavigation";
 import { SidebarConnect } from "@/components/SidebarConnect";
-import { useWindowWidth } from "@/hooks/useWindowWidth";
-
-const TAILWIND_SM = 768;
-
-function DialogOverlay() {
-  return <div className="fixed inset-0 bg-black/30" aria-hidden="true" />;
-}
+import { SidebarSection } from "@/components/SidebarSection";
+import { SidebarItem } from "@/components/SidebarItem";
+import { DropdownSidebarItem } from "@/components/DropdownSidebarItem";
 
 export function MobileSidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  useWindowWidth({
-    callback: () => setIsOpen(false),
-    minimumBoundary: TAILWIND_SM,
-  });
+  function closeSidebar() {
+    setIsOpen(false);
+  }
 
   return (
     <>
       <button
         type="button"
-        className="inline-block text-stone-400 md:hidden"
         onClick={() => setIsOpen(true)}
+        className="inline-block text-stone-400 md:hidden"
       >
         <Icons.Menu size={20} />
         <span className="sr-only">Menu</span>
@@ -41,15 +30,34 @@ export function MobileSidebar() {
         onClose={() => setIsOpen(false)}
         className="relative z-50"
       >
-        <DialogOverlay />
-        <div className="fixed inset-0 flex w-screen">
-          <DialogPanel className="max-w-lg space-y-4 bg-stone-50">
-            {/* <DialogTitle className="font-bold">Deactivate account</DialogTitle>
-            <Description>
-              This will permanently deactivate your account
-            </Description> */}
-            <div className="flex h-min w-72 shrink-0 flex-col gap-14 pt-10">
-              <SidebarNavigation />
+        <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+        <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <DialogPanel className="h-[95vh] w-[95vw] space-y-4 rounded-lg border bg-white p-12">
+            <div className="flex flex-col gap-14">
+              <SidebarSection>
+                <SidebarItem
+                  href="/"
+                  content="Home"
+                  onClick={() => closeSidebar()}
+                />
+                <SidebarItem
+                  href="/reading"
+                  content="Reading"
+                  onClick={() => closeSidebar()}
+                />
+                <DropdownSidebarItem
+                  href="/projects"
+                  label="Projects"
+                  onClick={() => closeSidebar()}
+                >
+                  <SidebarItem
+                    isExternal
+                    href="https://github.com/juwanpetty/github-icons"
+                    content="GitHub Icons"
+                  />
+                </DropdownSidebarItem>
+              </SidebarSection>
+
               <SidebarConnect />
             </div>
           </DialogPanel>
