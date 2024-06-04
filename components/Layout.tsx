@@ -1,5 +1,5 @@
 import { Sidebar } from "@/components/Sidebar";
-import { SiteControls } from "@/components/SiteControls";
+import { Header } from "@/components/Header";
 
 type Props = {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ type Props = {
 export function Layout({ children }: Props) {
   return (
     <div className="relative mx-auto flex flex-col">
-      <SiteControls />
+      <Header />
       <div className="flex gap-4 pt-14">
         <Sidebar />
         {children}
