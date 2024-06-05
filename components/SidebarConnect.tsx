@@ -1,29 +1,29 @@
 import React from "react";
+import { Icons } from "@/shared/Icons";
 import { SidebarItem } from "@/components/SidebarItem";
 import { SidebarSection } from "@/components/SidebarSection";
 
 export function SidebarConnect() {
   return (
     <SidebarSection label="Connect">
-      <SidebarItem
-        isExternal
-        href="mailto:jchpetty@gmail.com"
-        content="Email"
-      />
+      <SidebarItem isExternal href="mailto:jchpetty@gmail.com" label="Email" />
       <SidebarItem
         isExternal
         href="https:www.instagram.com/juwanpetty/"
-        content="Instagram"
+        label="Instagram"
+        trailingAction={<Icons.External size={16} />}
       />
       <SidebarItem
         isExternal
         href="https:twitter.com/juwanpetty"
-        content="Twitter"
+        label="Twitter"
+        trailingAction={<Icons.External size={16} />}
       />
       <SidebarItem
         isExternal
         href="https:github.com/juwanpetty"
-        content="GitHub"
+        label="GitHub"
+        trailingAction={<Icons.External size={16} />}
       />
     </SidebarSection>
   );
