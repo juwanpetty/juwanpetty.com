@@ -27,22 +27,31 @@ export function MobileSidebar() {
       </button>
       <Dialog
         open={isOpen}
-        onClose={() => setIsOpen(false)}
+        onClose={() => closeSidebar()}
         className="relative z-50"
       >
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          <DialogPanel className="h-[95vh] w-[95vw] space-y-4 rounded-lg border bg-white p-12">
+          <DialogPanel className="relative h-[95vh] w-[95vw] space-y-4 rounded-lg border bg-white p-12">
+            <button
+              type="button"
+              onClick={() => closeSidebar()}
+              className="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full bg-stone-100"
+            >
+              <Icons.Close className="size-4" />
+              <span className="sr-only">Close</span>
+            </button>
+            <span className="sr-only">Close</span>
             <div className="flex flex-col gap-14">
               <SidebarSection>
                 <SidebarItem
                   href="/"
-                  content="Home"
+                  label="Home"
                   onClick={() => closeSidebar()}
                 />
                 <SidebarItem
                   href="/reading"
-                  content="Reading"
+                  label="Reading"
                   onClick={() => closeSidebar()}
                 />
                 <DropdownSidebarItem
@@ -53,7 +62,8 @@ export function MobileSidebar() {
                   <SidebarItem
                     isExternal
                     href="https://github.com/juwanpetty/github-icons"
-                    content="GitHub Icons"
+                    label="GitHub Icons"
+                    trailingAction={<Icons.External size={16} />}
                   />
                 </DropdownSidebarItem>
               </SidebarSection>

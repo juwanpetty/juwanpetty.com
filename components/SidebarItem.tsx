@@ -5,47 +5,71 @@ import { usePathname } from "next/navigation";
 import { Icons } from "@/shared/Icons";
 import { cn } from "@/utilities/mergeClassNames";
 import { isCurrentPath } from "@/utilities/isCurrentPath";
+import { createElement } from "react";
 
 type SidebarItemProps = {
   href: string;
-  content: string;
+  label: string;
   isExternal?: boolean;
   onClick?: () => void;
+  leadingVisual?: keyof typeof Icons;
+  trailingVisual?: React.ReactNode;
+  trailingAction?: React.ReactNode;
 };
 
 export function SidebarItem({
   href,
-  content,
-  isExternal,
+  label,
   onClick,
+  isExternal,
+  leadingVisual,
+  trailingVisual,
+  trailingAction,
 }: SidebarItemProps) {
   const pathName = usePathname();
 
+  const leadingVisualMarkup = leadingVisual
+    ? createElement(Icons[leadingVisual], { className: "size-4" })
+    : null;
+
+  const trailingVisualMarkup = trailingVisual ? (
+    <span className="flex items-center justify-center">{trailingVisual}</span>
+  ) : null;
+
   return isExternal ? (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex h-7 items-center justify-start gap-2 px-2 text-stone-300"
-    >
-      <span className="flex-grow text-sm text-stone-500 transition-all hover:text-stone-800">
-        {content}
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      <span className="flex h-8 items-center justify-start gap-2 rounded-[0.625rem] px-3 transition-colors hover:bg-stone-100">
+        <span className="flex grow items-center justify-start gap-2">
+          {leadingVisualMarkup}
+          <span
+            className={cn(
+              "text-sm font-medium text-stone-500 transition-all hover:font-medium hover:text-stone-800",
+              { "font-medium text-stone-800": isCurrentPath(pathName, href) }
+            )}
+          >
+            {label}
+          </span>
+          {trailingVisualMarkup}
+        </span>
+        {trailingAction}
       </span>
-      <Icons.External size={16} />
     </a>
   ) : (
-    <Link
-      href={href}
-      className="flex h-7 w-full items-center justify-start gap-2 px-2 text-stone-300"
-      onClick={onClick}
-    >
-      <span
-        className={cn(
-          "flex-grow text-sm text-stone-500 transition-all hover:font-medium hover:text-stone-800",
-          { "font-medium text-stone-800": isCurrentPath(pathName, href) }
-        )}
-      >
-        {content}
+    <Link href={href} onClick={onClick}>
+      <span className="flex h-8 items-center justify-start gap-2 rounded-[0.625rem] px-3 transition-colors hover:bg-stone-100">
+        <span className="flex grow items-center justify-start gap-2">
+          {leadingVisualMarkup}
+          <span
+            className={cn(
+              "text-sm font-medium text-stone-500 transition-all hover:font-medium hover:text-stone-800",
+              { "font-medium text-stone-800": isCurrentPath(pathName, href) }
+            )}
+          >
+            {label}
+          </span>
+          {trailingVisualMarkup}
+        </span>
+        {trailingAction}
       </span>
     </Link>
   );
