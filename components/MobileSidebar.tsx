@@ -47,16 +47,19 @@ export function MobileSidebar() {
                 <SidebarItem
                   href="/"
                   label="Home"
+                  leadingVisual="Home"
                   onClick={() => closeSidebar()}
                 />
                 <SidebarItem
                   href="/reading"
                   label="Reading"
+                  leadingVisual="Book"
                   onClick={() => closeSidebar()}
                 />
                 <DropdownSidebarItem
                   href="/projects"
                   label="Projects"
+                  leadingVisual="Code"
                   onClick={() => closeSidebar()}
                 >
                   <SidebarItem
