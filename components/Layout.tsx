@@ -9,7 +9,7 @@ export function Layout({ children }: Props) {
   return (
     <div className="relative mx-auto flex flex-col">
       <Header />
-      <div className="flex gap-4 pt-14">
+      <div className="flex gap-4 pt-[var(--header-height)]">
         <Sidebar />
         {children}
       </div>

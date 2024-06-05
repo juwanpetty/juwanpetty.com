@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --header-height: 3rem;
+}
+
 *,
 *::before,
 *::after {
