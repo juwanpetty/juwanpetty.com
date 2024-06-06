@@ -5,7 +5,7 @@ import { MobileSidebar } from "@/components/MobileSidebar";
 
 export function Header() {
   return (
-    <div className="fixed left-0 top-0 flex h-[var(--header-height)] w-full items-center justify-between border-b border-solid border-neutral-200 bg-white px-4 md:px-8">
+    <div className="fixed left-0 top-0 z-[1] flex h-[var(--header-height)] w-full items-center justify-between border-b border-solid border-neutral-200 bg-white px-4 md:px-8">
       <MobileSidebar />
 
       <Link href="/" className="hidden md:inline-block">

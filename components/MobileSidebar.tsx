@@ -32,7 +32,7 @@ export function MobileSidebar() {
       >
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          <DialogPanel className="relative h-[95dvh] w-[95vw] space-y-4 rounded-lg border bg-white p-12">
+          <DialogPanel className="relative h-[95dvh] w-[95vw] rounded-lg border bg-white p-4 pt-12">
             <button
               type="button"
               onClick={() => closeSidebar()}
