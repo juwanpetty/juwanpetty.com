@@ -14,7 +14,7 @@ function Page({ title, subtitle, aside, children }: PageProps) {
     <div className="relative flex w-full gap-4 md:pl-72">
       <div
         id="page-wrapper"
-        className="relative -z-10 flex min-h-[calc(100vh-var(--header-height))] flex-grow flex-col pt-6"
+        className="relative flex min-h-[calc(100vh-var(--header-height))] flex-grow flex-col pt-6"
       >
         <article
           id="page"

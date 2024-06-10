@@ -15,16 +15,31 @@ export function MobileSidebar() {
     setIsOpen(false);
   }
 
+  const openButtonMarkup = (
+    <button
+      type="button"
+      onClick={() => setIsOpen(true)}
+      className="inline-block text-stone-400 md:hidden"
+    >
+      <Icons.Menu size={20} />
+      <span className="sr-only">Menu</span>
+    </button>
+  );
+
+  const closeButtonMarkup = (
+    <button
+      type="button"
+      onClick={() => closeSidebar()}
+      className="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full bg-stone-100"
+    >
+      <Icons.Close className="size-4" />
+      <span className="sr-only">Close</span>
+    </button>
+  );
+
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setIsOpen(true)}
-        className="inline-block text-stone-400 md:hidden"
-      >
-        <Icons.Menu size={20} />
-        <span className="sr-only">Menu</span>
-      </button>
+      {openButtonMarkup}
       <Dialog
         open={isOpen}
         onClose={() => closeSidebar()}
@@ -32,15 +47,8 @@ export function MobileSidebar() {
       >
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          <DialogPanel className="relative h-[95dvh] w-[95vw] rounded-lg border bg-white p-4 pt-12">
-            <button
-              type="button"
-              onClick={() => closeSidebar()}
-              className="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full bg-stone-100"
-            >
-              <Icons.Close className="size-4" />
-              <span className="sr-only">Close</span>
-            </button>
+          <DialogPanel className="relative h-[95dvh] w-[95vw] rounded-lg border bg-white p-4 pt-16">
+            {closeButtonMarkup}
             <span className="sr-only">Close</span>
             <div className="flex flex-col gap-14">
               <SidebarSection>
