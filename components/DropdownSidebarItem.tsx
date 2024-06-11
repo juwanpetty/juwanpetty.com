@@ -22,7 +22,7 @@ export function DropdownSidebarItem({
   onClick,
 }: Props) {
   return (
-    <Accordion.Root type="single" defaultValue="item-1" collapsible>
+    <Accordion.Root type="single" collapsible>
       <Accordion.Item className="overflow-hidden" value="item-1">
         <Accordion.Header className="mb-1 w-full items-center justify-between">
           <SidebarItem
