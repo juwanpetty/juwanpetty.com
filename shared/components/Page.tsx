@@ -18,7 +18,7 @@ function Page({ title, subtitle, aside, children }: PageProps) {
       >
         <article
           id="page"
-          className="mx-auto w-full max-w-screen-sm grow px-4 pb-32"
+          className="mx-auto w-full max-w-screen-sm grow px-8 pb-32"
         >
           <PageHeader title={title} subtitle={subtitle} />
           {children}
