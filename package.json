@@ -13,6 +13,7 @@
     "@graphcms/rich-text-react-renderer": "^0.6.1",
     "@graphcms/rich-text-types": "^0.5.0",
     "@headlessui/react": "^2.0.3",
+    "@iconify/react": "^5.0.1",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-progress": "^1.0.3",
     "@radix-ui/react-toast": "^1.1.5",
@@ -40,7 +41,6 @@
     "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
-    "@iconify/react": "^5.0.1",
     "@svgr/webpack": "^7.0.0",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/jest": "^29.5.1",
