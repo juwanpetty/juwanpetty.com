@@ -1,4 +1,4 @@
-import { Icons } from "@/shared/Icons";
+import { Icon } from "@iconify/react";
 import { cn } from "@/utilities/mergeClassNames";
 
 type Props = {
@@ -13,7 +13,7 @@ export function ImagePlaceholder({ className }: Props) {
         className
       )}
     >
-      <Icons.Image size={20} />
+      <Icon icon="tabler:image" className="size-8" />
     </div>
   );
 }

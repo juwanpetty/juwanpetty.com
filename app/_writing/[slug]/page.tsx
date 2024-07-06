@@ -1,7 +1,6 @@
 import React from "react";
 import Markdown from "react-markdown";
 import { Page } from "@/shared/Page";
-import { TableOfContents } from "@/components/TableOfContents";
 
 const getPost = async (params: { slug: any }) => {
   const response = await fetch(
@@ -38,7 +37,7 @@ async function WritingDetail({ params }: { params: any }) {
   const { title, content } = post;
 
   return (
-    <Page aside={<TableOfContents label="On this page" />}>
+    <Page>
       <div className="prose-ston prose">
         <h1 className="text-xl font-medium">{title}</h1>
         <Markdown>{content.markdown}</Markdown>

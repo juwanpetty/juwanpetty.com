@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Icon } from "@iconify/react";
 import { useTheme } from "next-themes";
-import { Icons } from "@/shared/Icons";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -15,11 +15,11 @@ export function ThemeSwitcher() {
   function renderThemeIcon() {
     switch (theme) {
       case "light":
-        return <Icons.Sun size={20} />;
+        return <Icon icon="tabler:sun" className="size-4" />;
       case "dark":
-        return <Icons.Moon size={20} />;
+        return <Icon icon="tabler:moon" className="size-4" />;
       default:
-        return <Icons.Sun size={20} />;
+        return <Icon icon="tabler:sun" className="size-4" />;
     }
   }
 

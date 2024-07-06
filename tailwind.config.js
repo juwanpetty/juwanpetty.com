@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'selector',
+  darkMode: "selector",
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,6 +12,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: generateScale("sand"),
       fontFamily: {
         sans: ["var(--font-inter)"],
         mono: ["var(--font-geist-mono)"],
@@ -34,7 +35,18 @@ module.exports = {
         "slide-down": "slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         "slide-up": "slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)",
       },
-    }
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };
+
+function generateScale(name) {
+  let scale = Array.from({ length: 12 }, (_, i) => {
+    let id = i + 1;
+    return [
+      [`${name}-${id}`, `var(--${name}-${id})`],
+      [`${name}-a${id}`, `var(--${name}-a${id})`],
+    ];
+  }).flat();
+  return Object.fromEntries(scale);
+}

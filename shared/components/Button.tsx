@@ -1,7 +1,7 @@
-import React, { ButtonHTMLAttributes, createElement } from "react";
+import { ButtonHTMLAttributes } from "react";
 import { VariantProps, cva } from "class-variance-authority";
-import { Icons } from "@/shared/Icons";
 import { cn } from "@/utilities/mergeClassNames";
+import { Icon } from "@iconify/react";
 
 export const buttonVariants = cva(
   "flex h-8 items-center gap-[2px] rounded-md px-[10px] text-sm font-medium shadow-sm transition-colors",
@@ -24,8 +24,8 @@ interface Props
     VariantProps<typeof buttonVariants> {
   children: React.ReactNode;
   className?: string;
-  leadingIcon?: keyof typeof Icons;
-  trailngIcon?: keyof typeof Icons;
+  leadingIcon?: string;
+  trailngIcon?: string;
 }
 
 export function Button({
@@ -36,13 +36,13 @@ export function Button({
   variant = "default",
   ...props
 }: Props) {
-  const leadingIconMarkup = leadingIcon
-    ? createElement(Icons[leadingIcon], { size: 16 })
-    : null;
+  const leadingIconMarkup = leadingIcon ? (
+    <Icon icon={leadingIcon} className="size-4" />
+  ) : null;
 
-  const trailngIconMarkup = trailngIcon
-    ? createElement(Icons[trailngIcon], { size: 16 })
-    : null;
+  const trailngIconMarkup = trailngIcon ? (
+    <Icon icon={trailngIcon} className="size-4" />
+  ) : null;
 
   return (
     <button
