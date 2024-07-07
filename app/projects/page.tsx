@@ -10,6 +10,13 @@ export const metadata: Metadata = {
 async function Projects() {
   return (
     <Page>
+      <h1 className="mb-4 text-base font-medium text-sand-12">Projects</h1>
+      <p className="mb-16 text-base leading-7 text-sand-11">
+        Here are some of the projects I’ve worked on or am currently working on,
+        pouring in a lot of time and effort to bring them to life. I&apos;ve
+        been deeply involved in their creation, maintenance, and enhancement,
+        making sure they’re the best they can be.
+      </p>
       <section className="flex flex-col gap-16">
         <div className="flex flex-col gap-3">
           <Link href="/projects/">

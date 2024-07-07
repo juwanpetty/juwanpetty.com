@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="bg-sand-1 text-sand-11 transition-colors">
+      <body className="bg-sand-1 text-sand-12 transition-colors">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
