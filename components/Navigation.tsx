@@ -57,7 +57,7 @@ export function Navigation({ pageTitle }: NavigationProps) {
         </ListboxButton>
         <ListboxOptions
           anchor="bottom start"
-          className="flex flex-col gap-2 [--anchor-gap:8px]"
+          className="z-20 flex flex-col gap-2 [--anchor-gap:8px]"
         >
           {navigationItems.map((item) => (
             <ListboxOption
