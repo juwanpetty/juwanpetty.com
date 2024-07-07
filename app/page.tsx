@@ -13,8 +13,8 @@ async function Home() {
       </p>
       <p className="text-base leading-7 text-sand-12">
         Hi, I&apos;m Juwan Petty. I&apos;m a software engineer who loves to
-        build things. I write about software development, productivity, and
-        photography.
+        build things. I write about software development, productivity, and the
+        IndieWeb movement.
       </p>
     </Page>
   );
