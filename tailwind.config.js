@@ -37,7 +37,6 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
 };
 
 function generateScale(name) {

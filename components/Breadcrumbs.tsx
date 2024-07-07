@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { cn } from "@/utilities/mergeClassNames";
+import { cn } from "@/utilities/merge-classnames";
 
 type Props = {
   items: { label: string; href: string }[];
