@@ -18,7 +18,7 @@ async function Reading() {
         <div className="grid grid-cols-2 gap-x-4 gap-y-12">
           <div className="flex flex-col gap-3">
             <a href="https://google.com">
-              <ImagePlaceholder className="aspect-[3/4] max-w-64" />
+              <ImagePlaceholder className="aspect-[3/4]" />
               <span className="sr-only">
                 The Art of Code Crafting by Jane Doe
               </span>
@@ -37,7 +37,7 @@ async function Reading() {
 
           <div className="flex flex-col gap-3">
             <a href="https://google.com">
-              <ImagePlaceholder className="aspect-[3/4] max-w-64" />
+              <ImagePlaceholder className="aspect-[3/4]" />
               <span className="sr-only">
                 Advanced Frontend Techniques by Alex Johnson
               </span>
@@ -56,7 +56,7 @@ async function Reading() {
 
           <div className="flex flex-col gap-3">
             <a href="https://google.com">
-              <ImagePlaceholder className="aspect-[3/4] max-w-64" />
+              <ImagePlaceholder className="aspect-[3/4]" />
               <span className="sr-only">
                 Mastering Web Interfaces by John Smith
               </span>
