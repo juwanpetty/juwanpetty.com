@@ -1,5 +1,5 @@
-import { Icons } from "@/shared/Icons";
-import { cn } from "@/utilities/mergeClassNames";
+import { Icon } from "@iconify/react";
+import { cn } from "@/utilities/merge-classnames";
 
 type Props = {
   className?: string;
@@ -9,11 +9,11 @@ export function ImagePlaceholder({ className }: Props) {
   return (
     <div
       className={cn(
-        "flex aspect-square w-full items-center justify-center rounded-lg border border-solid border-stone-200 bg-stone-50 text-stone-400",
+        "flex aspect-square w-full items-center justify-center rounded-lg border border-solid border-sand-6 bg-sand-2 text-sand-11",
         className
       )}
     >
-      <Icons.Image size={20} />
+      <Icon icon="radix-icons:image" className="size-5" />
     </div>
   );
 }

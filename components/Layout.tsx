@@ -1,4 +1,5 @@
-import { Sidebar } from "@/components/Sidebar";
+import { Environment } from "@/components/Environment";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 
 type Props = {
@@ -7,12 +8,11 @@ type Props = {
 
 export function Layout({ children }: Props) {
   return (
-    <div className="relative mx-auto flex flex-col">
+    <div className="relative flex min-h-dvh flex-col pt-[var(--header-height)]">
       <Header />
-      <div className="flex gap-4 pt-[var(--header-height)]">
-        <Sidebar />
-        {children}
-      </div>
+      <main className="grow px-8 py-16">{children}</main>
+      <Footer />
+      <Environment />
     </div>
   );
 }

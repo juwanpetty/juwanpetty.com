@@ -1,36 +1,21 @@
-import React from "react";
 import { Metadata } from "next";
 import { Page } from "@/shared/Page";
-import { Text } from "@/shared/Text";
-import { TableOfContents } from "@/components/TableOfContents";
 
 export const metadata: Metadata = {
   title: "Juwan Petty",
 };
 
 async function Home() {
-  const asideMarkup = <TableOfContents label="On this page" />;
-
   return (
-    <Page aside={asideMarkup}>
-      <Text variant="headingLg" className="mb-2">
-        Intro
-      </Text>
-      <Text variant="bodyMd" className="mb-6">
+    <Page>
+      <p className="mb-6 text-base leading-7 text-sand-12">
         Welcome to my corner of the internet.
-      </Text>
-
-      <Text variant="headingMd" className="mb-2">
-        Test Heading 2
-      </Text>
-      <Text variant="bodyMd" className="mb-6">
-        Test paragraph
-      </Text>
-
-      <Text variant="headingSm" className="mb-2">
-        Test Heading 3
-      </Text>
-      <Text variant="bodyMd">Test paragraph</Text>
+      </p>
+      <p className="text-base leading-7 text-sand-12">
+        Hi, I&apos;m Juwan Petty. I&apos;m a software engineer who loves to
+        build things. I write about software development, productivity, and
+        photography.
+      </p>
     </Page>
   );
 }

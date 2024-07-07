@@ -1,6 +1,7 @@
-import React from "react";
+import { Fragment } from "react";
 import Link from "next/link";
-import { Icons } from "@/shared/Icons";
+import { Icon } from "@iconify/react";
+import { cn } from "@/utilities/merge-classnames";
 
 type Props = {
   items: { label: string; href: string }[];
@@ -13,13 +14,16 @@ export function Breadcrumbs({ items }: Props) {
 
   function renderText(item: { label: string; href: string }, index: number) {
     return isLastItem(index) ? (
-      <span className="text-stone-800" aria-disabled>
+      <span
+        className="block h-6 content-center truncate rounded-lg border border-sand-6 px-2 text-sand-12"
+        aria-disabled
+      >
         {item.label}
       </span>
     ) : (
       <Link
         href={item.href}
-        className="text-stone-500 transition-colors hover:text-stone-800"
+        className="block h-6 content-center rounded-lg bg-sand-3 px-2 text-sand-11 transition-colors hover:text-sand-12"
       >
         {item.label}
       </Link>
@@ -27,16 +31,22 @@ export function Breadcrumbs({ items }: Props) {
   }
 
   return (
-    <div className="flex items-center gap-[2px] text-sm text-stone-500">
+    <div className="flex h-[var(--header-height)] w-full min-w-0 items-center gap-1 text-sm font-medium">
       {items.map((item, index) => (
-        <React.Fragment key={item.href}>
-          {renderText(item, index)}
-          {index < items.length - 1 && (
-            <span className="text-stone-300">
-              <Icons.Slash size={16} />
+        <Fragment key={item.href}>
+          <div
+            className={cn("h-6", {
+              "min-w-0": isLastItem(index),
+            })}
+          >
+            {renderText(item, index)}
+          </div>
+          {!isLastItem(index) && (
+            <span className="min-w-4 text-sand-6">
+              <Icon icon="radix-icons:slash" className="size-4" />
             </span>
           )}
-        </React.Fragment>
+        </Fragment>
       ))}
     </div>
   );
