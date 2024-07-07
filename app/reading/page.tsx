@@ -6,6 +6,13 @@ async function Reading() {
   return (
     <Page>
       <section className="mb-16">
+        <h1 className="mb-4 text-base font-medium text-sand-12">Reading</h1>
+        <p className="mb-16 text-base leading-7 text-sand-11">
+          Each year, I pick at most ten books that really stuck with me and
+          place them here for you to explore. Here, you&apos;ll find my top
+          picks from the past three years.
+        </p>
+
         <h2 className="mb-3 text-base font-medium">2024</h2>
 
         <div className="grid grid-cols-2 gap-x-4 gap-y-12">
