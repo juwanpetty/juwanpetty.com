@@ -4,15 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "@radix-ui/colors/sand.css";
-@import "@radix-ui/colors/sand-alpha.css";
-@import "@radix-ui/colors/sand-dark.css";
-@import "@radix-ui/colors/sand-dark-alpha.css";
-@import "@radix-ui/colors/blue.css";
-@import "@radix-ui/colors/yellow.css";
-
 :root {
-  --header-height: 3.5rem;
+  --header-height: 3rem;
 }
 
 *,
@@ -26,25 +19,9 @@
 }
 
 body {
-  line-height: 1.5;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-  font-family:
-    var(--font-geist-sans),
-    -apple-system,
-    BlinkMacSystemFont,
-    avenir next,
-    avenir,
-    segoe ui,
-    helvetica neue,
-    helvetica,
-    Cantarell,
-    Ubuntu,
-    roboto,
-    noto,
-    arial,
-    sans-serif;
 }
 
 img,
@@ -97,9 +74,4 @@ button {
   :focus-visible {
     outline: auto;
   }
-}
-
-::selection {
-  background-color: var(--blue-4);
-  color: var(--blue-8);
 }
