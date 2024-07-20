@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import { ThemeProvider as NextThemeProvider } from "next-themes";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export function ThemeProvider({ children }: Props) {

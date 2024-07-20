@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { cn } from "@/utilities/merge-classnames";
+import { cn } from "@utilities/merge-classnames";
 
 type Props = {
   className?: string;

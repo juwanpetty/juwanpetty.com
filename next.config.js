@@ -11,6 +11,6 @@ module.exports = {
     defaultLocale: "en",
   },
   images: {
-    domains: ["media.graphassets.com", "i.ytimg.com"],
+    domains: [""],
   },
 };
