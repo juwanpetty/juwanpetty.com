@@ -286,6 +286,7 @@ export function Sidebar() {
               </clipPath>
             </defs>
           </svg>
+          <span className="sr-only">Home</span>
         </Link>
         <button
           type="button"
