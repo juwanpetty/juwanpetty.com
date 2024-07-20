@@ -12,7 +12,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: generateScale("sand"),
       fontFamily: {
         sans: [
           "var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
@@ -43,14 +42,3 @@ module.exports = {
     },
   },
 };
-
-function generateScale(name) {
-  let scale = Array.from({ length: 12 }, (_, i) => {
-    let id = i + 1;
-    return [
-      [`${name}-${id}`, `var(--${name}-${id})`],
-      [`${name}-a${id}`, `var(--${name}-a${id})`],
-    ];
-  }).flat();
-  return Object.fromEntries(scale);
-}
