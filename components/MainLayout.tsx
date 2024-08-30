@@ -1,5 +1,5 @@
-import { Main } from "@components/Main";
-import { Sidebar } from "@components/Sidebar";
+import { BottomNavigation } from "@components/BottomNavigation";
+import { TopNavigation } from "@components/TopNavigation";
 
 type Props = {
   children: React.ReactNode;
@@ -7,9 +7,12 @@ type Props = {
 
 export function MainLayout({ children }: Props) {
   return (
-    <>
-      <Sidebar />
-      <Main>{children}</Main>
-    </>
+    <div>
+      <TopNavigation />
+      <div className="min-h-[calc(100vh-var(--header-height))] pb-[var(--header-height)] sm:pb-0 sm:pt-[var(--bottom-nav-height)]">
+        {children}
+      </div>
+      <BottomNavigation />
+    </div>
   );
 }
