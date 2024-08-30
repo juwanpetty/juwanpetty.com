@@ -6,7 +6,33 @@ export const metadata: Metadata = {
 };
 
 async function Projects() {
-  return <MainLayout>Projects Page</MainLayout>;
+  return (
+    <MainLayout>
+      <div className="mx-auto w-full max-w-screen-sm px-4 pb-32 pt-16 sm:pt-32">
+        <header className="space-y-2">
+          <h1 className="m-0 text-3xl font-semibold text-neutral-800">
+            Projects
+          </h1>
+          <p className="m-0 text-lg text-neutral-600">
+            Some cool projects I&apos;ve worked on.
+          </p>
+        </header>
+        <div className="mt-8">
+          <div className="space-y-4">
+            <div className="aspect-video w-full rounded-lg border border-neutral-200 bg-neutral-50" />
+            <div className="px-4">
+              <h2 className="text-base font-medium text-neutral-800">
+                Project Title
+              </h2>
+              <p className="text-base text-neutral-600">
+                Long project description.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </MainLayout>
+  );
 }
 
 export default Projects;
