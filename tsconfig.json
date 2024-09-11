@@ -14,11 +14,14 @@
       "@utilities/*": [
         "utilities/*"
       ],
-      "@types/*": [
+      "@/types/*": [
         "types/types.ts"
       ],
+      "@data/*": [
+        "app/data/*"
+      ],
     },
-    "target": "es5",
+    "target": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -46,9 +49,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "next.config.mjs",
+    "tailwind.config.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
   ]
 }
