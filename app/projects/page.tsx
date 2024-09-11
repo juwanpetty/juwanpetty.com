@@ -1,9 +1,35 @@
 import { Metadata } from "next";
 import { MainLayout } from "@components/MainLayout";
+import projects from "@data/projects.json";
 
 export const metadata: Metadata = {
   title: "Projects — Juwan Petty",
 };
+
+function ProjectItem({
+  title,
+  description,
+  url,
+}: {
+  title: string;
+  description: string;
+  url: string;
+}) {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="space-y-4"
+    >
+      <div className="aspect-video w-full rounded-lg border border-neutral-200 bg-neutral-50" />
+      <div className="px-4">
+        <h2 className="text-base font-medium text-neutral-800">{title}</h2>
+        <p className="text-base text-neutral-600">{description}</p>
+      </div>
+    </a>
+  );
+}
 
 async function Projects() {
   return (
@@ -18,17 +44,14 @@ async function Projects() {
           </p>
         </header>
         <div className="mt-8">
-          <div className="space-y-4">
-            <div className="aspect-video w-full rounded-lg border border-neutral-200 bg-neutral-50" />
-            <div className="px-4">
-              <h2 className="text-base font-medium text-neutral-800">
-                Project Title
-              </h2>
-              <p className="text-base text-neutral-600">
-                Long project description.
-              </p>
-            </div>
-          </div>
+          {projects.map((project) => (
+            <ProjectItem
+              key={project.name}
+              title={project.name}
+              description={project.description}
+              url={project.url}
+            />
+          ))}
         </div>
       </div>
     </MainLayout>

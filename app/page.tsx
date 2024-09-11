@@ -1,34 +1,23 @@
 import type { Metadata } from "next";
 import { MainLayout } from "@components/MainLayout";
+import { getPosts } from "@utilities/get-posts";
+import { groupPostsByYear } from "@utilities/group-posts-by-desc";
 
 export const metadata: Metadata = {
   title: "Juwan Petty",
 };
 
-const postLinks2024 = [
-  {
-    title: "Post title",
-    date: "Jun 14",
-  },
-];
-
-const postLinks2023 = [
-  {
-    title: "Post title",
-    date: "Nov 25",
-  },
-];
-
 type PostItemProps = {
   title: string;
   date: string;
+  slug: string;
 };
 
-function PostItem({ title, date }: PostItemProps) {
+function PostItem({ title, date, slug }: PostItemProps) {
   return (
     <a
       className="group flex flex-row items-center gap-4 truncate font-normal text-inherit no-underline transition-colors"
-      href="/writing/oauth-next-rsc"
+      href={`/writing/${slug}`}
     >
       <p className="m-0 truncate text-neutral-700 transition-colors group-hover:text-red-500">
         {title}
@@ -42,6 +31,9 @@ function PostItem({ title, date }: PostItemProps) {
 }
 
 async function Home() {
+  const posts = await getPosts();
+  const groupedPosts = groupPostsByYear(posts);
+
   return (
     <MainLayout>
       <div className="mx-auto w-full max-w-screen-sm px-4 pb-32 pt-16 sm:pt-32">
@@ -53,26 +45,23 @@ async function Home() {
             Thoughts, ideas, and opinions.
           </p>
         </header>
-        <div className="space-y-4">
-          <div className="mt-8 flex items-center justify-start font-medium">
-            <span>2024</span>
+        {groupedPosts.map((group) => (
+          <div key={group.year} className="space-y-4">
+            <div className="mt-8 flex items-center justify-start font-medium">
+              <span>{group.year}</span>
+            </div>
+            <div className="grid gap-4">
+              {group.posts.map(({ frontmatter, slug }) => (
+                <PostItem
+                  key={slug}
+                  slug={slug}
+                  title={frontmatter.title}
+                  date={frontmatter.publishedAt}
+                />
+              ))}
+            </div>
           </div>
-          <div className="grid gap-4">
-            {postLinks2024.map((post) => (
-              <PostItem key={post.title} title={post.title} date={post.date} />
-            ))}
-          </div>
-        </div>
-        <div className="space-y-4">
-          <div className="mt-8 flex items-center justify-start font-medium">
-            <span>2023</span>
-          </div>
-          <div className="grid gap-4">
-            {postLinks2023.map((post) => (
-              <PostItem key={post.title} title={post.title} date={post.date} />
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </MainLayout>
   );
