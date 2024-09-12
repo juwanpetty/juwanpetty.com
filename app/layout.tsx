@@ -21,7 +21,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="bg-white font-sans text-neutral-900 transition-colors">
+      <body className="bg-sand-2 text-sand-11 font-sans transition-colors">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

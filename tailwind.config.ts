@@ -1,7 +1,18 @@
 import type { Config } from "tailwindcss";
 
+function getColorScale(name: string) {
+  const scale: { [key: string]: string } = {};
+  for (let i = 1; i <= 12; i += 1) {
+    scale[i] = `var(--${name}-${i})`;
+    scale[`a${i}`] = `var(--${name}-a${i})`;
+  }
+
+  return scale;
+}
+
+
 const config: Config = {
-  darkMode: "selector",
+  darkMode: 'class',
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,6 +25,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        sand: getColorScale('sand'),
+      },
       fontFamily: {
         sans: [
           "var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
