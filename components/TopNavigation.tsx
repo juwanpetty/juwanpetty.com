@@ -4,13 +4,30 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { isCurrentPath } from "@utilities/is-current-path";
 import { cn } from "@utilities/merge-classnames";
+import { NavLinkProps } from "@/types/types";
 
-export function TopNavigation() {
+function NavLink({ href, children, hrefMatches }: NavLinkProps) {
   const pathName = usePathname();
 
   return (
-    <header className="left-0 top-0 z-10 flex h-[var(--header-height)] w-full items-center justify-center gap-6 border-b border-solid border-transparent bg-white px-4 sm:fixed sm:justify-start sm:border-neutral-100">
-      <Link href="/" className="flex items-center gap-1.5">
+    <Link
+      href={href}
+      className={cn("text-sand-8 hover:text-sand-9 flex items-center gap-1", {
+        "text-sand-11 hover:text-sand-11": isCurrentPath({
+          pathName,
+          href: hrefMatches || [href],
+        }),
+      })}
+    >
+      {children}
+    </Link>
+  );
+}
+
+export function TopNavigation() {
+  return (
+    <header className="border-sand-2 bg-sand-2 sm:border-sand-3 left-0 top-0 z-10 flex h-[var(--header-height)] w-full items-center justify-center gap-6 border-b border-solid px-4 sm:fixed sm:justify-start">
+      <Link href="/" className="text-sand-11 flex items-center gap-1.5">
         <svg
           width="28"
           height="20"
@@ -34,18 +51,7 @@ export function TopNavigation() {
       </Link>
 
       <div className="absolute bottom-0 left-0 right-0 top-0 m-auto hidden w-min items-center gap-6 sm:flex">
-        <Link
-          href="/"
-          className={cn(
-            "flex items-center gap-1 text-neutral-400 hover:text-neutral-500",
-            {
-              "text-neutral-800 hover:text-neutral-800": isCurrentPath({
-                pathName,
-                href: ["/", "/writing"],
-              }),
-            }
-          )}
-        >
+        <NavLink href="/" hrefMatches={["/", "/writing"]}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -59,19 +65,8 @@ export function TopNavigation() {
             </g>
           </svg>
           <span className="text-sm font-medium">Writing</span>
-        </Link>
-        <Link
-          href="/projects"
-          className={cn(
-            "flex items-center gap-1 text-neutral-400 hover:text-neutral-500",
-            {
-              "text-neutral-800 hover:text-neutral-800": isCurrentPath({
-                pathName,
-                href: "/projects",
-              }),
-            }
-          )}
-        >
+        </NavLink>
+        <NavLink href="/projects">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -85,7 +80,7 @@ export function TopNavigation() {
             </g>
           </svg>
           <span className="text-sm font-medium">Projects</span>
-        </Link>
+        </NavLink>
       </div>
     </header>
   );

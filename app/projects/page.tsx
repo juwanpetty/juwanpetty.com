@@ -22,10 +22,10 @@ function ProjectItem({
       rel="noopener noreferrer"
       className="space-y-4"
     >
-      <div className="aspect-video w-full rounded-lg border border-neutral-200 bg-neutral-50" />
+      <div className="border-sand-4 bg-sand-1 aspect-video w-full rounded-lg border" />
       <div className="px-4">
-        <h2 className="text-base font-medium text-neutral-800">{title}</h2>
-        <p className="text-base text-neutral-600">{description}</p>
+        <h2 className="text-sand-11 text-base font-medium">{title}</h2>
+        <p className="text-sand-9 text-base">{description}</p>
       </div>
     </a>
   );
@@ -36,10 +36,8 @@ async function Projects() {
     <MainLayout>
       <div className="mx-auto w-full max-w-screen-sm px-4 pb-32 pt-16 sm:pt-32">
         <header className="space-y-2">
-          <h1 className="m-0 text-3xl font-semibold text-neutral-800">
-            Projects
-          </h1>
-          <p className="m-0 text-lg text-neutral-600">
+          <h1 className="text-sand-11 m-0 text-3xl font-semibold">Projects</h1>
+          <p className="text-sand-9 m-0 text-lg">
             Some cool projects I&apos;ve worked on.
           </p>
         </header>

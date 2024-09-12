@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "@radix-ui/colors/sand.css";
+@import "@radix-ui/colors/sand-dark.css";
+
 :root {
   --header-height: 3.5rem;
   --bottom-nav-height: 3.5rem;

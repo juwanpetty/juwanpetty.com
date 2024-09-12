@@ -8,3 +8,9 @@ export type Post = {
   content: ReactElement<any, string | JSXElementConstructor<any>>;
   slug: string;
 }
+
+export type NavLinkProps = {
+  href: string;
+  children: React.ReactNode;
+  hrefMatches?: string | string[];
+};

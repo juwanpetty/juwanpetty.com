@@ -4,12 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { isCurrentPath } from "@utilities/is-current-path";
 import { cn } from "@utilities/merge-classnames";
-
-type NavLinkProps = {
-  href: string;
-  children: React.ReactNode;
-  hrefMatches?: string | string[];
-};
+import { NavLinkProps } from "@/types/types";
 
 function NavLink({ href, children, hrefMatches }: NavLinkProps) {
   const pathName = usePathname();
@@ -18,9 +13,9 @@ function NavLink({ href, children, hrefMatches }: NavLinkProps) {
     <Link
       href={href}
       className={cn(
-        "flex aspect-video h-full items-center justify-center gap-1 px-2 text-neutral-400 hover:text-neutral-500",
+        "text-sand-8 hover:text-sand-9 flex aspect-video h-full items-center justify-center gap-1 px-2",
         {
-          "text-neutral-800 hover:text-neutral-800": isCurrentPath({
+          "text-sand-11 hover:text-sand-11": isCurrentPath({
             pathName,
             href: hrefMatches || [href],
           }),
@@ -34,7 +29,7 @@ function NavLink({ href, children, hrefMatches }: NavLinkProps) {
 
 export function BottomNavigation() {
   return (
-    <div className="fixed bottom-0 left-0 z-10 flex h-[var(--bottom-nav-height)] w-full items-center justify-center gap-6 border-t border-solid border-neutral-100 bg-white px-4 py-2 sm:hidden">
+    <div className="border-sand-3 bg-sand-2 fixed bottom-0 left-0 z-10 flex h-[var(--bottom-nav-height)] w-full items-center justify-center gap-6 border-t border-solid px-4 py-2 sm:hidden">
       <NavLink href="/" hrefMatches={["/", "/writing"]}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

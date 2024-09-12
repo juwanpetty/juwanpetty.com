@@ -27,19 +27,17 @@ async function WritingDetail({ params }: Props) {
 
   return (
     <MainLayout>
-      <div className="mx-auto w-full max-w-screen-md px-4 pb-32 pt-4 sm:pt-32">
+      <div className="mx-auto w-full max-w-screen-sm px-4 pb-32 pt-16 sm:pt-32">
         <header className="space-y-2">
-          <h1 className="m-0 text-3xl font-semibold text-neutral-800">
-            {title}
-          </h1>
+          <h1 className="text-sand-11 m-0 text-3xl font-semibold">{title}</h1>
           <div>
-            <p className="text-base text-neutral-600">
+            <p className="text-sand-9 text-base">
               Filed under{" "}
-              <Link href="/" className="font-medium text-neutral-800 underline">
+              <Link href="/" className="text-sand-11 font-medium underline">
                 JavaScript
               </Link>{" "}
               on{" "}
-              <span className="font-medium text-neutral-800">
+              <span className="text-sand-11 font-medium">
                 {format(new Date(publishedAt), "MMMM do, yyyy")}
               </span>
               .
@@ -47,8 +45,8 @@ async function WritingDetail({ params }: Props) {
           </div>
         </header>
 
-        <div className="prose mt-8">
-          {/* <p className="text-base leading-[30px] text-neutral-600">
+        <div className="text-sand-11 prose mt-8">
+          {/* <p className="text-base leading-[30px] text-sand-9">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo sunt
             accusamus quos ratione fugiat, voluptatem illum deleniti ut nostrum
             magni quia dolorem optio fugit ab quis. Distinctio ad delectus
