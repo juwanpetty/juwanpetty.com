@@ -15,7 +15,7 @@ function NavLink({ href, children, hrefMatches }: NavLinkProps) {
       className={cn(
         "text-sand-8 hover:text-sand-9 flex aspect-video h-full items-center justify-center gap-1 px-2",
         {
-          "text-sand-11 hover:text-sand-11": isCurrentPath({
+          "text-sand-12 hover:text-sand-12": isCurrentPath({
             pathName,
             href: hrefMatches || [href],
           }),

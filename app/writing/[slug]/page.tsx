@@ -29,15 +29,15 @@ async function WritingDetail({ params }: Props) {
     <MainLayout>
       <div className="mx-auto w-full max-w-screen-sm px-4 pb-32 pt-16 sm:pt-32">
         <header className="space-y-2">
-          <h1 className="text-sand-11 m-0 text-3xl font-semibold">{title}</h1>
+          <h1 className="text-sand-12 m-0 text-3xl font-semibold">{title}</h1>
           <div>
             <p className="text-sand-9 text-base">
               Filed under{" "}
-              <Link href="/" className="text-sand-11 font-medium underline">
+              <Link href="/" className="text-sand-12 font-medium underline">
                 JavaScript
               </Link>{" "}
               on{" "}
-              <span className="text-sand-11 font-medium">
+              <span className="text-sand-12 font-medium">
                 {format(new Date(publishedAt), "MMMM do, yyyy")}
               </span>
               .

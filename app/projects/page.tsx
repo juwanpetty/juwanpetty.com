@@ -24,7 +24,7 @@ function ProjectItem({
     >
       <div className="border-sand-4 bg-sand-1 aspect-video w-full rounded-lg border" />
       <div className="px-4">
-        <h2 className="text-sand-11 text-base font-medium">{title}</h2>
+        <h2 className="text-sand-12 text-base font-medium">{title}</h2>
         <p className="text-sand-9 text-base">{description}</p>
       </div>
     </a>
@@ -36,7 +36,7 @@ async function Projects() {
     <MainLayout>
       <div className="mx-auto w-full max-w-screen-sm px-4 pb-32 pt-16 sm:pt-32">
         <header className="space-y-2">
-          <h1 className="text-sand-11 m-0 text-3xl font-semibold">Projects</h1>
+          <h1 className="text-sand-12 m-0 text-3xl font-semibold">Projects</h1>
           <p className="text-sand-9 m-0 text-lg">
             Some cool projects I&apos;ve worked on.
           </p>
