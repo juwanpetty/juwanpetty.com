@@ -1,8 +1,7 @@
-import Link from "next/link";
 import { Metadata } from "next";
 import { MainLayout } from "@components/MainLayout";
 import { getPostBySlug, getAllPostSlugs } from "@utilities/get-posts";
-import { format } from "date-fns";
+import { formatDate } from "@utilities/format-date";
 
 export async function generateStaticParams() {
   return getAllPostSlugs();
@@ -28,21 +27,9 @@ async function WritingDetail({ params }: Props) {
   return (
     <MainLayout>
       <div className="mx-auto w-full max-w-screen-sm px-4 pb-32 pt-16 sm:pt-32">
-        <header className="space-y-2">
+        <header>
           <h1 className="text-sand-12 m-0 text-3xl font-semibold">{title}</h1>
-          <div>
-            <p className="text-sand-9 text-base">
-              Filed under{" "}
-              <Link href="/" className="text-sand-12 font-medium underline">
-                JavaScript
-              </Link>{" "}
-              on{" "}
-              <span className="text-sand-12 font-medium">
-                {format(new Date(publishedAt), "MMMM do, yyyy")}
-              </span>
-              .
-            </p>
-          </div>
+          <p className="text-sand-9 m-0 text-base">{formatDate(publishedAt)}</p>
         </header>
 
         <div className="text-sand-11 prose mt-8">
