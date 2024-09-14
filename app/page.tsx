@@ -22,11 +22,11 @@ function PostItem({ title, date, slug }: PostItemProps) {
       className="group flex flex-row items-center gap-4 truncate font-normal text-inherit no-underline transition-colors"
       href={`/writing/${slug}`}
     >
-      <p className="text-sand-12 m-0 truncate transition-colors group-hover:text-red-500">
+      <p className="group-hover:text-grass-11 m-0 truncate text-sand-12 transition-colors">
         {title}
       </p>
-      <hr className="border-sand-4 m-0 block min-w-7 flex-1 transition-colors group-hover:border-red-400" />
-      <p className="text-sand-9 m-0 shrink-0 transition-colors group-hover:text-red-400">
+      <hr className="group-hover:border-grass-4 m-0 block min-w-7 flex-1 border-sand-4 transition-colors" />
+      <p className="group-hover:text-grass-11 m-0 shrink-0 text-sand-9 transition-colors">
         {formatDate(date)}
       </p>
     </Link>
@@ -48,16 +48,16 @@ async function Home() {
         <div>
           <Link
             href={`/writing/${firstPostSlug}`}
-            className="text-sand-12 m-0 text-3xl font-semibold transition-colors hover:text-red-500"
+            className="m-0 text-2xl font-semibold text-sand-12 transition-colors"
           >
             {firstPostTitle}
           </Link>
-          <p className="text-sand-9 m-0 text-base">
+          <p className="m-0 text-base text-sand-9">
             {formatDate(firstPostPublishedAt)}
           </p>
 
-          <div className="text-sand-11 prose mt-8">
-            <p className="text-base leading-[30px]">
+          <div className="prose mt-8 text-sand-11">
+            <p className="">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo sunt
               accusamus quos ratione fugiat, voluptatem illum deleniti ut
               nostrum magni quia dolorem optio fugit ab quis. Distinctio ad
@@ -67,7 +67,7 @@ async function Home() {
 
           <Link
             href={`/writing/${firstPostSlug}`}
-            className="text-sand-12 mt-4 inline-flex items-center gap-2 text-base no-underline transition-colors hover:text-red-500"
+            className="mt-4 inline-flex h-7 items-center gap-1 rounded-full border border-solid border-sand-4 px-2 text-sm font-medium text-sand-11 no-underline transition-colors"
           >
             <span>Read more</span>
             <svg
@@ -75,6 +75,7 @@ async function Home() {
               width="18"
               height="18"
               viewBox="0 0 18 18"
+              className="size-4"
             >
               <g
                 fill="none"
@@ -90,39 +91,12 @@ async function Home() {
           </Link>
         </div>
 
-        <div className="mt-16 space-y-2">
-          <div className="text-sand-12 mt-8 flex items-center justify-start font-medium">
-            <span>Topics</span>
-          </div>
-
-          <div className="flex flex-wrap gap-x-3 gap-y-1">
-            <div>
-              <span>personal</span>
-              <sup>18</sup>
-            </div>
-            <div>
-              <span>technology</span>
-              <sup>9</sup>
-            </div>
-            <div>
-              <span>internet</span>
-              <sup>15</sup>
-            </div>
-            <div>
-              <span>social media</span>
-              <sup>7</sup>
-            </div>
-          </div>
-        </div>
-
         {groupedPosts.map((group, index) => (
           <div key={group.year} className="space-y-4">
             <div
               className={cn(
-                "text-sand-12 mt-8 flex items-center justify-start font-medium",
-                {
-                  "mt-16": index === 0,
-                }
+                "mt-8 flex items-center justify-start font-medium text-sand-12",
+                { "mt-16": index === 0 }
               )}
             >
               <span>{group.year}</span>

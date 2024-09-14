@@ -28,11 +28,11 @@ async function WritingDetail({ params }: Props) {
     <MainLayout>
       <div className="mx-auto w-full max-w-screen-sm px-4 pb-32 pt-16 sm:pt-32">
         <header>
-          <h1 className="text-sand-12 m-0 text-3xl font-semibold">{title}</h1>
-          <p className="text-sand-9 m-0 text-base">{formatDate(publishedAt)}</p>
+          <h1 className="m-0 text-2xl font-semibold text-sand-12">{title}</h1>
+          <p className="m-0 text-base text-sand-9">{formatDate(publishedAt)}</p>
         </header>
 
-        <div className="text-sand-11 prose mt-8">
+        <div className="prose mt-8 text-sand-11">
           {/* <p className="text-base leading-[30px] text-sand-9">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo sunt
             accusamus quos ratione fugiat, voluptatem illum deleniti ut nostrum
