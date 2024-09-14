@@ -2,7 +2,7 @@ import React from "react";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@context/ThemeProvider";
+import { ThemeProvider } from "next-themes";
 
 import "../styles/styles.scss";
 
@@ -19,10 +19,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="bg-sand-2 text-sand-11 font-sans transition-colors">
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="bg-sand-2 font-sans text-sand-11 transition-colors">
+        <ThemeProvider attribute="class">{children}</ThemeProvider>
       </body>
     </html>
   );
