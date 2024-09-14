@@ -22,7 +22,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="bg-sand-2 font-sans text-sand-11 transition-colors">
+      <body className="bg-neutral-50 font-sans text-neutral-900 transition-colors dark:bg-neutral-900">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

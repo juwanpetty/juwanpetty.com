@@ -32,7 +32,7 @@ async function WritingDetail({ params }: Props) {
           <p className="m-0 text-base text-sand-9">{formatDate(publishedAt)}</p>
         </header>
 
-        <div className="prose mt-8 text-sand-11">
+        <div className="prose prose-neutral mt-8 dark:prose-invert">
           {/* <p className="text-base leading-[30px] text-sand-9">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo sunt
             accusamus quos ratione fugiat, voluptatem illum deleniti ut nostrum

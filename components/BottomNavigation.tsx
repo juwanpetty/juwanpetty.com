@@ -13,7 +13,7 @@ function NavLink({ href, children, hrefMatches }: NavLinkProps) {
     <Link
       href={href}
       className={cn(
-        "text-sand-8 hover:text-sand-9 flex aspect-video h-full items-center justify-center gap-1 px-2",
+        "flex aspect-video h-full items-center justify-center gap-1 px-2 text-sand-8 hover:text-sand-9",
         {
           "text-sand-12 hover:text-sand-12": isCurrentPath({
             pathName,
@@ -29,7 +29,7 @@ function NavLink({ href, children, hrefMatches }: NavLinkProps) {
 
 export function BottomNavigation() {
   return (
-    <div className="border-sand-3 bg-sand-2 fixed bottom-0 left-0 z-10 flex h-[var(--bottom-nav-height)] w-full items-center justify-center gap-6 border-t border-solid px-4 py-2 sm:hidden">
+    <div className="fixed bottom-0 left-0 z-10 flex h-[var(--bottom-nav-height)] w-full items-center justify-center gap-6 border-t border-solid border-sand-3 bg-neutral-50 px-4 py-2 dark:bg-neutral-900 sm:hidden">
       <NavLink href="/" hrefMatches={["/", "/writing"]}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
