@@ -27,6 +27,7 @@ const config: Config = {
     extend: {
       colors: {
         sand: getColorScale('sand'),
+        grass: getColorScale('grass'),
       },
       fontFamily: {
         sans: [
