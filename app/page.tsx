@@ -56,7 +56,7 @@ async function Home() {
             {formatDate(firstPostPublishedAt)}
           </p>
 
-          <div className="prose mt-8 text-sand-11">
+          <div className="prose prose-neutral mt-8 dark:prose-invert">
             <p className="">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo sunt
               accusamus quos ratione fugiat, voluptatem illum deleniti ut
@@ -95,7 +95,7 @@ async function Home() {
           <div key={group.year} className="space-y-4">
             <div
               className={cn(
-                "mt-8 flex items-center justify-start font-medium text-sand-12",
+                "mt-8 flex items-center justify-start font-medium text-neutral-900 dark:text-neutral-100",
                 { "mt-16": index === 0 }
               )}
             >

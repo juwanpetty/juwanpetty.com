@@ -12,7 +12,7 @@ function NavLink({ href, children, hrefMatches }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className={cn("text-sand-8 hover:text-sand-9 flex items-center gap-1", {
+      className={cn("flex items-center gap-1 text-sand-8 hover:text-sand-9", {
         "text-sand-12 hover:text-sand-12": isCurrentPath({
           pathName,
           href: hrefMatches || [href],
@@ -26,8 +26,8 @@ function NavLink({ href, children, hrefMatches }: NavLinkProps) {
 
 export function TopNavigation() {
   return (
-    <header className="border-sand-2 bg-sand-2 sm:border-sand-3 left-0 top-0 z-10 flex h-[var(--header-height)] w-full items-center justify-center gap-6 border-b border-solid px-4 sm:fixed sm:justify-start">
-      <Link href="/" className="text-sand-12 flex items-center gap-1.5">
+    <header className="left-0 top-0 z-10 flex h-[var(--header-height)] w-full items-center justify-center gap-6 border-b border-solid border-sand-2 bg-neutral-50 px-4 dark:bg-neutral-900 sm:fixed sm:justify-start sm:border-sand-3">
+      <Link href="/" className="flex items-center gap-1.5 text-sand-12">
         <svg
           width="28"
           height="20"
