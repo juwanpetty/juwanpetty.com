@@ -9,7 +9,7 @@ export function MainLayout({ children }: Props) {
   return (
     <div>
       <TopNavigation />
-      <div className="min-h-[calc(100vh-var(--header-height))] pb-[var(--header-height)] sm:pb-0 sm:pt-[var(--bottom-nav-height)]">
+      <div className="min-h-dvh bg-neutral-50 pb-[var(--header-height)] dark:bg-neutral-900 sm:pb-0 sm:pt-[var(--bottom-nav-height)]">
         {children}
       </div>
       <BottomNavigation />
