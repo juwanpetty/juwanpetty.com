@@ -2,10 +2,10 @@ import React from "react";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import { cn } from "@utilities/merge-classnames";
 
 import "../styles/styles.scss";
-import { ThemeProvider } from "@context/ThemeProvider";
-import { cn } from "@utilities/merge-classnames";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,7 +25,7 @@ export default function RootLayout({
           `${inter.variable} ${GeistSans.variable} ${GeistMono.variable}`
         )}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider attribute="class">{children}</ThemeProvider>
       </body>
     </html>
   );
