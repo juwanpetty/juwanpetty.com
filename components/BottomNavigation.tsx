@@ -29,7 +29,7 @@ function NavLink({ href, children, hrefMatches }: NavLinkProps) {
 
 export function BottomNavigation() {
   return (
-    <div className="fixed bottom-0 left-0 z-10 flex h-[var(--bottom-nav-height)] w-full items-center justify-center gap-6 border-t border-solid border-sand-3 bg-neutral-50 px-4 py-2 dark:bg-neutral-900 sm:hidden">
+    <div className="fixed bottom-0 left-0 z-10 flex h-[var(--bottom-nav-height)] w-full items-center justify-center gap-6 border-t border-solid border-neutral-200 bg-white px-4 py-2 dark:bg-neutral-900 sm:hidden">
       <NavLink href="/" hrefMatches={["/", "/writing"]}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

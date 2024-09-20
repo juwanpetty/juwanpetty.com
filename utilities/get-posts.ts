@@ -1,3 +1,4 @@
+import { ImagePlaceholder } from '@components/ImagePlaceholder';
 import fs from 'fs';
 import path from 'path';
 import { compileMDX } from 'next-mdx-remote/rsc';
@@ -16,11 +17,13 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     publishedAt: string;
   }>({
     source: fileContent,
-    options: { parseFrontmatter: true },
+    options: { parseFrontmatter: true, },
+    components: { ImagePlaceholder },
   });
 
   return {
     frontmatter,
+    source: fileContent,
     content,
     slug: path.parse(fileName).name,
   };
