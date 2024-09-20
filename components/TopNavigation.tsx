@@ -26,7 +26,7 @@ function NavLink({ href, children, hrefMatches }: NavLinkProps) {
 
 export function TopNavigation() {
   return (
-    <header className="left-0 top-0 z-10 flex h-[var(--header-height)] w-full items-center justify-center gap-6 border-b border-solid border-sand-2 bg-neutral-50 px-4 dark:bg-neutral-900 sm:fixed sm:justify-start sm:border-sand-3">
+    <header className="left-0 top-0 z-10 flex h-[var(--header-height)] w-full items-center justify-center gap-6 border-b border-solid border-sand-2 bg-white px-4 dark:bg-neutral-900 sm:fixed sm:justify-start sm:border-sand-3">
       <Link href="/" className="flex items-center gap-1.5 text-sand-12">
         <svg
           width="28"
@@ -51,7 +51,7 @@ export function TopNavigation() {
       </Link>
 
       <div className="absolute bottom-0 left-0 right-0 top-0 m-auto hidden w-min items-center gap-6 sm:flex">
-        <NavLink href="/" hrefMatches={["/", "/writing"]}>
+        <NavLink href="/" hrefMatches={["/"]}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"

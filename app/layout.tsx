@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "bg-neutral-50 font-sans text-neutral-900 transition-colors dark:bg-neutral-900",
+          "bg-white font-sans text-neutral-900 transition-colors dark:bg-neutral-900",
           `${inter.variable} ${GeistSans.variable} ${GeistMono.variable}`
         )}
       >

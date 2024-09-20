@@ -6,6 +6,7 @@ export type Post = {
     publishedAt: string;
   };
   content: ReactElement<any, string | JSXElementConstructor<any>>;
+  source: string;
   slug: string;
 }
 

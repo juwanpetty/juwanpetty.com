@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { MainLayout } from "@components/MainLayout";
 import projects from "@data/projects.json";
+import { ImagePlaceholder } from "@components/ImagePlaceholder";
 
 export const metadata: Metadata = {
   title: "Projects — Juwan Petty",
@@ -22,7 +23,7 @@ function ProjectItem({
       rel="noopener noreferrer"
       className="space-y-4"
     >
-      <div className="aspect-video w-full rounded-lg border border-sand-4 bg-sand-1" />
+      <ImagePlaceholder className="aspect-video" />
       <div className="px-4">
         <h2 className="text-base font-medium text-sand-12">{title}</h2>
         <p className="text-base text-sand-9">{description}</p>
