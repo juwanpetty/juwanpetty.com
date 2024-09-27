@@ -6,19 +6,22 @@
         "./*"
       ],
       "@components/*": [
-        "components/*"
+        "src/components/*"
       ],
       "@context/*": [
-        "context/*"
+        "src/context/*"
       ],
       "@utilities/*": [
-        "utilities/*"
+        "src/utilities/*"
       ],
       "@/types/*": [
-        "types/types.ts"
+        "src/types/types.ts"
       ],
       "@data/*": [
-        "app/data/*"
+        "src/app/data/*"
+      ],
+      "@features/*": [
+        "src/features/*"
       ],
     },
     "target": "esnext",

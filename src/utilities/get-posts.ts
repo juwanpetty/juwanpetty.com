@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import { compileMDX } from 'next-mdx-remote/rsc';
-import { Post } from '@/types/types';
+import { Post } from '../types/types';
 
-const PATH_TO_CONTENT = 'app/content/posts';
+const PATH_TO_CONTENT = 'src/app/content/posts';
 
 const contentDir = path.join(process.cwd(), PATH_TO_CONTENT);
 

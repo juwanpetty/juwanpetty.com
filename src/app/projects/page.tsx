@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { MainLayout } from "@components/MainLayout";
+import { MainLayout } from "@features/layout/components/MainLayout";
 import projects from "@data/projects.json";
 
 export const metadata: Metadata = {

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { isCurrentPath } from "@utilities/is-current-path";
 import { cn } from "@utilities/merge-classnames";
-import { NavLinkProps } from "@/types/types";
+import { NavLinkProps } from "../../../types/types";
 
 function NavLink({ href, children, hrefMatches }: NavLinkProps) {
   const pathName = usePathname();
@@ -26,7 +26,7 @@ function NavLink({ href, children, hrefMatches }: NavLinkProps) {
 
 export function TopNavigation() {
   return (
-    <header className="left-0 top-0 z-10 flex h-[var(--header-height)] w-full items-center justify-center gap-6 border-b border-solid border-sand-2 bg-neutral-50 px-4 dark:bg-neutral-900 sm:fixed sm:justify-start sm:border-sand-3">
+    <header className="fixed left-0 top-0 z-10 flex h-[var(--header-height)] w-full items-center justify-center gap-6 bg-white px-4 dark:bg-neutral-900 sm:justify-start md:border-b md:border-solid md:border-neutral-200">
       <Link href="/" className="flex items-center gap-1.5 text-sand-12">
         <svg
           width="28"
@@ -45,13 +45,25 @@ export function TopNavigation() {
             fill="currentColor"
           />
         </svg>
-        <span className="sr-only text-lg font-semibold sm:not-sr-only">
-          Acme Corp
-        </span>
+        <span className="sr-only">Acme Corp</span>
       </Link>
 
       <div className="absolute bottom-0 left-0 right-0 top-0 m-auto hidden w-min items-center gap-6 sm:flex">
-        <NavLink href="/" hrefMatches={["/", "/writing"]}>
+        <NavLink href="/" hrefMatches={["/"]}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            className="size-4 min-w-4"
+          >
+            <g fill="currentColor">
+              <path d="M12.259,10.858c-.36,0-.755-.023-1.192-.069-.412-.043-.71-.413-.667-.825,.043-.412,.409-.711,.825-.667,1.405,.149,2.158,.017,2.695-.311,.502-.418,.899-.998,1.116-1.831,.139-.612,.228-1.204,.313-1.776,.135-.901,.262-1.751,.551-2.256,.139-.242,.132-.542-.019-.777-.15-.235-.417-.373-.697-.343C3.521,3.023,2.019,15.044,2.005,15.165c-.047,.411,.248,.782,.659,.83,.029,.003,.058,.005,.087,.005,.375,0,.7-.282,.744-.664,.017-.143,.174-1.323,.711-2.88,.81,.363,1.612,.523,1.659,.531,.854,.156,1.643,.234,2.367,.234,1.507,0,2.73-.338,3.65-1.01,.506-.37,.898-.847,1.198-1.406-.254,.031-.522,.052-.822,.052Z" />
+            </g>
+          </svg>
+          <span className="text-sm font-medium">Feed</span>
+        </NavLink>
+        <NavLink href="/writing" hrefMatches={["/writing"]}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"

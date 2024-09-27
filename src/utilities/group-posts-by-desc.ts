@@ -1,4 +1,4 @@
-import { Post } from "@/types/types";
+import { Post } from "../types/types";
 
 export function groupPostsByYear(posts: Post[]) {
   // Group posts by year
