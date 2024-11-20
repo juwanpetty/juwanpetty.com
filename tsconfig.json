@@ -1,43 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@*": [
-        "./*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@context/*": [
-        "src/context/*"
-      ],
-      "@utilities/*": [
-        "src/utilities/*"
-      ],
-      "@/types/*": [
-        "src/types/types.ts"
-      ],
-      "@data/*": [
-        "src/app/data/*"
-      ],
-      "@features/*": [
-        "src/features/*"
-      ],
-    },
-    "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -46,17 +17,11 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "next.config.mjs",
-    "tailwind.config.ts"
-  ],
-  "exclude": [
-    "node_modules",
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
