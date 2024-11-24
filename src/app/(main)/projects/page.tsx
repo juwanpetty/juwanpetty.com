@@ -2,6 +2,11 @@ import { ProjectList } from "@/features/projects/components/project-list";
 import { Project } from "@/features/projects/types";
 import { getAllProjects } from "@/features/projects/utilities/get-project-data";
 import { PageLayout } from "@/shared/components//page-layout";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+};
 
 const breadcrumbLinks = [
   { href: "/", name: "Explore" },

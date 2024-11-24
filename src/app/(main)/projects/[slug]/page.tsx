@@ -6,15 +6,23 @@ import {
 import { PageLayout } from "@/shared/components/page-layout";
 import { notFound } from "next/navigation";
 
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
 export async function generateStaticParams() {
   return await getAllProjectSlug();
 }
 
-export default async function ProjectsDetail({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata({ params }: Props) {
+  const project = (await getProjectBySlug((await params).slug)) as Project;
+
+  return {
+    title: project.frontmatter.title,
+  };
+}
+
+export default async function ProjectsDetail({ params }: Props) {
   const project = (await getProjectBySlug((await params).slug)) as Project;
 
   if (!project) {

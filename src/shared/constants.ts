@@ -1,5 +1,7 @@
 import { SecondaryNavigation } from "@/shared/types";
 
+export const SITE_NAME = "Juwan Petty";
+
 export const MAIN_SECONDARY_NAVIGATION: SecondaryNavigation[] = [
   {
     title: "Explore",

@@ -1,7 +1,15 @@
 import { ReactNode } from "react";
 import { SidebarSection } from "@/shared/components/sidebar-section";
 import { Navigation } from "@/shared/components/navigation";
-import { MAIN_SECONDARY_NAVIGATION } from "@/shared/constants";
+import { MAIN_SECONDARY_NAVIGATION, SITE_NAME } from "@/shared/constants";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    template: `%s | ${SITE_NAME}`,
+    default: SITE_NAME,
+  },
+};
 
 type Props = {
   children: ReactNode;

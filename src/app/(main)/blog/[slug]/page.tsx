@@ -6,15 +6,23 @@ import {
 } from "@/features/blog/utilities/get-blog-data";
 import { Post } from "@/features/blog/types";
 
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
 export async function generateStaticParams() {
   return await getAllPostSlug();
 }
 
-export default async function WritingDetail({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata({ params }: Props) {
+  const post = (await getPostBySlug((await params).slug)) as Post;
+
+  return {
+    title: post.frontmatter.title,
+  };
+}
+
+export default async function WritingDetail({ params }: Props) {
   const post = await getPostBySlug((await params).slug);
 
   if (!post) {
