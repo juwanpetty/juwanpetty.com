@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
 
-export type Project = {
+export type Post = {
   frontmatter: {
     title: string;
+    publishedAt: string;
     summary: string;
-    href: string;
     image?: string;
   },
   content: ReactElement;

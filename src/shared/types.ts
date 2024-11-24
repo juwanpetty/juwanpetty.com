@@ -7,5 +7,3 @@ export type SecondaryNavigation = {
   title: string;
   links: Link[];
 };
-
-// MAIN_SECONDARY_NAVIGATION

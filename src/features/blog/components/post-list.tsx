@@ -1,5 +1,5 @@
-import { PostCard } from "@/features/writing/components/post-card";
-import type { Post } from "@/features/writing/types";
+import { PostCard } from "@/features/blog/components/post-card";
+import type { Post } from "@/features/blog/types";
 
 type Props = {
   posts: Post[];

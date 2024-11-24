@@ -1,7 +1,7 @@
 "use client";
 
-import { useDynamicLineClamp } from "@/features/writing/hooks/useDynamicLineClamp";
-import type { Post } from "@/features/writing/types";
+import { useDynamicLineClamp } from "@/features/blog/hooks/useDynamicLineClamp";
+import type { Post } from "@/features/blog/types";
 import { ImagePlaceholder } from "@/shared/components/image-placeholder";
 import { formatDate } from "@/shared/utilities/format-date";
 import { cn } from "@/shared/utilities/merge-classnames";
@@ -14,20 +14,23 @@ type Props = {
 export function PostCard({ post }: Props) {
   const { elementRef: titleRef, lineClamp } = useDynamicLineClamp(2);
 
+  const {
+    frontmatter: { title, publishedAt, summary },
+    slug,
+  } = post;
+
   return (
     <Link
-      href={`/writing/${post.slug}`}
-      key={post.slug}
+      href={`/blog/${slug}`}
+      key={slug}
       className="flex flex-col rounded-xl border border-neutral-100 p-4"
     >
       <div className="mb-4 flex-grow">
         <h2 ref={titleRef} className="mb-1 font-semibold">
-          {post.title}
+          {title}
         </h2>
         <div className="mb-4 flex flex-row gap-2">
-          <span className="text-neutral-500">
-            {formatDate(post.publishedAt)}
-          </span>
+          <span className="text-neutral-500">{formatDate(publishedAt)}</span>
         </div>
         <p
           className={cn("text-neutral-700", {
@@ -35,7 +38,7 @@ export function PostCard({ post }: Props) {
             "line-clamp-2": lineClamp === 2,
           })}
         >
-          {post.excerpt}
+          {summary}
         </p>
       </div>
 
