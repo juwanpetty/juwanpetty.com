@@ -4,7 +4,7 @@ export const MAIN_SECONDARY_NAVIGATION: SecondaryNavigation[] = [
   {
     title: "Explore",
     links: [
-      { name: "Writing", href: "/writing" },
+      { name: "Writing", href: "/blog" },
       { name: "Projects", href: "/projects" },
     ],
   },

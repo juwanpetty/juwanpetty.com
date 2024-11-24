@@ -4,7 +4,7 @@ import { MobileNavigation } from "@/shared/components/mobile-navigation";
 
 const NAVIGATION_ITEMS = [
   { name: "Explore", href: "/" },
-  { name: "Writing", href: "/writing" },
+  { name: "Writing", href: "/blog" },
   { name: "Projects", href: "/projects" },
 ];
 

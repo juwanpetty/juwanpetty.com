@@ -8,7 +8,7 @@ export function Footer() {
   const currentYear = getCurrentYear();
 
   return (
-    <footer className="border-t border-neutral-100 bg-white">
+    <footer className="border-t border-neutral-100">
       <div className="mx-auto max-w-7xl pb-3 pt-12 md:flex md:items-center md:justify-between">
         <div className="flex justify-center gap-x-6 md:order-2">
           {[
