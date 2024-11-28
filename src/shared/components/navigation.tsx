@@ -10,8 +10,8 @@ const NAVIGATION_ITEMS = [
 
 export function Navigation() {
   return (
-    <header className="sticky top-0 z-10 w-full border-b border-neutral-100 bg-white">
-      <div className="flex h-14 items-center px-4">
+    <header className="sticky top-0 z-10 w-full border-b border-neutral-200 bg-white">
+      <div className="relative mx-auto flex h-14 w-full max-w-screen-xl items-center px-4">
         <div className="mr-4 hidden md:flex">
           <Link className="mr-4 flex items-center space-x-2 lg:mr-6" href="/">
             <svg

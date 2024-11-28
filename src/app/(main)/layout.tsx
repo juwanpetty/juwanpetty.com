@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
-import { SidebarSection } from "@/shared/components/sidebar-section";
-import { Navigation } from "@/shared/components/navigation";
-import { MAIN_SECONDARY_NAVIGATION, SITE_NAME } from "@/shared/constants";
+import { Sidebar } from "@/shared/components/sidebar";
+import { SITE_NAME } from "@/shared/constants";
 import { Metadata } from "next";
+import { Navigation } from "@/shared/components/navigation";
 
 export const metadata: Metadata = {
   title: {
@@ -17,23 +17,11 @@ type Props = {
 
 export default function Layout({ children }: Props) {
   return (
-    <div className="mx-auto w-full">
+    <div>
       <Navigation />
-      <div className="mx-auto">
-        <div className="grid w-full items-start px-8 md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
-          <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem-1px)] w-full shrink-0 md:sticky md:block">
-            <div className="no-scrollbar h-full overflow-auto py-6 pr-6 lg:py-8">
-              <div className="space-y-4">
-                {MAIN_SECONDARY_NAVIGATION.map((section) => (
-                  <SidebarSection
-                    key={section.title}
-                    heading={section.title}
-                    links={section.links}
-                  />
-                ))}
-              </div>
-            </div>
-          </aside>
+      <div className="relative mx-auto w-full max-w-screen-xl px-4 py-10 md:flex md:flex-row md:py-10">
+        <div className="grid w-full md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
+          <Sidebar />
           {children}
         </div>
       </div>
