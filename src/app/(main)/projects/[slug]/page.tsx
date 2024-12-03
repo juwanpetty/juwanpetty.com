@@ -33,7 +33,7 @@ export default async function ProjectsDetail({ params }: Props) {
 
   return (
     <PageLayout>
-      <article className="prose prose-neutral">
+      <article className="prose prose-stone">
         <h1>{frontmatter.title}</h1>
         <p>{frontmatter.summary}</p>
 

@@ -24,7 +24,7 @@ export function PageLayout({
   ) : null;
 
   const subtitleMarkup = subtitle ? (
-    <p className="max-w-lg text-base text-neutral-500">{subtitle}</p>
+    <p className="max-w-lg text-base text-stone-500">{subtitle}</p>
   ) : null;
 
   return (

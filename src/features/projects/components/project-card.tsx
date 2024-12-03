@@ -17,7 +17,7 @@ export function ProjectCard({ project }: Props) {
       <ImagePlaceholder className="mb-2 aspect-video" />
       <div className="mb-4 md:px-3">
         <h2 className="mb-1 font-semibold">{title}</h2>
-        <p className="line-clamp-2 text-neutral-700">{summary}</p>
+        <p className="line-clamp-2 text-stone-700">{summary}</p>
       </div>
     </Link>
   );

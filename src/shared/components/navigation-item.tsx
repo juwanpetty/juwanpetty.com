@@ -21,10 +21,9 @@ export function NavigationItem({ href, children }: NavigationItemProps) {
   return (
     <Link
       href={href}
-      className={cn(
-        "text-neutral-500 transition-colors hover:text-neutral-900",
-        { "text-neutral-900": isActiveRoute },
-      )}
+      className={cn("text-stone-500 transition-colors hover:text-stone-900", {
+        "text-stone-900": isActiveRoute,
+      })}
     >
       {children}
     </Link>
