@@ -1,16 +1,16 @@
 import Link from "next/link";
-import { NavigationItem } from "@/shared/components/navigation-item";
+// import { NavigationItem } from "@/shared/components/navigation-item";
 import { MobileNavigation } from "@/shared/components/mobile-navigation";
 
-const NAVIGATION_ITEMS = [
-  { name: "Explore", href: "/" },
-  { name: "Writing", href: "/blog" },
-  { name: "Projects", href: "/projects" },
-];
+// const NAVIGATION_ITEMS = [
+//   { name: "Explore", href: "/" },
+//   { name: "Writing", href: "/blog" },
+//   { name: "Projects", href: "/projects" },
+// ];
 
 export function Navigation() {
   return (
-    <header className="sticky top-0 z-10 w-full border-b border-stone-200 bg-white">
+    <header className="sticky top-0 z-10 w-full border-b border-stone-200 bg-stone-50">
       <div className="relative mx-auto flex h-14 w-full max-w-screen-xl items-center px-4">
         <div className="mr-4 hidden md:flex">
           <Link className="mr-4 flex items-center space-x-2 lg:mr-6" href="/">
@@ -19,7 +19,7 @@ export function Navigation() {
               width="18"
               height="18"
               viewBox="0 0 18 18"
-              className="h-6 w-6 text-blue-400"
+              className="h-6 w-6 text-stone-400"
             >
               <g
                 fill="none"
@@ -48,13 +48,13 @@ export function Navigation() {
             <span className="hidden font-bold lg:inline-block">Acme</span>
           </Link>
 
-          <nav className="flex items-center gap-4 text-sm xl:gap-6">
+          {/* <nav className="flex items-center gap-4 text-sm xl:gap-6">
             {NAVIGATION_ITEMS.map((item) => (
               <NavigationItem key={item.name} href={item.href}>
                 {item.name}
               </NavigationItem>
             ))}
-          </nav>
+          </nav> */}
         </div>
 
         <div className="flex w-full items-center space-x-2 md:hidden">

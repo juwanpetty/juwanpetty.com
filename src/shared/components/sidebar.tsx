@@ -7,7 +7,7 @@ export function Sidebar() {
       <div>
         <button
           type="button"
-          className="flex h-8 w-full items-center justify-start gap-1.5 rounded-[0.625rem] border border-solid border-stone-200 bg-white px-2.5 shadow-sm"
+          className="flex h-8 w-full items-center justify-start gap-1.5 rounded-[0.625rem] border border-solid border-stone-200 bg-white px-2 pr-1 shadow-sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
