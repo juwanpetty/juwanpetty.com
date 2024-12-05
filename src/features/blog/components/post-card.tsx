@@ -23,17 +23,17 @@ export function PostCard({ post }: Props) {
     <Link
       href={`/blog/${slug}`}
       key={slug}
-      className="flex flex-col rounded-xl border border-neutral-100 p-4"
+      className="flex flex-col rounded-xl border border-stone-100 p-4"
     >
       <div className="mb-4 flex-grow">
         <h2 ref={titleRef} className="mb-1 font-semibold">
           {title}
         </h2>
         <div className="mb-4 flex flex-row gap-2">
-          <span className="text-neutral-500">{formatDate(publishedAt)}</span>
+          <span className="text-stone-500">{formatDate(publishedAt)}</span>
         </div>
         <p
-          className={cn("text-neutral-700", {
+          className={cn("text-stone-700", {
             "line-clamp-1": lineClamp === 1,
             "line-clamp-2": lineClamp === 2,
           })}

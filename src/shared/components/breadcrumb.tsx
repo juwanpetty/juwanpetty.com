@@ -30,8 +30,8 @@ export function Breadcrumb({ links }: Props) {
         <Fragment key={link.name}>
           <Link
             href={link.href}
-            className={cn("text-neutral-900", {
-              "text-neutral-500": isFirstItem(index),
+            className={cn("text-stone-900", {
+              "text-stone-500": isFirstItem(index),
             })}
           >
             {link.name}
@@ -42,7 +42,7 @@ export function Breadcrumb({ links }: Props) {
               width="12"
               height="12"
               viewBox="0 0 12 12"
-              className="h-2.5 w-2.5 text-neutral-500"
+              className="h-2.5 w-2.5 text-stone-500"
             >
               <g
                 fill="none"
