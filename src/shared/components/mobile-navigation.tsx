@@ -6,7 +6,7 @@ export function MobileNavigation() {
   const mobilePanelActivator = (
     <button
       type="button"
-      className="flex size-8 items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-neutral-100"
+      className="flex size-8 items-center justify-center rounded-md text-stone-500 transition-colors hover:bg-stone-100"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

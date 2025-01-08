@@ -8,7 +8,7 @@ export function Footer() {
   const currentYear = getCurrentYear();
 
   return (
-    <footer className="border-t border-neutral-100">
+    <footer className="border-t border-stone-100">
       <div className="mx-auto max-w-7xl pb-3 pt-12 md:flex md:items-center md:justify-between">
         <div className="flex justify-center gap-x-6 md:order-2">
           {[
@@ -16,7 +16,7 @@ export function Footer() {
               name: "Bluesky",
               href: "#",
               icon: (
-                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>,
+                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
               ) => (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ export function Footer() {
               name: "GitHub",
               href: "#",
               icon: (
-                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>,
+                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
               ) => (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ export function Footer() {
               name: "YouTube",
               href: "#",
               icon: (
-                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>,
+                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
               ) => (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,14 +73,14 @@ export function Footer() {
             <a
               key={item.name}
               href={item.href}
-              className="text-neutral-500 hover:text-neutral-800"
+              className="text-stone-500 hover:text-stone-800"
             >
               <span className="sr-only">{item.name}</span>
               <item.icon aria-hidden="true" className="h-5 w-5" />
             </a>
           ))}
         </div>
-        <p className="mt-8 text-center text-sm/6 text-neutral-500 md:order-1 md:mt-0">
+        <p className="mt-8 text-center text-sm/6 text-stone-500 md:order-1 md:mt-0">
           &copy; {currentYear} Acme, Inc. All rights reserved.
         </p>
       </div>

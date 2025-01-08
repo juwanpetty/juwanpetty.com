@@ -22,8 +22,8 @@ export function SidebarLink({ href, children }: Props) {
     <Link
       href={href}
       className={cn(
-        "flex w-full items-center px-2 py-1 text-foreground text-neutral-500 underline-offset-2 transition-colors hover:text-neutral-900 hover:underline",
-        { "text-neutral-900 underline": isActiveRoute },
+        "flex h-8 w-full items-center rounded-[0.625rem] px-2 text-sm font-medium text-stone-500 transition-colors",
+        { "bg-stone-100 text-stone-900": isActiveRoute }
       )}
     >
       {children}
