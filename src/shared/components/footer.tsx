@@ -8,15 +8,15 @@ export function Footer() {
   const currentYear = getCurrentYear();
 
   return (
-    <footer className="border-t border-neutral-100">
-      <div className="mx-auto max-w-7xl pb-3 pt-12 md:flex md:items-center md:justify-between">
+    <footer className="border-t border-neutral-100 bg-white">
+      <div className="mx-auto max-w-7xl px-8 py-6 md:flex md:items-center md:justify-between">
         <div className="flex justify-center gap-x-6 md:order-2">
           {[
             {
               name: "Bluesky",
               href: "#",
               icon: (
-                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>,
+                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
               ) => (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ export function Footer() {
               name: "GitHub",
               href: "#",
               icon: (
-                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>,
+                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
               ) => (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ export function Footer() {
               name: "YouTube",
               href: "#",
               icon: (
-                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>,
+                props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
               ) => (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
