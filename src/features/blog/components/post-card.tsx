@@ -1,10 +1,7 @@
 "use client";
 
-import { useDynamicLineClamp } from "@/features/blog/hooks/useDynamicLineClamp";
 import type { Post } from "@/features/blog/types";
-import { ImagePlaceholder } from "@/shared/components/image-placeholder";
 import { formatDate } from "@/shared/utilities/format-date";
-import { cn } from "@/shared/utilities/merge-classnames";
 import Link from "next/link";
 
 type Props = {
@@ -12,37 +9,23 @@ type Props = {
 };
 
 export function PostCard({ post }: Props) {
-  const { elementRef: titleRef, lineClamp } = useDynamicLineClamp(2);
-
   const {
-    frontmatter: { title, publishedAt, summary },
+    frontmatter: { title, publishedAt },
     slug,
   } = post;
 
   return (
     <Link
+      className="group flex flex-row items-center gap-4 truncate font-normal text-inherit no-underline transition-colors"
       href={`/blog/${slug}`}
-      key={slug}
-      className="flex flex-col rounded-xl border border-neutral-100 p-4"
     >
-      <div className="mb-4 flex-grow">
-        <h2 ref={titleRef} className="mb-1 font-semibold">
-          {title}
-        </h2>
-        <div className="mb-4 flex flex-row gap-2">
-          <span className="text-neutral-500">{formatDate(publishedAt)}</span>
-        </div>
-        <p
-          className={cn("text-neutral-700", {
-            "line-clamp-1": lineClamp === 1,
-            "line-clamp-2": lineClamp === 2,
-          })}
-        >
-          {summary}
-        </p>
-      </div>
-
-      <ImagePlaceholder className="aspect-video" />
+      <p className="group-hover:text-grass-11 text-sand-12 m-0 truncate transition-colors">
+        {title}
+      </p>
+      <hr className="group-hover:border-grass-4 border-sand-4 m-0 block min-w-7 flex-1 transition-colors" />
+      <p className="m-0 shrink-0 font-mono tabular-nums text-neutral-500 transition-colors group-hover:text-neutral-900">
+        {formatDate(publishedAt, "MMM dd")}
+      </p>
     </Link>
   );
 }

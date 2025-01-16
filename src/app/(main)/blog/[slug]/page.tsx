@@ -5,6 +5,7 @@ import {
   getPostBySlug,
 } from "@/features/blog/utilities/get-blog-data";
 import { Post } from "@/features/blog/types";
+import { formatDate } from "@/shared/utilities/format-date";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -29,13 +30,17 @@ export default async function WritingDetail({ params }: Props) {
     notFound();
   }
 
-  const { frontmatter, content } = post as Post;
+  const {
+    frontmatter: { title, publishedAt, summary },
+    content,
+  } = post as Post;
 
   return (
     <PageLayout>
-      <article className="prose">
-        <h1>{frontmatter.title}</h1>
-        <p>{frontmatter.summary}</p>
+      <article className="prose prose-neutral prose-headings:text-base prose-headings:font-semibold prose-p:text-neutral-500">
+        <h1>{title}</h1>
+        <span>{formatDate(publishedAt)}</span>
+        <p>{summary}</p>
 
         {content}
       </article>

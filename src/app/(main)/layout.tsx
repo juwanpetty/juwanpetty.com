@@ -22,7 +22,7 @@ export default function Layout({ children }: Props) {
       <Navigation />
       <div className="relative mx-auto w-full max-w-screen-xl px-8 md:flex md:flex-row">
         <div className="grid w-full md:grid-cols-[220px_minmax(0,1fr)] md:gap-8 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
-          <aside className="fixed top-14 z-0 hidden h-[calc(100vh-72px-1px-56px-1px)] w-full shrink-0 md:sticky md:block">
+          <aside className="fixed top-14 z-0 hidden h-[calc(100dvh-72px-1px-56px-1px)] w-full shrink-0 md:sticky md:block">
             <div className="no-scrollbar h-full overflow-auto py-6 pr-6 lg:py-8">
               <div className="space-y-4">
                 {MAIN_SECONDARY_NAVIGATION.map((section) => (
