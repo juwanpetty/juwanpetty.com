@@ -20,7 +20,7 @@ export function PageLayout({
   const shouldShowHeader = title || subtitle;
 
   const titleMarkup = title ? (
-    <h1 className="text-2xl font-semibold">{title}</h1>
+    <h1 className="text-base font-semibold">{title}</h1>
   ) : null;
 
   const subtitleMarkup = subtitle ? (
@@ -28,7 +28,7 @@ export function PageLayout({
   ) : null;
 
   return (
-    <div className="relative grid min-h-[calc(100vh-125px-1px-56px-1px)] py-6 sm:min-h-[calc(100vh-72px-1px-56px-1px)] lg:gap-10 lg:py-8 xl:grid-cols-[1fr_300px]">
+    <div className="relative grid min-h-[calc(100dvh-125px-1px-56px-1px)] py-6 sm:min-h-[calc(100dvh-72px-1px-56px-1px)] lg:gap-10 lg:py-8 xl:grid-cols-[1fr_300px]">
       <div className="mx-auto flex w-full min-w-0 max-w-3xl flex-col">
         <Breadcrumb links={breadcrumbLinks} />
         <div className="flex-grow pb-24">
