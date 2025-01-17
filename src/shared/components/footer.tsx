@@ -14,7 +14,7 @@ export function Footer() {
           {[
             {
               name: "Bluesky",
-              href: "#",
+              href: "https://bsky.app/profile/juwanpetty.com",
               icon: (
                 props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
               ) => (
@@ -33,7 +33,7 @@ export function Footer() {
             },
             {
               name: "GitHub",
-              href: "#",
+              href: "https://github.com/juwanpetty/",
               icon: (
                 props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
               ) => (
@@ -52,7 +52,7 @@ export function Footer() {
             },
             {
               name: "YouTube",
-              href: "#",
+              href: "https://www.youtube.com/@juwanpetty",
               icon: (
                 props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
               ) => (
@@ -73,6 +73,8 @@ export function Footer() {
             <a
               key={item.name}
               href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-neutral-500 hover:text-neutral-800"
             >
               <span className="sr-only">{item.name}</span>
