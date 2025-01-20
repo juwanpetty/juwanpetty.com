@@ -1,13 +1,13 @@
 import { PostCard } from "@/features/blog/components/post-card";
 import type { Post } from "@/features/blog/types";
-import { sortAndGroupByYear } from "@/features/blog/utilities/sort-and-group-by-year";
+import { sortAndGroupPostsByYear } from "@/features/blog/utilities/post-utils";
 
 type Props = {
   posts: Post[];
 };
 
 export function PostList({ posts }: Props) {
-  const sortedAndGrouped = sortAndGroupByYear(posts);
+  const sortedAndGrouped = sortAndGroupPostsByYear(posts);
 
   return (
     <section className="">
