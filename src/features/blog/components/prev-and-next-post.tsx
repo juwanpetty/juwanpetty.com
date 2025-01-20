@@ -53,13 +53,47 @@ function AdjacentPostLink({
         "items-end text-right": align === "end",
       })}
     >
-      <span
-        className={cn("pl-6 text-base text-neutral-500", {
-          "pr-6": align === "end",
-        })}
-      >
-        {label}
-      </span>
+      <div className="flex items-center justify-start gap-2">
+        {arrowDirection === "left" && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            className="size-3 h-5 min-w-3 text-neutral-500"
+          >
+            <g
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.5"
+              stroke="currentColor"
+            >
+              <polyline points="7.75 1.75 3.5 6 7.75 10.25"></polyline>
+            </g>
+          </svg>
+        )}
+        <span className="text-sm text-neutral-500">{label}</span>
+        {arrowDirection === "right" && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            className="size-3 h-5 min-w-3 text-neutral-500"
+          >
+            <g
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.5"
+              stroke="currentColor"
+            >
+              <polyline points="4.25 10.25 8.5 6 4.25 1.75"></polyline>
+            </g>
+          </svg>
+        )}
+      </div>
       <Link
         href={`/blog/${post.slug}`}
         aria-label={`Go to ${label.toLowerCase()} post: ${post?.frontmatter?.title ?? ""}`}
@@ -67,45 +101,7 @@ function AdjacentPostLink({
           "justify-end": align === "end",
         })}
       >
-        {arrowDirection === "left" && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            className="size-4 h-6 min-w-4 text-neutral-500"
-          >
-            <g
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              stroke="currentColor"
-            >
-              <polyline points="11.5 15.25 5.25 9 11.5 2.75" />
-            </g>
-          </svg>
-        )}
         <span className="text-base">{post.frontmatter.title}</span>
-        {arrowDirection === "right" && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            className="size-4 h-6 min-w-4 text-neutral-500"
-          >
-            <g
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              stroke="currentColor"
-            >
-              <polyline points="6.5 2.75 12.75 9 6.5 15.25" />
-            </g>
-          </svg>
-        )}
       </Link>
     </div>
   );
