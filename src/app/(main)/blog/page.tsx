@@ -14,7 +14,7 @@ const breadcrumbLinks = [
 ];
 
 export default async function WritingIndex() {
-  const posts = await getAllPosts();
+  const posts: Post[] = await getAllPosts();
 
   return (
     <PageLayout
