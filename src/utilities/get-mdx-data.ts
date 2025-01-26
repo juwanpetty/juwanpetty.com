@@ -2,14 +2,14 @@ import fs from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 
-export async function readMDXFile<T>(
+export async function readMDXFile(
   directory: string,
   slug: string,
 ) {
   const fileName = slug + ".mdx";
   const filePath = path.join(directory, fileName);
   const fileContent = fs.readFileSync(filePath, "utf8");
-  const { frontmatter, content } = await compileMDX<T>({
+  const { frontmatter, content } = await compileMDX({
     source: fileContent,
     options: { parseFrontmatter: true },
     components: {},
