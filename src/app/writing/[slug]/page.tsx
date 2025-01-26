@@ -71,7 +71,7 @@ export default async function WritingDetail({ params }: Props) {
         <span className="xl:hidden">
           <Link
             href="/"
-            className="-m-1 inline-flex items-center gap-1.5 rounded-sm p-1 text-sm"
+            className="-m-1 inline-flex items-center gap-1.5 rounded-xs p-1 text-sm"
             aria-label="Back to home page"
           >
             {backSVG}
@@ -80,7 +80,7 @@ export default async function WritingDetail({ params }: Props) {
         </span>
         <div className="relative">
           <Link
-            className="top-0 hidden items-center gap-1.5 rounded-sm p-1 text-sm xl:absolute xl:inline-flex xl:-translate-x-60"
+            className="top-0 hidden items-center gap-1.5 rounded-xs p-1 text-sm xl:absolute xl:inline-flex xl:-translate-x-60"
             aria-label="Back to home page"
             href="/"
           >
@@ -160,7 +160,7 @@ export default async function WritingDetail({ params }: Props) {
 
       {/* <nav className="flex justify-between text-sm">
         <Link
-          className="hover:decoration-secondary rounded-sm p-1 transition-colors"
+          className="hover:decoration-secondary rounded-xs p-1 transition-colors"
           href="/writing/ikigai"
         >
           <div className="flex flex-col gap-1">
@@ -170,7 +170,7 @@ export default async function WritingDetail({ params }: Props) {
         </Link>
         <div className="flex grow" />
         <Link
-          className="hover:decoration-secondary rounded-sm p-1 transition-colors"
+          className="hover:decoration-secondary rounded-xs p-1 transition-colors"
           href="/writing/motion"
         >
           <div className="flex flex-col items-end gap-1">
