@@ -1,12 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
-import { SITE_NAME } from "@/shared/constants";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: SITE_NAME,
+  title: "Juwan Petty",
 };
 
 export default function RootLayout({
@@ -16,8 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className}>
-      <body className="flex min-h-screen flex-col overscroll-none antialiased">
-        {children}
+      <body className="antialiased">
+        <main className="mx-auto min-h-dvh w-full max-w-2xl pb-6 pt-16 md:pb-12 md:pt-32">
+          <div className="px-4 md:px-0">{children}</div>
+        </main>
       </body>
     </html>
   );
