@@ -71,7 +71,7 @@ export default async function WritingDetail({ params }: Props) {
         <span className="xl:hidden">
           <Link
             href="/"
-            className="-m-1 inline-flex items-center gap-1.5 rounded-sm p-1 text-sm"
+            className="-m-1 inline-flex items-center gap-1.5 rounded-xs p-1 text-sm"
             aria-label="Back to home page"
           >
             {backSVG}
@@ -80,14 +80,14 @@ export default async function WritingDetail({ params }: Props) {
         </span>
         <div className="relative">
           <Link
-            className="top-0 hidden items-center gap-1.5 rounded-sm p-1 text-sm xl:absolute xl:inline-flex xl:-translate-x-60"
+            className="top-0 hidden items-center gap-1.5 rounded-xs p-1 text-sm xl:absolute xl:inline-flex xl:-translate-x-60"
             aria-label="Back to home page"
             href="/"
           >
             {backSVG}
             <span>Home</span>
           </Link>
-          <h1 className="text-balance text-lg font-medium">{title}</h1>
+          <h1 className="text-lg font-medium text-balance">{title}</h1>
           <div className="flex items-center justify-between text-sm">
             <time dateTime="2021-01-01" className="text-neutral-500">
               {formatDate(publishedAt, "MMM dd, yyyy")}
@@ -117,68 +117,11 @@ export default async function WritingDetail({ params }: Props) {
       </header>
       <article className="prose-headings:text-primary prose prose-base prose-neutral prose-headings:font-medium prose-h2:text-base prose-code:before:content-none prose-code:after:content-none">
         {content}
-        {/* <p>
-          Over the years, I have encountered a common piece of advice—learning
-          to say &quot;no&quot;. Now I&apos;m asking myself why a request should
-          change my focus.
-        </p>
-
-        <p>
-          I don&apos;t want to simply become adept at saying no; I want to
-          understand the motivations behind my decisions.
-        </p>
-
-        <p>
-          My aim is to produce mindful, technical work that reflects my values
-          and resonates with purpose. This requires a conscious effort to filter
-          out any unnecessary commitments and distractions, enabling me to focus
-          on projects that truly matter.
-        </p>
-
-        <p>
-          Saying &quot;no&quot; isn&apos;t about restriction but{" "}
-          <em>liberation</em>. It allows me to set boundaries, protect my time
-          and ideas, ensuring that I have the mental capacity to invest in the
-          important things.
-        </p>
-
-        <p>
-          Having numerous opportunities is wonderful, and I will always be
-          grateful for them. However, without clear reasonings it does not
-          necessarily equal abundance.
-        </p>
-
-        <p>
-          Not a restricting rule but rather a guiding principle, beginning a
-          better 26th year ahead.
-        </p> */}
       </article>
 
       <hr className="my-8 h-px border-0 bg-neutral-200" />
 
       <PrevAndNextPost previousPost={prevPost} nextPost={nextPost} />
-
-      {/* <nav className="flex justify-between text-sm">
-        <Link
-          className="hover:decoration-secondary rounded-sm p-1 transition-colors"
-          href="/writing/ikigai"
-        >
-          <div className="flex flex-col gap-1">
-            <span className="text-neutral-500">Previous</span>
-            <span>Ikigai</span>
-          </div>
-        </Link>
-        <div className="flex grow" />
-        <Link
-          className="hover:decoration-secondary rounded-sm p-1 transition-colors"
-          href="/writing/motion"
-        >
-          <div className="flex flex-col items-end gap-1">
-            <span className="text-neutral-500">Next</span>
-            <span>Motion</span>
-          </div>
-        </Link>
-      </nav> */}
     </Fragment>
   );
 }

@@ -36,7 +36,7 @@ function AdjacentPostLink({
 
   return (
     <Link
-      className="hover:decoration-secondary rounded-sm p-1 transition-colors"
+      className="rounded-xs p-1 transition-colors"
       href={`/writing/${post.slug}`}
     >
       <div className={cn("flex flex-col", { "items-end": align === "end" })}>
