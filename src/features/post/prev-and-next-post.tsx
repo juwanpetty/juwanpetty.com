@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Post } from "@/features/post/types";
 import { cn } from "@/utilities/merge-classnames";
 
