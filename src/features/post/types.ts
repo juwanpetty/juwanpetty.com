@@ -5,7 +5,7 @@ export type Post = {
     title: string;
     publishedAt: string;
     summary: string;
-    image?: string;
+    tags: string[];
   },
   content: ReactElement;
   slug: string;
