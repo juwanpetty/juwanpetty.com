@@ -89,29 +89,12 @@ export default async function WritingDetail({ params }: Props) {
           </Link>
           <h1 className="text-lg font-medium text-balance">{title}</h1>
           <div className="flex items-center justify-between text-sm">
-            <time dateTime="2021-01-01" className="text-neutral-500">
+            <time
+              dateTime={formatDate(publishedAt, "yyyy-MM-dd")}
+              className="text-neutral-500"
+            >
               {formatDate(publishedAt, "MMM dd, yyyy")}
             </time>
-            <button className="rounded-full p-1 text-neutral-500">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                className="size-5 min-w-5"
-              >
-                <g
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                >
-                  <path d="M8.5,6.827c-.352,.168-.682,.398-.973,.69l-.01,.01c-1.381,1.381-1.381,3.619,0,5l2.175,2.175c1.381,1.381,3.619,1.381,5,0l.01-.01c1.381-1.381,1.381-3.619,0-5l-.931-.931"></path>
-                  <path d="M9.5,11.173c.352-.168,.682-.398,.973-.69l.01-.01c1.381-1.381,1.381-3.619,0-5l-2.175-2.175c-1.381-1.381-3.619-1.381-5,0l-.01,.01c-1.381,1.381-1.381,3.619,0,5l.931,.931"></path>
-                </g>
-              </svg>
-            </button>
           </div>
         </div>
       </header>

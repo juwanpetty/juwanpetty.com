@@ -1,6 +1,9 @@
 import { PostList } from "@/features/post/post-list";
 import { getAllPosts, getPostsByTopic } from "@/features/post/utilities";
-import { getAllTopicSlugs } from "@/features/topic/utilities";
+import {
+  capitalizeTopicName,
+  getAllTopicSlugs,
+} from "@/features/topic/utilities";
 import { Link } from "next-view-transitions";
 import { Fragment } from "react";
 
@@ -16,9 +19,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
 
-  // TODO: Capitalize the topic name
   return {
-    title: slug,
+    title: capitalizeTopicName(slug),
   };
 }
 
@@ -27,6 +29,8 @@ export default async function TopicsDetail({ params }: Props) {
 
   const posts = await getAllPosts();
   const filteredPosts = getPostsByTopic(posts, slug);
+
+  const capitalizedTopicName = capitalizeTopicName(slug);
 
   const backSVG = (
     <svg
@@ -51,7 +55,7 @@ export default async function TopicsDetail({ params }: Props) {
 
   return (
     <Fragment>
-      <header className="mb-13 flex flex-col justify-between gap-6">
+      <header className="mb-12 flex flex-col justify-between gap-6">
         <span className="xl:hidden">
           <Link
             href="/"
@@ -71,7 +75,9 @@ export default async function TopicsDetail({ params }: Props) {
             {backSVG}
             <span>Home</span>
           </Link>
-          <h1 className="text-lg font-medium text-balance">{slug}</h1>
+          <h1 className="text-lg font-medium text-balance">
+            {capitalizedTopicName}
+          </h1>
         </div>
       </header>
 

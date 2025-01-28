@@ -33,9 +33,9 @@ export function createTopicSlug(name: string): string {
     .replace(/^-+|-+$/g, ""); // Trim leading or trailing hyphens
 }
 
-// function capitalizeTagName(tagName: string): string {
-//   return tagName
-//     .split(/[-\s]+/) // Split on hyphens or spaces
-//     .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
-//     .join(" ");
-// }
+export function capitalizeTopicName(topic: string) {
+  return topic
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
