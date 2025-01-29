@@ -98,7 +98,7 @@ export default async function WritingDetail({ params }: Props) {
           </div>
         </div>
       </header>
-      <article className="prose-headings:text-primary prose prose-base prose-neutral prose-headings:font-medium prose-h2:text-base prose-code:before:content-none prose-code:after:content-none">
+      <article className="prose prose-base prose-neutral prose-headings:font-medium prose-h2:text-base prose-code:before:content-none prose-code:after:content-none">
         {content}
       </article>
 
