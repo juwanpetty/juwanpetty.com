@@ -11,6 +11,7 @@ import { getAdjacentPosts } from "@/features/post/utilities";
 import { formatDate } from "@/utilities/format-date";
 import { PrevAndNextPost } from "@/features/post/prev-and-next-post";
 import { PostMDXComponents } from "@/features/post/post-mdx-components";
+import { PostFloatingMenu } from "@/features/post/post-floating-menu";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -108,6 +109,8 @@ export default async function WritingDetail({ params }: Props) {
       <hr className="my-8 h-px border-0 bg-neutral-200" />
 
       <PrevAndNextPost previousPost={prevPost} nextPost={nextPost} />
+
+      <PostFloatingMenu />
     </Fragment>
   );
 }
