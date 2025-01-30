@@ -9,6 +9,6 @@ export type Post = {
 export type Frontmatter = {
   title: string;
   publishedAt: string;
-  summary: string;
+  updatedAt: string;
   tags: string[];
 }

@@ -10,6 +10,7 @@ import { Post } from "@/features/post/types";
 import { getAdjacentPosts } from "@/features/post/utilities";
 import { formatDate } from "@/utilities/format-date";
 import { PrevAndNextPost } from "@/features/post/prev-and-next-post";
+import { PostMDXComponents } from "@/features/post/post-mdx-components";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function WritingDetail({ params }: Props) {
   const { slug } = await params;
   const post = await getPostBySlug(slug, {
-    // TODO: Add components here
+    ...PostMDXComponents,
   });
 
   if (!post) {
@@ -95,7 +96,7 @@ export default async function WritingDetail({ params }: Props) {
               dateTime={formatDate(publishedAt, "yyyy-MM-dd")}
               className="text-neutral-500"
             >
-              {formatDate(publishedAt, "MMM dd, yyyy")}
+              {formatDate(publishedAt, "MMMM dd, yyyy")}
             </time>
           </div>
         </div>
