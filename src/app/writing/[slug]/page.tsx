@@ -30,7 +30,9 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function WritingDetail({ params }: Props) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const post = await getPostBySlug(slug, {
+    // TODO: Add components here
+  });
 
   if (!post) {
     notFound();

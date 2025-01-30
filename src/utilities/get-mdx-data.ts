@@ -1,18 +1,20 @@
 import fs from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import { Frontmatter } from "@/features/post/types";
 
 export async function readMDXFile(
   directory: string,
   slug: string,
+  components: Record<string, React.ComponentType<React.PropsWithChildren<unknown>>> = {}
 ) {
   const fileName = slug + ".mdx";
   const filePath = path.join(directory, fileName);
   const fileContent = fs.readFileSync(filePath, "utf8");
-  const { frontmatter, content } = await compileMDX({
+  const { frontmatter, content } = await compileMDX<Frontmatter>({
     source: fileContent,
     options: { parseFrontmatter: true },
-    components: {},
+    components,
   });
 
   return {
