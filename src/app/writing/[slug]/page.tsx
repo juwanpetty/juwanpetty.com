@@ -43,7 +43,7 @@ export default async function WritingDetail({ params }: Props) {
   const { prevPost, nextPost } = getAdjacentPosts(posts, slug);
 
   const {
-    frontmatter: { title, publishedAt, tags },
+    frontmatter: { title, publishedAt },
     content,
   } = post as Post;
 
@@ -104,21 +104,6 @@ export default async function WritingDetail({ params }: Props) {
       <article className="prose prose-base prose-neutral prose-headings:font-medium prose-h2:text-base prose-code:before:content-none prose-code:after:content-none">
         {content}
       </article>
-
-      <div className="my-8">
-        <ul className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <li key={tag}>
-              <Link
-                href={`/topics/${tag}`}
-                className="inline-flex h-8 items-center justify-center rounded-full bg-neutral-100 px-4 text-sm text-neutral-500"
-              >
-                {tag}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
 
       <hr className="my-8 h-px border-0 bg-neutral-200" />
 
