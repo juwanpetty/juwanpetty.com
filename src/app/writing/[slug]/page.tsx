@@ -110,7 +110,7 @@ export default async function WritingDetail({ params }: Props) {
           {tags.map((tag) => (
             <li key={tag}>
               <Link
-                href={`/topic/${tag}`}
+                href={`/topics/${tag}`}
                 className="inline-flex h-8 items-center justify-center rounded-full bg-neutral-100 px-4 text-sm text-neutral-500"
               >
                 {tag}
