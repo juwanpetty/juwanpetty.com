@@ -4,13 +4,16 @@ import { readMDXFile, readDirectory, getSlugsFromDirectory } from "@/utilities/g
 
 const BLOG_DIRECTORY = path.join(process.cwd(), "src", "content", "blog");
 
-export async function getPostBySlug(slug: string) {
-  return await readMDXFile(BLOG_DIRECTORY, slug);
+export async function getPostBySlug(
+  slug: string,
+  components: Record<string, React.ComponentType<React.PropsWithChildren<unknown>>> = {}
+) {
+  return await readMDXFile(BLOG_DIRECTORY, slug, components);
 }
 
-export async function getAllPosts(): Promise<Post[]> {
+export async function getAllPosts(components: Record<string, React.ComponentType<React.PropsWithChildren<unknown>>> = {}): Promise<Post[]> {
   const slugs = readDirectory(BLOG_DIRECTORY);
-  const posts = await Promise.all(slugs.map((slug) => getPostBySlug(slug)));
+  const posts = await Promise.all(slugs.map((slug) => getPostBySlug(slug, components)));
   return posts as Post[];
 }
 
