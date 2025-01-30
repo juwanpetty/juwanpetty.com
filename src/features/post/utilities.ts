@@ -45,10 +45,12 @@ export function groupPostsByYear(posts: Post[]) {
     new Date(post.frontmatter.publishedAt).getFullYear().toString()
   ) as Record<string, Post[]>;
 
-  return Object.entries(grouped).map(([year, groupedPosts]) => ({
-    year,
-    posts: groupedPosts,
-  }));
+  return Object.entries(grouped)
+    .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA)) // Sort years in descending order
+    .map(([year, groupedPosts]) => ({
+      year,
+      posts: groupedPosts,
+    }));
 }
 
 export function sortAndGroupPostsByYear(posts: Post[]) {

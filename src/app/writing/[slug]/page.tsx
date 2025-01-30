@@ -10,6 +10,7 @@ import { Post } from "@/features/post/types";
 import { getAdjacentPosts } from "@/features/post/utilities";
 import { formatDate } from "@/utilities/format-date";
 import { PrevAndNextPost } from "@/features/post/prev-and-next-post";
+import { PostMDXComponents } from "@/features/post/post-mdx-components";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function WritingDetail({ params }: Props) {
   const { slug } = await params;
   const post = await getPostBySlug(slug, {
-    // TODO: Add components here
+    ...PostMDXComponents,
   });
 
   if (!post) {
@@ -42,7 +43,7 @@ export default async function WritingDetail({ params }: Props) {
   const { prevPost, nextPost } = getAdjacentPosts(posts, slug);
 
   const {
-    frontmatter: { title, publishedAt },
+    frontmatter: { title, publishedAt, tags },
     content,
   } = post as Post;
 
@@ -95,7 +96,7 @@ export default async function WritingDetail({ params }: Props) {
               dateTime={formatDate(publishedAt, "yyyy-MM-dd")}
               className="text-neutral-500"
             >
-              {formatDate(publishedAt, "MMM dd, yyyy")}
+              {formatDate(publishedAt, "MMMM dd, yyyy")}
             </time>
           </div>
         </div>
@@ -103,6 +104,21 @@ export default async function WritingDetail({ params }: Props) {
       <article className="prose prose-base prose-neutral prose-headings:font-medium prose-h2:text-base prose-code:before:content-none prose-code:after:content-none">
         {content}
       </article>
+
+      <div className="my-8">
+        <ul className="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <li key={tag}>
+              <Link
+                href={`/topic/${tag}`}
+                className="inline-flex h-8 items-center justify-center rounded-full bg-neutral-100 px-4 text-sm text-neutral-500"
+              >
+                {tag}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <hr className="my-8 h-px border-0 bg-neutral-200" />
 
