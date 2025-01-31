@@ -18,7 +18,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en" className={inter.className}>
         <body className="antialiased">
-          <main className="mx-auto min-h-dvh w-full max-w-2xl pt-16 pb-6 md:pt-32 md:pb-12">
+          <main className="mx-auto min-h-dvh w-full max-w-2xl py-12 sm:py-16">
             <div className="px-4 md:px-0">{children}</div>
           </main>
         </body>
