@@ -1,6 +1,7 @@
 import { Link } from "next-view-transitions";
 import { Post } from "@/features/post/types";
 import { formatDate } from "@/utilities/format-date";
+import { url } from "@/utilities/url";
 
 type Props = {
   post: Post;
@@ -14,7 +15,7 @@ export function PostLink({ post }: Props) {
 
   return (
     <Link
-      href={`/writing/${slug}`}
+      href={url.writingDetail(slug)}
       className="group flex flex-row items-center gap-4 truncate font-normal text-inherit no-underline transition-colors"
     >
       <p className="m-0 truncate text-neutral-900 transition-colors">{title}</p>

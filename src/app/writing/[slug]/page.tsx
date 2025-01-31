@@ -11,6 +11,7 @@ import { getAdjacentPosts } from "@/features/post/utilities";
 import { formatDate } from "@/utilities/format-date";
 import { PrevAndNextPost } from "@/features/post/prev-and-next-post";
 import { PostMDXComponents } from "@/features/post/post-mdx-components";
+import { url } from "@/utilities/url";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -73,7 +74,7 @@ export default async function WritingDetail({ params }: Props) {
       <header className="mb-6 flex flex-col justify-between gap-24">
         <span className="xl:hidden">
           <Link
-            href="/"
+            href={url.home()}
             className="-m-1 inline-flex items-center gap-1.5 rounded-xs p-1 text-sm"
             aria-label="Back to home page"
           >
@@ -85,7 +86,7 @@ export default async function WritingDetail({ params }: Props) {
           <Link
             className="top-0 hidden items-center gap-1.5 rounded-xs p-1 text-sm xl:absolute xl:inline-flex xl:-translate-x-60"
             aria-label="Back to home page"
-            href="/"
+            href={url.home()}
           >
             {backSVG}
             <span>Home</span>

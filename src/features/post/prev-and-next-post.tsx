@@ -1,6 +1,7 @@
 import { Link } from "next-view-transitions";
 import { Post } from "@/features/post/types";
 import { cn } from "@/utilities/merge-classnames";
+import { url } from "@/utilities/url";
 
 type Props = {
   previousPost: Post | null;
@@ -37,7 +38,7 @@ function AdjacentPostLink({
   return (
     <Link
       className="rounded-xs p-1 transition-colors"
-      href={`/writing/${post.slug}`}
+      href={url.writingDetail(post.slug)}
     >
       <div className={cn("flex flex-col", { "items-end": align === "end" })}>
         <span className="text-neutral-500">{label}</span>
