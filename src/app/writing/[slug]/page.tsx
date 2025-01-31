@@ -70,7 +70,7 @@ export default async function WritingDetail({ params }: Props) {
 
   return (
     <Fragment>
-      <header className="mb-6 flex flex-col justify-between gap-6">
+      <header className="mb-6 flex flex-col justify-between gap-24">
         <span className="xl:hidden">
           <Link
             href="/"
