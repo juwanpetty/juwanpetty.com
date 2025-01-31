@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <Fragment>
-      <div className="h-30 xl:hidden" />
+      <div className="h-12 xl:hidden" />
 
       <header className="mb-12 flex flex-col justify-between gap-6">
         <div>
