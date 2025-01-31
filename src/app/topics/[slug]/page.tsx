@@ -1,9 +1,7 @@
 import { PostList } from "@/features/post/post-list";
-import { getAllPosts, getPostsByTopic } from "@/features/post/utilities";
-import {
-  capitalizeTopicName,
-  getAllTopicSlugs,
-} from "@/features/topic/utilities";
+import { getAllPosts, getPostsByTag } from "@/features/post/utilities";
+import { capitalizeTagName, getAllTagSlugs } from "@/features/tag/utilities";
+import { url } from "@/utilities/url";
 import { Link } from "next-view-transitions";
 import { Fragment } from "react";
 
@@ -13,14 +11,14 @@ type Props = {
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
-  return await getAllTopicSlugs(posts);
+  return await getAllTagSlugs(posts);
 }
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
 
   return {
-    title: capitalizeTopicName(slug),
+    title: capitalizeTagName(slug),
   };
 }
 
@@ -28,9 +26,9 @@ export default async function TopicsDetail({ params }: Props) {
   const { slug } = await params;
 
   const posts = await getAllPosts();
-  const filteredPosts = getPostsByTopic(posts, slug);
+  const filteredPosts = getPostsByTag(posts, slug);
 
-  const capitalizedTopicName = capitalizeTopicName(slug);
+  const capitalizedTagName = capitalizeTagName(slug);
 
   const backSVG = (
     <svg
@@ -58,7 +56,7 @@ export default async function TopicsDetail({ params }: Props) {
       <header className="mb-12 flex flex-col justify-between gap-6">
         <span className="xl:hidden">
           <Link
-            href="/"
+            href={url.home()}
             className="-m-1 inline-flex items-center gap-1.5 rounded-xs p-1 text-sm"
             aria-label="Back to home page"
           >
@@ -70,13 +68,13 @@ export default async function TopicsDetail({ params }: Props) {
           <Link
             className="top-0 hidden items-center gap-1.5 rounded-xs p-1 text-sm xl:absolute xl:inline-flex xl:-translate-x-60"
             aria-label="Back to home page"
-            href="/"
+            href={url.home()}
           >
             {backSVG}
             <span>Home</span>
           </Link>
           <h1 className="text-lg font-medium text-balance">
-            {capitalizedTopicName}
+            {capitalizedTagName}
           </h1>
         </div>
       </header>

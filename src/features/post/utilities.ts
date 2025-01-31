@@ -76,6 +76,6 @@ export function getAdjacentPosts(
   return { prevPost, nextPost };
 }
 
-export function getPostsByTopic(posts: Post[], topic: string) {
-  return posts.filter(post => post.frontmatter.tags.includes(topic));
+export function getPostsByTag(posts: Post[], tag: string) {
+  return posts.filter(post => post.frontmatter.tags.includes(tag));
 }

@@ -1,12 +1,12 @@
 import { getAllPosts } from "@/features/post/utilities";
 import { PostList } from "@/features/post/post-list";
-import { TopicList } from "@/features/topic/topic-list";
-import { getPostTopicsAndCount } from "@/features/topic/utilities";
+import { TagList } from "@/features/tag/tag-list";
+import { getPostTagsAndCount } from "@/features/tag/utilities";
 import { Fragment } from "react";
 
 export default async function Home() {
   const posts = await getAllPosts();
-  const topics = getPostTopicsAndCount(posts);
+  const tags = getPostTagsAndCount(posts);
 
   return (
     <Fragment>
@@ -27,7 +27,7 @@ export default async function Home() {
             Topics
           </h2>
 
-          <TopicList topics={topics} />
+          <TagList tags={tags} />
         </section>
 
         <PostList posts={posts} />
