@@ -1,8 +1,8 @@
+import { Fragment } from "react";
 import { getAllPosts } from "@/features/post/utilities";
 import { PostList } from "@/features/post/post-list";
 import { TagList } from "@/features/tag/tag-list";
 import { getPostTagsAndCount } from "@/features/tag/utilities";
-import { Fragment } from "react";
 
 export default async function Home() {
   const posts = await getAllPosts();
