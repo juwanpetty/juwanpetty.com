@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+:root {
+  --header-height: 3.5rem;
+}
+
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
