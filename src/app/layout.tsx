@@ -1,13 +1,19 @@
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
-
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Juwan Petty",
 };
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -16,8 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en" className={inter.className}>
-        <body className="relative flex min-h-svh flex-col antialiased">
+      <html
+        lang="en"
+        className={`${GeistSans.variable} ${GeistMono.variable} ${inter.variable}`}
+      >
+        <body className="relative flex min-h-dvh flex-col antialiased">
           {children}
         </body>
       </html>
