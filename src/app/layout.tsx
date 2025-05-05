@@ -3,6 +3,7 @@ import { GeistMono } from "geist/font/mono";
 import { Inter } from "next/font/google";
 import { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,10 +25,18 @@ export default function RootLayout({
     <ViewTransitions>
       <html
         lang="en"
+        suppressHydrationWarning
         className={`${GeistSans.variable} ${GeistMono.variable} ${inter.variable}`}
       >
         <body className="relative flex min-h-dvh flex-col antialiased">
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ViewTransitions>
