@@ -1,14 +1,42 @@
 "use client";
 
 import { Icons } from "@/components/icons";
-import { createElement, useState } from "react";
+import { useTheme } from "next-themes";
+import { createElement, useEffect, useState } from "react";
 
 export function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
   const states = ["light", "dark", "system"] as const;
-  const [index, setIndex] = useState(0);
+
+  const initialStateIndex = () => {
+    if (theme === "system" || theme === "dark" || theme === "light") {
+      return states.indexOf(theme);
+    }
+
+    return 0;
+  };
+
+  const [index, setIndex] = useState(initialStateIndex);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <span className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-neutral-100 p-1.5">
+        <Icons.sun className="h-5 w-5 text-neutral-500" />
+      </span>
+    );
+  }
 
   function handleClick() {
-    setIndex((prev) => (prev + 1) % states.length);
+    const nextIndex = (index + 1) % states.length;
+
+    setIndex(nextIndex);
+    setTheme(states[nextIndex]);
   }
 
   let icon: keyof typeof Icons;
@@ -28,7 +56,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={handleClick}
-      className="hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-neutral-100 p-1.5 sm:flex"
+      className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-neutral-100 p-1.5"
     >
       {createElement(Icons[icon], { className: "h-5 w-5 text-neutral-500" })}
     </button>
