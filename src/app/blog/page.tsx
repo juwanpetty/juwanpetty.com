@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 
 export default async function BlogIndex() {
   const breadcrumbLinks = [
-    { name: "Craftwork", href: "#" },
+    { name: "Craftwork", href: "/" },
     { name: "Digests", href: "#" },
   ];
 
@@ -28,13 +28,97 @@ export default async function BlogIndex() {
             </div>
           </header>
 
-          <div className="mt-10 md:mt-23">
+          <div className="my-10 h-px bg-neutral-200 md:my-15" />
+
+          <div className="flex flex-col gap-15">
+            <section>
+              <h3 className="mb-2 text-sm font-medium text-neutral-500 uppercase">
+                2025
+              </h3>
+              <div className="flex flex-col gap-5">
+                <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-2 lg:gap-5">
+                  <a href="/blog/1">
+                    <ImagePlaceholder className="aspect-video" />
+                  </a>
+
+                  <div className="flex flex-col">
+                    <a href="/blog/1" className="mb-2.5 text-lg font-medium">
+                      Design Digest #10
+                    </a>
+                    <a
+                      href="/blog/1"
+                      className="mb-2 text-sm font-medium text-neutral-500"
+                    >
+                      16 April 2025
+                    </a>
+                    <p className="text-base text-neutral-500">
+                      Why Aren&apos;t More Designers Becoming Founders, Magic
+                      Animator and more
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-2 lg:gap-5">
+                  <a href="/blog/1">
+                    <ImagePlaceholder className="aspect-video" />
+                  </a>
+
+                  <div className="flex flex-col">
+                    <a href="/blog/1" className="mb-2.5 text-lg font-medium">
+                      Design Digest #10
+                    </a>
+                    <a
+                      href="/blog/1"
+                      className="mb-2 text-sm font-medium text-neutral-500"
+                    >
+                      16 April 2025
+                    </a>
+                    <p className="text-base text-neutral-500">
+                      Why Aren&apos;t More Designers Becoming Founders, Magic
+                      Animator and more
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h3 className="mb-2 text-sm font-medium text-neutral-500 uppercase">
+                2024
+              </h3>
+              <div className="flex flex-col gap-5">
+                <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-2 lg:gap-5">
+                  <a href="/blog/1">
+                    <ImagePlaceholder className="aspect-video" />
+                  </a>
+
+                  <div className="flex flex-col">
+                    <a href="/blog/1" className="mb-2.5 text-lg font-medium">
+                      Design Digest #10
+                    </a>
+                    <a
+                      href="/blog/1"
+                      className="mb-2 text-sm font-medium text-neutral-500"
+                    >
+                      16 April 2025
+                    </a>
+                    <p className="text-base text-neutral-500">
+                      Why Aren&apos;t More Designers Becoming Founders, Magic
+                      Animator and more
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {/* <div className="mt-10 md:mt-23">
             <p className="border-b border-neutral-200 pb-4 text-xl font-semibold tracking-[-0.66px]">
               Latest Digests
             </p>
-          </div>
+          </div> */}
 
-          <div className="mt-8 flex flex-col gap-10 lg:gap-5">
+          {/* <div className="mt-8 flex flex-col gap-10 lg:gap-5">
             <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-2 lg:gap-5">
               <a href="#">
                 <ImagePlaceholder className="aspect-video" />
@@ -71,7 +155,7 @@ export default async function BlogIndex() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
     </div>
