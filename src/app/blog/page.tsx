@@ -1,6 +1,7 @@
 import { Breadcrumb } from "@/components/breadcrumb";
 import { ImagePlaceholder } from "@/components/image-placeholder";
 import { SiteHeader } from "@/components/site-header";
+import Link from "next/link";
 
 export default async function BlogIndex() {
   const breadcrumbLinks = [
@@ -37,20 +38,20 @@ export default async function BlogIndex() {
               </h3>
               <div className="flex flex-col gap-5">
                 <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-2 lg:gap-5">
-                  <a href="/blog/1">
+                  <Link href="/blog/1">
                     <ImagePlaceholder className="aspect-video" />
-                  </a>
+                  </Link>
 
                   <div className="flex flex-col">
-                    <a href="/blog/1" className="mb-2.5 text-lg font-medium">
+                    <Link href="/blog/1" className="mb-2.5 text-lg font-medium">
                       Design Digest #10
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/blog/1"
                       className="mb-2 text-sm font-medium text-neutral-500"
                     >
                       16 April 2025
-                    </a>
+                    </Link>
                     <p className="text-base text-neutral-500">
                       Why Aren&apos;t More Designers Becoming Founders, Magic
                       Animator and more
@@ -59,20 +60,20 @@ export default async function BlogIndex() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-2 lg:gap-5">
-                  <a href="/blog/1">
+                  <Link href="/blog/1">
                     <ImagePlaceholder className="aspect-video" />
-                  </a>
+                  </Link>
 
                   <div className="flex flex-col">
-                    <a href="/blog/1" className="mb-2.5 text-lg font-medium">
+                    <Link href="/blog/1" className="mb-2.5 text-lg font-medium">
                       Design Digest #10
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/blog/1"
                       className="mb-2 text-sm font-medium text-neutral-500"
                     >
                       16 April 2025
-                    </a>
+                    </Link>
                     <p className="text-base text-neutral-500">
                       Why Aren&apos;t More Designers Becoming Founders, Magic
                       Animator and more
@@ -88,20 +89,20 @@ export default async function BlogIndex() {
               </h3>
               <div className="flex flex-col gap-5">
                 <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-2 lg:gap-5">
-                  <a href="/blog/1">
+                  <Link href="/blog/1">
                     <ImagePlaceholder className="aspect-video" />
-                  </a>
+                  </Link>
 
                   <div className="flex flex-col">
-                    <a href="/blog/1" className="mb-2.5 text-lg font-medium">
+                    <Link href="/blog/1" className="mb-2.5 text-lg font-medium">
                       Design Digest #10
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/blog/1"
                       className="mb-2 text-sm font-medium text-neutral-500"
                     >
                       16 April 2025
-                    </a>
+                    </Link>
                     <p className="text-base text-neutral-500">
                       Why Aren&apos;t More Designers Becoming Founders, Magic
                       Animator and more
