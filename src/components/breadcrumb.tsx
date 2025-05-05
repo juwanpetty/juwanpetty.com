@@ -30,7 +30,7 @@ export function Breadcrumb({ links }: Props) {
                 <Link href={link.href} className="font-medium text-neutral-900">
                   {link.name}
                 </Link>
-                <Icons.chevronRight className="h-2.5 w-2.5 text-neutral-500" />
+                <Icons.chevronRightSmall className="h-2.5 w-2.5 text-neutral-500" />
               </>
             )}
           </Fragment>

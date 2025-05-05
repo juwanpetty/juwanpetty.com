@@ -90,6 +90,25 @@ export const Icons = {
   chevronRight: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <polyline points="6.5 2.75 12.75 9 6.5 15.25"></polyline>
+      </g>
+    </svg>
+  ),
+  chevronRightSmall: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="12"
       height="12"
       viewBox="0 0 12 12"
@@ -187,6 +206,27 @@ export const Icons = {
       </g>
     </svg>
   ),
+  desktop: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <path d="M5.75,16.25c.758-.239,1.878-.5,3.25-.5,.795,0,1.941,.088,3.25,.5"></path>
+        <line x1="9" y1="13.25" x2="9" y2="15.75"></line>
+        <rect x="1.75" y="2.75" width="14.5" height="10.5" rx="2" ry="2"></rect>
+      </g>
+    </svg>
+  ),
   folder: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -247,6 +287,45 @@ export const Icons = {
     >
       <g fill="currentColor">
         <circle cx="9" cy="9" r="8" />
+      </g>
+    </svg>
+  ),
+  menu: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <line x1="1.75" y1="5.75" x2="16.25" y2="5.75"></line>
+        <line x1="1.75" y1="12.25" x2="16.25" y2="12.25"></line>
+      </g>
+    </svg>
+  ),
+  moon: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <path d="M13,11.75c-3.452,0-6.25-2.798-6.25-6.25,0-1.352,.433-2.599,1.162-3.622-3.364,.628-5.912,3.575-5.912,7.122,0,4.004,3.246,7.25,7.25,7.25,3.372,0,6.198-2.306,7.009-5.424-.95,.583-2.063,.924-3.259,.924Z"></path>
       </g>
     </svg>
   ),

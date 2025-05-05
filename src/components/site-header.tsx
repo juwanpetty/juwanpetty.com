@@ -1,11 +1,16 @@
 import { Icons } from "@/components/icons";
+import { MobileMenu } from "@/components/mobile-menu";
+import { ThemeToggle } from "@/components/theme-toggle";
+import Link from "next/link";
 
 export function SiteHeader() {
   return (
-    <header className="h-15 border-b border-neutral-200">
+    <header className="sticky top-0 z-10 h-15 border-b border-neutral-200 bg-white">
       <div className="mx-auto flex h-full w-full items-center justify-between px-4">
         <div className="flex items-center gap-6">
-          <a href="#" className="flex items-center">
+          <MobileMenu />
+
+          <Link href="/" className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="34"
@@ -21,11 +26,14 @@ export function SiteHeader() {
               />
             </svg>
             <span className="sr-only">Acme</span>
-          </a>
+          </Link>
 
-          <a href="#" className="text-base font-[450] text-neutral-700">
+          <Link
+            href="/blog"
+            className="hidden text-base font-[450] text-neutral-700 sm:block"
+          >
             Writing
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -41,15 +49,7 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-6">
-          <a href="#" className="text-base font-[450] text-neutral-700">
-            Newsletter
-          </a>
-          <button
-            type="button"
-            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-neutral-100 p-1.5"
-          >
-            <Icons.sun className="h-5 w-5 text-neutral-500" />
-          </button>
+          <ThemeToggle />
         </div>
       </div>
     </header>

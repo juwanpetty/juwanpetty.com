@@ -4,8 +4,8 @@ import { ImagePlaceholder } from "@/components/image-placeholder";
 
 export default async function BlogDetail() {
   const breadcrumbLinks = [
-    { href: "#", name: "Craftwork" },
-    { href: "#", name: "Digests" },
+    { href: "/", name: "Craftwork" },
+    { href: "/blog", name: "Digests" },
   ];
 
   return (
@@ -20,9 +20,6 @@ export default async function BlogDetail() {
           </h1>
 
           <div className="mt-5 flex items-center gap-[30px] text-neutral-500">
-            <p className="text-[16px] leading-[22px] font-normal tracking-[-0.32px]">
-              Craftwork
-            </p>
             <div className="flex items-center gap-[6px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
