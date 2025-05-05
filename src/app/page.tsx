@@ -38,20 +38,20 @@ export default async function Home() {
 
             <div className="mt-[30px] grid grid-cols-1 gap-[30px] lg:grid-cols-2 lg:grid-rows-2">
               <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:gap-5">
-                <a href="#">
+                <Link href="#">
                   <ImagePlaceholder className="aspect-video" />
-                </a>
+                </Link>
 
                 <div className="flex flex-col">
-                  <a href="#" className="mb-2.5 text-lg font-medium">
+                  <Link href="#" className="mb-2.5 text-lg font-medium">
                     Design Digest #10
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="mb-2 text-sm font-medium text-neutral-500"
                   >
                     16 April 2025
-                  </a>
+                  </Link>
                   <p className="text-base text-neutral-500">
                     Why Aren&apos;t More Designers Becoming Founders, Magic
                     Animator and more
@@ -60,20 +60,20 @@ export default async function Home() {
               </div>
 
               <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:gap-5">
-                <a href="#">
+                <Link href="#">
                   <ImagePlaceholder className="aspect-video" />
-                </a>
+                </Link>
 
                 <div className="flex flex-col">
-                  <a href="#" className="mb-2.5 text-lg font-medium">
+                  <Link href="#" className="mb-2.5 text-lg font-medium">
                     Design Digest #10
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="mb-2 text-sm font-medium text-neutral-500"
                   >
                     16 April 2025
-                  </a>
+                  </Link>
                   <p className="text-base text-neutral-500">
                     Why Aren&apos;t More Designers Becoming Founders, Magic
                     Animator and more
@@ -82,20 +82,20 @@ export default async function Home() {
               </div>
 
               <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:gap-5">
-                <a href="#">
+                <Link href="#">
                   <ImagePlaceholder className="aspect-video" />
-                </a>
+                </Link>
 
                 <div className="flex flex-col">
-                  <a href="#" className="mb-2.5 text-lg font-medium">
+                  <Link href="#" className="mb-2.5 text-lg font-medium">
                     Design Digest #10
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="mb-2 text-sm font-medium text-neutral-500"
                   >
                     16 April 2025
-                  </a>
+                  </Link>
                   <p className="text-base text-neutral-500">
                     Why Aren&apos;t More Designers Becoming Founders, Magic
                     Animator and more
