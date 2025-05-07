@@ -110,7 +110,7 @@ interface GroupedPosts {
   posts: PostMetadata[];
 }
 
-export function groupPostsByYear(posts: PostMetadata[]): GroupedPosts[] {
+function groupPostsByYear(posts: PostMetadata[]): GroupedPosts[] {
   const sorted = posts.sort((a, b) => {
     const dateA = new Date(a.datePublished).getTime();
     const dateB = new Date(b.datePublished).getTime();
