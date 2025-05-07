@@ -1,7 +1,7 @@
 import { Icons } from "@/components/icons";
 import { MobileMenu } from "@/components/mobile-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 export function SiteHeader() {
   return (
@@ -32,17 +32,17 @@ export function SiteHeader() {
             href="/blog"
             className="hidden text-base font-[450] text-neutral-700 sm:block"
           >
-            Writing
+            Blog
           </Link>
 
           <button
             type="button"
             className="flex cursor-pointer items-center gap-1"
           >
-            <Icons.search className="h-5 w-5 text-neutral-500" />
+            <Icons icon="search" className="h-5 w-5 text-neutral-500" />
 
             <div className="flex items-center gap-1.5 rounded-lg bg-neutral-100 px-1.5 py-0.5 text-neutral-500">
-              <Icons.command className="h-4 w-4" />
+              <Icons icon="command" className="h-4 w-4" />
               <span className="pr-1 text-sm font-medium">K</span>
             </div>
           </button>

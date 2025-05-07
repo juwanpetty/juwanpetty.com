@@ -1,13 +1,17 @@
 import { Breadcrumb } from "@/components/breadcrumb";
-import { ImagePlaceholder } from "@/components/image-placeholder";
+import { PostCard } from "@/components/post-card";
 import { SiteHeader } from "@/components/site-header";
-import Link from "next/link";
+import { BLOG_DIRECTORY } from "@/constants";
+import { getAllPosts, type PostMetadata } from "@/utilities/get-mdx-data";
+
+const breadcrumbLinks = [
+  { name: "Home", href: "/" },
+  { name: "Blog", href: "#" },
+];
 
 export default async function BlogIndex() {
-  const breadcrumbLinks = [
-    { name: "Craftwork", href: "/" },
-    { name: "Digests", href: "#" },
-  ];
+  const posts = await getAllPosts(BLOG_DIRECTORY);
+  const sortedAndGroupedPosts = groupPostsByYear(posts);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -18,10 +22,8 @@ export default async function BlogIndex() {
 
           <header className="mb-12 flex flex-col justify-between gap-6">
             <div className="space-y-2">
-              <h1 className="my-5 text-4xl font-bold tracking-tight">
-                Craftwork Design Digests
-              </h1>
-              <p className="max-w-[635px] text-base text-neutral-500 md:text-lg">
+              <h1 className="my-5 text-4xl font-bold tracking-tight">Blog</h1>
+              <p className="max-w-[635px] text-base text-pretty text-neutral-500 md:text-lg">
                 Every week, we curate a selection of the latest news, tutorials,
                 resources, tools, and new products in the design world. Stay up
                 to date with everything that matters, all in one place.
@@ -33,83 +35,23 @@ export default async function BlogIndex() {
 
           <div className="flex flex-col gap-15">
             <section>
-              <h3 className="mb-2 text-sm font-medium text-neutral-500 uppercase">
-                2025
-              </h3>
-              <div className="flex flex-col gap-5">
-                <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-2 lg:gap-5">
-                  <Link href="/blog/1">
-                    <ImagePlaceholder className="aspect-video" />
-                  </Link>
+              {sortedAndGroupedPosts.map((group) => (
+                <section key={group.year} className="mb-8">
+                  <h3 className="mb-2 text-sm font-medium text-neutral-500 uppercase">
+                    {group.year}
+                  </h3>
 
-                  <div className="flex flex-col">
-                    <Link href="/blog/1" className="mb-2.5 text-lg font-medium">
-                      Design Digest #10
-                    </Link>
-                    <Link
-                      href="/blog/1"
-                      className="mb-2 text-sm font-medium text-neutral-500"
-                    >
-                      16 April 2025
-                    </Link>
-                    <p className="text-base text-neutral-500">
-                      Why Aren&apos;t More Designers Becoming Founders, Magic
-                      Animator and more
-                    </p>
+                  <div className="flex flex-col gap-5">
+                    {group.posts.map((post) => (
+                      <PostCard
+                        key={post.slug}
+                        post={post}
+                        className="lg:grid-cols-2"
+                      />
+                    ))}
                   </div>
-                </div>
-
-                <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-2 lg:gap-5">
-                  <Link href="/blog/1">
-                    <ImagePlaceholder className="aspect-video" />
-                  </Link>
-
-                  <div className="flex flex-col">
-                    <Link href="/blog/1" className="mb-2.5 text-lg font-medium">
-                      Design Digest #10
-                    </Link>
-                    <Link
-                      href="/blog/1"
-                      className="mb-2 text-sm font-medium text-neutral-500"
-                    >
-                      16 April 2025
-                    </Link>
-                    <p className="text-base text-neutral-500">
-                      Why Aren&apos;t More Designers Becoming Founders, Magic
-                      Animator and more
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section>
-              <h3 className="mb-2 text-sm font-medium text-neutral-500 uppercase">
-                2024
-              </h3>
-              <div className="flex flex-col gap-5">
-                <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-2 lg:gap-5">
-                  <Link href="/blog/1">
-                    <ImagePlaceholder className="aspect-video" />
-                  </Link>
-
-                  <div className="flex flex-col">
-                    <Link href="/blog/1" className="mb-2.5 text-lg font-medium">
-                      Design Digest #10
-                    </Link>
-                    <Link
-                      href="/blog/1"
-                      className="mb-2 text-sm font-medium text-neutral-500"
-                    >
-                      16 April 2025
-                    </Link>
-                    <p className="text-base text-neutral-500">
-                      Why Aren&apos;t More Designers Becoming Founders, Magic
-                      Animator and more
-                    </p>
-                  </div>
-                </div>
-              </div>
+                </section>
+              ))}
             </section>
           </div>
 
@@ -161,4 +103,34 @@ export default async function BlogIndex() {
       </main>
     </div>
   );
+}
+
+interface GroupedPosts {
+  year: string;
+  posts: PostMetadata[];
+}
+
+export function groupPostsByYear(posts: PostMetadata[]): GroupedPosts[] {
+  const sorted = posts.sort((a, b) => {
+    const dateA = new Date(a.datePublished).getTime();
+    const dateB = new Date(b.datePublished).getTime();
+
+    if (dateA !== dateB) {
+      return dateB - dateA;
+    }
+
+    return a.title.localeCompare(b.title);
+  });
+
+  const grouped: Record<string, PostMetadata[]> = {};
+
+  for (const post of sorted) {
+    const year = new Date(post.datePublished).getFullYear().toString();
+    grouped[year] = grouped[year] || [];
+    grouped[year].push(post);
+  }
+
+  return Object.entries(grouped)
+    .sort(([a], [b]) => Number(b) - Number(a)) // sort years desc
+    .map(([year, posts]) => ({ year, posts }));
 }

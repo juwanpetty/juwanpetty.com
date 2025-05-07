@@ -1,8 +1,8 @@
 "use client";
 
-import { Icons } from "@/components/icons";
+import { Icons, IconsMap } from "@/components/icons";
 import { useTheme } from "next-themes";
-import { createElement, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -27,7 +27,7 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <span className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-neutral-100 p-1.5">
-        <Icons.sun className="h-5 w-5 text-neutral-500" />
+        <Icons icon="sun" className="h-5 w-5 text-neutral-500" />
       </span>
     );
   }
@@ -39,7 +39,7 @@ export function ThemeToggle() {
     setTheme(states[nextIndex]);
   }
 
-  let icon: keyof typeof Icons;
+  let icon: keyof typeof IconsMap;
   switch (states[index]) {
     case "light":
       icon = "sun";
@@ -58,7 +58,7 @@ export function ThemeToggle() {
       onClick={handleClick}
       className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-neutral-100 p-1.5"
     >
-      {createElement(Icons[icon], { className: "h-5 w-5 text-neutral-500" })}
+      <Icons icon={icon} className="h-5 w-5 text-neutral-500" />
     </button>
   );
 }

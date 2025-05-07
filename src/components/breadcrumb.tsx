@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Icons } from "@/components/icons";
 
 export type BreadcrumbLink = {
@@ -30,7 +30,10 @@ export function Breadcrumb({ links }: Props) {
                 <Link href={link.href} className="font-medium text-neutral-900">
                   {link.name}
                 </Link>
-                <Icons.chevronRightSmall className="h-2.5 w-2.5 text-neutral-500" />
+                <Icons
+                  icon="chevronRightSmall"
+                  className="h-2.5 w-2.5 text-neutral-500"
+                />
               </>
             )}
           </Fragment>
