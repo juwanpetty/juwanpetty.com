@@ -29,6 +29,7 @@ export async function generateMetadata({
 
   return {
     title: frontmatter.title,
+    description: frontmatter.description,
   };
 }
 

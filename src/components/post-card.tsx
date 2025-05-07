@@ -10,7 +10,7 @@ type Props = {
 };
 
 export function PostCard({ post, className }: Props) {
-  const { title, datePublished, slug } = post;
+  const { title, description, datePublished, slug } = post;
   const formattedDate = format(new Date(datePublished), "MMMM dd, yyyy");
 
   return (
@@ -32,10 +32,7 @@ export function PostCard({ post, className }: Props) {
         >
           {formattedDate}
         </Link>
-        <p className="text-base text-pretty text-neutral-500">
-          Why Aren&apos;t More Designers Becoming Founders, Magic Animator and
-          more
-        </p>
+        <p className="text-base text-pretty text-neutral-500">{description}</p>
       </div>
     </div>
   );
