@@ -60,7 +60,7 @@ export default async function Home() {
   );
 }
 
-export function sortPostsByDateAndTitle(
+function sortPostsByDateAndTitle(
   posts: PostMetadata[],
   limit?: number
 ): PostMetadata[] {
