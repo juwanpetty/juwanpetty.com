@@ -20,9 +20,9 @@ export default async function Home() {
                 Frontend Engineer
               </h1>
               <p className="max-w-[635px] text-base text-neutral-500 md:text-lg">
-                Every week, we curate a selection of the latest news, tutorials,
-                resources, tools, and new products in the design world. Stay up
-                to date with everything that matters, all in one place.
+                Lorem ipsum, dolor sit amet consectetuer adipiscing, elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat, in uno loco.
               </p>
             </div>
           </header>

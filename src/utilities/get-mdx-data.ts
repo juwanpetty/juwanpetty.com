@@ -25,10 +25,7 @@ export async function readMDXFile(
 }
 
 export async function compileMDXContent(content: string) {
-  return compileMDX<{
-    title: string;
-    datePublished: string;
-  }>({
+  return compileMDX<PostMetadata>({
     source: content,
     options: {
       parseFrontmatter: true,
@@ -39,6 +36,7 @@ export async function compileMDXContent(content: string) {
 export interface PostMetadata {
   title: string;
   datePublished: string;
+  description: string;
   slug: string;
 }
 
@@ -52,6 +50,7 @@ export async function getAllPosts(directory: string): Promise<PostMetadata[]> {
       return {
         title: frontmatter.title,
         datePublished: frontmatter.datePublished,
+        description: frontmatter.description,
         slug: fileName,
       };
     })
