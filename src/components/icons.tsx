@@ -1,7 +1,18 @@
-type IconProps = React.HTMLAttributes<SVGElement>;
+type IconName = keyof typeof IconsMap;
+type IconProps = React.SVGProps<SVGSVGElement> & { icon: IconName };
 
-export const Icons = {
-  arrowTurnLeft2: (props: IconProps) => (
+export const Icons = ({ icon, ...props }: IconProps) => {
+  const IconComponent = IconsMap[icon];
+
+  if (!IconComponent) {
+    return null;
+  }
+
+  return <IconComponent {...props} />;
+};
+
+export const IconsMap = {
+  arrowTurnLeft2: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="12"
@@ -21,7 +32,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  arrowUpRight: (props: IconProps) => (
+  arrowUpRight: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -38,7 +49,7 @@ export const Icons = {
       <path d="M7 17 17 7" />
     </svg>
   ),
-  blog: (props: IconProps) => (
+  blog: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -55,7 +66,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  bluesky: (props: IconProps) => (
+  bluesky: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"
@@ -68,7 +79,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  bookmark: (props: IconProps) => (
+  bookmark: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -87,7 +98,29 @@ export const Icons = {
       </g>
     </svg>
   ),
-  chevronRight: (props: IconProps) => (
+  calendar: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <line x1="5.75" y1="2.75" x2="5.75" y2=".75"></line>
+        <line x1="12.25" y1="2.75" x2="12.25" y2=".75"></line>
+        <rect x="2.25" y="2.75" width="13.5" height="12.5" rx="2" ry="2"></rect>
+        <line x1="2.25" y1="6.25" x2="15.75" y2="6.25"></line>
+      </g>
+    </svg>
+  ),
+  chevronRight: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -106,7 +139,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  chevronRightSmall: (props: IconProps) => (
+  chevronRightSmall: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="12"
@@ -125,7 +158,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  command: (props: IconProps) => (
+  command: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -157,7 +190,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  component: (props: IconProps) => (
+  component: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -178,7 +211,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  copy: (props: IconProps) => (
+  copy: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -206,7 +239,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  desktop: (props: IconProps) => (
+  desktop: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -227,7 +260,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  folder: (props: IconProps) => (
+  folder: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -246,7 +279,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  github: (props: IconProps) => (
+  github: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"
@@ -259,7 +292,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  gridList: (props: IconProps) => (
+  gridList: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -277,7 +310,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  logo: (props: IconProps) => (
+  logo: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -290,7 +323,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  menu: (props: IconProps) => (
+  menu: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -310,7 +343,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  moon: (props: IconProps) => (
+  moon: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -329,7 +362,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  penWriting2: (props: IconProps) => (
+  penWriting2: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -344,7 +377,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  search: (props: IconProps) => (
+  search: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -364,7 +397,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  signature: (props: IconProps) => (
+  signature: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 351 340"
@@ -425,7 +458,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  sun: (props: IconProps) => (
+  sun: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -452,7 +485,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  youtube: (props: IconProps) => (
+  youtube: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"

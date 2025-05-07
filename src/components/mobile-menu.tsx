@@ -16,7 +16,7 @@ export function MobileMenu() {
       className="-mr-3 h-5 w-5 md:hidden"
       onClick={toggleOpen}
     >
-      <Icons.menu className="h-5 w-5 text-neutral-900" />
+      <Icons icon="menu" className="h-5 w-5 text-neutral-900" />
     </button>
   );
 
