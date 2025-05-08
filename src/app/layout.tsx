@@ -7,7 +7,10 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Juwan Petty",
+  title: {
+    template: "%s | Juwan Petty",
+    default: "Juwan Petty",
+  },
 };
 
 const inter = Inter({

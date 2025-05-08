@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 
 export type BreadcrumbLink = {
   name: string;
-  href: string;
+  href?: string;
 };
 
 type Props = {
@@ -19,22 +19,27 @@ export function Breadcrumb({ links }: Props) {
   return (
     <div className="flex items-center space-x-1.5 text-base leading-none">
       {links.map((link, index) => {
+        const { name, href } = link;
+
         const isLast = index === links.length - 1;
+        const hasLink = href && href !== "";
+
+        const content = hasLink ? (
+          <Link href={href!} className="font-medium text-neutral-900">
+            {name}
+          </Link>
+        ) : (
+          <span className="text-neutral-500">{name}</span>
+        );
 
         return (
-          <Fragment key={link.name}>
-            {isLast ? (
-              <span className="text-neutral-500">{link.name}</span>
-            ) : (
-              <>
-                <Link href={link.href} className="font-medium text-neutral-900">
-                  {link.name}
-                </Link>
-                <Icons
-                  icon="chevronRightSmall"
-                  className="h-2.5 w-2.5 text-neutral-500"
-                />
-              </>
+          <Fragment key={name}>
+            {content}
+            {!isLast && (
+              <Icons
+                icon="chevronRightSmall"
+                className="h-2.5 w-2.5 text-neutral-500"
+              />
             )}
           </Fragment>
         );

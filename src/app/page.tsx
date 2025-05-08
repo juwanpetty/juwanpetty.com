@@ -3,12 +3,7 @@ import { PostCard } from "@/components/post-card";
 import { SiteHeader } from "@/components/site-header";
 import { BLOG_DIRECTORY } from "@/constants";
 import { getAllPosts, PostMetadata } from "@/utilities/get-mdx-data";
-import { Metadata } from "next";
 import { Link } from "next-view-transitions";
-
-export const metadata: Metadata = {
-  title: "Juwan Petty | Design Engineer",
-};
 
 export default async function Home() {
   const posts = await getAllPosts(BLOG_DIRECTORY);
