@@ -5,13 +5,10 @@ import { BLOG_DIRECTORY } from "@/constants";
 import { getAllPosts, type PostMetadata } from "@/utilities/get-mdx-data";
 import { Metadata } from "next";
 
-const breadcrumbLinks = [
-  { name: "Home", href: "/" },
-  { name: "Blog", href: "/blog" },
-];
+const breadcrumbLinks = [{ name: "Home", href: "/" }, { name: "Blog" }];
 
 export const metadata: Metadata = {
-  title: "Blog | Juwan Petty",
+  title: "Blog",
 };
 
 export default async function BlogIndex() {
