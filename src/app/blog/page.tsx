@@ -3,11 +3,16 @@ import { PostCard } from "@/components/post-card";
 import { SiteHeader } from "@/components/site-header";
 import { BLOG_DIRECTORY } from "@/constants";
 import { getAllPosts, type PostMetadata } from "@/utilities/get-mdx-data";
+import { Metadata } from "next";
 
 const breadcrumbLinks = [
   { name: "Home", href: "/" },
   { name: "Blog", href: "/blog" },
 ];
+
+export const metadata: Metadata = {
+  title: "Blog | Juwan Petty",
+};
 
 export default async function BlogIndex() {
   const posts = await getAllPosts(BLOG_DIRECTORY);

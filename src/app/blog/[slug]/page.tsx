@@ -28,7 +28,7 @@ export async function generateMetadata({
   const { frontmatter } = await compileMDXContent(mdxContent);
 
   return {
-    title: frontmatter.title,
+    title: `${frontmatter.title} | Juwan Petty`,
     description: frontmatter.description,
   };
 }

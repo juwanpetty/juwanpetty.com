@@ -28,7 +28,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${GeistSans.variable} ${GeistMono.variable} ${inter.variable}`}
       >
-        <body className="relative flex min-h-dvh flex-col antialiased">
+        <body className="relative flex min-h-dvh flex-col bg-white text-neutral-900 antialiased">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

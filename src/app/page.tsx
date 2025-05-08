@@ -3,7 +3,12 @@ import { PostCard } from "@/components/post-card";
 import { SiteHeader } from "@/components/site-header";
 import { BLOG_DIRECTORY } from "@/constants";
 import { getAllPosts, PostMetadata } from "@/utilities/get-mdx-data";
+import { Metadata } from "next";
 import { Link } from "next-view-transitions";
+
+export const metadata: Metadata = {
+  title: "Juwan Petty | Design Engineer",
+};
 
 export default async function Home() {
   const posts = await getAllPosts(BLOG_DIRECTORY);
@@ -17,7 +22,7 @@ export default async function Home() {
           <header className="mb-12 flex flex-col justify-between gap-6">
             <div className="space-y-2">
               <h1 className="my-5 text-4xl font-bold tracking-tight">
-                Frontend Engineer
+                Design Engineer
               </h1>
               <p className="max-w-[635px] text-base text-neutral-500 md:text-lg">
                 Lorem ipsum, dolor sit amet consectetuer adipiscing, elit, sed
