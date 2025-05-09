@@ -1,5 +1,6 @@
 import { promises as fs } from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
+import { MDXComponents } from "mdx/types";
 import path from "path";
 
 export async function getFilesFromDirectory(
@@ -24,19 +25,22 @@ export async function readMDXFile(
   return fs.readFile(filePath, "utf-8");
 }
 
-export async function compileMDXContent(content: string) {
+export async function compileMDXContent(
+  content: string,
+  components?: MDXComponents
+) {
   return compileMDX<PostMetadata>({
     source: content,
     options: {
       parseFrontmatter: true,
     },
+    components,
   });
 }
 
 export interface PostMetadata {
   title: string;
   datePublished: string;
-  description: string;
   slug: string;
 }
 
@@ -50,7 +54,6 @@ export async function getAllPosts(directory: string): Promise<PostMetadata[]> {
       return {
         title: frontmatter.title,
         datePublished: frontmatter.datePublished,
-        description: frontmatter.description,
         slug: fileName,
       };
     })
