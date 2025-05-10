@@ -1,4 +1,3 @@
-import { ImagePlaceholder } from "@/components/image-placeholder";
 import { PostMetadata } from "@/utilities/get-mdx-data";
 import { format } from "date-fns";
 import { Link } from "next-view-transitions";
@@ -11,28 +10,20 @@ type Props = {
 
 export function PostCard({ post, className }: Props) {
   const { title, datePublished, slug } = post;
-  const formattedDate = format(new Date(datePublished), "MMMM dd, yyyy");
+  const formattedDate = format(new Date(datePublished), "MMMM dd");
 
   return (
-    <div className={cn("grid grid-cols-1 gap-2.5 lg:gap-5", className)}>
-      <Link href={`/blog/${slug}`}>
-        <ImagePlaceholder className="aspect-video" />
-      </Link>
-
-      <div className="flex flex-col">
-        <Link
-          href={`/blog/${slug}`}
-          className="mb-2.5 text-lg font-medium text-balance"
-        >
-          {title}
-        </Link>
-        <Link
-          href={`/blog/${slug}`}
-          className="mb-2 text-sm font-medium text-neutral-500"
-        >
-          {formattedDate}
-        </Link>
-      </div>
-    </div>
+    <Link
+      href={`/blog/${slug}`}
+      className={cn(
+        "flex items-center justify-between rounded-lg bg-neutral-100 px-4 py-1.5",
+        className
+      )}
+    >
+      <h3 className="grow text-base font-medium">{title}</h3>
+      <time dateTime={datePublished} className="text-sm text-neutral-500">
+        {formattedDate}
+      </time>
+    </Link>
   );
 }
