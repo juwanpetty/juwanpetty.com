@@ -26,8 +26,8 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <span className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-neutral-100 p-1.5">
-        <Icons icon="sun" className="h-5 w-5 text-neutral-500" />
+      <span className="flex size-8 cursor-pointer items-center justify-center rounded-full bg-neutral-100">
+        <Icons icon="sun" className="size-4 text-neutral-900" />
       </span>
     );
   }
@@ -56,9 +56,9 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={handleClick}
-      className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-neutral-100 p-1.5"
+      className="flex size-8 cursor-pointer items-center justify-center rounded-full bg-neutral-100"
     >
-      <Icons icon={icon} className="h-5 w-5 text-neutral-500" />
+      <Icons icon={icon} className="size-4 text-neutral-900" />
     </button>
   );
 }

@@ -5,7 +5,7 @@ import { Link } from "next-view-transitions";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-10 h-15 border-b border-neutral-200 bg-white">
+    <header className="sticky top-0 z-10 h-14 border-b border-neutral-900/5 bg-white">
       <div className="mx-auto flex h-full w-full items-center justify-between px-4">
         <div className="flex items-center gap-6">
           <MobileMenu />
@@ -17,6 +17,7 @@ export function SiteHeader() {
               height="34"
               viewBox="0 0 34 34"
               fill="none"
+              className="size-8"
             >
               <path
                 fillRule="evenodd"
@@ -30,19 +31,19 @@ export function SiteHeader() {
 
           <Link
             href="/blog"
-            className="hidden text-base font-[450] text-neutral-700 sm:block"
+            className="hidden text-sm font-[450] text-neutral-900 sm:block"
           >
-            Blog
+            Writing
           </Link>
 
           <button
             type="button"
             className="flex cursor-pointer items-center gap-1"
           >
-            <Icons icon="search" className="h-5 w-5 text-neutral-500" />
+            <Icons icon="search" className="size-4 text-neutral-900" />
 
-            <div className="flex items-center gap-1.5 rounded-lg bg-neutral-100 px-1.5 py-0.5 text-neutral-500">
-              <Icons icon="command" className="h-4 w-4" />
+            <div className="flex items-center gap-1.5 rounded-lg bg-neutral-100 px-1.5 py-0.5 text-neutral-900">
+              <Icons icon="command" className="size-4 text-neutral-900" />
               <span className="pr-1 text-sm font-medium">K</span>
             </div>
           </button>
