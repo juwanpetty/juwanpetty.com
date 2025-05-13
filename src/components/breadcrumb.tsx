@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Link } from "next-view-transitions";
+import { Icons } from "@/components/icons";
 
 export type BreadcrumbLink = {
   name: string;
@@ -16,39 +17,38 @@ export function Breadcrumb({ links }: Props) {
   }
 
   return (
-    // <div className="flex items-center gap-3 text-sm leading-none">
-    //   <div className="size-6 rounded-full bg-[#08C6FF]" />
-    //   <span className="text-xs font-medium text-neutral-500">/</span>
-    //   <span className="text-neutral-500">Design System</span>
-    //   <span className="text-xs font-medium text-neutral-500">/</span>
-    //   <span>Cultivating Taste</span>
-    // </div>
-    <div className="flex items-center gap-3 text-sm leading-none">
-      <div className="size-6 rounded-full bg-[#08C6FF]" />
-      <span className="text-xs font-medium text-neutral-500">/</span>
+    <nav
+      aria-label="breadcrumb"
+      className="flex items-center gap-2 text-base font-medium"
+    >
       {links.map((link, index) => {
         const { name, href } = link;
-
         const isLast = index === links.length - 1;
-        const hasLink = href && href !== "";
 
-        const content = !isLast ? (
-          <Link href={href!} className="text-sm text-neutral-500">
-            {name}
-          </Link>
-        ) : (
-          <span className="text-sm">{name}</span>
-        );
+        const content =
+          !isLast || href ? (
+            <Link href={href!} className="text-neutral-900">
+              {name}
+            </Link>
+          ) : (
+            <span className="truncate text-neutral-500">{name}</span>
+          );
 
         return (
           <Fragment key={name}>
             {content}
             {!isLast && (
-              <span className="text-xs font-medium text-neutral-500">/</span>
+              <span
+                className="text-xs text-neutral-500"
+                role="presentation"
+                aria-hidden="true"
+              >
+                <Icons icon="arrowRight" className="h-4 w-4" />
+              </span>
             )}
           </Fragment>
         );
       })}
-    </div>
+    </nav>
   );
 }
