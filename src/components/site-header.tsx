@@ -31,9 +31,15 @@ export function SiteHeader() {
 
           <Link
             href="/blog"
-            className="hidden text-sm font-[450] text-neutral-900 sm:block"
+            className="hidden text-sm font-medium text-neutral-900 sm:block"
           >
             Writing
+          </Link>
+          <Link
+            href="/projects"
+            className="hidden text-sm font-medium text-neutral-900 sm:block"
+          >
+            Projects
           </Link>
 
           <button

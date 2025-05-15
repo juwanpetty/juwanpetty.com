@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Blog",
 };
 
-const breadcrumbLinks = [{ name: "Home", href: "/" }, { name: "Writing" }];
+const breadcrumbLinks = [{ name: "Home", href: "/" }, { name: "Digests" }];
 
 export default async function BlogIndex() {
   const posts = await getAllPosts(BLOG_DIRECTORY);
@@ -23,29 +23,32 @@ export default async function BlogIndex() {
           <div className="mb-4">
             <Breadcrumb links={breadcrumbLinks} />
           </div>
-
           <header className="space-y-1 md:space-y-2">
-            <h1 className="my-[10px] text-[26px] font-bold text-balance md:my-5 md:text-[42px]">
-              Writing
+            <h1 className="text-2xl leading-8 font-semibold tracking-[-0.3px]">
+              Craftwork Design Digests
             </h1>
-            <p className="max-w-[635px] text-base text-neutral-500">
-              Lorem ipsum, dolor sit amet consectetuer adipiscing, elit, sed
-              diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-              aliquam erat volutpat, in uno loco.
+            <p className="max-w-[635px] text-base tracking-[-0.2px] text-neutral-500">
+              Every week, we curate a selection of the latest news, tutorials,
+              resources, tools, and new products in the design world. Stay up to
+              date with everything that matters, all in one place.
             </p>
           </header>
-
+          <div className="my-10 h-px bg-neutral-200 md:my-15" />
           <div className="space-y-20">
             <div className="my-10 md:my-15">
               <section className="mb-8">
                 {sortedAndGroupedPosts.map((group) => (
                   <section key={group.year} className="mb-8">
-                    <h3 className="mb-2 text-sm font-medium text-neutral-500 uppercase">
+                    <h3 className="mb-3 text-sm font-medium tracking-[-0.1px] text-neutral-500">
                       {group.year}
                     </h3>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-10 sm:gap-5">
                       {group.posts.map((post) => (
-                        <PostCard key={post.slug} post={post} />
+                        <PostCard
+                          className="sm:grid-cols-2"
+                          key={post.slug}
+                          post={post}
+                        />
                       ))}
                     </div>
                   </section>
