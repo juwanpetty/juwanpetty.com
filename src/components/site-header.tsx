@@ -30,12 +30,6 @@ export function SiteHeader() {
           </Link>
 
           <Link
-            href="/blog"
-            className="hidden text-sm font-medium text-neutral-900 sm:block"
-          >
-            Writing
-          </Link>
-          <Link
             href="/projects"
             className="hidden text-sm font-medium text-neutral-900 sm:block"
           >
