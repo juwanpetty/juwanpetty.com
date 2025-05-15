@@ -19,7 +19,7 @@ export function Breadcrumb({ links }: Props) {
   return (
     <nav
       aria-label="breadcrumb"
-      className="flex items-center gap-2 text-base font-medium"
+      className="flex items-center gap-2 text-sm font-medium"
     >
       {links.map((link, index) => {
         const { name, href } = link;
@@ -27,11 +27,13 @@ export function Breadcrumb({ links }: Props) {
 
         const content =
           !isLast || href ? (
-            <Link href={href!} className="text-neutral-900">
+            <Link href={href!} className="tracking-[-0.1px] text-neutral-900">
               {name}
             </Link>
           ) : (
-            <span className="truncate text-neutral-500">{name}</span>
+            <span className="truncate tracking-[-0.1px] text-neutral-500">
+              {name}
+            </span>
           );
 
         return (

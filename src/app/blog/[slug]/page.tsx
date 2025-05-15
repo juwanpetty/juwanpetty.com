@@ -62,7 +62,7 @@ export default async function BlogDetail({
           </div>
 
           <header className="my-[10px] md:my-5">
-            <h1 className="text-[26px] font-bold text-balance md:text-[42px]">
+            <h1 className="text-2xl leading-8 font-semibold tracking-[-0.3px]">
               {title}
             </h1>
             {/* <div className="flex items-center justify-between text-sm">
