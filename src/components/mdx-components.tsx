@@ -20,7 +20,7 @@ export const mdxComponents: MDXComponents = {
   ),
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
-      className={cn("leading-[1.65rem] [&:not(:first-child)]:mt-5", className)}
+      className={cn("leading-[1.65rem] not-first:mt-5", className)}
       {...props}
     />
   ),
