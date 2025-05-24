@@ -25,7 +25,7 @@ export async function readMDXFile(
   return fs.readFile(filePath, "utf-8");
 }
 
-export async function compileMDXContent(
+export async function compileMDXPostContent(
   content: string,
   components?: MDXComponents
 ) {
@@ -44,12 +44,18 @@ export interface PostMetadata {
   slug: string;
 }
 
-export async function getAllPosts(directory: string): Promise<PostMetadata[]> {
+export async function getAllPosts(
+  directory: string,
+  limit?: number
+): Promise<PostMetadata[]> {
   const files = await getFilesFromDirectory(directory);
+  const limitedFiles =
+    typeof limit === "number" ? files.slice(0, limit) : files;
+
   const posts = await Promise.all(
-    files.map(async (fileName) => {
+    limitedFiles.map(async (fileName) => {
       const mdxContent = await readMDXFile(directory, fileName);
-      const { frontmatter } = await compileMDXContent(mdxContent);
+      const { frontmatter } = await compileMDXPostContent(mdxContent);
 
       return {
         title: frontmatter.title,
@@ -60,4 +66,49 @@ export async function getAllPosts(directory: string): Promise<PostMetadata[]> {
   );
 
   return posts;
+}
+
+export async function compileMDXProjectContent(
+  content: string,
+  components?: MDXComponents
+) {
+  return compileMDX<ProjectMetadata>({
+    source: content,
+    options: {
+      parseFrontmatter: true,
+    },
+    components,
+  });
+}
+
+export interface ProjectMetadata {
+  title: string;
+  description: string;
+  dateStarted: string;
+  link: string;
+}
+
+export async function getAllProjects(
+  directory: string,
+  limit?: number
+): Promise<ProjectMetadata[]> {
+  const files = await getFilesFromDirectory(directory);
+  const limitedFiles =
+    typeof limit === "number" ? files.slice(0, limit) : files;
+
+  const projects = await Promise.all(
+    limitedFiles.map(async (fileName) => {
+      const mdxContent = await readMDXFile(directory, fileName);
+      const { frontmatter } = await compileMDXProjectContent(mdxContent);
+
+      return {
+        title: frontmatter.title,
+        description: frontmatter.description,
+        dateStarted: frontmatter.dateStarted,
+        link: frontmatter.link,
+      };
+    })
+  );
+
+  return projects;
 }

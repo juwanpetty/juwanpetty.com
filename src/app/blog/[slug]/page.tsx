@@ -1,6 +1,6 @@
 import { Breadcrumb } from "@/components/breadcrumb";
 import {
-  compileMDXContent,
+  compileMDXPostContent,
   getSlugsFromDirectory,
   readMDXFile,
 } from "@/utilities/get-mdx-data";
@@ -8,6 +8,8 @@ import { BLOG_DIRECTORY } from "@/constants";
 import { mdxComponents } from "@/components/mdx-components";
 import { SiteHeader } from "@/components/site-header";
 import { formatDate } from "@/utilities/format-date";
+import { Link } from "next-view-transitions";
+import { Icons } from "@/components/icons";
 
 export const dynamicParams = false;
 
@@ -19,7 +21,7 @@ export async function generateMetadata({
   const { slug } = await params;
 
   const mdxContent = await readMDXFile(BLOG_DIRECTORY, slug);
-  const { frontmatter } = await compileMDXContent(mdxContent);
+  const { frontmatter } = await compileMDXPostContent(mdxContent);
 
   return {
     title: frontmatter.title,
@@ -39,7 +41,7 @@ export default async function BlogDetail({
   const { slug } = await params;
 
   const mdxContent = await readMDXFile(BLOG_DIRECTORY, slug);
-  const { content, frontmatter } = await compileMDXContent(
+  const { content, frontmatter } = await compileMDXPostContent(
     mdxContent,
     mdxComponents
   );
@@ -54,9 +56,16 @@ export default async function BlogDetail({
 
   return (
     <div className="flex min-h-screen flex-col">
-      <SiteHeader />
+      <nav className="fixed top-4 left-0 z-50 mx-auto flex w-full justify-center px-7 sm:top-6">
+        <div className="flex h-12 w-full max-w-md items-center justify-between rounded-full bg-stone-800 py-1 pr-1 pl-3 shadow-xl">
+          <Link href="/">
+            <Icons icon="logo" className="size-7 text-white" />
+          </Link>
+        </div>
+      </nav>
+
       <main className="grow">
-        <div className="mx-auto max-w-[730px] px-5 pt-5 pb-15 md:pt-15 md:pb-32 lg:px-0">
+        <div className="mx-auto w-full max-w-xl grow px-3 pt-36 pb-8 md:px-5 lg:px-8">
           <div className="mb-4">
             <Breadcrumb links={breadcrumbLinks} />
           </div>
