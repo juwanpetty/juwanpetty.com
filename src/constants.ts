@@ -6,3 +6,10 @@ export const BLOG_DIRECTORY = path.join(
   "content",
   "blog"
 );
+
+export const PROJECTS_DIRECTORY = path.join(
+  process.cwd(),
+  "src",
+  "content",
+  "projects"
+);
