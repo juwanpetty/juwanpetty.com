@@ -62,7 +62,7 @@ export default async function BlogDetail({
             <Link href="/" className="flex items-center gap-1">
               <Icons icon="arrowLeft" className="size-4 text-neutral-500" />
               <span className="text-sm font-medium tracking-[-0.1px] text-neutral-700">
-                Back to Journal
+                Back to Home
               </span>
             </Link>
             <h1 className="text-2xl leading-8 font-semibold tracking-[-0.3px]">
