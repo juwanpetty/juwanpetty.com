@@ -56,16 +56,8 @@ export default async function BlogDetail({
 
   return (
     <div className="flex min-h-screen flex-col">
-      <nav className="fixed top-4 left-0 z-50 mx-auto flex w-full justify-center px-7 sm:top-6">
-        <div className="flex h-12 w-full max-w-md items-center justify-between rounded-full bg-stone-800 py-1 pr-1 pl-3 shadow-xl">
-          <Link href="/">
-            <Icons icon="logo" className="size-7 text-white" />
-          </Link>
-        </div>
-      </nav>
-
       <main className="grow">
-        <div className="mx-auto w-full max-w-xl grow px-3 pt-36 pb-8 md:px-5 lg:px-8">
+        <div className="mx-auto w-full max-w-[730px] grow px-3 pt-36 pb-8 md:px-5 lg:px-8">
           <header className="my-[10px] flex flex-col gap-3 md:my-5">
             <Link href="/" className="flex items-center gap-1">
               <Icons icon="arrowLeft" className="size-4 text-neutral-500" />

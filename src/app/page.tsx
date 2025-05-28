@@ -33,6 +33,7 @@ export default async function Page() {
                       className="flex size-8 items-center justify-center rounded-full bg-transparent hover:bg-white/15"
                     >
                       <Icons icon="github" className="size-4.5 text-white" />
+                      <span className="sr-only">GitHub</span>
                     </a>
                     <a
                       href="https://bsky.app/profile/juwanpetty.com"
@@ -41,6 +42,7 @@ export default async function Page() {
                       className="flex size-8 items-center justify-center rounded-full bg-transparent hover:bg-white/15"
                     >
                       <Icons icon="bluesky" className="size-4.5 text-white" />
+                      <span className="sr-only">BlueSky</span>
                     </a>
                     <a
                       href="https://www.youtube.com/@juwanpetty"
@@ -49,6 +51,7 @@ export default async function Page() {
                       className="flex size-8 items-center justify-center rounded-full bg-transparent hover:bg-white/15"
                     >
                       <Icons icon="youtube" className="size-4.5 text-white" />
+                      <span className="sr-only">YouTube</span>
                     </a>
                   </div>
                   <ContactButton />
