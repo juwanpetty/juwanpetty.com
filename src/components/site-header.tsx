@@ -4,7 +4,7 @@ import { Link } from "next-view-transitions";
 
 export function SiteHeader() {
   return (
-    <header className="bg-background sticky top-0 z-50 flex w-full items-center border-b">
+    <header className="sticky top-0 z-50 flex w-full items-center border-b bg-white">
       <div className="mx-auto flex h-[var(--header-height)] w-full items-center justify-between gap-2 px-4">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center">
@@ -50,4 +50,14 @@ export function SiteHeader() {
       </div>
     </header>
   );
+}
+
+{
+  /* <nav className="fixed top-4 left-0 z-50 mx-auto flex w-full justify-center px-7 sm:top-6">
+        <div className="flex h-12 w-full max-w-md items-center justify-between rounded-full bg-stone-800 py-1 pr-1 pl-3 shadow-xl">
+          <Link href="/">
+            <Icons icon="logo" className="size-7 text-white" />
+          </Link>
+        </div>
+      </nav> */
 }

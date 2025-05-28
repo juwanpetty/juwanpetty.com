@@ -86,6 +86,7 @@ export interface ProjectMetadata {
   description: string;
   dateStarted: string;
   link: string;
+  images: { src: string; alt: string }[];
 }
 
 export async function getAllProjects(
@@ -106,6 +107,7 @@ export async function getAllProjects(
         description: frontmatter.description,
         dateStarted: frontmatter.dateStarted,
         link: frontmatter.link,
+        images: frontmatter.images || [],
       };
     })
   );
