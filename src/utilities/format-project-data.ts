@@ -1,11 +1,11 @@
-import { ProjectMetadata } from "@/utilities/get-mdx-data";
+import { ProjectMetadata } from "@/utilities/mdx-utils";
 
 export function sortProjectsByDateThenTitle(
   projects: ProjectMetadata[]
 ): ProjectMetadata[] {
   return [...projects].sort((a, b) => {
-    const dateA = new Date(a.dateStarted).getTime();
-    const dateB = new Date(b.dateStarted).getTime();
+    const dateA = new Date(a.datePublished).getTime();
+    const dateB = new Date(b.datePublished).getTime();
 
     if (dateA !== dateB) {
       return dateB - dateA;

@@ -1,4 +1,4 @@
-import { type PostMetadata } from "@/utilities/get-mdx-data";
+import { type PostMetadata } from "@/utilities/mdx-utils";
 
 interface GroupedPosts {
   year: string;

@@ -1,4 +1,4 @@
-import { PostMetadata } from "@/utilities/get-mdx-data";
+import { PostMetadata } from "@/utilities/mdx-utils";
 
 export function sortPostsByDateAndTitle(
   posts: PostMetadata[],

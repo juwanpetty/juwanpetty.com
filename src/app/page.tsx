@@ -1,7 +1,7 @@
 import { Icons } from "@/components/icons";
 import { ImagePlaceholder } from "@/components/image-placeholder";
 import { BLOG_DIRECTORY, PROJECTS_DIRECTORY } from "@/constants";
-import { getAllPosts, getAllProjects } from "@/utilities/get-mdx-data";
+import { getAllPosts, getAllProjects } from "@/utilities/mdx-utils";
 import { sortPostsByDateThenTitle } from "@/utilities/format-post-data";
 import { sortProjectsByDateThenTitle } from "@/utilities/format-project-data";
 import { PageSection, SectionHeader } from "@/components/page-section";
