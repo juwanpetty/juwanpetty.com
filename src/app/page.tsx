@@ -19,7 +19,7 @@ export default async function Page() {
   return (
     <div className="flex min-h-screen flex-col">
       <main className="grow">
-        <div className="mx-auto w-full max-w-screen-2xl grow px-3 pt-12 pb-8 md:px-5 lg:px-8">
+        <div className="mx-auto w-full max-w-screen-2xl grow px-3 pt-3 pb-8 md:px-5 md:pt-5 lg:px-8 lg:pt-8">
           <header className="relative -mx-3 -mt-12 h-min px-3 pt-[160px] sm:m-0 md:pt-[200px] lg:pt-[240px] xl:pt-[280px]">
             <div className="relative z-10 mx-auto flex max-w-xl flex-col gap-4 pb-8 sm:px-0">
               <div className="flex w-full items-start justify-between">
