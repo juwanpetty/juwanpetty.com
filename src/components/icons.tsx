@@ -1,0 +1,617 @@
+type IconName = keyof typeof IconsMap;
+type IconProps = React.SVGProps<SVGSVGElement> & { icon: IconName };
+
+export const Icons = ({ icon, ...props }: IconProps) => {
+  const IconComponent = IconsMap[icon];
+
+  if (!IconComponent) {
+    return null;
+  }
+
+  return <IconComponent {...props} />;
+};
+
+export const IconsMap = {
+  arrowLeft: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <line x1="2.75" y1="9" x2="15.25" y2="9"></line>
+        <polyline points="7 13.25 2.75 9 7 4.75"></polyline>
+      </g>
+    </svg>
+  ),
+  arrowRight: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <line x1="15.25" y1="9" x2="2.75" y2="9"></line>
+        <polyline points="11 4.75 15.25 9 11 13.25"></polyline>
+      </g>
+    </svg>
+  ),
+  arrowTurnLeft2: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <path d="m1.25,5.75h7.5c1.105,0,2,.895,2,2v2" />
+        <polyline points="4.25 9 1 5.75 4.25 2.5" />
+      </g>
+    </svg>
+  ),
+  arrowUpRight: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </svg>
+  ),
+  blog: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g fill="currentColor">
+        <path d="M12.25,17H3.75c-1.517,0-2.75-1.233-2.75-2.75V3.75c0-1.517,1.233-2.75,2.75-2.75H12.25c1.517,0,2.75,1.233,2.75,2.75v1.5c0,.414-.336,.75-.75,.75s-.75-.336-.75-.75v-1.5c0-.689-.561-1.25-1.25-1.25H3.75c-.689,0-1.25,.561-1.25,1.25V14.25c0,.689,.561,1.25,1.25,1.25H12.25c.689,0,1.25-.561,1.25-1.25v-2c0-.414,.336-.75,.75-.75s.75,.336,.75,.75v2c0,1.517-1.233,2.75-2.75,2.75Z" />
+        <path d="M9.25,6.5H4.75c-.414,0-.75-.336-.75-.75s.336-.75,.75-.75h4.5c.414,0,.75,.336,.75,.75s-.336,.75-.75,.75Z" />
+        <path d="M7,9.5h-2.25c-.414,0-.75-.336-.75-.75s.336-.75,.75-.75h2.25c.414,0,.75,.336,.75,.75s-.336,.75-.75,.75Z" />
+        <path d="M6.25,12.5h-1.5c-.414,0-.75-.336-.75-.75s.336-.75,.75-.75h1.5c.414,0,.75,.336,.75,.75s-.336,.75-.75,.75Z" />
+        <path d="M17.116,4.134c-.774-.774-2.033-.779-2.806-.005l-4.216,4.216c-.724,.723-1.198,2.665-1.327,3.243-.056,.25,.021,.512,.202,.693,.143,.142,.334,.22,.53,.22,.054,0,.108-.006,.163-.018,.577-.128,2.519-.603,3.242-1.326l4.216-4.216c.771-.771,.77-2.029-.005-2.805Z" />
+      </g>
+    </svg>
+  ),
+  bluesky: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      {...props}
+    >
+      <g fill="currentColor">
+        <path d="M23.931,5.298c-3.21,2.418-6.663,7.32-7.931,9.951-1.267-2.631-4.721-7.533-7.931-9.951-2.316-1.744-6.069-3.094-6.069,1.201,0,.857,.49,7.206,.778,8.237,.999,3.583,4.641,4.497,7.881,3.944-5.663,.967-7.103,4.169-3.992,7.372,5.908,6.083,8.492-1.526,9.154-3.476,.123-.36,.179-.527,.179-.379,0-.148,.057,.019,.179,.379,.662,1.949,3.245,9.558,9.154,3.476,3.111-3.203,1.671-6.405-3.992-7.372,3.24,.553,6.882-.361,7.881-3.944,.288-1.031,.778-7.38,.778-8.237,0-4.295-3.753-2.945-6.069-1.201Z" />
+      </g>
+    </svg>
+  ),
+  boltLightning: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g fill="currentColor">
+        <path d="M14.868,6.191c-.213-.426-.642-.691-1.118-.691h-2.653l1.088-2.798c.149-.385,.099-.818-.134-1.159-.233-.34-.619-.543-1.031-.543H6.85c-.522,0-.994,.329-1.174,.819l-2.385,6.501c-.14,.383-.083,.812,.15,1.146,.234,.334,.617,.533,1.024,.533h3.79l-1.727,6.044c-.1,.348,.063,.717,.387,.878,.107,.053,.221,.078,.334,.078,.229,0,.454-.106,.6-.3L14.751,7.5c.285-.381,.33-.882,.117-1.309Z"></path>
+      </g>
+    </svg>
+  ),
+  bookmark: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <path d="M14.25,16.25l-5.25-3.5-5.25,3.5V3.75c0-1.105,.895-2,2-2h6.5c1.105,0,2,.895,2,2v12.5Z"></path>
+      </g>
+    </svg>
+  ),
+  calendar: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <line x1="5.75" y1="2.75" x2="5.75" y2=".75"></line>
+        <line x1="12.25" y1="2.75" x2="12.25" y2=".75"></line>
+        <rect x="2.25" y="2.75" width="13.5" height="12.5" rx="2" ry="2"></rect>
+        <line x1="2.25" y1="6.25" x2="15.75" y2="6.25"></line>
+      </g>
+    </svg>
+  ),
+  chevronRight: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <polyline points="6.5 2.75 12.75 9 6.5 15.25"></polyline>
+      </g>
+    </svg>
+  ),
+  chevronRightSmall: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <polyline points="4.25 10.25 8.5 6 4.25 1.75" />
+      </g>
+    </svg>
+  ),
+  circlePlay: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g fill="currentColor">
+        <path d="M9,1C4.589,1,1,4.589,1,9s3.589,8,8,8,8-3.589,8-8S13.411,1,9,1Zm2.778,8.648l-3.65,2.129c-.118,.069-.248,.104-.378,.104-.128,0-.256-.034-.374-.101-.236-.135-.376-.378-.376-.65V6.871c0-.272,.141-.515,.376-.65,.236-.136,.517-.134,.751,.002l3.65,2.129c.233,.136,.373,.378,.373,.648s-.139,.512-.373,.648Z"></path>
+      </g>
+    </svg>
+  ),
+  circleUser: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g fill="currentColor">
+        <circle cx="9" cy="7.75" r="2.75"></circle>
+        <path d="M9,11.5c-2.027,0-3.828,1.313-4.476,3.196,1.233,.97,2.785,1.554,4.476,1.554s3.242-.583,4.475-1.553c-.657-1.891-2.453-3.197-4.475-3.197Z"></path>
+        <path d="M9,17c-4.411,0-8-3.589-8-8S4.589,1,9,1s8,3.589,8,8-3.589,8-8,8Zm0-14.5c-3.584,0-6.5,2.916-6.5,6.5s2.916,6.5,6.5,6.5,6.5-2.916,6.5-6.5-2.916-6.5-6.5-6.5Z"></path>
+      </g>
+    </svg>
+  ),
+  command: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <rect x="6.75" y="6.75" width="4.5" height="4.5"></rect>
+        <path d="M4.75,2.75h0c1.104,0,2,.896,2,2v2h-2c-1.104,0-2-.896-2-2h0c0-1.104,.896-2,2-2Z"></path>
+        <path
+          d="M13.25,2.75h0c1.104,0,2,.896,2,2v2h-2c-1.104,0-2-.896-2-2h0c0-1.104,.896-2,2-2Z"
+          transform="translate(18 -8.5) rotate(90)"
+        ></path>
+        <path
+          d="M13.25,11.25h0c1.104,0,2,.896,2,2v2h-2c-1.104,0-2-.896-2-2h0c0-1.104,.896-2,2-2Z"
+          transform="translate(26.5 26.5) rotate(-180)"
+        ></path>
+        <path
+          d="M4.75,11.25h0c1.104,0,2,.896,2,2v2h-2c-1.104,0-2-.896-2-2h0c0-1.104,.896-2,2-2Z"
+          transform="translate(-8.5 18) rotate(-90)"
+        ></path>
+      </g>
+    </svg>
+  ),
+  component: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <path d="m3.5417,3.6104l-1.7538,4.5807c-.1547.4042.1872.8238.6143.7539l4.8771-.7986c.4271-.0699.6173-.5768.3418-.9105l-3.1233-3.7821c-.2735-.3312-.8025-.2446-.9561.1566Z"></path>
+        <circle cx="13.5" cy="4.5" r="2.75"></circle>
+        <path d="m14.25,12.5167h0c-1.274.9216-2.2147,2.2316-2.681,3.7333h0s0,0,0,0c-.9216-1.274-2.2316-2.2147-3.7333-2.681h0,0c1.274-.9216,2.2147-2.2316,2.681-3.7333h0s0,0,0,0c.9216,1.274,2.2316,2.2147,3.7333,2.681h0Z"></path>
+      </g>
+    </svg>
+  ),
+  copy: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <rect
+          x="5.25"
+          y="5.25"
+          width="11"
+          height="11"
+          rx="2"
+          ry="2"
+          transform="translate(21.5 21.5) rotate(180)"
+        />
+        <path d="M3,12.605c-.733-.297-1.25-1.015-1.25-1.855V3.75c0-1.105,.895-2,2-2h7c.839,0,1.558,.517,1.855,1.25" />
+      </g>
+    </svg>
+  ),
+  desktop: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <path d="M5.75,16.25c.758-.239,1.878-.5,3.25-.5,.795,0,1.941,.088,3.25,.5"></path>
+        <line x1="9" y1="13.25" x2="9" y2="15.75"></line>
+        <rect x="1.75" y="2.75" width="14.5" height="10.5" rx="2" ry="2"></rect>
+      </g>
+    </svg>
+  ),
+  folder: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <path d="M13.75,5.25c1.105,0,2,.895,2,2v5.5c0,1.105-.895,2-2,2H4.25c-1.105,0-2-.895-2-2V4.75c0-1.105,.895-2,2-2h1.825c.587,0,1.144,.258,1.524,.705l1.524,1.795h4.626Z" />
+      </g>
+    </svg>
+  ),
+  github: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      {...props}
+    >
+      <g fill="currentColor">
+        <path d="M16,2.345c7.735,0,14,6.265,14,14-.002,6.015-3.839,11.359-9.537,13.282-.7,.14-.963-.298-.963-.665,0-.473,.018-1.978,.018-3.85,0-1.312-.437-2.152-.945-2.59,3.115-.35,6.388-1.54,6.388-6.912,0-1.54-.543-2.783-1.435-3.762,.14-.35,.63-1.785-.14-3.71,0,0-1.173-.385-3.85,1.435-1.12-.315-2.31-.472-3.5-.472s-2.38,.157-3.5,.472c-2.677-1.802-3.85-1.435-3.85-1.435-.77,1.925-.28,3.36-.14,3.71-.892,.98-1.435,2.24-1.435,3.762,0,5.355,3.255,6.563,6.37,6.913-.403,.35-.77,.963-.893,1.872-.805,.368-2.818,.963-4.077-1.155-.263-.42-1.05-1.452-2.152-1.435-1.173,.018-.472,.665,.017,.927,.595,.332,1.277,1.575,1.435,1.978,.28,.787,1.19,2.293,4.707,1.645,0,1.173,.018,2.275,.018,2.607,0,.368-.263,.787-.963,.665-5.719-1.904-9.576-7.255-9.573-13.283,0-7.735,6.265-14,14-14Z" />
+      </g>
+    </svg>
+  ),
+  gridList: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g fill="currentColor">
+        <path d="M15.25,3h-5c-.414,0-.75,.336-.75,.75s.336,.75,.75,.75h5c.414,0,.75-.336,.75-.75s-.336-.75-.75-.75Z"></path>
+        <path d="M15.25,6h-5c-.414,0-.75,.336-.75,.75s.336,.75,.75,.75h5c.414,0,.75-.336,.75-.75s-.336-.75-.75-.75Z"></path>
+        <path d="M15.25,10.5h-5c-.414,0-.75,.336-.75,.75s.336,.75,.75,.75h5c.414,0,.75-.336,.75-.75s-.336-.75-.75-.75Z"></path>
+        <path d="M15.25,13.5h-5c-.414,0-.75,.336-.75,.75s.336,.75,.75,.75h5c.414,0,.75-.336,.75-.75s-.336-.75-.75-.75Z"></path>
+        <rect x="2" y="2" width="6" height="6" rx="1.75" ry="1.75"></rect>
+        <rect x="2" y="10" width="6" height="6" rx="1.75" ry="1.75"></rect>
+      </g>
+    </svg>
+  ),
+  logo: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g clipPath="url(#clip0_0_3)">
+        <path
+          d="M17.7 7.27326H15.144C14.94 7.27326 14.778 7.11138 14.778 6.9075V4.3594C14.778 4.19153 14.646 4.05962 14.478 4.05962H11.922C11.718 4.05962 11.556 3.89774 11.556 3.69389L11.544 1.85325C11.544 1.68538 11.442 1.53548 11.292 1.46954C10.296 1.05584 9.234 0.84 8.136 0.84C3.648 0.84 0 4.48531 0 8.97C0 13.4547 3.648 17.1 8.136 17.1C9.234 17.1 10.29 16.8842 11.292 16.4645C11.448 16.3985 11.544 16.2486 11.544 16.0808L11.556 14.1142C11.556 13.9103 11.718 13.7485 11.922 13.7485H14.478C14.646 13.7485 14.778 13.6166 14.778 13.4487V10.8946C14.778 10.6907 14.94 10.5289 15.144 10.5289H17.7C17.868 10.5289 18 10.3969 18 10.2291V7.56102C18 7.40514 17.868 7.27326 17.7 7.27326ZM7.926 10.4929H5.49C5.286 10.4929 5.124 10.331 5.124 10.1272V7.68696C5.124 7.48308 5.286 7.3212 5.49 7.3212H7.932C8.136 7.3212 8.298 7.48308 8.298 7.68696V10.1272C8.292 10.325 8.13 10.4929 7.926 10.4929ZM11.148 7.27326H8.706C8.502 7.27326 8.34 7.11138 8.34 6.9075V4.47332C8.34 4.26947 8.502 4.10759 8.706 4.10759H11.148C11.352 4.10759 11.514 4.26947 11.514 4.47332V6.9135C11.508 7.11138 11.346 7.27326 11.148 7.27326ZM8.706 10.5409H11.148C11.352 10.5409 11.514 10.7027 11.514 10.9066V13.3468C11.514 13.5506 11.352 13.7125 11.148 13.7125H8.706C8.502 13.7125 8.34 13.5506 8.34 13.3468V10.9066C8.34 10.7027 8.508 10.5409 8.706 10.5409ZM11.928 7.3272H14.37C14.574 7.3272 14.736 7.48908 14.736 7.69296V10.1332C14.736 10.337 14.574 10.4989 14.37 10.4989H11.928C11.724 10.4989 11.562 10.337 11.562 10.1332V7.69296C11.562 7.48908 11.724 7.3272 11.928 7.3272Z"
+          fill="currentColor"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_0_3">
+          <rect width="18" height="18" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  ),
+  menu: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <line x1="1.75" y1="5.75" x2="16.25" y2="5.75"></line>
+        <line x1="1.75" y1="12.25" x2="16.25" y2="12.25"></line>
+      </g>
+    </svg>
+  ),
+  moon: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <path d="M13,11.75c-3.452,0-6.25-2.798-6.25-6.25,0-1.352,.433-2.599,1.162-3.622-3.364,.628-5.912,3.575-5.912,7.122,0,4.004,3.246,7.25,7.25,7.25,3.372,0,6.198-2.306,7.009-5.424-.95,.583-2.063,.924-3.259,.924Z"></path>
+      </g>
+    </svg>
+  ),
+  penWriting2: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g fill="currentColor">
+        <path d="M15.25,16h-6.25c-.414,0-.75-.336-.75-.75s.336-.75,.75-.75h6.25c.414,0,.75,.336,.75,.75s-.336,.75-.75,.75Z" />
+        <path d="M15.25,12.5h-2.5c-.414,0-.75-.336-.75-.75s.336-.75,.75-.75h2.5c.414,0,.75,.336,.75,.75s-.336,.75-.75,.75Z" />
+        <path d="M11.414,2.848L3.605,10.657c-.863,.864-1.401,3.406-1.593,4.459-.044,.242,.034,.491,.208,.665,.142,.142,.333,.22,.53,.22,.044,0,.089-.004,.134-.012,1.053-.191,3.595-.729,4.459-1.593l7.809-7.809c1.03-1.031,1.03-2.707,0-3.738-.998-.998-2.74-.997-3.738,0Z" />
+      </g>
+    </svg>
+  ),
+  placeholder: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <path d="M2.75,4.75c0-1.105,.895-2,2-2"></path>
+        <path d="M13.25,2.75c1.105,0,2,.895,2,2"></path>
+        <path d="M15.25,13.25c0,1.105-.895,2-2,2"></path>
+        <path d="M4.75,15.25c-1.105,0-2-.895-2-2"></path>
+        <line x1="7.75" y1="2.75" x2="10.25" y2="2.75"></line>
+        <line x1="7.75" y1="15.25" x2="10.25" y2="15.25"></line>
+        <line x1="15.25" y1="7.75" x2="15.25" y2="10.25"></line>
+        <line x1="2.75" y1="7.75" x2="2.75" y2="10.25"></line>
+      </g>
+    </svg>
+  ),
+  search: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <line x1="15.25" y1="15.25" x2="11.285" y2="11.285" />
+        <circle cx="7.75" cy="7.75" r="5" />
+      </g>
+    </svg>
+  ),
+  signature: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 351 340"
+      width="351"
+      height="340"
+      preserveAspectRatio="xMidYMid slice"
+      style={{
+        height: "100%",
+        transform: "translate3d(0px, 0px, 0px)",
+      }}
+      {...props}
+    >
+      <defs>
+        <clipPath id="__lottie_element_2">
+          <rect width="351" height="340" x="0" y="0"></rect>
+        </clipPath>
+        <clipPath id="__lottie_element_4">
+          <path d="M0,0 L351,0 L351,340 L0,340z"></path>
+        </clipPath>
+      </defs>
+      <g clipPath="url(#__lottie_element_2)">
+        <g
+          clipPath="url(#__lottie_element_4)"
+          transform="matrix(1,0,0,1,0,0)"
+          opacity="1"
+          style={{
+            display: "block",
+          }}
+        >
+          <g
+            transform="matrix(1,0,0,1,4,4)"
+            opacity="1"
+            style={{
+              display: "block",
+            }}
+          >
+            <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+              <path
+                fill="rgb(0,255,0)"
+                fillOpacity="0"
+                d=" M523.279052734375,-169.24249267578125 C523.279052734375,-169.24249267578125 -174.4263458251953,-169.24249267578125 -174.4263458251953,-169.24249267578125 C-174.4263458251953,-169.24249267578125 -174.4263458251953,507.72747802734375 -174.4263458251953,507.72747802734375 C-174.4263458251953,507.72747802734375 523.279052734375,507.72747802734375 523.279052734375,507.72747802734375 C523.279052734375,507.72747802734375 523.279052734375,-169.24249267578125 523.279052734375,-169.24249267578125z"
+              ></path>
+            </g>
+            <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="miter"
+                fillOpacity="0"
+                strokeMiterlimit="4"
+                stroke="rgb(0,0,0)"
+                strokeOpacity="1"
+                strokeWidth="6"
+                d=" M35.35300064086914,101.15599822998047 C76.85347747802734,240.15640258789062 253.35350036621094,60.65639877319336 208.3529052734375,7.156000137329102 C155.32266235351562,-55.89065170288086 -30.648000717163086,318.0072021484375 4.353000164031982,332.156005859375 C27.854799270629883,341.6564025878906 95.35269927978516,142.15609741210938 103.85269927978516,154.65609741210938 C112.35269927978516,167.15609741210938 103.85269927978516,200.15609741210938 114.85269927978516,197.15609741210938 C125.85269927978516,194.15609741210938 148.35260009765625,159.15609741210938 158.35260009765625,163.65609741210938 C168.35260009765625,168.15609741210938 178.85989379882812,181.37139892578125 193.85260009765625,180.15609741210938 C212.35345458984375,178.6564483642578 259.35430908203125,147.92559814453125 276.8534851074219,154.65609741210938 C289.8542785644531,159.6564483642578 292.3534851074219,178.65640258789062 306.3526916503906,180.15609741210938 C319.1239929199219,181.5240020751953 333.4859924316406,176.14999389648438 340.1759948730469,170.1820068359375"
+              ></path>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  ),
+  sun: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <line x1="9" y1="1.25" x2="9" y2="2.25"></line>
+        <line x1="14.48" y1="3.52" x2="13.773" y2="4.227"></line>
+        <line x1="16.75" y1="9" x2="15.75" y2="9"></line>
+        <line x1="14.48" y1="14.48" x2="13.773" y2="13.773"></line>
+        <line x1="9" y1="16.75" x2="9" y2="15.75"></line>
+        <line x1="3.52" y1="14.48" x2="4.227" y2="13.773"></line>
+        <line x1="1.25" y1="9" x2="2.25" y2="9"></line>
+        <line x1="3.52" y1="3.52" x2="4.227" y2="4.227"></line>
+        <circle cx="9" cy="9" r="4.25"></circle>
+      </g>
+    </svg>
+  ),
+  youtube: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      {...props}
+    >
+      <g fill="currentColor">
+        <path d="M31.331,8.248c-.368-1.386-1.452-2.477-2.829-2.848-2.496-.673-12.502-.673-12.502-.673,0,0-10.007,0-12.502,.673-1.377,.37-2.461,1.462-2.829,2.848-.669,2.512-.669,7.752-.669,7.752,0,0,0,5.241,.669,7.752,.368,1.386,1.452,2.477,2.829,2.847,2.496,.673,12.502,.673,12.502,.673,0,0,10.007,0,12.502-.673,1.377-.37,2.461-1.462,2.829-2.847,.669-2.512,.669-7.752,.669-7.752,0,0,0-5.24-.669-7.752ZM12.727,20.758V11.242l8.364,4.758-8.364,4.758Z" />
+      </g>
+    </svg>
+  ),
+};

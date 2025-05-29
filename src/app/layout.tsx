@@ -1,13 +1,23 @@
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
-
-const inter = Inter({ subsets: ["latin"] });
+import { ThemeProvider } from "@/components/theme-provider";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Juwan Petty",
+  title: {
+    template: "%s | Juwan Petty",
+    default: "Juwan Petty",
+  },
 };
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -16,11 +26,20 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en" className={inter.className}>
-        <body className="antialiased">
-          <main className="mx-auto min-h-dvh w-full max-w-2xl py-12 sm:py-16 sm:pt-32">
-            <div className="px-4 md:px-0">{children}</div>
-          </main>
+      <html
+        lang="en"
+        suppressHydrationWarning
+        className={`${GeistSans.variable} ${GeistMono.variable} ${inter.variable}`}
+      >
+        <body className="relative flex min-h-dvh flex-col bg-white text-neutral-900 antialiased">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ViewTransitions>
