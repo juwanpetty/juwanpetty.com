@@ -9,7 +9,7 @@ interface RelatedPostsProps {
 export function RelatedPosts({ posts }: RelatedPostsProps) {
   return (
     <PageSection>
-      <SectionHeader title="Latest writings" icon="penWriting2" />
+      <SectionHeader title="Related posts" icon="penWriting2" />
       <div className="flex flex-col gap-5 px-1">
         {posts.map((post) => (
           <PostCard

@@ -24,7 +24,7 @@ export function ProfileHeader() {
             {/* Contact Button */}
             <button
               type="button"
-              className="flex h-8 items-center gap-1.5 rounded-[10px] border border-neutral-900/10 px-2.5"
+              className="flex h-8 items-center gap-1.5 rounded-[10px] border border-neutral-900/10 px-2.5 transition ease-[ease] hover:bg-neutral-100"
             >
               <Icons icon="copy" className="size-4 text-neutral-500" />
               <span className="text-sm font-medium">Contact</span>

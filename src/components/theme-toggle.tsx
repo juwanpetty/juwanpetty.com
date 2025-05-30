@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import { ToggleButtonGroup, ToggleButton } from "react-aria-components";
 import { THEME_STATES, THEME_ICONS } from "@/types/theme";
 import { useThemeToggle } from "@/hooks/use-theme-toggle";
+import { cn } from "@/utilities/merge-classnames";
 
 export function ThemeToggle() {
   const { mounted, selectedIndex, currentTheme, handleThemeChange } =
@@ -41,7 +42,13 @@ export function ThemeToggle() {
             key={state}
             isSelected={currentTheme === state}
             onChange={() => handleThemeChange(THEME_STATES.indexOf(state))}
-            className="flex h-7 flex-1 cursor-pointer items-center rounded-[8px] border border-transparent px-4 py-1.5 text-sm font-medium text-neutral-500 capitalize data-[selected]:border-neutral-200 data-[selected]:bg-white data-[selected]:text-neutral-900"
+            className={cn(
+              "flex h-7 flex-1 cursor-pointer items-center rounded-[8px] border border-transparent px-4 py-1.5 text-sm font-medium text-neutral-500 capitalize transition-colors ease-[ease] data-[selected]:border-neutral-200 data-[selected]:bg-white data-[selected]:text-neutral-900",
+              {
+                "hover:bg-neutral-100": currentTheme !== state,
+                "hover:bg-white": currentTheme === state,
+              }
+            )}
           >
             {state}
           </ToggleButton>

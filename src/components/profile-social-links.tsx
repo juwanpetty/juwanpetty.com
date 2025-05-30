@@ -11,14 +11,15 @@ export function ProfileSocialLinks() {
         <SocialLinks />
       </div>
       <Popover className="relative sm:hidden">
-        <PopoverButton className="flex size-8 items-center justify-center rounded-lg">
+        <PopoverButton className="flex size-8 items-center justify-center rounded-lg bg-white transition-colors ease-[ease] hover:bg-neutral-100">
           <Icons icon="dots" className="size-4 text-neutral-500" />
           <span className="sr-only">Open social links</span>
         </PopoverButton>
 
         <PopoverPanel
+          transition
           anchor="bottom"
-          className="flex w-45 flex-col gap-1 rounded-xl border border-neutral-900/10 bg-white px-1.5 py-1 shadow-xs [--anchor-gap:8px]"
+          className="flex w-45 origin-top flex-col gap-1 rounded-xl border border-neutral-900/10 bg-white px-1.5 py-1 shadow-xs transition duration-150 ease-out [--anchor-gap:8px] data-closed:-translate-y-1 data-closed:opacity-0"
         >
           {SOCIAL_LINKS.map(({ href, icon, label }) => (
             <a

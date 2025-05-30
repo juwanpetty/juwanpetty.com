@@ -70,7 +70,7 @@ export default async function Page() {
 
               {/* Blog sections */}
               <PageSection>
-                <SectionHeader title="Latest writings" icon="penWriting2" />
+                <SectionHeader title="Latest posts" icon="penWriting2" />
 
                 <div className="flex flex-col gap-6 px-1 sm:gap-8">
                   {sortedPosts.map((post) => (
