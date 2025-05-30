@@ -59,10 +59,10 @@ export default async function BlogDetail({
 
       <main className="grow">
         <div className="mx-auto w-full max-w-[1400px] px-5">
-          <div className="py-8">
+          <div className="py-8 pt-16 sm:pt-24">
             <div className="mx-auto flex w-full max-w-[730px] flex-col">
               {/* Breadcrumbs */}
-              <nav className="mb-4 flex items-center gap-1.5">
+              <nav className="mb-8 flex items-center gap-1.5 sm:mb-16">
                 <Link
                   href="/"
                   className="text-sm leading-none text-neutral-500"

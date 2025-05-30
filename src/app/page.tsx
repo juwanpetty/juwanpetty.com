@@ -41,6 +41,8 @@ export default async function Page() {
                   <p className="mt-5 text-base leading-[1.65rem]">
                     Previously at{" "}
                     <a
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href="https://www.shopify.com"
                       className="font-semibold underline"
                     >

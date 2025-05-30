@@ -1,6 +1,5 @@
 import { Icons } from "@/components/icons";
 import { ImagePlaceholder } from "@/components/image-placeholder";
-import { Link } from "next-view-transitions";
 
 interface ProjectCardProps {
   title: string;
@@ -10,7 +9,12 @@ interface ProjectCardProps {
 
 export function ProjectCard({ title, description, href }: ProjectCardProps) {
   return (
-    <Link href={href} className="flex flex-col gap-3">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col gap-3"
+    >
       <ImagePlaceholder className="aspect-video" />
       <div className="flex w-full items-start gap-4 px-1">
         <div className="grow">
@@ -20,6 +24,6 @@ export function ProjectCard({ title, description, href }: ProjectCardProps) {
 
         <Icons icon="arrowUpRight" className="size-4 text-neutral-500" />
       </div>
-    </Link>
+    </a>
   );
 }

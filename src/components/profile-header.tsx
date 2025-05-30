@@ -5,12 +5,13 @@ import { ProfileSocialLinks } from "@/components/profile-social-links";
 export function ProfileHeader() {
   return (
     <header className="relative pt-40 pb-8 sm:pt-64">
+      {/* Banner */}
       <ImagePlaceholder className="absolute -top-6 -left-5 h-40 w-[calc(100%+40px)] rounded-none border-none border-neutral-900/10 sm:top-0 sm:left-0 sm:h-64 sm:w-full sm:rounded-lg sm:border sm:border-solid" />
 
       <div className="mx-auto flex w-full max-w-[730px] flex-col gap-4">
         <div className="flex w-full items-start justify-between">
-          {/* Avatar */}
           <div className="relative">
+            {/* Avatar */}
             <ImagePlaceholder className="-mt-10 size-20 ring-4 ring-white sm:-mt-14 sm:size-28" />
 
             {/* Profile status dot */}
