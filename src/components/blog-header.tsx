@@ -1,6 +1,4 @@
-import { Icons } from "@/components/icons";
 import { formatDate } from "@/utilities/format-date";
-import { Link } from "next-view-transitions";
 
 interface BlogHeaderProps {
   title: string;
@@ -11,21 +9,26 @@ export function BlogHeader({ title, datePublished }: BlogHeaderProps) {
   const formattedDate = formatDate(datePublished, "MMM d, yyyy");
 
   return (
-    <header className="my-[10px] flex flex-col gap-3 md:my-5">
-      <Link href="/" className="flex items-center gap-1">
-        <Icons icon="arrowLeft" className="size-4 text-neutral-500" />
-        <span className="text-sm font-medium tracking-[-0.1px] text-neutral-700">
-          Back to Home
-        </span>
-      </Link>
-      <h1 className="text-2xl leading-8 font-semibold tracking-[-0.3px]">
+    <header className="space-y-2">
+      <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight text-balance">
         {title}
       </h1>
-      <div className="flex items-center justify-between text-sm">
-        <time
-          dateTime={formattedDate}
-          className="text-sm font-medium tracking-[-0.1px] text-neutral-700"
-        >
+
+      <div className="flex items-center gap-2">
+        <div className="flex gap-1">
+          <div className="flex h-5 items-center rounded-md border border-neutral-900/10 bg-neutral-100 px-0.75">
+            <span className="px-0.75 text-xs font-medium text-neutral-500">
+              Design
+            </span>
+          </div>
+          <div className="flex h-5 items-center rounded-md border border-neutral-900/10 bg-neutral-100 px-0.75">
+            <span className="px-0.75 text-xs font-medium text-neutral-500">
+              UX
+            </span>
+          </div>
+        </div>
+        <span className="text-sm text-neutral-500">/</span>
+        <time dateTime={formattedDate} className="text-sm text-neutral-500">
           {formattedDate}
         </time>
       </div>

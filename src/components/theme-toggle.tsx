@@ -25,7 +25,7 @@ export function ThemeToggle() {
 
   return (
     <Fragment>
-      <button
+      {/* <button
         type="button"
         onClick={handleClick}
         className="flex size-8 cursor-pointer items-center justify-center rounded-full bg-neutral-100 md:hidden"
@@ -34,7 +34,7 @@ export function ThemeToggle() {
           icon={THEME_ICONS[currentTheme]}
           className="size-4 text-neutral-900"
         />
-      </button>
+      </button> */}
       <ToggleButtonGroup className="flex h-8 items-center gap-0.5 rounded-[10px] border border-neutral-100 bg-neutral-50 p-0.5 px-px">
         {THEME_STATES.map((state) => (
           <ToggleButton

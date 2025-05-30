@@ -22,10 +22,8 @@ export function SectionHeader({ title, icon }: SectionHeaderProps) {
   return (
     <div className="flex items-center gap-2.5">
       <Icons icon={icon} className="size-5 text-neutral-500" />
-      <h2 className="text-sm font-medium tracking-[-0.1px] text-neutral-500">
-        {title}
-      </h2>
-      <div className="h-px grow bg-neutral-900/5" />
+      <h2 className="text-sm font-medium text-neutral-500">{title}</h2>
+      <div className="h-px grow bg-neutral-900/10" />
     </div>
   );
 }

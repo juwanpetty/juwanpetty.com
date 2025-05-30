@@ -211,6 +211,32 @@ export const IconsMap = {
       </g>
     </svg>
   ),
+  circleDash: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <path d="M4.987,2.961c.778-.518,1.662-.89,2.612-1.075"></path>
+        <path d="M1.879,7.631c.185-.968,.562-1.867,1.091-2.657"></path>
+        <path d="M4.987,15.039c.778,.518,1.662,.89,2.612,1.075"></path>
+        <path d="M1.879,10.369c.185,.968,.562,1.867,1.091,2.657"></path>
+        <path d="M10.401,1.886c.95,.185,1.834,.557,2.612,1.075"></path>
+        <path d="M15.03,4.974c.529,.79,.906,1.689,1.091,2.657"></path>
+        <path d="M10.401,16.114c.95-.185,1.834-.557,2.612-1.075"></path>
+        <path d="M15.03,13.026c.529-.79,.906-1.689,1.091-2.657"></path>
+      </g>
+    </svg>
+  ),
   circlePlay: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -317,6 +343,27 @@ export const IconsMap = {
           transform="translate(21.5 21.5) rotate(180)"
         />
         <path d="M3,12.605c-.733-.297-1.25-1.015-1.25-1.855V3.75c0-1.105,.895-2,2-2h7c.839,0,1.558,.517,1.855,1.25" />
+      </g>
+    </svg>
+  ),
+  dots: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      {...props}
+    >
+      <g
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      >
+        <circle cx="9" cy="9" r=".5" fill="currentColor"></circle>
+        <circle cx="3.25" cy="9" r=".5" fill="currentColor"></circle>
+        <circle cx="14.75" cy="9" r=".5" fill="currentColor"></circle>
       </g>
     </svg>
   ),
