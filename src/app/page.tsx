@@ -44,7 +44,7 @@ export default async function Page() {
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://www.shopify.com"
-                      className="font-semibold underline"
+                      className="font-semibold text-blue-400 underline decoration-blue-400/20 decoration-2 underline-offset-4 transition-colors ease-[ease] hover:decoration-blue-400/50"
                     >
                       Shopify
                     </a>
@@ -62,6 +62,7 @@ export default async function Page() {
                       key={project.link}
                       title={project.title}
                       description={project.description}
+                      image={project.image}
                       href={project.link}
                     />
                   ))}
