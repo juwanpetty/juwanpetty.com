@@ -87,7 +87,7 @@ export default async function Page() {
 
               {/* Interaction section */}
               <PageSection>
-                <SectionHeader title="Latest interaction" icon="circlePlay" />
+                <SectionHeader title="Latest interaction" icon="windowCode2" />
 
                 <div>
                   <ImagePlaceholder className="aspect-video" />
