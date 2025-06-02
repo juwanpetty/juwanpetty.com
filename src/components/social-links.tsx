@@ -10,9 +10,9 @@ export function SocialLinks() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex size-8 items-center justify-center rounded-lg bg-white transition-colors ease-[ease] hover:bg-neutral-100"
+          className="hover:bg-neutral-4 flex size-8 items-center justify-center rounded-lg bg-white transition-colors ease-[ease]"
         >
-          <Icons icon={icon} className="size-4 text-neutral-500" />
+          <Icons icon={icon} className="text-neutral-11 size-4" />
           <span className="sr-only">{accessibilityLabel}</span>
         </a>
       ))}

@@ -63,13 +63,10 @@ export default async function BlogDetail({
             <div className="mx-auto flex w-full max-w-[730px] flex-col">
               {/* Breadcrumbs */}
               <nav className="mb-8 flex items-center gap-1.5 sm:mb-16">
-                <Link
-                  href="/"
-                  className="text-sm leading-none text-neutral-500"
-                >
+                <Link href="/" className="text-neutral-11 text-sm leading-none">
                   Home
                 </Link>
-                <Icons icon="arrowRight" className="size-4 text-neutral-500" />
+                <Icons icon="arrowRight" className="text-neutral-11 size-4" />
                 <span className="text-sm leading-none">Blog</span>
               </nav>
 

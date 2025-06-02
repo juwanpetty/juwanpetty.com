@@ -8,7 +8,7 @@ export function ImagePlaceholder({ className }: Props) {
   return (
     <div
       className={cn(
-        "flex aspect-square w-full items-center justify-center rounded-lg border border-dashed border-neutral-200 bg-neutral-50 text-neutral-400",
+        "border-neutral-6 bg-neutral-1 text-neutral-11 flex aspect-square w-full items-center justify-center rounded-lg border border-dashed",
         className
       )}
     >

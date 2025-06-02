@@ -4,7 +4,7 @@ import { Link } from "next-view-transitions";
 
 export function SiteHeader() {
   return (
-    <div className="sticky top-0 z-50 flex w-full items-center border-b border-neutral-900/10 bg-white">
+    <div className="border-neutral-12/10 sticky top-0 z-50 flex w-full items-center border-b bg-white">
       <div className="mx-auto flex h-[var(--header-height)] w-full max-w-[1400px] items-center justify-between px-5">
         <div>
           <Link href="/" className="flex items-center gap-2">

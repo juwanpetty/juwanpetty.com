@@ -26,16 +26,16 @@ export function ProjectCard({
         alt={`${title} Screenshot`}
         width={1920}
         height={1080}
-        className="aspect-video rounded-lg border border-neutral-200 shadow-2xs"
+        className="border-neutral-12/10 aspect-video rounded-lg border shadow-2xs"
       />
 
       <div className="flex w-full items-start gap-4 px-1">
         <div className="grow">
           <h3 className="text-base font-semibold">{title}</h3>
-          <p className="text-sm text-neutral-500">{description}</p>
+          <p className="text-neutral-11 text-sm">{description}</p>
         </div>
 
-        <Icons icon="arrowUpRight" className="size-4 text-neutral-500" />
+        <Icons icon="arrowUpRight" className="text-neutral-11 size-4" />
       </div>
     </a>
   );

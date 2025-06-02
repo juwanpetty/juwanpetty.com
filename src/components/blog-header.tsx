@@ -15,7 +15,7 @@ export function BlogHeader({ title, datePublished }: BlogHeaderProps) {
       </h1>
 
       <div className="flex items-center gap-2">
-        <time dateTime={formattedDate} className="text-sm text-neutral-500">
+        <time dateTime={formattedDate} className="text-neutral-11 text-sm">
           {formattedDate}
         </time>
       </div>

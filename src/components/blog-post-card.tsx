@@ -14,11 +14,11 @@ export function PostCard({ title, datePublished, slug }: PostCardProps) {
     <Link href={`/blog/${slug}`} className="flex flex-col gap-1">
       <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-center sm:gap-2">
         <h3 className="truncate text-base font-semibold">{title}</h3>
-        <span className="text-sm text-nowrap text-neutral-500">
+        <span className="text-neutral-11 text-sm text-nowrap">
           {formattedDate}
         </span>
       </div>
-      <p className="hidden text-sm text-neutral-500 sm:block">
+      <p className="text-neutral-11 hidden text-sm sm:block">
         This is a brief description of the blog post.
       </p>
     </Link>

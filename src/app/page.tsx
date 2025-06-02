@@ -30,7 +30,7 @@ export default async function Page() {
               <PageSection>
                 <SectionHeader title="About" icon="circleUser" />
 
-                <div className="px-1 text-neutral-700">
+                <div className="text-neutral-11 px-1">
                   <p className="text-base leading-[1.65rem]">
                     Hello, I&apos;m Juwan, a Frontend Engineer based in the US.
                     This is my little corner of the internet where you can
@@ -85,9 +85,9 @@ export default async function Page() {
                 </div>
               </PageSection>
 
-              {/* Video section */}
+              {/* Interaction section */}
               <PageSection>
-                <SectionHeader title="Latest video" icon="circlePlay" />
+                <SectionHeader title="Latest interaction" icon="circlePlay" />
 
                 <div>
                   <ImagePlaceholder className="aspect-video" />

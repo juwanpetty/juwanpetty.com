@@ -27,11 +27,11 @@ export function Breadcrumb({ links }: Props) {
 
         const content =
           !isLast || href ? (
-            <Link href={href!} className="tracking-[-0.1px] text-neutral-900">
+            <Link href={href!} className="text-neutral-12 tracking-[-0.1px]">
               {name}
             </Link>
           ) : (
-            <span className="truncate tracking-[-0.1px] text-neutral-500">
+            <span className="text-neutral-11 truncate tracking-[-0.1px]">
               {name}
             </span>
           );
@@ -41,7 +41,7 @@ export function Breadcrumb({ links }: Props) {
             {content}
             {!isLast && (
               <span
-                className="text-xs text-neutral-500"
+                className="text-neutral-11 text-xs"
                 role="presentation"
                 aria-hidden="true"
               >
