@@ -1,6 +1,6 @@
 import { PostCard } from "@/components/blog-post-card";
-import { ImagePlaceholder } from "@/components/image-placeholder";
 import { PageSection, SectionHeader } from "@/components/page-section";
+import { CardHover } from "@/components/playground/card-hover";
 import { ProfileHeader } from "@/components/profile-header";
 import { ProjectCard } from "@/components/project-card";
 import { SiteHeader } from "@/components/site-header";
@@ -89,8 +89,12 @@ export default async function Page() {
               <PageSection>
                 <SectionHeader title="Latest interaction" icon="windowCode2" />
 
-                <div>
-                  <ImagePlaceholder className="aspect-video" />
+                <div className="flex flex-col gap-3">
+                  <CardHover />
+
+                  <div className="px-1">
+                    <h3 className="text-base font-semibold">Card Hover</h3>
+                  </div>
                 </div>
               </PageSection>
             </div>
