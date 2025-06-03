@@ -1,6 +1,7 @@
 import { CopyEmailButton } from "@/components/copy-email-button";
 import { ImagePlaceholder } from "@/components/image-placeholder";
 import { ProfileSocialLinks } from "@/components/profile-social-links";
+import bannerImage from "../../public/banner.png";
 import Image from "next/image";
 
 export function ProfileHeader() {
@@ -10,10 +11,11 @@ export function ProfileHeader() {
       <div className="border-neutral-12/10 absolute -top-6 -left-5 h-40 w-[calc(100%+40px)] overflow-hidden rounded-none border-none sm:top-0 sm:left-0 sm:h-64 sm:w-full sm:rounded-lg sm:border sm:border-solid">
         <Image
           fill
-          objectFit="cover"
-          src="/banner.png"
-          alt="Banner Image"
+          src={bannerImage}
+          alt="Profile Banner"
+          placeholder="blur"
           priority
+          style={{ objectFit: "cover" }}
         />
       </div>
 
