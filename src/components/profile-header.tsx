@@ -1,21 +1,21 @@
-import { Icons } from "@/components/icons";
+import { CopyEmailButton } from "@/components/copy-email-button";
 import { ImagePlaceholder } from "@/components/image-placeholder";
 import { ProfileSocialLinks } from "@/components/profile-social-links";
-// import Image from "next/image";
+import Image from "next/image";
 
 export function ProfileHeader() {
   return (
     <header className="relative pt-40 pb-8 sm:pt-64">
       {/* Banner */}
-      <ImagePlaceholder className="border-neutral-12/10 absolute -top-6 -left-5 h-40 w-[calc(100%+40px)] rounded-none border-none sm:top-0 sm:left-0 sm:h-64 sm:w-full sm:rounded-lg sm:border sm:border-solid" />
-      {/* <Image
-        src="/banner.jpeg"
-        alt="Banner Image"
-        width="10000"
-        height="5625"
-        objectFit="cover"
-        className="absolute -top-6 -left-5 h-40 w-[calc(100%+40px)] rounded-none border-none border-neutral-900/10 sm:top-0 sm:left-0 sm:h-64 sm:w-full sm:rounded-lg sm:border sm:border-solid"
-      /> */}
+      <div className="border-neutral-12/10 absolute -top-6 -left-5 h-40 w-[calc(100%+40px)] overflow-hidden rounded-none border-none sm:top-0 sm:left-0 sm:h-64 sm:w-full sm:rounded-lg sm:border sm:border-solid">
+        <Image
+          fill
+          objectFit="cover"
+          src="/banner.png"
+          alt="Banner Image"
+          priority
+        />
+      </div>
 
       <div className="mx-auto flex w-full max-w-[730px] flex-col gap-4">
         <div className="flex w-full items-start justify-between">
@@ -34,13 +34,7 @@ export function ProfileHeader() {
             <ProfileSocialLinks />
 
             {/* Contact Button */}
-            <button
-              type="button"
-              className="border-neutral-12/10 hover:bg-neutral-4 flex h-8 items-center gap-1.5 rounded-[10px] border px-2.5 transition ease-[ease]"
-            >
-              <Icons icon="copy" className="text-neutral-11 size-4" />
-              <span className="text-sm font-medium">Contact</span>
-            </button>
+            <CopyEmailButton />
           </div>
         </div>
 

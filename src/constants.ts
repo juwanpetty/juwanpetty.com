@@ -34,3 +34,5 @@ export const SOCIAL_LINKS = [
     accessibilityLabel: "Go to YouTube channel",
   },
 ] as const;
+
+export const EMAIL_ADDRESS = "jchpetty@gmail.com";
