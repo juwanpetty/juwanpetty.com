@@ -1,0 +1,17 @@
+import { ArticleLayout } from '@/components/article-layout'
+
+export const article = {
+  date: '2025-07-03',
+  title: 'Welcome to my personal website',
+  description:
+    'I showcase the new version of my personal website and explain my plans for it going forward.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Welcome to my personal website! This is the new version of my site, and I’m excited to share it with you.

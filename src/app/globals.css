@@ -3,53 +3,11 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  --header-height: 3.5rem;
-}
-
-@theme {
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-
-  /* Colors */
-  --color-*: initial;
-
-  --color-white: #ffffff;
-  --color-black: #000000;
-
-  --color-neutral-1: #fcfcfc;
-	--color-neutral-2: #f9f9f9;
-	--color-neutral-3: #f0f0f0;
-	--color-neutral-4: #e8e8e8;
-	--color-neutral-5: #e0e0e0;
-	--color-neutral-6: #d9d9d9;
-	--color-neutral-7: #cecece;
-	--color-neutral-8: #bbbbbb;
-	--color-neutral-9: #8d8d8d;
-	--color-neutral-10: #838383;
-	--color-neutral-11: #646464;
-	--color-neutral-12: #202020;
-}
-
-@layer theme {
-  .dark {
-    --color-white: #000000;
-    --color-black: #ffffff;
-
-	--color-neutral-1: #111111;
-	--color-neutral-2: #191919;
-	--color-neutral-3: #222222;
-	--color-neutral-4: #2a2a2a;
-	--color-neutral-5: #313131;
-	--color-neutral-6: #3a3a3a;
-	--color-neutral-7: #484848;
-	--color-neutral-8: #606060;
-	--color-neutral-9: #6e6e6e;
-	--color-neutral-10: #7b7b7b;
-	--color-neutral-11: #b4b4b4;
-	--color-neutral-12: #eeeeee;
-  }
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  /* --font-sans: var(--font-inter); */
+  --font-sans--font-feature-settings: "cv11";
+  --font-mono: var(--font-geist-mono);
 }
 
 /*
@@ -66,7 +24,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-neutral-200, currentColor);
   }
 
   button {

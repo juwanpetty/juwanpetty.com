@@ -1,0 +1,27 @@
+import { ExperimentLayout } from "@/components/experiment-layout";
+import { HoldToDelete } from "./hold-to-delete";
+import holdToDeleteImage from './hold-to-delete.png';
+
+export const experiment = {
+  date: "2025-07-02",
+  title: "Hold to Delete",
+  image: holdToDeleteImage,
+  description: "In this experiment, I explore an interaction pattern — the hold to delete action. Using CSS clip-path and transitions, I've created a smooth animation that reveals a destructive action when the user presses and holds a button.",
+};
+
+export const metadata = {
+  title: experiment.title,
+  description: experiment.description,
+};
+
+export default (props) => (
+  <ExperimentLayout experiment={experiment} {...props} />
+);
+
+In this experiment, I explore an interaction pattern — the hold to delete action. Using CSS `clip-path`, I've created a smooth animation that reveals a destructive action when the user presses and holds down the button.
+
+<div className="my-8 flex w-full flex-col items-center justify-center">
+	<div className="flex h-80 w-full items-center justify-center rounded-xl border bg-white dark:bg-neutral-950 border-black/10 dark:border-white/10">
+		<HoldToDelete />
+	</div>
+</div>
