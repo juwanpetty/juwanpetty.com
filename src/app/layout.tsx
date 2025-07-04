@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/utilities/merge-classnames";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,24 +22,29 @@ const inter = Inter({
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <ViewTransitions>
       <html
         lang="en"
         suppressHydrationWarning
-        className={`${GeistSans.variable} ${GeistMono.variable} ${inter.variable}`}
+        className={cn(
+          GeistSans.variable,
+          GeistMono.variable,
+          inter.variable,
+          "scroll-pt-16 bg-white font-sans text-neutral-900 antialiased dark:bg-neutral-900 dark:text-white"
+        )}
       >
-        <body className="text-neutral-12 relative flex min-h-dvh flex-col bg-white antialiased">
+        <body>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <div className="isolate">{children}</div>
           </ThemeProvider>
         </body>
       </html>

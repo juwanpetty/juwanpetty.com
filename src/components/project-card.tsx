@@ -1,42 +1,10 @@
-import { Icons } from "@/components/icons";
-import Image from "next/image";
-
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  href: string;
-  image: string;
-}
-
-export function ProjectCard({
-  title,
-  description,
-  href,
-  image,
-}: ProjectCardProps) {
+export function ProjectCard() {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex flex-col gap-3"
-    >
-      <Image
-        src={image}
-        alt={`${title} Screenshot`}
-        width={1920}
-        height={1080}
-        className="border-neutral-12/10 aspect-video rounded-lg border shadow-2xs"
-      />
-
-      <div className="flex w-full items-start gap-4 px-1">
-        <div className="grow">
-          <h3 className="text-base font-semibold">{title}</h3>
-          <p className="text-neutral-11 text-sm">{description}</p>
-        </div>
-
-        <Icons icon="arrowUpRight" className="text-neutral-11 size-4" />
-      </div>
-    </a>
+    <article>
+      <div className="aspect-4/3 rounded-md border border-black/15 bg-neutral-50 dark:border-white/15 dark:bg-neutral-950" />
+      <h2 className="mt-3 text-base font-medium text-neutral-900 dark:text-white">
+        Title
+      </h2>
+    </article>
   );
 }
