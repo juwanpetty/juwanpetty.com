@@ -1,6 +1,7 @@
+import { ReactNode } from "react";
 import { Link } from "next-view-transitions";
 
-export function PageSection({ children }: { children?: React.ReactNode }) {
+export function PageSection({ children }: { children?: ReactNode }) {
   return <section className="flex flex-col gap-5 py-8">{children}</section>;
 }
 
@@ -12,7 +13,7 @@ export function PageSectionContent({
   return <div>{children}</div>;
 }
 
-export function PageSectionHeader({ children }: { children: React.ReactNode }) {
+export function PageSectionHeader({ children }: { children: ReactNode }) {
   return (
     <div className="flex items-center gap-2">
       {children}
@@ -26,7 +27,7 @@ export function PageSectionLabel({
   children,
 }: {
   slug?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <div className="text-sm font-medium text-neutral-600 dark:text-white/70">

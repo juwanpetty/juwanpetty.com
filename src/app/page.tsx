@@ -9,7 +9,6 @@ import { BadgeCheckIcon } from "@/icons/BadgeCheckIcon";
 import { BoltIcon } from "@/icons/BoltIcon";
 import { CircleUserIcon } from "@/icons/CircleUserIcon";
 import { PenWritingIcon } from "@/icons/PenWritingIcon";
-import { SuitcaseIcon } from "@/icons/SuitcaseIcon";
 import { getAllArticles } from "@/lib/articles";
 import { getAllExperiments } from "@/lib/experiment";
 import {
