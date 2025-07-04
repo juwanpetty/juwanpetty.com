@@ -107,7 +107,7 @@ function groupArticlesByPublishedYear(
     .map(([year, articles]) => ({ year, articles }));
 }
 
-export function getArticlesOrganizedByYear(
+function getArticlesOrganizedByYear(
   articles: ArticleWithSlug[]
 ): GroupedPosts[] {
   const sortedArticles = sortArticlesByDateAndTitle(articles);
