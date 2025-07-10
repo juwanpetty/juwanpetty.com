@@ -11,7 +11,7 @@ import { Metadata } from "next";
 import { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: "Articles",
+  title: "Blog",
   description: "All of my thoughts collected in chronological order.",
 };
 
@@ -25,7 +25,7 @@ export default async function ArticlesIndex() {
         <Breadcrumbs>
           <BreadcrumbHome />
           <BreadcrumbSeparator />
-          <Breadcrumb>Articles</Breadcrumb>
+          <Breadcrumb>Blog</Breadcrumb>
         </Breadcrumbs>
       }
     >

@@ -18,7 +18,7 @@ function SiteNavigation() {
     <nav className="flex items-center">
       <div className="flex gap-x-6 text-sm/6 text-gray-900 max-lg:hidden dark:text-white">
         <Link href={url.blogIndex()}>Blog</Link>
-        <Link href={url.experimentIndex()}>Experiments</Link>
+        <Link href={url.craftIndex()}>Crafts</Link>
       </div>
     </nav>
   );

@@ -17,7 +17,7 @@ export function Breadcrumbs(props: React.ComponentProps<"nav">) {
 export function BreadcrumbHome() {
   return (
     <Link
-      href={url.home()}
+      href={url.index()}
       className="flex min-w-0 shrink-0 items-center gap-2.5 text-neutral-900 dark:text-white"
     >
       <span>Juwan Petty</span>

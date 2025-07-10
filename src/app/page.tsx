@@ -10,7 +10,7 @@ import { BoltIcon } from "@/icons/BoltIcon";
 import { CircleUserIcon } from "@/icons/CircleUserIcon";
 import { PenWritingIcon } from "@/icons/PenWritingIcon";
 import { getAllArticles } from "@/lib/articles";
-import { getAllExperiments } from "@/lib/experiment";
+import { getAllCrafts } from "@/lib/crafts";
 import {
   PageSection,
   PageSectionContent,
@@ -19,13 +19,13 @@ import {
 } from "@/components/page-section";
 import { ProjectCard } from "@/components/project-card";
 import { ArticleCard } from "@/components/article-card";
-import { ExperimentCard } from "@/components/experiment-card";
+import { CraftCard } from "@/components/craft-card";
 import { WindowCodeIcon } from "@/icons/WindowCodeIcon";
 import { Fragment } from "react";
 import { url } from "@/lib/url";
 
 export default async function Page() {
-  const experiments = await getAllExperiments();
+  const crafts = await getAllCrafts();
   const articles = await getAllArticles();
 
   return (
@@ -79,8 +79,8 @@ export default async function Page() {
             </PageSectionLabel>
           </PageSectionHeader>
           <PageSectionContent>
-            <div className="grid grid-cols-1 gap-x-2.5 gap-y-5 sm:grid-cols-2 md:grid-cols-3">
-              {Array.from({ length: 3 }).map((_, index) => (
+            <div className="grid grid-cols-1 gap-x-2.5 gap-y-5 sm:grid-cols-2">
+              {Array.from({ length: 2 }).map((_, index) => (
                 <ProjectCard key={index} />
               ))}
             </div>
@@ -108,19 +108,19 @@ export default async function Page() {
 
         <PageSection>
           <PageSectionHeader>
-            <PageSectionLabel slug={url.experimentIndex()}>
+            <PageSectionLabel slug={url.craftIndex()}>
               <WindowCodeIcon className="size-4.5 text-neutral-500 dark:text-white/50" />
-              <span>Latest Experiments</span>
+              <span>Latest Crafts</span>
             </PageSectionLabel>
           </PageSectionHeader>
           <PageSectionContent>
             <div className="grid grid-cols-1 gap-x-2.5 gap-y-5 sm:grid-cols-2 md:grid-cols-3">
-              {experiments.map((experiment) => (
-                <ExperimentCard
-                  key={experiment.slug}
-                  slug={experiment.slug}
-                  title={experiment.title}
-                  image={experiment.image}
+              {crafts.map((craft) => (
+                <CraftCard
+                  key={craft.slug}
+                  slug={craft.slug}
+                  title={craft.title}
+                  video={craft.video}
                 />
               ))}
             </div>

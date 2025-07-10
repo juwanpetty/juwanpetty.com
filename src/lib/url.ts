@@ -1,7 +1,7 @@
 export const url = {
-  home: () => "/",
+  index: () => "/",
   blogIndex: () => "/blog",
   blogDetail: (id: string) => `/blog/${id}`,
-  experimentIndex: () => "/experiments",
-  experimentDetail: (id: string) => `/experiments/${id}`,
+  craftIndex: () => "/crafts",
+  craftDetail: (id: string) => `/crafts/${id}`,
 };
