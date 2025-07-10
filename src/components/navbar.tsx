@@ -16,7 +16,7 @@ export function Navbar({ children, ...props }: React.ComponentProps<"div">) {
 function SiteNavigation() {
   return (
     <nav className="flex items-center">
-      <div className="flex gap-x-6 text-sm/6 text-gray-900 max-lg:hidden dark:text-white">
+      <div className="flex gap-x-6 text-sm/6 text-gray-900 max-md:hidden dark:text-white">
         <Link href={url.blogIndex()}>Blog</Link>
         <Link href={url.craftIndex()}>Crafts</Link>
       </div>

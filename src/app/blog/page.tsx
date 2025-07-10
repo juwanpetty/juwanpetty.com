@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: "All of my thoughts collected in chronological order.",
 };
 
-export default async function ArticlesIndex() {
+export default async function BlogIndex() {
   const articles = await getAllArticles();
   const sortedAndGroupedArticles = getArticlesOrganizedByYear(articles);
 
@@ -31,7 +31,7 @@ export default async function ArticlesIndex() {
     >
       <div className="mx-auto max-w-3xl">
         <header className="mt-10 space-y-1">
-          <h2 className="text-base font-medium">Articles</h2>
+          <h2 className="text-base font-medium">Blog</h2>
           <span className="text-base/7 text-neutral-700 dark:text-white/70">
             Occasionally, I write about things on my mind.
           </span>
