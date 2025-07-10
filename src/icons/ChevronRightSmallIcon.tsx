@@ -1,14 +1,17 @@
 import { cn } from "@/utilities/merge-classnames";
 import { ComponentProps } from "react";
 
-export function LayoutLeftIcon({ className, ...props }: ComponentProps<"svg">) {
+export function ChevronRightSmallIcon({
+  className,
+  ...props
+}: ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="18"
-      height="18"
-      viewBox="0 0 18 18"
-      className={cn("size-5 shrink-0", className)}
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      className={cn("size-3 shrink-0", className)}
       {...props}
     >
       <g
@@ -18,8 +21,7 @@ export function LayoutLeftIcon({ className, ...props }: ComponentProps<"svg">) {
         strokeWidth="1.5"
         stroke="currentColor"
       >
-        <rect x="1.75" y="2.75" width="14.5" height="12.5" rx="2" ry="2"></rect>
-        <line x1="4.75" y1="5.75" x2="4.75" y2="12.25"></line>
+        <polyline points="4.25 10.25 8.5 6 4.25 1.75"></polyline>
       </g>
     </svg>
   );

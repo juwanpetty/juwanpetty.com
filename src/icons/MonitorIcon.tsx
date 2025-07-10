@@ -1,7 +1,7 @@
 import { cn } from "@/utilities/merge-classnames";
 import { ComponentProps } from "react";
 
-export function BoltIcon({ className, ...props }: ComponentProps<"svg">) {
+export function MonitorIcon({ className, ...props }: ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,9 @@ export function BoltIcon({ className, ...props }: ComponentProps<"svg">) {
         strokeWidth="1.5"
         stroke="currentColor"
       >
-        <path d="M14.7505 7.25H9.49905L9.81065 1.9868C9.82325 1.7732 9.55085 1.6734 9.42255 1.8446L3.04965 10.3501C2.92615 10.5149 3.04376 10.75 3.24976 10.75H8.50115L8.18955 16.0132C8.17695 16.2268 8.44935 16.3266 8.57765 16.1554L14.9506 7.6499C15.0741 7.4851 14.9565 7.25 14.7505 7.25Z"></path>
+        <path d="M5.75 15.75C6.508 15.511 7.628 15.25 9 15.25C9.795 15.25 10.941 15.338 12.25 15.75"></path>{" "}
+        <path d="M9 12.75V15.25"></path>{" "}
+        <path d="M14.25 2.75H3.75C2.64543 2.75 1.75 3.64543 1.75 4.75V10.75C1.75 11.8546 2.64543 12.75 3.75 12.75H14.25C15.3546 12.75 16.25 11.8546 16.25 10.75V4.75C16.25 3.64543 15.3546 2.75 14.25 2.75Z"></path>
       </g>
     </svg>
   );
