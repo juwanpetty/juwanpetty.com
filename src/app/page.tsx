@@ -23,10 +23,12 @@ import { CraftCard } from "@/components/craft-card";
 import { WindowCodeIcon } from "@/icons/WindowCodeIcon";
 import { Fragment } from "react";
 import { url } from "@/lib/url";
+import { getProjects } from "@/lib/projects";
 
 export default async function Page() {
   const crafts = await getAllCrafts();
   const articles = await getAllArticles();
+  const projects = getProjects();
 
   return (
     <CenteredPageLayout
@@ -80,8 +82,13 @@ export default async function Page() {
           </PageSectionHeader>
           <PageSectionContent>
             <div className="grid grid-cols-1 gap-x-2.5 gap-y-5 sm:grid-cols-2">
-              {Array.from({ length: 2 }).map((_, index) => (
-                <ProjectCard key={index} />
+              {projects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  url={project.url}
+                  image={project.image}
+                />
               ))}
             </div>
           </PageSectionContent>
