@@ -1,7 +1,7 @@
 import { cn } from "@/utilities/merge-classnames";
 import { ComponentProps } from "react";
 
-export function MenuLeftIcon({ className, ...props }: ComponentProps<"svg">) {
+export function XMarkIcon({ className, ...props }: ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,14 +13,13 @@ export function MenuLeftIcon({ className, ...props }: ComponentProps<"svg">) {
     >
       <g
         fill="none"
-        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
+        stroke="currentColor"
       >
-        <line x1="2.25" y1="14.25" x2="15.75" y2="14.25" />
-        <line x1="2.25" y1="3.75" x2="15.75" y2="3.75" />
-        <line x1="2.25" y1="9" x2="9.25" y2="9" />
+        <line x1="14" y1="4" x2="4" y2="14"></line>
+        <line x1="4" y1="4" x2="14" y2="14"></line>
       </g>
     </svg>
   );

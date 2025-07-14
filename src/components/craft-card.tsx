@@ -24,7 +24,7 @@ export function CraftCard({ slug, title, video }: CraftCardProps) {
           Your browser does not support the video tag.
         </video>
       </div>
-      <h3 className="mt-3 text-base font-medium text-neutral-950 dark:text-white">
+      <h3 className="mt-2 text-base font-medium text-neutral-950 dark:text-white">
         {title}
       </h3>
     </Link>
