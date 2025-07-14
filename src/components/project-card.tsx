@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from "@/icons/ExternalLinkIcon";
 import Image from "next/image";
 
 export function ProjectCard({
@@ -23,9 +24,14 @@ export function ProjectCard({
           className="rounded-md"
         />
       </div>
-      <h2 className="mt-3 text-base font-medium text-neutral-900 dark:text-white">
-        {title}
-      </h2>
+      <div className="mt-2 flex items-start gap-2">
+        <h2 className="grow text-base font-medium text-neutral-900 dark:text-white">
+          {title}
+        </h2>
+        <span className="flex size-6 items-center justify-center">
+          <ExternalLinkIcon className="size-4 text-neutral-500 dark:text-neutral-400" />
+        </span>
+      </div>
     </a>
   );
 }
