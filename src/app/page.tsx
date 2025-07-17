@@ -103,10 +103,12 @@ export default async function Page() {
           </PageSectionHeader>
           <PageSectionContent>
             <div className="flex flex-col sm:space-y-3">
-              {articles.map(({ slug, title, date }) => (
+              {articles.map(({ slug, title, date }, index) => (
                 <Fragment key={slug}>
                   <ArticleCard slug={slug} title={title} date={date} />
-                  <hr className="my-5 border-t border-dashed border-black/15 sm:hidden dark:border-white/15" />
+                  {index < articles.length - 1 && (
+                    <div className="h-px bg-neutral-200 dark:bg-neutral-800" />
+                  )}
                 </Fragment>
               ))}
             </div>
