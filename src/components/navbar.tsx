@@ -1,12 +1,29 @@
 "use client";
 
 import { MenuIcon } from "@/icons/MenuIcon";
+import { PenWritingIcon } from "@/icons/PenWritingIcon";
+import { WindowCodeIcon } from "@/icons/WindowCodeIcon";
 import { XMarkIcon } from "@/icons/XMarkIcon";
 import { url } from "@/lib/url";
 import { cn } from "@/utilities/merge-classnames";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { Link } from "next-view-transitions";
 import { useState } from "react";
+
+interface NavigationLinkProps extends React.ComponentProps<typeof Link> {
+  children: React.ReactNode;
+}
+
+function NavigationLink({ children, ...props }: NavigationLinkProps) {
+  return (
+    <Link
+      {...props}
+      className="relative flex items-center gap-2 rounded-lg p-2 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 md:py-1.5 dark:text-white/70 dark:hover:bg-neutral-800 dark:hover:text-white [&>svg]:size-4"
+    >
+      {children}
+    </Link>
+  );
+}
 
 function MobileNavigation() {
   const [open, setOpen] = useState(false);
@@ -42,12 +59,20 @@ function MobileNavigation() {
               </button>
             </div>
             <div className="flex flex-col">
-              <Link href={url.blogIndex()} onClick={() => setOpen(false)}>
-                Blog
-              </Link>
-              <Link href={url.craftIndex()} onClick={() => setOpen(false)}>
-                Crafts
-              </Link>
+              <NavigationLink
+                href={url.blogIndex()}
+                onClick={() => setOpen(false)}
+              >
+                <PenWritingIcon />
+                <span>Blog</span>
+              </NavigationLink>
+              <NavigationLink
+                href={url.craftIndex()}
+                onClick={() => setOpen(false)}
+              >
+                <WindowCodeIcon />
+                <span>Crafts</span>
+              </NavigationLink>
             </div>
           </DialogPanel>
         </div>
