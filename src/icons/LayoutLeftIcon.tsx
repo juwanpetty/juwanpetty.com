@@ -8,7 +8,7 @@ export function LayoutLeftIcon({ className, ...props }: ComponentProps<"svg">) {
       width="18"
       height="18"
       viewBox="0 0 18 18"
-      className={cn("h-3.5 shrink-0", className)}
+      className={cn("h-5 shrink-0", className)}
       {...props}
     >
       <g

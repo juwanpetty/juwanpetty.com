@@ -31,7 +31,6 @@ export default function RootLayout({
         lang="en"
         suppressHydrationWarning
         className={cn(
-          GeistSans.variable,
           GeistMono.variable,
           inter.variable,
           "scroll-pt-16 bg-white font-sans text-neutral-900 antialiased dark:bg-neutral-900 dark:text-white"

@@ -1,0 +1,26 @@
+import { CraftLayout } from "@/components/craft-layout";
+import { TextReveal } from "./text-reveal";
+
+export const craft = {
+  date: "2025-07-02",
+  title: "Text Reveal",
+  video: 'hold-to-delete',
+  description: "In this craft, I explore an interaction pattern — the hold to delete action. Using CSS clip-path and transitions, I've created a smooth animation that reveals a destructive action when the user presses and holds a button.",
+};
+
+export const metadata = {
+  title: craft.title,
+  description: craft.description,
+};
+
+export default (props) => (
+  <CraftLayout craft={craft} {...props} />
+);
+
+In this craft, I explore an interaction pattern — the hold to delete action. Using CSS `clip-path`, I've created a smooth animation that reveals a destructive action when the user presses and holds down the button.
+
+<div className="my-8 flex w-full flex-col items-center justify-center">
+	<div className="flex h-80 w-full items-center justify-center rounded-xl border bg-white dark:bg-neutral-950 border-black/10 dark:border-white/10">
+		<TextReveal />
+	</div>
+</div>

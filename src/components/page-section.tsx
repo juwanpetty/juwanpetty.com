@@ -34,7 +34,7 @@ export function PageSectionLabel({
       {slug ? (
         <Link
           href={slug}
-          className="-ml-2 flex items-center gap-2 rounded-md px-2 py-1 transition-colors duration-150 hover:bg-black/4 hover:dark:bg-white/8"
+          className="-ml-2 flex items-center gap-2 rounded-md px-2 py-1 transition-colors duration-150 hover:bg-black/10 hover:dark:bg-white/8"
         >
           {children}
         </Link>
