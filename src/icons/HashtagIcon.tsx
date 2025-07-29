@@ -1,7 +1,7 @@
 import { cn } from "@/utilities/merge-classnames";
 import { ComponentProps } from "react";
 
-export function FolderIcon({ className, ...props }: ComponentProps<"svg">) {
+export function HashtagIcon({ className, ...props }: ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,12 +13,15 @@ export function FolderIcon({ className, ...props }: ComponentProps<"svg">) {
     >
       <g
         fill="none"
-        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
+        stroke="currentColor"
       >
-        <path d="M13.75,5.25c1.105,0,2,.895,2,2v5.5c0,1.105-.895,2-2,2H4.25c-1.105,0-2-.895-2-2V4.75c0-1.105,.895-2,2-2h1.825c.587,0,1.144,.258,1.524,.705l1.524,1.795h4.626Z" />
+        <line x1="3.75" y1="6.25" x2="15.25" y2="6.25"></line>
+        <line x1="2.75" y1="11.75" x2="14.25" y2="11.75"></line>
+        <line x1="7.633" y1="2.75" x2="5.289" y2="15.25"></line>
+        <line x1="12.711" y1="2.75" x2="10.367" y2="15.25"></line>
       </g>
     </svg>
   );

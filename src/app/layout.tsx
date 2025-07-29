@@ -1,4 +1,3 @@
-import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Inter } from "next/font/google";
 import { Metadata } from "next";
@@ -31,7 +30,6 @@ export default function RootLayout({
         lang="en"
         suppressHydrationWarning
         className={cn(
-          GeistSans.variable,
           GeistMono.variable,
           inter.variable,
           "scroll-pt-16 bg-white font-sans text-neutral-900 antialiased dark:bg-neutral-900 dark:text-white"
