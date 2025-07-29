@@ -1,8 +1,15 @@
 export const url = {
-  index: () => "/",
+  home: () => "/",
   about: () => "/about",
+  reading: () => "/reading",
+  workspace: () => "/workspace",
+  stack: () => "/stack",
+  projectIndex: () => "/projects",
+  projectDetail: (id: string) => `/projects/${id}`,
+  componentsIndex: () => "/components",
+  componentDetail: (id: string) => `/components/${id}`,
+  feedIndex: () => "/feed",
+  feedDetail: (id: string) => `/feed/${id}`,
   blogIndex: () => "/blog",
   blogDetail: (id: string) => `/blog/${id}`,
-  craftIndex: () => "/crafts",
-  craftDetail: (id: string) => `/crafts/${id}`,
 };
