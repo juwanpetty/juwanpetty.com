@@ -41,7 +41,7 @@ export default function Page() {
               </div>
 
               <div className="flex items-center gap-3">
-                <span className="flex h-7.5 items-center gap-0.5 rounded-full bg-amber-500 px-2.5 text-white dark:bg-amber-600">
+                <span className="flex h-7.5 items-center gap-0.5 rounded-full bg-neutral-100 px-2.5 text-neutral-500 dark:bg-neutral-800">
                   <SuitcaseIcon className="size-4" />
                   <span className="px-1 text-sm font-medium">Open to work</span>
                 </span>
