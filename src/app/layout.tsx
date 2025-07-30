@@ -32,7 +32,7 @@ export default function RootLayout({
         className={cn(
           GeistMono.variable,
           inter.variable,
-          "scroll-pt-16 bg-white font-sans text-neutral-900 antialiased dark:bg-neutral-900 dark:text-white"
+          "scroll-pt-16 bg-white font-sans text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-200"
         )}
       >
         <body>
