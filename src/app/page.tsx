@@ -29,7 +29,7 @@ export default function Page() {
           <header className="flex items-center gap-x-4">
             <div className="size-24 rounded-full border border-neutral-200 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800" />
 
-            <div className="flex flex-col items-start gap-3">
+            <div className="flex flex-col items-start gap-2.5">
               <div>
                 <h1 className="flex items-center gap-2 text-xl">
                   <span className="font-medium">Juwan Petty</span>
@@ -41,7 +41,7 @@ export default function Page() {
               </div>
 
               <div className="flex items-center gap-3">
-                <span className="flex h-8 items-center gap-0.5 rounded-full bg-amber-500 px-2.5 text-white dark:bg-amber-600">
+                <span className="flex h-7.5 items-center gap-0.5 rounded-full bg-amber-500 px-2.5 text-white dark:bg-amber-600">
                   <SuitcaseIcon className="size-4" />
                   <span className="px-1 text-sm font-medium">Open to work</span>
                 </span>
@@ -50,7 +50,7 @@ export default function Page() {
                   href="mailto:jchpetty@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex size-8 items-center justify-center rounded-full text-neutral-500 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                  className="flex size-7.5 items-center justify-center rounded-full text-neutral-500 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
                 >
                   <EnvelopeIcon className="size-4" />
                   <span className="sr-only">Email me</span>
