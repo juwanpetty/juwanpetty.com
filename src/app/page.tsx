@@ -89,10 +89,15 @@ export default function Page() {
               <div className="flex flex-col gap-10">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-[9rem_25rem]">
                   <span className="text-sm text-neutral-500">2020 — 2025</span>
-                  <div className="flex flex-col">
-                    <h2 className="flex text-sm font-medium text-balance">
+                  <div className="flex flex-col items-start">
+                    <a
+                      href="https://www.shopify.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex text-sm font-medium text-balance hover:underline"
+                    >
                       Frontend Engineer at Shopify
-                    </h2>
+                    </a>
                     <p className="text-sm text-neutral-500">Remote</p>
 
                     <div className="mt-2.5">
@@ -121,10 +126,15 @@ export default function Page() {
 
                 <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-[9rem_25rem]">
                   <span className="text-sm text-neutral-500">2018 — 2019</span>
-                  <div className="flex flex-col">
-                    <h2 className="text-sm font-medium text-balance">
+                  <div className="flex flex-col items-start">
+                    <a
+                      href="https://www.shopify.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex text-sm font-medium text-balance hover:underline"
+                    >
                       Web Developer Intern at Shopify
-                    </h2>
+                    </a>
                     <p className="mt-1 text-sm text-neutral-500">Toronto, ON</p>
 
                     <div className="mt-2.5">
@@ -139,11 +149,16 @@ export default function Page() {
 
                 <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-[9rem_25rem]">
                   <span className="text-sm text-neutral-500">2017 — 2018</span>
-                  <div className="flex flex-col">
-                    <h2 className="text-sm font-medium text-balance">
-                      Frontend Developer Intern at Georgia Departmant of
+                  <div className="flex flex-col items-start">
+                    <a
+                      href="https://doas.ga.gov/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium text-balance hover:underline"
+                    >
+                      Frontend Developer Intern at Georgia Department of
                       Administrative Services
-                    </h2>
+                    </a>
                     <p className="mt-1 text-sm text-neutral-500">Atlanta, GA</p>
 
                     <div className="mt-2.5">

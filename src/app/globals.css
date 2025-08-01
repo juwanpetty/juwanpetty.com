@@ -41,3 +41,16 @@
 *::after {
   box-sizing: border-box;
 }
+
+a[target="_blank"]::after {
+  content: "";
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-image: url("/assets/external-icon.svg");
+  background-size: 1rem;
+  padding-inline-end: 1.25rem;
+}
+
+.dark a[target="_blank"]::after {
+  background-image: url("/assets/external-icon-dark.svg");
+}
