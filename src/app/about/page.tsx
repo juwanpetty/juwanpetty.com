@@ -1,11 +1,13 @@
 import { BadgeCheckIcon } from "@/icons/BadgeCheckIcon";
 import { BoltIcon } from "@/icons/BoltIcon";
+import { CircleUserIcon } from "@/icons/CircleUserIcon";
 import { EnvelopeIcon } from "@/icons/EnvelopeIcon";
 import { GraduationCapIcon } from "@/icons/GraduationCapIcon";
 import { LogoIcon } from "@/icons/LogoIcon";
 import { SuitcaseIcon } from "@/icons/SuitcaseIcon";
 import { url } from "@/lib/url";
 import { Link } from "next-view-transitions";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -63,13 +65,10 @@ export default function Page() {
                 aria-label="Tabs"
                 className="-mb-px grid grid-cols-3 gap-x-4 text-center text-sm font-medium"
               >
-                <Link
-                  href="/explore"
-                  className="border-b-2 border-neutral-700 py-3.5"
-                >
+                <Link href="/explore" className="py-3.5 text-neutral-500">
                   Explore
                 </Link>
-                <Link href="/" className="py-3.5 text-neutral-500">
+                <Link href="/" className="border-b-2 border-neutral-700 py-3.5">
                   About
                 </Link>
                 <span className="py-3.5 text-neutral-500">Label</span>
@@ -77,6 +76,14 @@ export default function Page() {
             </div> */}
 
             <section className="flex flex-col gap-1">
+              <div className="flex items-center gap-x-2">
+                <div className="-ml-2 flex h-8 items-center gap-2 px-2 text-neutral-700 dark:text-neutral-400">
+                  <CircleUserIcon className="size-4.5 text-neutral-500" />
+                  <span className="text-sm font-medium">About</span>
+                </div>
+                <span className="flex flex-1 shrink border-t border-dashed border-neutral-300 dark:border-neutral-700" />
+              </div>
+
               <div>
                 <p className="text-sm text-pretty text-neutral-500">
                   Obsessed with the details that make digital products feel{" "}
@@ -89,15 +96,14 @@ export default function Page() {
               <div className="flex items-center gap-x-2">
                 <div className="-ml-2 flex h-8 items-center gap-2 px-2 text-neutral-700 dark:text-neutral-400">
                   <BoltIcon className="size-4.5 text-neutral-500" />
-                  <span className="text-sm font-medium">Writing</span>
+                  <span className="text-sm font-medium">Experience</span>
                 </div>
                 <span className="flex flex-1 shrink border-t border-dashed border-neutral-300 dark:border-neutral-700" />
               </div>
 
-              <div className="flex flex-col gap-7">
-                <div className="flex items-center gap-4">
-                  <div className="aspect-3/4 h-22 rounded-lg border border-neutral-200 bg-neutral-50 shadow-xs" />
-
+              <div className="flex flex-col gap-10">
+                <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-[9rem_25rem]">
+                  <span className="text-sm text-neutral-500">2020 — 2025</span>
                   <div className="flex flex-col items-start">
                     <a
                       href="https://www.shopify.com"
@@ -105,35 +111,75 @@ export default function Page() {
                       rel="noopener noreferrer"
                       className="external flex text-sm font-medium text-balance hover:underline"
                     >
-                      Conversations in Android 11
+                      Frontend Engineer at Shopify
                     </a>
+                    <p className="text-sm text-neutral-500">Remote</p>
 
-                    <div className="mt-2">
-                      <p className="line-clamp-2 text-sm text-neutral-500">
-                        At the end of the day, we use our phones to communicate
-                        and connect with people that matter most to us.
+                    <div className="mt-2.5">
+                      <p className="text-sm text-neutral-500">
+                        Built merchant-facing marketing tools like email
+                        automation, campaign workflows, and reporting
+                        dashboards.
+                      </p>
+                    </div>
+
+                    <div>
+                      <div className="mt-4 flex h-32 gap-2 overflow-x-auto">
+                        <div className="aspect-video h-full overflow-hidden rounded-lg">
+                          <Image
+                            src="/images/integrated-campaigns.png"
+                            width={1280}
+                            height={720}
+                            alt="Integrated Campaigns"
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-[9rem_25rem]">
+                  <span className="text-sm text-neutral-500">2018 — 2019</span>
+                  <div className="flex flex-col items-start">
+                    <a
+                      href="https://www.shopify.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="external flex text-sm font-medium text-balance hover:underline"
+                    >
+                      Web Developer Intern at Shopify
+                    </a>
+                    <p className="mt-1 text-sm text-neutral-500">Toronto, ON</p>
+
+                    <div className="mt-2.5">
+                      <p className="text-sm text-neutral-500">
+                        Worked on first-party Facebook Ads tools within
+                        Shopify’s Marketing section, helping merchants create
+                        and manage ad campaigns directly in-platform.
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="aspect-3/4 h-22 rounded-lg border border-neutral-200 bg-neutral-50 shadow-xs" />
-
+                <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-[9rem_25rem]">
+                  <span className="text-sm text-neutral-500">2017 — 2018</span>
                   <div className="flex flex-col items-start">
                     <a
-                      href="https://www.shopify.com"
+                      href="https://doas.ga.gov/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="external flex text-sm font-medium text-balance hover:underline"
+                      className="external text-sm font-medium text-balance hover:underline"
                     >
-                      FreshBooks meets Material Design
+                      Frontend Developer Intern at Georgia Department of
+                      Administrative Services
                     </a>
+                    <p className="mt-1 text-sm text-neutral-500">Atlanta, GA</p>
 
-                    <div className="mt-2">
-                      <p className="line-clamp-2 text-sm text-neutral-500">
-                        At TWG, we developed Freshbooks&apos; redesign of their
-                        Android app to adopt Material Design.
+                    <div className="mt-2.5">
+                      <p className="text-sm text-neutral-500">
+                        Redesigned and rebuilt internal-facing government web
+                        pages for better usability and mobile responsiveness.
                       </p>
                     </div>
                   </div>
@@ -145,40 +191,19 @@ export default function Page() {
               <div className="flex items-center gap-x-2">
                 <div className="-ml-2 flex h-8 items-center gap-2 px-2 text-neutral-700 dark:text-neutral-400">
                   <GraduationCapIcon className="size-4.5 text-neutral-500" />
-                  <span className="text-sm font-medium">Reading</span>
+                  <span className="text-sm font-medium">Education</span>
                 </div>
                 <span className="flex flex-1 shrink border-t border-dashed border-neutral-300 dark:border-neutral-700" />
               </div>
 
-              <div className="flex flex-col gap-10">Lorem ipsum</div>
-            </section>
-
-            <section className="flex flex-col gap-3">
-              <div className="flex items-center gap-x-2">
-                <div className="-ml-2 flex h-8 items-center gap-2 px-2 text-neutral-700 dark:text-neutral-400">
-                  <GraduationCapIcon className="size-4.5 text-neutral-500" />
-                  <span className="text-sm font-medium">Latest Video</span>
+              <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-[9rem_25rem]">
+                <span className="text-sm text-neutral-500">2015 — 2020</span>
+                <div className="flex flex-col">
+                  <h2 className="text-sm font-medium text-balance">
+                    Bachelor of Science at Kennesaw State University
+                  </h2>
+                  <p className="mt-1 text-sm text-neutral-500">Kennesaw, GA</p>
                 </div>
-                <span className="flex flex-1 shrink border-t border-dashed border-neutral-300 dark:border-neutral-700" />
-              </div>
-
-              <div className="flex flex-col">
-                <div className="aspect-video w-full rounded-lg border border-neutral-200 bg-neutral-50" />
-              </div>
-            </section>
-
-            <section className="flex flex-col gap-3">
-              <div className="flex items-center gap-x-2">
-                <span className="flex flex-1 shrink border-t border-dashed border-neutral-300 dark:border-neutral-700" />
-                <div className="flex h-8 items-center gap-2 px-2 text-neutral-700 dark:text-neutral-400">
-                  <EnvelopeIcon className="size-4.5 text-neutral-500" />
-                  <span className="text-sm font-medium">Newsletter</span>
-                </div>
-                <span className="flex flex-1 shrink border-t border-dashed border-neutral-300 dark:border-neutral-700" />
-              </div>
-
-              <div className="flex flex-col">
-                <div className="aspect-video w-full rounded-lg border border-neutral-200 bg-neutral-50" />
               </div>
             </section>
           </div>
