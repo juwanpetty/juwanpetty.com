@@ -94,7 +94,7 @@ export default function Page() {
                       href="https://www.shopify.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex text-sm font-medium text-balance hover:underline"
+                      className="external flex text-sm font-medium text-balance hover:underline"
                     >
                       Frontend Engineer at Shopify
                     </a>
@@ -131,7 +131,7 @@ export default function Page() {
                       href="https://www.shopify.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex text-sm font-medium text-balance hover:underline"
+                      className="external flex text-sm font-medium text-balance hover:underline"
                     >
                       Web Developer Intern at Shopify
                     </a>
@@ -154,7 +154,7 @@ export default function Page() {
                       href="https://doas.ga.gov/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-medium text-balance hover:underline"
+                      className="external text-sm font-medium text-balance hover:underline"
                     >
                       Frontend Developer Intern at Georgia Department of
                       Administrative Services
