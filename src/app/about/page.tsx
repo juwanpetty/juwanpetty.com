@@ -85,8 +85,12 @@ export default function Page() {
 
               <div>
                 <p className="text-sm text-pretty text-neutral-500">
-                  Obsessed with the details that make digital products feel{" "}
-                  <i>just</i> right. Design-minded dev and dev-minded designer.
+                  Hey, I’m Juwan Petty. I’m a Frontend Engineer and Design
+                  Engineer with 8+ years of experience crafting scalable,
+                  reusable UI systems that make products feel effortless to use.
+                  I work at the intersection of design and engineering,
+                  collaborating with teams to build tools that are as
+                  maintainable for developers as they are intuitive for users.
                 </p>
               </div>
             </section>
