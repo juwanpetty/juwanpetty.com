@@ -39,7 +39,7 @@ export default function Page() {
                 alt="Juwan Petty"
                 width={420}
                 height={420}
-                className="w-4/5 object-cover"
+                className="w-4/5 translate-y-2 object-contain"
               />
             </div>
 

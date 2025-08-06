@@ -44,7 +44,7 @@ export default async function Page() {
                 width={420}
                 height={420}
                 quality={1}
-                className="w-4/5 object-contain"
+                className="w-4/5 translate-y-2 object-contain"
               />
             </div>
 
