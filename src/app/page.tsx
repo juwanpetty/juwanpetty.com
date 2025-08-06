@@ -171,6 +171,7 @@ export default async function Page() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="external flex text-sm font-medium text-balance hover:underline"
+
                     >
                       Headlines
                     </a>
