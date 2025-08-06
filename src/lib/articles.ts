@@ -4,16 +4,23 @@ interface Article {
   title: string;
   description: string;
   date: string;
+  thumbnail: {
+    src: string;
+  };
 }
 
 export interface ArticleWithSlug extends Article {
   slug: string;
 }
 
+const WORKING_DIRECTORY = "blog";
+
 async function importArticle(
   articleFilename: string
 ): Promise<ArticleWithSlug> {
-  const { article } = (await import(`../app/blog/${articleFilename}`)) as {
+  const { article } = (await import(
+    `../app/${WORKING_DIRECTORY}/${articleFilename}`
+  )) as {
     default: React.ComponentType;
     article: Article;
   };
@@ -26,7 +33,7 @@ async function importArticle(
 
 export async function getAllArticles() {
   const articleFilenames = await glob("*/page.mdx", {
-    cwd: "./src/app/blog",
+    cwd: `./src/app/${WORKING_DIRECTORY}`,
   });
 
   const articles = await Promise.all(articleFilenames.map(importArticle));
