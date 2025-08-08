@@ -1,14 +1,15 @@
 import { BadgeCheckIcon } from "@/icons/BadgeCheckIcon";
-import { BoltIcon } from "@/icons/BoltIcon";
+import { CircleUserIcon } from "@/icons/CircleUserIcon";
 import { EnvelopeIcon } from "@/icons/EnvelopeIcon";
+import { GraduationCapIcon } from "@/icons/GraduationCapIcon";
 import { LogoIcon } from "@/icons/LogoIcon";
 import { SuitcaseIcon } from "@/icons/SuitcaseIcon";
 import { url } from "@/lib/url";
 import { Link } from "next-view-transitions";
-import { Field, Input } from "@headlessui/react";
 import { getAllArticles } from "@/lib/articles";
-import { PenWritingIcon } from "@/icons/PenWritingIcon";
 import Image from "next/image";
+import { BoltIcon } from "@/icons/BoltIcon";
+import { PenWritingIcon } from "@/icons/PenWritingIcon";
 
 export default async function Page() {
   const articles = await getAllArticles();
@@ -16,7 +17,7 @@ export default async function Page() {
   return (
     <div className="h-full w-full">
       <div className="sticky top-0 z-10 w-full bg-white/90 px-4 backdrop-blur-sm md:px-10 dark:bg-neutral-900/90">
-        <div className="flex h-14 w-full items-center justify-between">
+        <div className="flex h-14 w-full items-center">
           <Link
             href={url.home()}
             className="flex size-8 items-center justify-center rounded-[0.625rem]"
@@ -24,13 +25,6 @@ export default async function Page() {
             <LogoIcon className="text-neutral-800 dark:text-neutral-200" />
             <span className="sr-only">Go home</span>
           </Link>
-
-          <nav className="flex items-center">
-            <div className="flex gap-x-6 text-sm">
-              <Link href={url.home()}>Home</Link>
-              <Link href={url.about()}>About</Link>
-            </div>
-          </nav>
         </div>
       </div>
 
@@ -43,7 +37,6 @@ export default async function Page() {
                 alt="Juwan Petty"
                 width={420}
                 height={420}
-                quality={1}
                 className="w-4/5 translate-y-2 object-contain"
               />
             </div>
@@ -80,6 +73,14 @@ export default async function Page() {
 
           <div className="mt-18 flex flex-col gap-18">
             <section className="flex flex-col gap-1">
+              <div className="flex items-center gap-x-2">
+                <div className="-ml-2 flex h-8 items-center gap-2 px-2 text-neutral-700 dark:text-neutral-400">
+                  <CircleUserIcon className="size-4.5 text-neutral-500" />
+                  <span className="text-sm font-medium">About</span>
+                </div>
+                <span className="flex flex-1 shrink border-t border-dashed border-neutral-300 dark:border-neutral-700" />
+              </div>
+
               <div>
                 <p className="text-sm text-pretty text-neutral-500">
                   Obsessed with the details that make digital products feel{" "}
@@ -171,7 +172,6 @@ export default async function Page() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="external flex text-sm font-medium text-balance hover:underline"
-
                     >
                       Headlines
                     </a>
@@ -189,31 +189,116 @@ export default async function Page() {
 
             <section className="flex flex-col gap-3">
               <div className="flex items-center gap-x-2">
-                <span className="flex flex-1 shrink border-t border-dashed border-neutral-300 dark:border-neutral-700" />
-                <div className="flex h-8 items-center gap-2 px-2 text-neutral-700 dark:text-neutral-400">
-                  <EnvelopeIcon className="size-4.5 text-neutral-500" />
-                  <span className="text-sm font-medium">Newsletter (Soon)</span>
+                <div className="-ml-2 flex h-8 items-center gap-2 px-2 text-neutral-700 dark:text-neutral-400">
+                  <SuitcaseIcon className="size-4.5 text-neutral-500" />
+                  <span className="text-sm font-medium">Experience</span>
                 </div>
                 <span className="flex flex-1 shrink border-t border-dashed border-neutral-300 dark:border-neutral-700" />
               </div>
 
-              <div className="flex flex-col">
-                <Field>
-                  <div className="mt-2 grid grid-cols-1">
-                    <Input
-                      disabled
-                      autoComplete="email"
-                      name="email"
-                      type="email"
-                      placeholder="Your email address"
-                      className="col-start-1 row-start-1 block h-10 w-full rounded-lg bg-neutral-100 pr-3 pl-10 text-sm outline-1 -outline-offset-1 outline-neutral-200 placeholder:text-neutral-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:pl-9 dark:bg-neutral-800 dark:outline-neutral-700 dark:placeholder:text-neutral-500"
-                    />
-                    <EnvelopeIcon
-                      aria-hidden="true"
-                      className="pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-neutral-500 sm:size-4"
-                    />
+              <div className="flex flex-col gap-10">
+                <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-[9rem_25rem]">
+                  <span className="text-sm text-neutral-500">2020 — 2025</span>
+                  <div className="flex flex-col items-start">
+                    <a
+                      href="https://www.shopify.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="external flex text-sm font-medium text-balance hover:underline"
+                    >
+                      Frontend Engineer at Shopify
+                    </a>
+                    <p className="text-sm text-neutral-500">Remote</p>
+
+                    <div className="mt-2.5">
+                      <p className="text-sm text-neutral-500">
+                        Built merchant-facing marketing tools like email
+                        automation, campaign workflows, and reporting
+                        dashboards.
+                      </p>
+                    </div>
+
+                    <div>
+                      <div className="mt-4 flex h-24 gap-2 overflow-x-auto">
+                        <div className="aspect-video h-full overflow-hidden rounded-lg">
+                          <Image
+                            src="/images/integrated-campaigns.png"
+                            width={1280}
+                            height={720}
+                            alt="Integrated Campaigns"
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </Field>
+                </div>
+
+                <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-[9rem_25rem]">
+                  <span className="text-sm text-neutral-500">2018 — 2019</span>
+                  <div className="flex flex-col items-start">
+                    <a
+                      href="https://www.shopify.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="external flex text-sm font-medium text-balance hover:underline"
+                    >
+                      Web Developer Intern at Shopify
+                    </a>
+                    <p className="mt-1 text-sm text-neutral-500">Toronto, ON</p>
+
+                    <div className="mt-2.5">
+                      <p className="text-sm text-neutral-500">
+                        Worked on first-party Facebook Ads tools within
+                        Shopify’s Marketing section, helping merchants create
+                        and manage ad campaigns directly in-platform.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-[9rem_25rem]">
+                  <span className="text-sm text-neutral-500">2017 — 2018</span>
+                  <div className="flex flex-col items-start">
+                    <a
+                      href="https://doas.ga.gov/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="external text-sm font-medium text-balance hover:underline"
+                    >
+                      Frontend Developer Intern at Georgia Department of
+                      Administrative Services
+                    </a>
+                    <p className="mt-1 text-sm text-neutral-500">Atlanta, GA</p>
+
+                    <div className="mt-2.5">
+                      <p className="text-sm text-neutral-500">
+                        Redesigned and rebuilt internal-facing government web
+                        pages for better usability and mobile responsiveness.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="flex flex-col gap-3">
+              <div className="flex items-center gap-x-2">
+                <div className="-ml-2 flex h-8 items-center gap-2 px-2 text-neutral-700 dark:text-neutral-400">
+                  <GraduationCapIcon className="size-4.5 text-neutral-500" />
+                  <span className="text-sm font-medium">Education</span>
+                </div>
+                <span className="flex flex-1 shrink border-t border-dashed border-neutral-300 dark:border-neutral-700" />
+              </div>
+
+              <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-[9rem_25rem]">
+                <span className="text-sm text-neutral-500">2015 — 2020</span>
+                <div className="flex flex-col">
+                  <h2 className="text-sm font-medium text-balance">
+                    Bachelor of Science at Kennesaw State University
+                  </h2>
+                  <p className="mt-1 text-sm text-neutral-500">Kennesaw, GA</p>
+                </div>
               </div>
             </section>
           </div>
