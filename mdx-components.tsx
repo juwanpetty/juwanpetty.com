@@ -2,7 +2,7 @@ import Image, { type ImageProps } from "next/image";
 import type { MDXComponents } from "mdx/types";
 import { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { ExternalLink } from "@/components/external-link";
 
 function getTextContent(node: ReactNode): string {
