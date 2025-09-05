@@ -5,18 +5,10 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
-  --font-sans--font-feature-settings: "cv11";
+  --font-sans--font-feature-settings: "cv01", "cv06", "cv11", "ss03";
   --font-mono: var(--font-geist-mono);
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
@@ -42,15 +34,26 @@
   box-sizing: border-box;
 }
 
-a.external[target="_blank"]::after {
-  content: "";
-  background-position: center right;
-  background-repeat: no-repeat;
-  background-image: url("/assets/external-icon.svg");
-  background-size: 1rem;
-  padding-inline-end: 1.25rem;
+code[data-theme~="github-light"] span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
 }
 
-.dark a.external[target="_blank"]::after {
-  background-image: url("/assets/external-icon-dark.svg");
+@media (prefers-color-scheme: dark) {
+  code[data-theme~="github-dark"] span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
+  }
+}
+
+code[data-theme*="github-light"] span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  code[data-theme*="github-dark"] span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
+  }
 }

@@ -1,9 +1,9 @@
-import { GeistMono } from "geist/font/mono";
-import { Inter } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/components/theme-provider";
-import { cn } from "@/utilities/merge-classnames";
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,10 +13,17 @@ export const metadata: Metadata = {
   },
 };
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
   variable: "--font-inter",
-  display: "swap",
+  src: [
+    { path: "./InterVariable.woff2", style: "normal" },
+    { path: "./InterVariable-Italic.woff2", style: "italic" },
+  ],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export default function RootLayout({
@@ -30,9 +37,9 @@ export default function RootLayout({
         lang="en"
         suppressHydrationWarning
         className={cn(
-          GeistMono.variable,
+          "bg-white font-sans text-neutral-800 antialiased",
           inter.variable,
-          "scroll-pt-16 bg-white font-sans text-neutral-900 antialiased dark:bg-neutral-900 dark:text-neutral-100"
+          geistMono.variable
         )}
       >
         <body>
