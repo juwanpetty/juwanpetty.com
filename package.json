@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,7 +12,7 @@
     "@headlessui/react": "^2.2.4",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "^15.3.4",
+    "@next/mdx": "^15.5.2",
     "@radix-ui/react-slot": "^1.2.3",
     "@types/mdx": "^2.0.13",
     "clsx": "^2.1.1",
@@ -25,6 +25,8 @@
     "react": "^18.3.1",
     "react-aria-components": "^1.9.0",
     "react-dom": "^18.3.1",
+    "rehype-pretty-code": "^0.14.1",
+    "shiki": "^3.12.2",
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {

@@ -1,7 +1,9 @@
 import Image, { type ImageProps } from "next/image";
 import type { MDXComponents } from "mdx/types";
-import { ReactNode } from "react";
-import { cn } from "@/utilities/merge-classnames";
+import { ComponentProps, ReactNode } from "react";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { ExternalLink } from "@/components/external-link";
 
 function getTextContent(node: ReactNode): string {
   if (typeof node === "string") return node;
@@ -31,56 +33,60 @@ function generateId(text: string) {
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
-    h1: ({ children, ...props }: React.ComponentProps<"h1">) => {
+    h1: ({ children, ...props }: ComponentProps<"h1">) => {
       const id = generateId(getTextContent(children));
       return (
-        <h1 id={id} className="mb-6 scroll-m-4 text-xl font-medium" {...props}>
+        <h1 id={id} className="mb-8 text-lg font-[550] text-balance" {...props}>
           {children}
         </h1>
       );
     },
-    h2: ({ children, ...props }: React.ComponentProps<"h2">) => {
+    h2: ({ children, ...props }: ComponentProps<"h2">) => {
       const id = generateId(getTextContent(children));
       return (
-        <h2
-          id={id}
-          className="mt-16 mb-6 scroll-m-4 text-base font-medium"
-          {...props}
-        >
+        <h2 id={id} className="mt-16 mb-2 font-[550]" {...props}>
           {children}
         </h2>
       );
     },
-    p: ({ children, ...props }: React.ComponentProps<"p">) => {
+    p: ({ children, ...props }: ComponentProps<"p">) => {
       return (
-        <p
-          className="text-base/7.5 text-pretty text-neutral-900/85 not-last:mb-10 dark:text-white/85"
-          {...props}
-        >
+        <p className="mb-5 text-pretty text-neutral-600" {...props}>
           {children}
         </p>
       );
     },
-    pre: ({ children, ...props }: React.ComponentProps<"pre">) => {
+    a: ({ href = "", children, ...props }: ComponentProps<"a">) => {
+      const isInternal = href.startsWith("/");
+      if (isInternal) {
+        return (
+          <Link href={href} className="text-sky-600" {...props}>
+            {children}
+          </Link>
+        );
+      }
       return (
-        <pre
-          className="my-7 overflow-auto rounded-xl bg-neutral-50 py-4 text-sm text-red-500 md:my-7 dark:bg-[#0D0D0C]"
-          {...props}
-        >
+        <ExternalLink href={href} {...props}>
           {children}
-        </pre>
+        </ExternalLink>
       );
     },
-    code: ({ className, ...props }: React.ComponentProps<"code">) => {
-      return (
-        <code
-          className={cn(
-            "rounded-sm border border-black/15 bg-black/6 px-1 text-sm text-neutral-600 dark:border-white/15 dark:bg-white/8 dark:text-white/70",
-            className
-          )}
-          {...props}
-        />
-      );
+    pre: ({ children }: ComponentProps<"pre">) => (
+      <pre className="my-8 w-full overflow-x-auto rounded-xl border border-neutral-200 p-4 font-mono text-[0.8125rem] [&_*]:font-mono">
+        {children}
+      </pre>
+    ),
+    code: ({ ...props }: ComponentProps<"code">) => {
+      if (typeof props.children === "string") {
+        return (
+          <code
+            className="rounded-md border border-neutral-200 px-1 py-0.5 text-sm leading-relaxed"
+            {...props}
+          />
+        );
+      }
+
+      return <code {...props} />;
     },
     ul: ({ className, ...props }: React.ComponentProps<"ul">) => (
       <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
