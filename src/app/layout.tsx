@@ -2,7 +2,7 @@ import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
-import { ThemeProvider } from "@/components/theme-provider";
+// import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -43,14 +43,14 @@ export default function RootLayout({
         )}
       >
         <body>
-          <ThemeProvider
+          {/* <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >
-            <div className="isolate">{children}</div>
-          </ThemeProvider>
+          > */}
+          <div className="isolate">{children}</div>
+          {/* </ThemeProvider> */}
         </body>
       </html>
     </ViewTransitions>
