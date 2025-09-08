@@ -51,10 +51,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     },
     p: ({ children, ...props }: ComponentProps<"p">) => {
       return (
-        <p
-          className="mb-5 text-pretty text-neutral-700 dark:text-neutral-500"
-          {...props}
-        >
+        <p className="mb-5 text-pretty text-neutral-700" {...props}>
           {children}
         </p>
       );
