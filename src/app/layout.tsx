@@ -37,7 +37,7 @@ export default function RootLayout({
         lang="en"
         suppressHydrationWarning
         className={cn(
-          "bg-neutral-25 font-sans text-neutral-800 antialiased dark:bg-neutral-800 dark:text-neutral-200",
+          "bg-neutral-25 font-sans text-neutral-800 antialiased",
           inter.variable,
           geistMono.variable
         )}

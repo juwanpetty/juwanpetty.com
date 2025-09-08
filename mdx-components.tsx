@@ -80,7 +80,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       if (typeof props.children === "string") {
         return (
           <code
-            className="rounded-md border border-neutral-200 px-1 py-0.5 text-sm leading-relaxed dark:border-neutral-600"
+            className="rounded-md border border-neutral-200 px-1 py-0.5 text-sm leading-relaxed"
             {...props}
           />
         );
