@@ -36,7 +36,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h1: ({ children, ...props }: ComponentProps<"h1">) => {
       const id = generateId(getTextContent(children));
       return (
-        <h1 id={id} className="mb-8 text-lg font-[550] text-balance" {...props}>
+        <h1 id={id} className="mb-6 text-lg font-[550] text-balance" {...props}>
           {children}
         </h1>
       );
@@ -44,14 +44,17 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h2: ({ children, ...props }: ComponentProps<"h2">) => {
       const id = generateId(getTextContent(children));
       return (
-        <h2 id={id} className="mt-16 mb-2 font-[550]" {...props}>
+        <h2 id={id} className="mt-16 mb-6 font-[550]" {...props}>
           {children}
         </h2>
       );
     },
     p: ({ children, ...props }: ComponentProps<"p">) => {
       return (
-        <p className="mb-5 text-pretty text-neutral-600" {...props}>
+        <p
+          className="mb-5 text-pretty text-neutral-700 dark:text-neutral-500"
+          {...props}
+        >
           {children}
         </p>
       );
@@ -60,7 +63,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       const isInternal = href.startsWith("/");
       if (isInternal) {
         return (
-          <Link href={href} className="text-sky-600" {...props}>
+          <Link href={href} {...props}>
             {children}
           </Link>
         );
@@ -72,7 +75,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       );
     },
     pre: ({ children }: ComponentProps<"pre">) => (
-      <pre className="my-8 w-full overflow-x-auto rounded-xl border border-neutral-200 p-4 font-mono text-[0.8125rem] [&_*]:font-mono">
+      <pre className="my-8 w-full overflow-x-auto rounded-xl border border-neutral-200 bg-white p-4 font-mono text-[0.8125rem] [&_*]:font-mono">
         {children}
       </pre>
     ),
@@ -80,7 +83,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       if (typeof props.children === "string") {
         return (
           <code
-            className="rounded-md border border-neutral-200 px-1 py-0.5 text-sm leading-relaxed"
+            className="rounded-md border border-neutral-200 px-1 py-0.5 text-sm leading-relaxed dark:border-neutral-600"
             {...props}
           />
         );

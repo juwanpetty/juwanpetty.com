@@ -5,7 +5,7 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
-  --font-sans--font-feature-settings: "cv01", "cv06", "cv11", "ss03";
+  --font-sans--font-feature-settings: "cv01", "ss03";
   --font-mono: var(--font-geist-mono);
 }
 
@@ -21,6 +21,10 @@
   button {
     cursor: pointer;
   }
+}
+
+@theme {
+  --color-neutral-25: oklch(0.994 0.001 106.4);
 }
 
 .scrollbar-none {
@@ -39,21 +43,21 @@ code[data-theme~="github-light"] span {
   background-color: var(--shiki-light-bg);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   code[data-theme~="github-dark"] span {
     color: var(--shiki-dark);
     background-color: var(--shiki-dark-bg);
   }
-}
+} */
 
 code[data-theme*="github-light"] span {
   color: var(--shiki-light);
   background-color: var(--shiki-light-bg);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   code[data-theme*="github-dark"] span {
     color: var(--shiki-dark);
     background-color: var(--shiki-dark-bg);
   }
-}
+}  */
