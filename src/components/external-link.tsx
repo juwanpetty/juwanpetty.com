@@ -11,7 +11,7 @@ export function ExternalLink({ href, children }: ExternalLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative inline pr-5.5 text-sky-600 underline underline-offset-2"
+      className="relative inline pr-5.5 underline decoration-neutral-200 underline-offset-3 transition-colors hover:decoration-neutral-700"
     >
       {children}
       <span

@@ -1,5 +1,5 @@
 import { homePath } from "@/paths";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 export function SiteHeader() {
   return (
@@ -7,7 +7,7 @@ export function SiteHeader() {
       <Link className="font-medium" href={homePath()}>
         Juwan Petty
       </Link>
-      <span className="text-neutral-400">Design Engineer</span>
+      <span className="text-neutral-400">Frontend &amp; Design Engineer</span>
     </header>
   );
 }
