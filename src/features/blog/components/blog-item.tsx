@@ -23,7 +23,7 @@ export function BlogItem({ title, description, slug }: BlogItemProps) {
         <Link href={href} className="inline-block truncate font-medium">
           {title}
         </Link>
-        <p className="line-clamp-2 min-h-[2lh] leading-relaxed text-neutral-600">
+        <p className="line-clamp-2 min-h-[2lh] leading-relaxed text-neutral-500">
           {description}
         </p>
       </div>

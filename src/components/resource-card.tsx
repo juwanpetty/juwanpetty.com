@@ -37,7 +37,7 @@ export function ResourceCard({
         <Link href={href} className="font-medium">
           {title}
         </Link>
-        <span className="text-neutral-600">{subtitle}</span>
+        <span className="text-neutral-500">{subtitle}</span>
       </div>
     </div>
   );

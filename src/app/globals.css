@@ -23,6 +23,21 @@
   }
 }
 
+@layer utilities {
+  @keyframes reveal-text {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-reveal-text {
+    animation: reveal-text 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
 @theme {
   --color-neutral-25: oklch(0.994 0.001 106.4);
 }
