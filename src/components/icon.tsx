@@ -8,6 +8,7 @@ import { PostIcon } from "@/icons/post-icon";
 import { BoltLightningIcon } from "@/icons/bolt-lightning";
 import { ArrowLeftIcon } from "@/icons/arrow-left-icon";
 import { EnvelopeIcon } from "@/icons/envelope-icon";
+import { SpinnerIcon } from "@/icons/spinner-icon";
 
 export type IconName = keyof typeof icons;
 
@@ -30,4 +31,5 @@ const icons = {
   envelope: EnvelopeIcon,
   external: ExternalIcon,
   post: PostIcon,
+  spinner: SpinnerIcon,
 } as const;
