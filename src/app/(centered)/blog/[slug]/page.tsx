@@ -1,15 +1,22 @@
 import { Icon } from "@/components/icon";
+import { LoginButtonPlayground } from "@/features/blog/components/login-button";
+import { TextReveal } from "@/features/blog/components/text-reveal";
 import { getBlog, getBlogSlugs } from "@/features/blog/utilities";
-import { homePath } from "@/paths";
+import { homePath } from "@/lib/paths";
 import { Link } from "next-view-transitions";
 
-type Props = {
+type BlogDetailsPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export default async function Page({ params }: Props) {
+export default async function BlogDetailsPage({
+  params,
+}: BlogDetailsPageProps) {
   const { slug } = await params;
-  const { content: Content } = await getBlog(slug);
+  const { content } = await getBlog(slug, {
+    LoginButtonPlayground,
+    TextReveal,
+  });
 
   return (
     <div>
@@ -21,7 +28,7 @@ export default async function Page({ params }: Props) {
         <span className="text-neutral-700">Back to home</span>
       </Link>
 
-      <Content />
+      {content}
     </div>
   );
 }

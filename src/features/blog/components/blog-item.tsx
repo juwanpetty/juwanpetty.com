@@ -1,5 +1,5 @@
 import { Icon } from "@/components/icon";
-import { blogPath } from "@/paths";
+import { blogPath } from "@/lib/paths";
 import { Link } from "next-view-transitions";
 
 type BlogItemProps = {

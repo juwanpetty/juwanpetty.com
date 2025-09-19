@@ -30,7 +30,7 @@ function generateId(text: string) {
     .replace(/[^a-z0-9-]/g, "");
 }
 
-export function useMDXComponents(components: MDXComponents): MDXComponents {
+export function useMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...components,
     h1: ({ children, ...props }: ComponentProps<"h1">) => {
