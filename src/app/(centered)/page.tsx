@@ -3,7 +3,7 @@ import { PageSection } from "@/components/page-section";
 import { ResourceCard } from "@/components/resource-card";
 import { BlogItem } from "@/features/blog/components/blog-item";
 import { getBlogs } from "@/features/blog/utilities";
-import { homePath } from "@/paths";
+import { homePath } from "@/lib/paths";
 import { Link } from "next-view-transitions";
 
 export default async function Home() {
