@@ -3,6 +3,7 @@ import { getSlugsFromDirectory, readMDXFile } from "@/lib/mdx-utils";
 import { MDXComponents } from "mdx/types";
 import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
+import { getMDXComponents } from "@/../mdx-components";
 
 const contentDir = path.join(process.cwd(), "src/content/blog");
 
@@ -12,7 +13,9 @@ async function compileBlogContent(content: string, components?: MDXComponents) {
     options: {
       parseFrontmatter: true,
     },
-    components,
+    components: {
+      ...getMDXComponents(components),
+    },
   });
 }
 
