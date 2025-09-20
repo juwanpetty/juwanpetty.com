@@ -1,43 +1,25 @@
-import { Blog, BlogMetadata } from "@/features/blog/types";
-import { getSlugsFromDirectory, readMDXFile } from "@/lib/mdx-utils";
-import { MDXComponents } from "mdx/types";
-import { compileMDX } from "next-mdx-remote/rsc";
+import { Blog } from "@/features/blog/types";
+import { getSlugsFromDirectory } from "@/lib/mdx-utils";
 import path from "path";
-import { getMDXComponents } from "@/mdx-components";
 
 const contentDir = path.join(process.cwd(), "content/blog");
 
-async function compileBlogContent(content: string, components?: MDXComponents) {
-  return compileMDX<BlogMetadata>({
-    source: content,
-    options: {
-      parseFrontmatter: true,
-    },
-    components: {
-      ...getMDXComponents(components),
-    },
-  });
-}
+export async function getBlog(slug: string) {
+  const { default: Blog, metadata } = await import(
+    `@/content/blog/${slug}.mdx`
+  );
 
-export async function getBlog(slug: string, components?: MDXComponents) {
-  const content = await readMDXFile(contentDir, slug);
-
-  return compileBlogContent(content, components);
+  return {
+    slug,
+    content: Blog,
+    ...metadata,
+  } as Blog;
 }
 
 export async function getBlogs() {
   const slugs = await getSlugsFromDirectory(contentDir);
 
-  const blogs = await Promise.all(
-    slugs.map(async ({ slug }) => {
-      const { frontmatter, content } = await getBlog(slug);
-      return {
-        slug,
-        content,
-        ...frontmatter,
-      } as Blog;
-    })
-  );
+  const blogs = await Promise.all(slugs.map(async ({ slug }) => getBlog(slug)));
 
   return [...blogs].sort((a, b) => {
     const dateA = new Date(a.date).getTime();

@@ -42,11 +42,31 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         </ExternalLink>
       );
     },
-    pre: ({ children }: ComponentProps<"pre">) => (
-      <pre className="my-8 w-full overflow-x-auto rounded-xl border border-neutral-200 bg-white p-4 font-mono text-[0.8125rem] [&_*]:font-mono">
+    figure: ({ children, ...props }: ComponentProps<"figure">) => (
+      <figure className="my-8" {...props}>
         {children}
-      </pre>
+      </figure>
     ),
+    figcaption: ({ children, ...props }: ComponentProps<"figcaption">) => (
+      <figcaption
+        className="ring-b-0 flex h-10 items-center rounded-t-lg border border-neutral-200 bg-neutral-50 px-4 text-sm font-medium text-neutral-500"
+        {...props}
+      >
+        {children}
+      </figcaption>
+    ),
+    pre: ({ children, ...props }: ComponentProps<"pre">) => {
+      console.log("Props", props);
+
+      return (
+        <pre
+          className="relative rounded-lg border border-neutral-200 px-0 py-4 font-mono text-sm shadow-xs [&_*]:font-mono [figcaption[data-rehype-pretty-code-title]~&]:rounded-t-none [figcaption[data-rehype-pretty-code-title]~&]:border-t-0"
+          {...props}
+        >
+          {children}
+        </pre>
+      );
+    },
     code: ({ ...props }: ComponentProps<"code">) => {
       if (typeof props.children === "string") {
         return (
@@ -60,4 +80,8 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       return <code {...props} />;
     },
   };
+}
+
+export function useMDXComponents(): MDXComponents {
+  return getMDXComponents();
 }

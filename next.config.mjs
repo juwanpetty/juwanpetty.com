@@ -1,13 +1,25 @@
-import createMDX from "@next/mdx";
+import nextMDX from "@next/mdx";
+import rehypePrettyCode from "rehype-pretty-code";
+
+/** @type {import('rehype-pretty-code').Options} */
+const options = {
+  theme: {
+    dark: "github-dark",
+    light: "github-light",
+  },
+};
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  transpilePackages: ["next-mdx-remote"],
 };
 
-const withMDX = createMDX({
+const withMDX = nextMDX({
   extension: /\.(md|mdx)$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [[rehypePrettyCode, options]],
+  },
 });
 
 export default withMDX(nextConfig);

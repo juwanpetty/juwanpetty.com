@@ -1,8 +1,8 @@
----
-title: "Using 'clsx' or 'classnames' with 'tailwind-merge'"
-date: 2025-09-05
-description: A function that allows the conditional classnames from 'clsx' or 'classnames' to be passed into 'tailwind-merge'.
----
+export const metadata = {
+    title: "Using 'clsx' or 'classnames' with 'tailwind-merge'",
+    description: "A function that allows the conditional classnames from 'clsx' or 'classnames' to be passed into 'tailwind-merge'.",
+    date: "2025-09-05",
+}
 
 # Using 'clsx' or 'classnames' with 'tailwind-merge'
 
@@ -11,11 +11,11 @@ A function that allows the conditional classnames from ‘clsx’ or ‘classnam
 Combining [clsx](https://www.npmjs.com/package/clsx) or [classnames](https://www.npmjs.com/package/classnames) with [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) allows us to conditionally join tailwind classes in `classNames` without style conflicts.
 
 
-```tsx
+```tsx showLineNumbers title="src/index.js"
 import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge"; 
+import { twMerge } from "tailwind-merge";
 
-export function cn(...args: ClassValue[]) {  
-	return twMerge(clsx(args));
+export function cn(...args: ClassValue[]) {
+  return twMerge(clsx(args));
 }
 ```

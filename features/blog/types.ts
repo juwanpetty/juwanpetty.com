@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ElementType } from "react";
 
 export type BlogMetadata = {
   title: string;
@@ -8,5 +8,5 @@ export type BlogMetadata = {
 
 export type Blog = BlogMetadata & {
   slug: string;
-  content: ReactElement;
+  content: ElementType;
 };
