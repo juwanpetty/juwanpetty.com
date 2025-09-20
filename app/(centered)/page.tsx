@@ -4,7 +4,7 @@ import { ResourceCard } from "@/components/resource-card";
 import { BlogItem } from "@/features/blog/components/blog-item";
 import { getBlogs } from "@/features/blog/utilities";
 import { homePath } from "@/lib/paths";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 export default async function Home() {
   const blogPosts = await getBlogs();
