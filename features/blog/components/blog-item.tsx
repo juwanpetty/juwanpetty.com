@@ -1,6 +1,6 @@
 import { Icon } from "@/components/icon";
 import { blogPath } from "@/lib/paths";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 type BlogItemProps = {
   title: string;

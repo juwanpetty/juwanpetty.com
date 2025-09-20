@@ -3,7 +3,7 @@ import { LoginButtonPlayground } from "@/features/blog/components/login-button";
 import { TextReveal } from "@/features/blog/components/text-reveal";
 import { getBlog, getBlogSlugs } from "@/features/blog/utilities";
 import { homePath } from "@/lib/paths";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 type BlogDetailsPageProps = {
   params: Promise<{ slug: string }>;

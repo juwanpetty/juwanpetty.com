@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-sans--font-feature-settings: "cv01", "ss03";
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: white;
+}
+
+@layer base {
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer utilities {
+  @keyframes reveal-text {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-reveal-text {
+    animation: reveal-text 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
+.scrollbar-none {
+  scrollbar-width: none; /* for Firefox */
+  -ms-overflow-style: none; /* for Internet Explorer 10+ */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
