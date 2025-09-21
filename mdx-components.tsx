@@ -55,18 +55,14 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         {children}
       </figcaption>
     ),
-    pre: ({ children, ...props }: ComponentProps<"pre">) => {
-      console.log("Props", props);
-
-      return (
-        <pre
-          className="relative rounded-lg border border-neutral-200 px-0 py-4 font-mono text-sm shadow-xs [&_*]:font-mono [figcaption[data-rehype-pretty-code-title]~&]:rounded-t-none [figcaption[data-rehype-pretty-code-title]~&]:border-t-0"
-          {...props}
-        >
-          {children}
-        </pre>
-      );
-    },
+    pre: ({ children, ...props }: ComponentProps<"pre">) => (
+      <pre
+        className="relative rounded-lg border border-neutral-200 px-0 py-4 font-mono text-sm shadow-xs [&_*]:font-mono [figcaption[data-rehype-pretty-code-title]~&]:rounded-t-none [figcaption[data-rehype-pretty-code-title]~&]:border-t-0"
+        {...props}
+      >
+        {children}
+      </pre>
+    ),
     code: ({ ...props }: ComponentProps<"code">) => {
       if (typeof props.children === "string") {
         return (
