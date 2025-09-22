@@ -1,7 +1,9 @@
+import { CopyButton } from "@/components/copy-button";
 import { ExternalLink } from "@/components/external-link";
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 import { ComponentProps } from "react";
+import reactToText from "react-to-text";
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
@@ -47,14 +49,21 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         {children}
       </figure>
     ),
-    figcaption: ({ children, ...props }: ComponentProps<"figcaption">) => (
-      <figcaption
-        className="ring-b-0 flex h-10 items-center rounded-t-lg border border-neutral-200 bg-neutral-50 px-4 text-sm font-medium text-neutral-500"
-        {...props}
-      >
-        {children}
-      </figcaption>
-    ),
+    figcaption: ({ children, ...props }: ComponentProps<"figcaption">) => {
+      console.log({ children, ...props });
+
+      return (
+        <figcaption
+          className="ring-b-0 flex h-10 items-center rounded-t-lg border border-neutral-200 bg-neutral-50 px-4 pr-1 text-sm font-medium text-neutral-500"
+          {...props}
+        >
+          <div>{children}</div>
+          <div className="ml-auto">
+            <CopyButton text={reactToText(children)} />
+          </div>
+        </figcaption>
+      );
+    },
     pre: ({ children, ...props }: ComponentProps<"pre">) => (
       <pre
         className="relative rounded-lg border border-neutral-200 px-0 py-4 font-mono text-sm shadow-xs [&_*]:font-mono [figcaption[data-rehype-pretty-code-title]~&]:rounded-t-none [figcaption[data-rehype-pretty-code-title]~&]:border-t-0"

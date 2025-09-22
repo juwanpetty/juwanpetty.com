@@ -1,14 +1,17 @@
-import { ArrowUpRightIcon } from "@/icons/arrow-up-right-icon";
+import { ArrowLeftIcon } from "@/icons/arrow-left-icon";
 import { ArrowRightIcon } from "@/icons/arrow-right-icon";
+import { ArrowUpRightIcon } from "@/icons/arrow-up-right-icon";
+import { BoltLightningIcon } from "@/icons/bolt-lightning";
+import { ChevronLeftIcon } from "@/icons/chevron-left-icon";
+import { ChevronRightIcon } from "@/icons/chevron-right-icon";
+import { CircleUserIcon } from "@/icons/circle-user-icon";
+import { CopyIcon } from "@/icons/copy-icon";
+import { EnvelopeIcon } from "@/icons/envelope-icon";
 import { ExternalIcon } from "@/icons/external-icon";
+import { PostIcon } from "@/icons/post-icon";
+import { SpinnerIcon } from "@/icons/spinner-icon";
 import { cn } from "@/lib/utils";
 import { ComponentProps } from "react";
-import { CircleUserIcon } from "@/icons/circle-user-icon";
-import { PostIcon } from "@/icons/post-icon";
-import { BoltLightningIcon } from "@/icons/bolt-lightning";
-import { ArrowLeftIcon } from "@/icons/arrow-left-icon";
-import { EnvelopeIcon } from "@/icons/envelope-icon";
-import { SpinnerIcon } from "@/icons/spinner-icon";
 
 export type IconName = keyof typeof icons;
 
@@ -27,7 +30,10 @@ const icons = {
   "arrow-right": ArrowRightIcon,
   "arrow-up-right": ArrowUpRightIcon,
   bolt: BoltLightningIcon,
+  "chevron-left": ChevronLeftIcon,
+  "chevron-right": ChevronRightIcon,
   "circle-user": CircleUserIcon,
+  copy: CopyIcon,
   envelope: EnvelopeIcon,
   external: ExternalIcon,
   post: PostIcon,
