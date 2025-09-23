@@ -3,11 +3,13 @@ import { PageSection } from "@/components/page-section";
 import { ResourceCard } from "@/components/resource-card";
 import { BlogItem } from "@/features/blog/components/blog-item";
 import { getBlogs } from "@/features/blog/utilities";
-import { homePath } from "@/lib/paths";
+import { getWorks } from "@/features/works/utilities";
+import { homePath, workPath } from "@/lib/paths";
 import Link from "next/link";
 
 export default async function Home() {
   const blogPosts = await getBlogs();
+  const works = await getWorks();
 
   return (
     <div className="space-y-15">
@@ -27,17 +29,15 @@ export default async function Home() {
 
       <PageSection label="Latest Works" icon="bolt">
         <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          <ResourceCard
-            title="GitHub Icons"
-            subtitle="A file icon theme for VS Code"
-            href="https://github.com/juwanpetty/github-icons"
-            image={{
-              src: "/github-icons.png",
-              width: 1050,
-              height: 660,
-              alt: "GitHub Icons Preview",
-            }}
-          />
+          {works.map(({ title, description, slug, thumbnail }) => (
+            <ResourceCard
+              key={slug}
+              title={title}
+              subtitle={description}
+              slug={workPath(slug)}
+              thumbnail={thumbnail}
+            />
+          ))}
         </div>
       </PageSection>
 

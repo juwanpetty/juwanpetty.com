@@ -2,13 +2,14 @@ import { ExternalLink } from "@/components/external-link";
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 import { ComponentProps } from "react";
+import Image from "next/image";
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...components,
     h1: ({ children, ...props }: ComponentProps<"h1">) => {
       return (
-        <h1 className="mb-6 text-lg font-[550] text-balance" {...props}>
+        <h1 className="mb-6 text-base font-[550] text-balance" {...props}>
           {children}
         </h1>
       );
@@ -75,6 +76,15 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
 
       return <code {...props} />;
     },
+    img: ({ alt, ...props }: ComponentProps<"img">) => (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        className="rounded-lg border border-neutral-200"
+        alt={alt}
+        {...props}
+      />
+    ),
+    Image,
   };
 }
 
