@@ -26,6 +26,9 @@
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
+    "@content-collections/core": "^0.11.1",
+    "@content-collections/mdx": "^0.2.2",
+    "@content-collections/next": "^0.2.7",
     "@tailwindcss/postcss": "^4.1.7",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -36,6 +39,7 @@
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.1.7",
-    "typescript": "^5"
+    "typescript": "^5",
+    "zod": "^4.1.11"
   }
 }
