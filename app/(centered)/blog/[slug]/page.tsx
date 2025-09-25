@@ -1,6 +1,4 @@
-import { Icon } from "@/components/icon";
 import { getBlog, getBlogSlugs } from "@/features/blog/utilities";
-import { homePath } from "@/lib/paths";
 import Link from "next/link";
 
 type BlogDetailsPageProps = {
@@ -15,17 +13,29 @@ export default async function BlogDetailsPage({
 
   return (
     <div>
-      <Link
-        href={homePath()}
-        className="mb-15 flex items-center gap-x-2 text-sm font-medium"
-      >
-        <Icon name="arrow-left" className="size-4 text-neutral-500" />
-        <span className="text-neutral-700 underline decoration-neutral-200 underline-offset-3 transition-colors hover:decoration-neutral-700">
-          Back
-        </span>
-      </Link>
+      <header className="mb-15">
+        <h1 className="mb-5 text-base font-semibold text-neutral-800">
+          Code Editing Toolbar
+        </h1>
 
-      <Content />
+        <p className="mb-5 text-base leading-relaxed text-neutral-800">
+          October 2024
+        </p>
+
+        <p className="text-base leading-relaxed text-neutral-500">
+          We recently shipped{" "}
+          <Link
+            href="/"
+            className="underline decoration-neutral-200 underline-offset-3"
+          >
+            code editing in v0
+          </Link>
+          , and I wanted to play around with the way the toolbar moves and
+          transitions after you edit and save some code.
+        </p>
+      </header>
+
+      {/*<Content />*/}
     </div>
   );
 }
