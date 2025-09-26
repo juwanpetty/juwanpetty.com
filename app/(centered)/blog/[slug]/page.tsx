@@ -1,5 +1,5 @@
 import { getBlog, getBlogSlugs } from "@/features/blog/utilities";
-import { formatDate } from "@/lib/utils";
+import { formatDate, FULL_DATE_FORMAT } from "@/lib/utils";
 
 type BlogDetailsPageProps = {
   params: Promise<{ slug: string }>;
@@ -13,13 +13,13 @@ export default async function BlogDetailsPage({
 
   return (
     <div>
-      <header className="mb-15">
-        <h1 className="mb-5 text-base font-semibold text-neutral-800">
+      <header className="mb-12">
+        <h1 className="mb-3 text-[1.75rem] leading-8 font-semibold text-neutral-800">
           {title}
         </h1>
 
-        <p className="mb-5 text-base leading-relaxed text-neutral-800">
-          {formatDate(date)}
+        <p className="text-sm font-medium text-neutral-500">
+          {formatDate(date, FULL_DATE_FORMAT)}
         </p>
       </header>
 

@@ -20,15 +20,15 @@ export default async function WorkDetailsPage({
 
   return (
     <div>
-      <header className="mb-15">
-        <h1 className="mb-5 text-base font-semibold text-neutral-800">
+      <header className="mb-12">
+        <h1 className="mb-3 text-[1.75rem] leading-8 font-semibold text-neutral-800">
           {title}
         </h1>
-
-        <p className="text-base leading-relaxed text-neutral-500">
-          {description}
-        </p>
       </header>
+
+      <p className="mb-12 text-base leading-relaxed text-neutral-500">
+        {description}
+      </p>
 
       <WorkDetails date={date} repository={repository} website={website} />
 
