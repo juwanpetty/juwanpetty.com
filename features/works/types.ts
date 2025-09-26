@@ -2,7 +2,8 @@ import { ElementType } from "react";
 
 export type WorkMetadata = {
   title: string;
-  description: string;
+  summary: string;
+  description?: string;
   date: string;
   website?: string;
   repository?: string;

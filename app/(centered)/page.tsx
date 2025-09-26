@@ -29,11 +29,11 @@ export default async function Home() {
 
       <PageSection label="Latest Works" icon="bolt">
         <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          {works.map(({ title, description, slug, thumbnail }) => (
+          {works.map(({ title, summary, slug, thumbnail }) => (
             <ResourceCard
               key={slug}
               title={title}
-              subtitle={description}
+              subtitle={summary}
               slug={workPath(slug)}
               thumbnail={thumbnail}
             />
