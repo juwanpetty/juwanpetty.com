@@ -86,9 +86,15 @@ code[data-line-numbers] > [data-line]::before {
   content: counter(line);
   display: inline-block;
   width: 0.75rem;
-  margin-right: 1rem;
   text-align: right;
   color: gray;
+  position: sticky;
+  left: 0;
+  background-color: var(--color-neutral-50);
+  padding-left: 1rem;
+  padding-right: 1.5rem;
+  margin-left: -1rem;
+  margin-right: 0.75rem;
 }
 
 code[data-line-numbers-max-digits="2"] > [data-line]::before {

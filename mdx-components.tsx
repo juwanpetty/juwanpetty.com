@@ -16,7 +16,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     },
     h2: ({ children, ...props }: ComponentProps<"h2">) => {
       return (
-        <h2 className="mt-16 mb-6 font-[550]" {...props}>
+        <h2 className="mt-16 mb-2 font-[550]" {...props}>
           {children}
         </h2>
       );
@@ -58,7 +58,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ),
     pre: ({ children, ...props }: ComponentProps<"pre">) => (
       <pre
-        className="relative rounded-lg border border-neutral-200 px-0 py-4 font-mono text-sm shadow-xs [&_*]:font-mono [figcaption[data-rehype-pretty-code-title]~&]:rounded-t-none [figcaption[data-rehype-pretty-code-title]~&]:border-t-0"
+        className="relative overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 px-0 py-4 font-mono text-[0.8125rem] leading-relaxed shadow-xs [&_*]:font-mono [figcaption[data-rehype-pretty-code-title]~&]:rounded-t-none [figcaption[data-rehype-pretty-code-title]~&]:border-t-0"
         {...props}
       >
         {children}
@@ -68,7 +68,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       if (typeof props.children === "string") {
         return (
           <code
-            className="rounded-md border border-neutral-200 px-1 py-0.5 text-sm leading-relaxed"
+            className="rounded-md border border-neutral-200 bg-neutral-50 px-1 py-0.5 text-sm leading-relaxed"
             {...props}
           />
         );

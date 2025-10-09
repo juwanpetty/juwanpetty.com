@@ -7,6 +7,7 @@ const options = {
     dark: "github-dark",
     light: "github-light",
   },
+  keepBackground: false,
 };
 
 /** @type {import('next').NextConfig} */

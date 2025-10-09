@@ -13,8 +13,8 @@ export default async function BlogDetailsPage({
 
   return (
     <div>
-      <header className="mb-12">
-        <h1 className="mb-3 text-[1.75rem] leading-8 font-semibold text-neutral-800">
+      <header className="mb-12 flex flex-col gap-1">
+        <h1 className="text-lg font-[550] text-balance text-neutral-800">
           {title}
         </h1>
 
