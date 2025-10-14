@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 const inter = localFont({
   variable: "--font-inter",
   src: [
-    { path: "../public/fonts/InterVariable.woff2", style: "normal" },
-    { path: "../public/fonts/InterVariable-Italic.woff2", style: "italic" },
+    { path: "../../public/fonts/InterVariable.woff2", style: "normal" },
+    { path: "../../public/fonts/InterVariable-Italic.woff2", style: "italic" },
   ],
 });
 
