@@ -2,7 +2,7 @@ import { Blog } from "@/features/blog/types";
 import { getSlugsFromDirectory } from "@/lib/mdx-utils";
 import path from "path";
 
-const contentDir = path.join(process.cwd(), "content/blog");
+const contentDir = path.join(process.cwd(), "src/content/blog");
 
 export async function getBlog(slug: string) {
   const { default: Blog, metadata } = await import(

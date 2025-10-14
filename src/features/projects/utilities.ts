@@ -2,7 +2,7 @@ import { Project } from "@/features/projects/types";
 import { getSlugsFromDirectory } from "@/lib/mdx-utils";
 import path from "path";
 
-const contentDir = path.join(process.cwd(), "content/projects");
+const contentDir = path.join(process.cwd(), "src/content/projects");
 
 export async function getProject(slug: string) {
   const { default: Project, metadata } = await import(
