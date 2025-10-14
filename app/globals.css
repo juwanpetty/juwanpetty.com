@@ -9,7 +9,10 @@
 }
 
 :root {
-  --background: white;
+  font-sythesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer base {

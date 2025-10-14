@@ -37,13 +37,17 @@ function DetailLink({ href, label }: DetailLinkProps) {
   );
 }
 
-type WorkDetailsProps = {
+type ProjectDetailsProps = {
   date: string;
   repository?: string;
   website?: string;
 };
 
-export function WorkDetails({ date, repository, website }: WorkDetailsProps) {
+export function ProjectDetails({
+  date,
+  repository,
+  website,
+}: ProjectDetailsProps) {
   return (
     <div className="mb-15">
       <div className="space-y-6 text-base md:space-y-4">

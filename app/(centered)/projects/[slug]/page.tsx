@@ -1,13 +1,13 @@
-import { WorkDetails } from "@/features/works/components/work-details";
-import { getWork, getWorkSlugs } from "@/features/works/utilities";
+import { ProjectDetails } from "@/features/projects/components/project-details";
+import { getProject, getProjectSlugs } from "@/features/projects/utilities";
 
-type WorkDetailsPageProps = {
+type ProjectDetailsPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export default async function WorkDetailsPage({
+export default async function ProjectDetailsPage({
   params,
-}: WorkDetailsPageProps) {
+}: ProjectDetailsPageProps) {
   const { slug } = await params;
   const {
     content: Content,
@@ -16,7 +16,7 @@ export default async function WorkDetailsPage({
     repository,
     website,
     date,
-  } = await getWork(slug);
+  } = await getProject(slug);
 
   return (
     <div>
@@ -28,7 +28,7 @@ export default async function WorkDetailsPage({
         <p className="text-base text-neutral-500">{description}</p>
       </header>
 
-      <WorkDetails date={date} repository={repository} website={website} />
+      <ProjectDetails date={date} repository={repository} website={website} />
 
       <Content />
     </div>
@@ -36,7 +36,7 @@ export default async function WorkDetailsPage({
 }
 
 export async function generateStaticParams() {
-  return await getWorkSlugs();
+  return await getProjectSlugs();
 }
 
 export const dynamicParams = false;

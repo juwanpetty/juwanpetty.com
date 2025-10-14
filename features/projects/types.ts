@@ -1,6 +1,6 @@
 import { ElementType } from "react";
 
-export type WorkMetadata = {
+export type ProjectMetadata = {
   title: string;
   summary: string;
   description?: string;
@@ -10,7 +10,7 @@ export type WorkMetadata = {
   thumbnail: string;
 };
 
-export type Work = WorkMetadata & {
+export type Project = ProjectMetadata & {
   slug: string;
   content: ElementType;
 };

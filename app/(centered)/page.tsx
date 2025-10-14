@@ -3,13 +3,13 @@ import { PageSection } from "@/components/page-section";
 import { ResourceCard } from "@/components/resource-card";
 import { BlogItem } from "@/features/blog/components/blog-item";
 import { getBlogs } from "@/features/blog/utilities";
-import { getWorks } from "@/features/works/utilities";
-import { homePath, workPath } from "@/lib/paths";
+import { getProjects } from "@/features/projects/utilities";
+import { homePath, projectPath } from "@/lib/paths";
 import Link from "next/link";
 
 export default async function Home() {
   const blogPosts = await getBlogs();
-  const works = await getWorks();
+  const projects = await getProjects();
 
   return (
     <div className="space-y-15">
@@ -27,21 +27,21 @@ export default async function Home() {
         </p>
       </PageSection>
 
-      <PageSection label="Latest Works" icon="bolt">
+      <PageSection label="Latest Projects" icon="bolt">
         <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          {works.map(({ title, summary, slug, thumbnail }) => (
+          {projects.map(({ title, summary, slug, thumbnail }) => (
             <ResourceCard
               key={slug}
               title={title}
               subtitle={summary}
-              slug={workPath(slug)}
+              slug={projectPath(slug)}
               thumbnail={thumbnail}
             />
           ))}
         </div>
       </PageSection>
 
-      <PageSection label="Latest Writings" icon="post">
+      <PageSection label="Latest Posts" icon="post">
         <div className="space-y-8">
           {blogPosts.map(({ slug, title, description }) => (
             <BlogItem

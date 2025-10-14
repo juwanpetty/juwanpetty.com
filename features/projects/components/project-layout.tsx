@@ -1,7 +1,7 @@
 import { BackButton } from "@/components/back-button";
 import { PropsWithChildren } from "react";
 
-export function WorkLayout({ children }: PropsWithChildren) {
+export function ProjectLayout({ children }: PropsWithChildren) {
   return (
     <article className="leading-relaxed">
       <BackButton />
