@@ -1,18 +1,37 @@
-import { Blog } from "@/features/blog/types";
-import { getSlugsFromDirectory } from "@/lib/mdx-utils";
+import { Blog, BlogMetadata } from "@/features/blog/types";
+import { getSlugsFromDirectory, readMDXFile } from "@/lib/mdx-utils";
+import { getMDXComponents } from "@/mdx-components";
+import { compileMDX } from "next-mdx-remote/rsc";
+import rehypePrettyCode from "rehype-pretty-code";
 import path from "path";
 
 const contentDir = path.join(process.cwd(), "src/content/blog");
 
+const rehypePrettyCodeOptions = {
+  theme: {
+    dark: "github-dark",
+    light: "github-light",
+  },
+  keepBackground: false,
+};
+
 export async function getBlog(slug: string) {
-  const { default: Blog, metadata } = await import(
-    `@/content/blog/${slug}.mdx`
-  );
+  const { content, frontmatter } = await compileMDX<BlogMetadata>({
+    source: await readMDXFile(contentDir, slug),
+    options: {
+      parseFrontmatter: true,
+      mdxOptions: {
+        remarkPlugins: [],
+        rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
+      },
+    },
+    components: getMDXComponents(),
+  });
 
   return {
     slug,
-    content: Blog,
-    ...metadata,
+    content,
+    ...frontmatter,
   } as Blog;
 }
 
