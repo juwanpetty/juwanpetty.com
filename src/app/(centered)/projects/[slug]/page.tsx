@@ -23,9 +23,23 @@ export default async function ProjectDetailsPage({
 
       {(demoURL || repoURL) && (
         <nav className="flex gap-1">
-          {demoURL && <a href={demoURL}>Website</a>}
+          {demoURL && (
+            <a
+              className="underline decoration-neutral-300 underline-offset-3 transition-colors hover:decoration-neutral-700"
+              href={demoURL}
+            >
+              Website
+            </a>
+          )}
           {demoURL && repoURL && <span>/</span>}
-          {repoURL && <a href={repoURL}>Repository</a>}
+          {repoURL && (
+            <a
+              className="underline decoration-neutral-300 underline-offset-3 transition-colors hover:decoration-neutral-700"
+              href={repoURL}
+            >
+              Repository
+            </a>
+          )}
         </nav>
       )}
 
