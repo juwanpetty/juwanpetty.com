@@ -1,8 +1,8 @@
 import { ThemeProvider } from "@/providers/theme";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
-import localFont from "next/font/local";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,19 +11,6 @@ export const metadata: Metadata = {
     default: "Juwan Petty",
   },
 };
-
-const inter = localFont({
-  variable: "--font-inter",
-  src: [
-    { path: "../../public/fonts/InterVariable.woff2", style: "normal" },
-    { path: "../../public/fonts/InterVariable-Italic.woff2", style: "italic" },
-  ],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export default function RootLayout({
   children,
@@ -36,8 +23,8 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(
         "bg-white font-sans text-neutral-800 antialiased",
-        inter.variable,
-        geistMono.variable
+        GeistSans.variable,
+        GeistMono.variable
       )}
     >
       <body>

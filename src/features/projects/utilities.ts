@@ -1,18 +1,23 @@
-import { Project } from "@/features/projects/types";
-import { getSlugsFromDirectory } from "@/lib/mdx-utils";
+import { Project, ProjectMetadata } from "@/features/projects/types";
+import { getSlugsFromDirectory, readMDXFile } from "@/lib/mdx-utils";
 import path from "path";
+import { getMDXComponents } from "@/mdx-components";
+import { compileMDX } from "next-mdx-remote/rsc";
 
 const contentDir = path.join(process.cwd(), "src/content/projects");
 
 export async function getProject(slug: string) {
-  const { default: Project, metadata } = await import(
-    `@/content/projects/${slug}.mdx`
-  );
-
+  const { content, frontmatter } = await compileMDX<ProjectMetadata>({
+    source: await readMDXFile(contentDir, slug),
+    options: {
+      parseFrontmatter: true,
+    },
+    components: getMDXComponents(),
+  });
   return {
     slug,
-    content: Project,
-    ...metadata,
+    content,
+    ...frontmatter,
   } as Project;
 }
 

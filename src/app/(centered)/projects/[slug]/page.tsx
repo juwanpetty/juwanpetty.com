@@ -1,4 +1,3 @@
-import { ProjectDetails } from "@/features/projects/components/project-details";
 import { getProject, getProjectSlugs } from "@/features/projects/utilities";
 
 type ProjectDetailsPageProps = {
@@ -9,14 +8,8 @@ export default async function ProjectDetailsPage({
   params,
 }: ProjectDetailsPageProps) {
   const { slug } = await params;
-  const {
-    content: Content,
-    title,
-    description,
-    repository,
-    website,
-    date,
-  } = await getProject(slug);
+  const { content, title, description, repoURL, demoURL } =
+    await getProject(slug);
 
   return (
     <div>
@@ -28,9 +21,15 @@ export default async function ProjectDetailsPage({
         <p className="text-base text-neutral-500">{description}</p>
       </header>
 
-      <ProjectDetails date={date} repository={repository} website={website} />
+      {(demoURL || repoURL) && (
+        <nav className="flex gap-1">
+          {demoURL && <a href={demoURL}>Website</a>}
+          {demoURL && repoURL && <span>/</span>}
+          {repoURL && <a href={repoURL}>Repository</a>}
+        </nav>
+      )}
 
-      <Content />
+      {content}
     </div>
   );
 }

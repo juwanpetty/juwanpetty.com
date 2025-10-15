@@ -5,6 +5,7 @@ import { BlogItem } from "@/features/blog/components/blog-item";
 import { getBlogs } from "@/features/blog/utilities";
 import { getProjects } from "@/features/projects/utilities";
 import { homePath, projectPath } from "@/lib/paths";
+import { formatDate, SHORTHAND_DATE_FORMAT } from "@/lib/utils";
 import Link from "next/link";
 
 export default async function Home() {
@@ -29,11 +30,11 @@ export default async function Home() {
 
       <PageSection label="Latest Projects" icon="bolt">
         <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          {projects.map(({ title, summary, slug, thumbnail }) => (
+            {projects.map(({ title, date, slug, thumbnail }) => (
             <ResourceCard
               key={slug}
               title={title}
-              subtitle={summary}
+                subtitle={formatDate(date, SHORTHAND_DATE_FORMAT)}
               slug={projectPath(slug)}
               thumbnail={thumbnail}
             />
