@@ -1,4 +1,3 @@
-import { ExternalLink } from "@/components/external-link";
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 import { ComponentProps } from "react";
@@ -23,7 +22,10 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     },
     p: ({ children, ...props }: ComponentProps<"p">) => {
       return (
-        <p className="mb-5 text-pretty text-neutral-700" {...props}>
+        <p
+          className="my-5 text-base leading-relaxed text-pretty text-neutral-600"
+          {...props}
+        >
           {children}
         </p>
       );
@@ -32,15 +34,25 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       const isInternal = href.startsWith("/");
       if (isInternal) {
         return (
-          <Link href={href} {...props}>
+          <Link
+            href={href}
+            {...props}
+            className="font-medium underline decoration-neutral-300 underline-offset-3 transition-colors hover:decoration-neutral-700"
+          >
             {children}
           </Link>
         );
       }
       return (
-        <ExternalLink href={href} {...props}>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-3 transition-colors hover:decoration-neutral-700"
+          {...props}
+        >
           {children}
-        </ExternalLink>
+        </a>
       );
     },
     figure: ({ children, ...props }: ComponentProps<"figure">) => (
