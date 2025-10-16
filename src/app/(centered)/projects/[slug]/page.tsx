@@ -1,4 +1,7 @@
-import { getProject, getProjectSlugs } from "@/features/projects/utilities";
+import { getMDXComponents } from "@/mdx-components";
+import { MDXContent } from "@content-collections/mdx/react";
+import { allProjects } from "content-collections";
+import { notFound } from "next/navigation";
 
 type ProjectDetailsPageProps = {
   params: Promise<{ slug: string }>;
@@ -8,8 +11,13 @@ export default async function ProjectDetailsPage({
   params,
 }: ProjectDetailsPageProps) {
   const { slug } = await params;
-  const { content, title, description, repoURL, demoURL } =
-    await getProject(slug);
+  const project = allProjects.find((project) => project.slug === slug);
+
+  if (!project) {
+    return notFound();
+  }
+
+  const { mdx: content, title, description, demoURL, repoURL } = project;
 
   return (
     <div>
@@ -43,13 +51,7 @@ export default async function ProjectDetailsPage({
         </nav>
       )}
 
-      {content}
+      <MDXContent code={content} components={getMDXComponents()} />
     </div>
   );
 }
-
-export async function generateStaticParams() {
-  return await getProjectSlugs();
-}
-
-export const dynamicParams = false;

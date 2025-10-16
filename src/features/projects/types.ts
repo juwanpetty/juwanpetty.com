@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 
 export type ProjectMetadata = {
   title: string;
+  slug: string;
   description?: string;
   date: string;
   draft?: boolean;

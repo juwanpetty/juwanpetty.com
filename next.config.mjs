@@ -1,5 +1,6 @@
 import nextMDX from "@next/mdx";
 import rehypePrettyCode from "rehype-pretty-code";
+import { withContentCollections } from "@content-collections/next";
 
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
@@ -24,4 +25,4 @@ const withMDX = nextMDX({
   },
 });
 
-export default withMDX(nextConfig);
+export default withContentCollections(withMDX(nextConfig));
