@@ -1,4 +1,3 @@
-import { Icon } from "@/components/icon";
 import { PageSection } from "@/components/page-section";
 import { ResourceCard } from "@/components/resource-card";
 import Welcome from "@/content/welcome.mdx";
@@ -7,6 +6,23 @@ import { postsSortedByDate } from "@/features/blog/utilities";
 import { projectsSortedByDate } from "@/features/projects/utilities";
 import { projectPath } from "@/lib/paths";
 import { formatDate, SHORTHAND_DATE_FORMAT } from "@/lib/utils";
+import { ArrowUpRightIcon } from "lucide-react";
+import { ComponentProps } from "react";
+
+function ExternalLink({ href, children, ...props }: ComponentProps<"a">) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="flex h-8 cursor-pointer items-center gap-0.5 rounded-[0.625rem] bg-neutral-100 px-2.5"
+      {...props}
+    >
+      <span className="text-sm font-medium">{children}</span>
+      <ArrowUpRightIcon className="size-4 text-neutral-600" />
+    </a>
+  );
+}
 
 export default async function Home() {
   return (
@@ -58,33 +74,13 @@ export default async function Home() {
 
         <PageSection label="Elsewhere">
           <div className="mt-4 flex flex-wrap items-center gap-3 gap-y-2">
-            <a
-              href="mailto:jchpetty@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-              className="flex h-8 cursor-pointer items-center gap-0.5 rounded-[0.625rem] bg-neutral-100 px-2.5"
-            >
-              <span className="text-sm font-medium">Mail</span>
-              <Icon name="arrow-up-right" className="size-4 text-neutral-600" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/juwanpetty/"
-              target="_blank"
-              rel="noreferrer"
-              className="flex h-8 cursor-pointer items-center gap-0.5 rounded-[0.625rem] bg-neutral-100 px-2.5"
-            >
-              <span className="text-sm font-medium">LinkedIn</span>
-              <Icon name="arrow-up-right" className="size-4 text-neutral-600" />
-            </a>
-            <a
-              href="https://github.com/juwanpetty"
-              target="_blank"
-              rel="noreferrer"
-              className="flex h-8 cursor-pointer items-center gap-0.5 rounded-[0.625rem] bg-neutral-100 px-2.5"
-            >
-              <span className="text-sm font-medium">Github</span>
-              <Icon name="arrow-up-right" className="size-4 text-neutral-600" />
-            </a>
+            <ExternalLink href="mailto:jchpetty@gmail.com">Mail</ExternalLink>
+            <ExternalLink href="https://www.linkedin.com/in/juwanpetty/">
+              LinkedIn
+            </ExternalLink>
+            <ExternalLink href="https://github.com/juwanpetty">
+              Github
+            </ExternalLink>
           </div>
         </PageSection>
       </div>

@@ -1,10 +1,10 @@
 "use client";
 
-import { Icon } from "@/components/icon";
 import { ReactNode, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Playground } from "@/features/blog/components/playground";
 import { cn } from "@/lib/utils";
+import { LoaderCircleIcon } from "lucide-react";
 
 type ButtonState = "idle" | "loading" | "success";
 
@@ -21,7 +21,7 @@ export function LoginButton() {
 
   const buttonCopy: Record<ButtonState, ReactNode> = {
     idle: "Send magic link",
-    loading: <Icon name="spinner" className="animate-spin" />,
+    loading: <LoaderCircleIcon className="animate-spin" />,
     success: "Magic link sent!",
   };
 
