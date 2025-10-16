@@ -1,5 +1,5 @@
-import { Icon } from "@/components/icon";
 import { blogPath } from "@/lib/paths";
+import { FileTextIcon } from "lucide-react";
 import Link from "next/link";
 
 type BlogItemProps = {
@@ -15,7 +15,7 @@ export function BlogItem({ title, description, slug }: BlogItemProps) {
     <div className="flex items-center gap-x-6">
       <Link href={href} className="shrink-0">
         <div className="flex aspect-3/4 h-21 items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-neutral-200">
-          <Icon name="post" className="size-5 text-neutral-500" />
+          <FileTextIcon className="size-5 text-neutral-500" />
         </div>
       </Link>
 
