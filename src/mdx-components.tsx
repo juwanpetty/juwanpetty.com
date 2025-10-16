@@ -23,7 +23,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     p: ({ children, ...props }: ComponentProps<"p">) => {
       return (
         <p
-          className="my-5 text-base leading-relaxed text-pretty text-neutral-600"
+          className="my-5 text-base leading-relaxed text-neutral-600"
           {...props}
         >
           {children}
