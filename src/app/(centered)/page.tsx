@@ -1,17 +1,14 @@
 import { Icon } from "@/components/icon";
 import { PageSection } from "@/components/page-section";
 import { ResourceCard } from "@/components/resource-card";
+import Welcome from "@/content/welcome.mdx";
 import { BlogItem } from "@/features/blog/components/blog-item";
-import { getBlogs } from "@/features/blog/utilities";
-import { getProjects } from "@/features/projects/utilities";
+import { postsSortedByDate } from "@/features/blog/utilities";
+import { projectsSortedByDate } from "@/features/projects/utilities";
 import { projectPath } from "@/lib/paths";
 import { formatDate, SHORTHAND_DATE_FORMAT } from "@/lib/utils";
-import Welcome from "@/content/welcome.mdx";
 
 export default async function Home() {
-  const blogPosts = await getBlogs();
-  const projects = await getProjects();
-
   return (
     <div>
       <section>
@@ -29,11 +26,14 @@ export default async function Home() {
 
         <PageSection label="Latest projects">
           <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-            {projects.map(({ title, date, slug, thumbnail }) => (
+            {projectsSortedByDate.map(({ title, date, slug, thumbnail }) => (
               <ResourceCard
                 key={slug}
                 title={title}
-                subtitle={formatDate(date, SHORTHAND_DATE_FORMAT)}
+                subtitle={formatDate(
+                  date.toDateString(),
+                  SHORTHAND_DATE_FORMAT
+                )}
                 slug={projectPath(slug)}
                 thumbnail={thumbnail}
               />
@@ -43,14 +43,16 @@ export default async function Home() {
 
         <PageSection label="Latest Posts">
           <div className="space-y-8">
-            {blogPosts.map(({ slug, title, description }) => (
-              <BlogItem
-                key={slug}
-                slug={slug}
-                title={title}
-                description={description}
-              />
-            ))}
+            {postsSortedByDate
+              .slice(0, 3)
+              .map(({ title, slug, description }) => (
+                <BlogItem
+                  key={slug}
+                  title={title}
+                  slug={slug}
+                  description={description}
+                />
+              ))}
           </div>
         </PageSection>
 
