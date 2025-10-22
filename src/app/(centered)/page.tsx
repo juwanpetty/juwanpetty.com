@@ -57,23 +57,31 @@ export default async function Home() {
           </div>
         </PageSection>
 
-        <PageSection label="Latest Posts">
-          <div className="space-y-8">
+        <PageSection
+          label="Latest Posts"
+          link={{ href: "/blog", label: "See all posts" }}
+        >
+          <div className="space-y-4">
             {postsSortedByDate
               .slice(0, 3)
-              .map(({ title, slug, description }) => (
+              .map(({ title, date, slug, description }) => (
                 <BlogItem
                   key={slug}
                   title={title}
                   slug={slug}
+                  date={formatDate(date.toDateString(), SHORTHAND_DATE_FORMAT)}
                   description={description}
                 />
               ))}
           </div>
         </PageSection>
 
-        <PageSection label="Elsewhere">
-          <div className="mt-4 flex flex-wrap items-center gap-3 gap-y-2">
+        <PageSection label="Let's Connect">
+          <p className="mb-5 text-base leading-relaxed text-neutral-600">
+            If you want to get in touch with me about something or just to say
+            hi, reach out on social media or send me an email.
+          </p>
+          <div className="flex flex-wrap items-center gap-3 gap-y-2">
             <ExternalLink href="mailto:jchpetty@gmail.com">Mail</ExternalLink>
             <ExternalLink href="https://www.linkedin.com/in/juwanpetty/">
               LinkedIn
