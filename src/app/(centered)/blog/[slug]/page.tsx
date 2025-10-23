@@ -1,7 +1,6 @@
 import { formatDate, SHORTHAND_DATE_FORMAT } from "@/lib/utils";
 import { getMDXComponents } from "@/mdx-components";
-import { MDXContent } from "@content-collections/mdx/react";
-import { allPosts } from "content-collections";
+import { blog } from "@/lib/source";
 import { notFound } from "next/navigation";
 
 type BlogDetailsPageProps = {
@@ -12,13 +11,15 @@ export default async function BlogDetailsPage({
   params,
 }: BlogDetailsPageProps) {
   const { slug } = await params;
-  const post = allPosts.find((post) => post.slug === slug);
+  const post = blog.getPage([slug]);
 
   if (!post) {
     return notFound();
   }
 
-  const { mdx: content, title, date } = post;
+  const {
+    data: { title, date, body: Content },
+  } = post;
 
   const dateString = date.toDateString();
   const formattedDate = formatDate(dateString, SHORTHAND_DATE_FORMAT);
@@ -35,7 +36,7 @@ export default async function BlogDetailsPage({
         </h1>
       </header>
 
-      <MDXContent code={content} components={getMDXComponents()} />
+      <Content components={getMDXComponents()} />
     </div>
   );
 }

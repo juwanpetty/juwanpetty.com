@@ -21,11 +21,11 @@ export default function BlogIndexPage() {
           <section key={year} className="mb-12 space-y-4">
             <h2 className="text-base font-medium">{year}</h2>
             <div className="flex flex-col gap-6">
-              {posts.map(({ title, slug, date, description }) => (
+              {posts.map(({ url, data: { title, date, description } }) => (
                 <BlogItem
-                  key={slug}
+                  key={url}
                   title={title}
-                  slug={slug}
+                  slug={url}
                   date={formatDate(date.toDateString(), FULL_DATE_FORMAT)}
                   description={description}
                 />

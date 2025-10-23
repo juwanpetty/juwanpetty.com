@@ -1,13 +1,10 @@
-import nextMDX from "@next/mdx";
-import { withContentCollections } from "@content-collections/next";
+import { createMDX } from "fumadocs-mdx/next";
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+const config = {
+  reactStrictMode: true,
 };
 
-const withMDX = nextMDX({
-  extension: /\.(md|mdx)$/,
-});
+const withMDX = createMDX({});
 
-export default withContentCollections(withMDX(nextConfig));
+export default withMDX(config);

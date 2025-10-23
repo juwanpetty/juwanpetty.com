@@ -1,6 +1,5 @@
 import { getMDXComponents } from "@/mdx-components";
-import { MDXContent } from "@content-collections/mdx/react";
-import { allProjects } from "content-collections";
+import { projects } from "@/lib/source";
 import { notFound } from "next/navigation";
 
 type ProjectDetailsPageProps = {
@@ -11,13 +10,16 @@ export default async function ProjectDetailsPage({
   params,
 }: ProjectDetailsPageProps) {
   const { slug } = await params;
-  const project = allProjects.find((project) => project.slug === slug);
+  const project = projects.getPage([slug]);
 
   if (!project) {
     return notFound();
   }
 
-  const { mdx: content, title, description, demoURL, repoURL } = project;
+  // const { mdx: content, title, description, demoURL, repoURL } = project;
+  const {
+    data: { title, description, demoURL, repoURL, body: Content },
+  } = project;
 
   return (
     <div>
@@ -51,7 +53,7 @@ export default async function ProjectDetailsPage({
         </nav>
       )}
 
-      <MDXContent code={content} components={getMDXComponents()} />
+      <Content components={getMDXComponents()} />
     </div>
   );
 }
