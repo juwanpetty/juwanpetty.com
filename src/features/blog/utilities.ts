@@ -1,16 +1,21 @@
-import { allPosts, type Post } from "content-collections";
+import { blog } from "@/lib/source";
+
+const allPosts = blog.getPages();
 
 export const postsSortedByDate = allPosts.toSorted(
-  (a, b) => b.date.getTime() - a.date.getTime()
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
 export const postsSortedByTitle = allPosts.toSorted((a, b) =>
-  a.title.localeCompare(b.title)
+  a.data.title.localeCompare(b.data.title)
 );
+
+// This is a band-aid fix
+type Post = (typeof allPosts)[number];
 
 export const postsGroupedByYear = Object.entries(
   postsSortedByDate.reduce<Record<number, Post[]>>((groups, post) => {
-    const year = post.date.getFullYear();
+    const year = post.data.date.getFullYear();
 
     if (!groups[year]) {
       groups[year] = [];

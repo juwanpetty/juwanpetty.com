@@ -36,24 +36,48 @@ export default async function Home() {
       <div className="space-y-16">
         <section>
           <article className="space-y-4">
-            <Welcome />
+            <p className="my-5 text-base leading-relaxed text-neutral-600">
+              As the online world becomes increasingly noisy and hostile, I
+              believe it’s more important than ever to carve out our own
+              personal space on the internet.
+            </p>
+            <p className="my-5 text-base leading-relaxed text-neutral-600">
+              This site is where I share notes and articles about the things I’m
+              interested in. Think of it as a digital garden—an evolving space
+              where I explore ideas around productivity, development, and my
+              ongoing fascination with slow living.
+            </p>
+            <p className="my-5 text-base leading-relaxed text-neutral-600">
+              If you like something you read here, feel free to{" "}
+              <a
+                href="mailto:jchpetty@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-3 transition-colors hover:decoration-neutral-700"
+              >
+                reach out
+              </a>{" "}
+              and let me know.
+            </p>
           </article>
         </section>
 
         <PageSection label="Latest projects">
           <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-            {projectsSortedByDate.map(({ title, date, slug, thumbnail }) => (
-              <ResourceCard
-                key={slug}
-                title={title}
-                subtitle={formatDate(
-                  date.toDateString(),
-                  SHORTHAND_DATE_FORMAT
-                )}
-                slug={projectPath(slug)}
-                thumbnail={thumbnail}
-              />
-            ))}
+            {projectsSortedByDate.map(
+              ({ url, data: { title, date, thumbnail } }) => (
+                <ResourceCard
+                  key={url}
+                  title={title}
+                  subtitle={formatDate(
+                    date.toDateString(),
+                    SHORTHAND_DATE_FORMAT
+                  )}
+                  slug={url}
+                  thumbnail={thumbnail}
+                />
+              )
+            )}
           </div>
         </PageSection>
 
@@ -64,11 +88,11 @@ export default async function Home() {
           <div className="space-y-4">
             {postsSortedByDate
               .slice(0, 3)
-              .map(({ title, date, slug, description }) => (
+              .map(({ url, data: { title, date, description } }) => (
                 <BlogItem
-                  key={slug}
+                  key={url}
                   title={title}
-                  slug={slug}
+                  slug={url}
                   date={formatDate(date.toDateString(), SHORTHAND_DATE_FORMAT)}
                   description={description}
                 />
