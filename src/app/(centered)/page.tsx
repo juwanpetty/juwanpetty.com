@@ -81,10 +81,7 @@ export default async function Home() {
           </div>
         </PageSection>
 
-        <PageSection
-          label="Latest Posts"
-          link={{ href: "/blog", label: "See all posts" }}
-        >
+        <PageSection label="Latest Posts">
           <div className="space-y-4">
             {postsSortedByDate
               .slice(0, 3)
