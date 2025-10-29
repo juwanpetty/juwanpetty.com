@@ -1,10 +1,8 @@
 import { PageSection } from "@/components/page-section";
 import { ResourceCard } from "@/components/resource-card";
-import Welcome from "@/content/welcome.mdx";
 import { BlogItem } from "@/features/blog/components/blog-item";
 import { postsSortedByDate } from "@/features/blog/utilities";
 import { projectsSortedByDate } from "@/features/projects/utilities";
-import { projectPath } from "@/lib/paths";
 import { formatDate, SHORTHAND_DATE_FORMAT } from "@/lib/utils";
 import { ArrowUpRightIcon } from "lucide-react";
 import { ComponentProps } from "react";
