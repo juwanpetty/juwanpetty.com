@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@/providers/theme";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
+import { Inter as InterFont } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
@@ -11,6 +12,11 @@ export const metadata: Metadata = {
     default: "Juwan Petty",
   },
 };
+
+const Inter = InterFont({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export default function RootLayout({
   children,
@@ -24,7 +30,8 @@ export default function RootLayout({
       className={cn(
         "bg-white font-sans text-neutral-800 antialiased",
         GeistSans.variable,
-        GeistMono.variable
+        GeistMono.variable,
+        Inter.variable
       )}
     >
       <body>

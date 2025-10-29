@@ -62,7 +62,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ),
     figcaption: ({ children, ...props }: ComponentProps<"figcaption">) => (
       <figcaption
-        className="ring-b-0 flex h-10 items-center rounded-t-lg border border-neutral-200 bg-neutral-50 px-4 text-sm font-medium text-neutral-500"
+        className="ring-b-0 flex h-11 items-center rounded-t-lg border border-neutral-200 bg-neutral-50 px-4 text-sm font-medium text-neutral-500"
         {...props}
       >
         {children}
@@ -70,7 +70,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ),
     pre: ({ children, ...props }: ComponentProps<"pre">) => (
       <pre
-        className="relative overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 px-0 py-4 font-mono text-[0.8125rem] leading-relaxed shadow-xs [&_*]:font-mono [figcaption[data-rehype-pretty-code-title]~&]:rounded-t-none [figcaption[data-rehype-pretty-code-title]~&]:border-t-0"
+        className="relative overflow-x-auto rounded-lg border border-neutral-200 px-0 py-4 font-mono text-[0.8125rem] leading-relaxed shadow-xs [&_*]:font-mono [figcaption[data-rehype-pretty-code-title]~&]:rounded-t-none [figcaption[data-rehype-pretty-code-title]~&]:border-t-0"
         {...props}
       >
         {children}

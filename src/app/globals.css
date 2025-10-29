@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-sans--font-feature-settings: "cv01", "ss03";
   --font-mono: var(--font-geist-mono);
 }
@@ -93,7 +93,6 @@ code[data-line-numbers] > [data-line]::before {
   color: gray;
   position: sticky;
   left: 0;
-  background-color: var(--color-neutral-50);
   padding-left: 1rem;
   padding-right: 1.5rem;
   margin-left: -1rem;
