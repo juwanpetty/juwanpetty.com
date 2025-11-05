@@ -25,39 +25,21 @@ function ExternalLink({ href, children, ...props }: ComponentProps<"a">) {
 export default async function Home() {
   return (
     <div>
-      <section>
-        <h1 className="text-base font-medium">
-          Welcome to my corner of the web.
-        </h1>
-      </section>
-
       <div className="space-y-16">
         <section>
-          <article className="space-y-4">
-            <p className="my-5 text-base leading-relaxed text-neutral-600">
-              As the online world becomes increasingly noisy and hostile, I
-              believe it’s more important than ever to carve out our own
-              personal space on the internet.
+          {/* <div className="mb-4">
+            <div className="size-16 rounded-full border border-neutral-200 bg-neutral-100" />
+          </div> */}
+
+          <h1 className="text-base font-medium">Juwan Petty</h1>
+          <p className="text-neutral-500">Software design & engineering</p>
+
+          <div>
+            <p className="mt-5 text-base leading-relaxed text-neutral-600">
+              Obsessed with the details that make digital products feel{" "}
+              <i>just</i> right. Design-minded dev and dev-minded designer.
             </p>
-            <p className="my-5 text-base leading-relaxed text-neutral-600">
-              This site is where I share notes and articles about the things I’m
-              interested in. Think of it as a digital garden—an evolving space
-              where I explore ideas around productivity, development, and my
-              ongoing fascination with slow living.
-            </p>
-            <p className="my-5 text-base leading-relaxed text-neutral-600">
-              If you like something you read here, feel free to{" "}
-              <a
-                href="mailto:jchpetty@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-3 transition-colors hover:decoration-neutral-700"
-              >
-                reach out
-              </a>{" "}
-              and let me know.
-            </p>
-          </article>
+          </div>
         </section>
 
         <PageSection label="Latest projects">
