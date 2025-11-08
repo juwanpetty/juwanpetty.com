@@ -1,7 +1,8 @@
-import { formatDate, SHORTHAND_DATE_FORMAT } from "@/lib/utils";
+import { formatDate, FULL_DATE_FORMAT } from "@/lib/utils";
 import { getMDXComponents } from "@/mdx-components";
 import { blog } from "@/lib/source";
 import { notFound } from "next/navigation";
+import { BackButton } from "@/components/back-button";
 
 type BlogDetailsPageProps = {
   params: Promise<{ slug: string }>;
@@ -22,21 +23,22 @@ export default async function BlogDetailsPage({
   } = post;
 
   const dateString = date.toDateString();
-  const formattedDate = formatDate(dateString, SHORTHAND_DATE_FORMAT);
+  const formattedDate = formatDate(dateString, FULL_DATE_FORMAT);
 
   return (
     <div>
-      <header className="mb-12 flex flex-col gap-1">
-        <time className="text-sm text-neutral-500" dateTime={dateString}>
-          {formattedDate}
-        </time>
+      <div className="mb-6">
+        <BackButton href="/blog">Blog</BackButton>
+      </div>
 
-        <h1 className="text-lg font-[550] text-balance text-neutral-800">
-          {title}
-        </h1>
-      </header>
+      <div className="mb-12">
+        <h1 className="text-base font-medium">{title}</h1>
+        <p className="text-neutral-500">{formattedDate}</p>
+      </div>
 
-      <Content components={getMDXComponents()} />
+      <div>
+        <Content components={getMDXComponents()} />
+      </div>
     </div>
   );
 }
