@@ -1,87 +1,60 @@
-import { BlogList } from "@/components/blog-list";
-import { ProjectList } from "@/components/project-list";
-import { ResourceList } from "@/components/resource-list";
-import Link from "next/link";
-import { PropsWithChildren } from "react";
+import { Icon, IconName } from "@/components/icon";
+import { ComponentProps } from "react";
 
 export default function HomeIndex() {
   return (
-    <div>
-      <div className="mb-12">
-        <div className="mb-4">
-          <div className="size-16 rounded-full border border-neutral-200 bg-neutral-100" />
-        </div>
-        <h1 className="text-base font-medium">Juwan Petty</h1>
-        <p className="text-neutral-500">Software design & engineering</p>
-      </div>
-
+    <div className="mx-auto max-w-2xl py-14">
       <div className="space-y-16">
-        <div>
-          <p className="text-base leading-relaxed">
-            Obsessed with the details that make digital products feel{" "}
-            <i>just</i> right. Design-minded dev and dev-minded designer.
+        <div className="space-y-6">
+          <h1 className="text-primary text-3xl tracking-tight">Welcome</h1>
+          <p className="text-primary text-base/7">
+            Design-minded dev and dev-minded designer. I obsess over the details
+            that make digital products feel <i>just right</i>—bridging design
+            and engineering to build interfaces that simply work and quietly
+            delight.
           </p>
-        </div>
 
-        {/* <div>
-          <div className="grid gap-6 sm:grid-cols-3">
-            <a className="group flex flex-col no-underline" href="/craft">
-              <span className="text-base font-medium">About</span>
-              <span className="shrink-0 text-base text-neutral-500">
-                Who, what, why
-              </span>
-            </a>
+          <div className="flex items-center gap-4">
+            <ExternalLink
+              href="mailto:jchpetty@gmail.com"
+              icon="mail"
+              label="Mail"
+            />
 
-            <a className="group flex flex-col no-underline" href="/bookmarks">
-              <span className="text-base font-medium">Now</span>
-              <span className="shrink-0 text-base text-neutral-500">
-                Short term focus
-              </span>
-            </a>
-
-            <a className="group flex flex-col no-underline" href="/bookmarks">
-              <span className="text-base font-medium">Someday</span>
-              <span className="shrink-0 text-base text-neutral-500">
-                Long-term goals
-              </span>
-            </a>
+            <ExternalLink
+              href="https://github.com/juwanpetty"
+              icon="github"
+              label="GitHub"
+            />
           </div>
-        </div> */}
-
-        <PageSection title="Projects">
-          <ProjectList />
-        </PageSection>
-
-        <PageSection title="Posts" href="/blog">
-          <BlogList />
-        </PageSection>
-
-        <PageSection title="Resources">
-          <ResourceList />
-        </PageSection>
+        </div>
       </div>
     </div>
   );
 }
 
-type PageSectionProps = PropsWithChildren & {
-  title: string;
-  href?: string;
+type ExternalLinkProps = ComponentProps<"a"> & {
+  icon: IconName;
+  href: string;
+  label: string;
 };
 
-function PageSection({ title, children, href }: PageSectionProps) {
+export function ExternalLink({
+  icon,
+  href,
+  label,
+  ...props
+}: ExternalLinkProps) {
   return (
-    <section>
-      <div className="mb-6 flex items-center justify-between text-base font-medium text-neutral-500">
-        <h2>{title}</h2>
-        {href ? (
-          <Link href={href} className="underline-offset-3 hover:underline">
-            See all
-          </Link>
-        ) : null}
-      </div>
-
-      {children}
-    </section>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-secondary text-secondary-foreground flex h-8 items-center gap-0.5 rounded-lg px-2.5"
+      {...props}
+    >
+      <Icon name={icon} className="size-4" />
+      <span className="px-1 text-sm font-medium">{label}</span>
+    </a>
   );
 }
