@@ -6,8 +6,10 @@ export default function HomeIndex() {
     <div className="mx-auto max-w-2xl py-14">
       <div className="space-y-16">
         <div className="space-y-6">
-          <h1 className="text-primary text-3xl tracking-tight">Welcome</h1>
-          <p className="text-primary text-base/7">
+          <h1 className="text-secondary-foreground text-3xl tracking-tight">
+            Welcome
+          </h1>
+          <p className="text-muted-foreground text-base/7">
             Design-minded dev and dev-minded designer. I obsess over the details
             that make digital products feel <i>just right</i>—bridging design
             and engineering to build interfaces that simply work and quietly
