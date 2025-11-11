@@ -1,14 +1,14 @@
 import { PropsWithChildren } from "react";
 
 type PageSectionProps = PropsWithChildren & {
-  label: string;
+  title: string;
 };
 
-export function PageSection({ label, children }: PageSectionProps) {
+export function PageSection({ title, children }: PageSectionProps) {
   return (
     <section>
       <h2 className="border-b border-neutral-950/5 pb-4 text-2xl font-medium tracking-tight text-neutral-950 dark:border-white/10 dark:text-white">
-        {label}
+        {title}
       </h2>
 
       <div>{children}</div>

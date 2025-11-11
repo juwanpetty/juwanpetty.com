@@ -23,7 +23,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={cn(
-        "font-sans antialiased",
+        "text-secondary-foreground font-sans antialiased",
         geistSans.variable,
         geistMono.variable
       )}

@@ -1,22 +1,21 @@
 import { Icon, IconName } from "@/components/icon";
+import { PageHeader } from "@/components/page-header";
+import { buttonVariants } from "@/components/ui/button";
 import { ComponentProps } from "react";
 
 export default function HomeIndex() {
   return (
     <div className="mx-auto max-w-2xl py-14">
       <div className="space-y-16">
-        <div className="space-y-6">
-          <h1 className="text-secondary-foreground text-3xl tracking-tight">
-            Welcome
-          </h1>
-          <p className="text-muted-foreground text-base/7">
+        <PageHeader>
+          <PageHeader.Title>Welcome</PageHeader.Title>
+          <PageHeader.Description>
             Design-minded dev and dev-minded designer. I obsess over the details
             that make digital products feel <i>just right</i>—bridging design
             and engineering to build interfaces that simply work and quietly
             delight.
-          </p>
-
-          <div className="flex items-center gap-4">
+          </PageHeader.Description>
+          <PageHeader.Actions>
             <ExternalLink
               href="mailto:jchpetty@gmail.com"
               icon="mail"
@@ -28,8 +27,8 @@ export default function HomeIndex() {
               icon="github"
               label="GitHub"
             />
-          </div>
-        </div>
+          </PageHeader.Actions>
+        </PageHeader>
       </div>
     </div>
   );
@@ -52,7 +51,7 @@ export function ExternalLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-secondary text-secondary-foreground flex h-8 items-center gap-0.5 rounded-lg px-2.5"
+      className={buttonVariants({ variant: "secondary", size: "default" })}
       {...props}
     >
       <Icon name={icon} className="size-4" />
