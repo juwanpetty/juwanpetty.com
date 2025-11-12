@@ -15,10 +15,3 @@ export function PageSection({ title, children }: PageSectionProps) {
     </section>
   );
 }
-
-// Example usage:
-// <PageSection title="Craft">
-//   <div className="mt-8 grid w-full grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
-//     ...content
-//   </div>
-// </PageSection>

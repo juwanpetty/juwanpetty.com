@@ -1,5 +1,7 @@
+import { CraftList } from "@/components/craft-list";
 import { Icon, IconName } from "@/components/icon";
 import { PageHeader } from "@/components/page-header";
+import { PageSection } from "@/components/page-section";
 import { buttonVariants } from "@/components/ui/button";
 import { ComponentProps } from "react";
 
@@ -29,6 +31,12 @@ export default function HomeIndex() {
             />
           </PageHeader.Actions>
         </PageHeader>
+
+        <PageSection title="Crafts">
+          <div className="mt-8">
+            <CraftList />
+          </div>
+        </PageSection>
       </div>
     </div>
   );
