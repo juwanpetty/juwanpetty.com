@@ -18,7 +18,7 @@ export function CraftItem({ craft }: CraftItemProps) {
         autoPlay
         muted
         loop
-        className="rounded-md border border-neutral-200"
+        className="border-border rounded-md border"
       >
         <source src={fileSrc} type="video/mp4" />
       </video>
