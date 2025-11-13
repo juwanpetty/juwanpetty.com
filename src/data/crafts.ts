@@ -12,6 +12,12 @@ export const crafts: Craft[] = [
     date: "2025-11-12",
     draft: false,
   },
+  {
+    id: "empty-state",
+    title: "Empty State",
+    date: "2025-11-13",
+    draft: false,
+  },
 ];
 
 export const getPublishedCrafts = (): Craft[] => {
