@@ -20,6 +20,10 @@ export const crafts: Craft[] = [
   },
 ];
 
+export const getSortedCrafts = (): Craft[] => {
+  return crafts.sort((a, b) => (a.date < b.date ? 1 : -1));
+};
+
 export const getPublishedCrafts = (): Craft[] => {
-  return crafts.filter((craft) => !craft.draft);
+  return getSortedCrafts().filter((craft) => !craft.draft);
 };
