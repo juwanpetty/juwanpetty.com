@@ -1,18 +1,20 @@
 import { Craft } from "@/data/crafts";
-import { formatDate } from "@/lib/utils";
 
 type CraftItemProps = {
   craft: Craft;
 };
 
 export function CraftItem({ craft }: CraftItemProps) {
-  const { title, date } = craft;
+  const { id } = craft;
 
   const fileSrc = `/crafts/${craft.id}.mp4`;
-  const formattedDate = formatDate(date);
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="border-border bg-muted flex flex-col rounded-xl border p-2 pt-0">
+      <div className="flex h-11 w-full items-center justify-between px-2 pr-0 font-mono text-sm">
+        <span className="text-muted-foreground font-medium">{id}</span>
+      </div>
+
       <video
         playsInline
         autoPlay
@@ -22,11 +24,6 @@ export function CraftItem({ craft }: CraftItemProps) {
       >
         <source src={fileSrc} type="video/mp4" />
       </video>
-
-      <div className="flex w-full flex-col px-1">
-        <span className="text-secondary-foreground font-medium">{title}</span>
-        <span className="text-muted-foreground">{formattedDate}</span>
-      </div>
     </div>
   );
 }
