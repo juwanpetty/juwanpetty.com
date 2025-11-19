@@ -18,6 +18,12 @@ export const crafts: Craft[] = [
     date: "2025-11-13",
     draft: false,
   },
+  {
+    id: "floating-toolbar",
+    title: "Floating Toolbar",
+    date: "2025-11-18",
+    draft: false,
+  },
 ];
 
 export const getSortedCrafts = (): Craft[] => {
