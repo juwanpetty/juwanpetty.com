@@ -2,6 +2,8 @@ export type Craft = {
   id: string;
   title: string;
   date: string;
+  previewUrl?: string;
+  repositoryUrl?: string;
   draft?: boolean;
 };
 
@@ -10,18 +12,24 @@ export const crafts: Craft[] = [
     id: "snooze-dropdown",
     title: "Snooze Dropdown",
     date: "2025-11-12",
+    previewUrl: "https://3vm6s3-5173.csb.app/",
+    repositoryUrl: "https://github.com/juwanpetty/simple-dropdown",
     draft: false,
   },
   {
     id: "empty-state",
     title: "Empty State",
     date: "2025-11-13",
+    previewUrl: "https://ltrgm5-5173.csb.app/",
+    repositoryUrl: "https://github.com/juwanpetty/empty-state",
     draft: false,
   },
   {
     id: "floating-toolbar",
     title: "Floating Toolbar",
     date: "2025-11-18",
+    previewUrl: "https://zlhkkx-5173.csb.app/",
+    repositoryUrl: "https://github.com/juwanpetty/floating-toolbar",
     draft: false,
   },
 ];
