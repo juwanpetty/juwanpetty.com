@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 
-export function ShareUpRightIcon({ ...props }: ComponentProps<"svg">) {
+export function GlobeIcon({ ...props }: ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,9 +16,9 @@ export function ShareUpRightIcon({ ...props }: ComponentProps<"svg">) {
         strokeWidth="1.5"
         stroke="currentColor"
       >
-        <polyline points="10.5 2.75 15.25 2.75 15.25 7.5"></polyline>
-        <line x1="15.25" y1="2.75" x2="9" y2="9"></line>
-        <path d="M15.25,10.5v2.75c0,1.105-.895,2-2,2H4.75c-1.105,0-2-.895-2-2V4.75c0-1.105,.895-2,2-2h2.75"></path>
+        <ellipse cx="9" cy="9" rx="3" ry="7.25"></ellipse>
+        <line x1="1.75" y1="9" x2="16.25" y2="9"></line>
+        <circle cx="9" cy="9" r="7.25"></circle>
       </g>
     </svg>
   );

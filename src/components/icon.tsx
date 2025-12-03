@@ -1,15 +1,15 @@
 import { ArrowRightIcon } from "@/icons/arrow-right-icon";
 import { GitHubIcon } from "@/icons/github-icon";
+import { GlobeIcon } from "@/icons/globe-icon";
 import { MailIcon } from "@/icons/mail-icon";
-import { ShareUpRightIcon } from "@/icons/share-up-right-icon";
 import { cn } from "@/lib/utils";
 import { ComponentProps } from "react";
 
 const icons = {
   "arrow-right": ArrowRightIcon,
   github: GitHubIcon,
+  globe: GlobeIcon,
   mail: MailIcon,
-  "share-up-right": ShareUpRightIcon,
 } as const;
 
 export type IconName = keyof typeof icons;

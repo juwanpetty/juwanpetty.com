@@ -28,7 +28,7 @@ export function CraftItem({ craft }: CraftItemProps) {
           {previewUrl ? (
             <ExternalIconLink
               href={previewUrl}
-              icon="share-up-right"
+              icon="globe"
               label="Preview URL"
             />
           ) : null}
