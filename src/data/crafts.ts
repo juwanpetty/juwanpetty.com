@@ -13,7 +13,8 @@ export const crafts: Craft[] = [
     title: "Snooze Dropdown",
     date: "2025-11-12",
     previewUrl: "https://crafts-ten.vercel.app/snooze-dropdown",
-    repositoryUrl: "https://github.com/juwanpetty/simple-dropdown",
+    repositoryUrl:
+      "https://github.com/juwanpetty/crafts/blob/main/src/components/snooze-dropdown.tsx",
     draft: false,
   },
   {
@@ -21,7 +22,8 @@ export const crafts: Craft[] = [
     title: "Empty State",
     date: "2025-11-13",
     previewUrl: "https://crafts-ten.vercel.app/empty-state",
-    repositoryUrl: "https://github.com/juwanpetty/empty-state",
+    repositoryUrl:
+      "https://github.com/juwanpetty/crafts/blob/main/src/components/empty-state.tsx",
     draft: false,
   },
   {
@@ -29,7 +31,8 @@ export const crafts: Craft[] = [
     title: "Floating Toolbar",
     date: "2025-11-18",
     previewUrl: "https://crafts-ten.vercel.app/floating-toolbar",
-    repositoryUrl: "https://github.com/juwanpetty/floating-toolbar",
+    repositoryUrl:
+      "https://github.com/juwanpetty/crafts/blob/main/src/components/floating-toolbar.tsx",
     draft: false,
   },
 ];
