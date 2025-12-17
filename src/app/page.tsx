@@ -15,7 +15,7 @@ export default function HomeIndex() {
             Design-minded dev and dev-minded designer. I obsess over the details
             that make digital products feel <i>just right</i>—bridging design
             and engineering to build interfaces that simply work and quietly
-            delight.
+            delight. Previously at Shopify.
           </PageHeader.Description>
           <PageHeader.Actions>
             <ExternalLink
