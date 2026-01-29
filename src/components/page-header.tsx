@@ -1,10 +1,10 @@
-import { PropsWithChildren } from "react";
+import { ComponentProps } from "react";
 
-export function PageHeader({ children }: PropsWithChildren) {
+export function PageHeader({ children }: ComponentProps<"header">) {
   return <div className="space-y-6">{children}</div>;
 }
 
-function PageHeaderTitle({ children }: PropsWithChildren) {
+function PageHeaderTitle({ children }: ComponentProps<"h1">) {
   return (
     <h1 className="text-secondary-foreground text-3xl tracking-tight">
       {children}
@@ -12,7 +12,7 @@ function PageHeaderTitle({ children }: PropsWithChildren) {
   );
 }
 
-function PageHeaderDescription({ children }: PropsWithChildren) {
+function PageHeaderDescription({ children }: ComponentProps<"div">) {
   return (
     <div className="text-muted-foreground flex flex-col gap-6 text-base/7">
       {children}
@@ -20,10 +20,8 @@ function PageHeaderDescription({ children }: PropsWithChildren) {
   );
 }
 
-function PageHeaderActions({ children }: PropsWithChildren) {
+function PageHeaderActions({ children }: ComponentProps<"div">) {
   return <div className="flex items-center gap-3">{children}</div>;
 }
 
-PageHeader.Title = PageHeaderTitle;
-PageHeader.Description = PageHeaderDescription;
-PageHeader.Actions = PageHeaderActions;
+export { PageHeaderTitle, PageHeaderDescription, PageHeaderActions };
