@@ -13,7 +13,11 @@ function PageHeaderTitle({ children }: PropsWithChildren) {
 }
 
 function PageHeaderDescription({ children }: PropsWithChildren) {
-  return <p className="text-muted-foreground text-base/7">{children}</p>;
+  return (
+    <div className="text-muted-foreground flex flex-col gap-6 text-base/7">
+      {children}
+    </div>
+  );
 }
 
 function PageHeaderActions({ children }: PropsWithChildren) {
