@@ -1,8 +1,6 @@
 import { CraftList } from "@/components/craft-list";
-import { Icon, IconName } from "@/components/icon";
 import { PageHeader } from "@/components/page-header";
 import { PageSection } from "@/components/page-section";
-import { buttonVariants } from "@/components/ui/button";
 import { ComponentProps } from "react";
 
 export default function HomeIndex() {
@@ -12,24 +10,29 @@ export default function HomeIndex() {
         <PageHeader>
           <PageHeader.Title>Welcome</PageHeader.Title>
           <PageHeader.Description>
-            Design-minded dev and dev-minded designer. I obsess over the details
-            that make digital products feel <i>just right</i>—bridging design
-            and engineering to build interfaces that simply work and quietly
-            delight. Previously at Shopify.
-          </PageHeader.Description>
-          <PageHeader.Actions>
-            <ExternalLink
-              href="mailto:jchpetty@gmail.com"
-              icon="mail"
-              label="Mail"
-            />
+            <p>
+              Design-minded dev and dev-minded designer. I obsess over the
+              details that make digital products feel <i>just right</i>—bridging
+              design and engineering to build interfaces that simply work and
+              quietly delight.
+            </p>
 
-            <ExternalLink
-              href="https://github.com/juwanpetty"
-              icon="github"
-              label="GitHub"
-            />
-          </PageHeader.Actions>
+            <p>
+              Previously, I worked at Shopify and a few{" "}
+              <ExternalLink href="https://linkedin.com/in/juwanpetty">
+                other
+              </ExternalLink>{" "}
+              companies. You can reach me via{" "}
+              <ExternalLink href="mailto:jchpetty@gmail.com">
+                email
+              </ExternalLink>{" "}
+              or see my code on{" "}
+              <ExternalLink href="https://github.com/juwanpetty">
+                GitHub
+              </ExternalLink>
+              .
+            </p>
+          </PageHeader.Description>
         </PageHeader>
 
         <PageSection title="Crafts">
@@ -43,27 +46,19 @@ export default function HomeIndex() {
 }
 
 type ExternalLinkProps = ComponentProps<"a"> & {
-  icon: IconName;
   href: string;
-  label: string;
 };
 
-export function ExternalLink({
-  icon,
-  href,
-  label,
-  ...props
-}: ExternalLinkProps) {
+function ExternalLink({ href, children, ...props }: ExternalLinkProps) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={buttonVariants({ variant: "secondary", size: "default" })}
+      className="text-secondary-foreground decoration-border hover:decoration-secondary-foreground font-medium underline underline-offset-3 transition-colors"
       {...props}
     >
-      <Icon name={icon} className="size-4" />
-      <span className="px-1 text-sm font-medium">{label}</span>
+      {children}
     </a>
   );
 }
