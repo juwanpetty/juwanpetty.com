@@ -1,17 +1,19 @@
-import { PropsWithChildren } from "react";
+import { ComponentProps } from "react";
 
-type PageSectionProps = PropsWithChildren & {
-  title: string;
-};
+function PageSection({ children }: ComponentProps<"section">) {
+  return <section>{children}</section>;
+}
 
-export function PageSection({ title, children }: PageSectionProps) {
+function PageSectionTitle({ children }: ComponentProps<"h2">) {
   return (
-    <section>
-      <h2 className="border-border text-secondary-foreground border-b pb-4 text-2xl font-medium tracking-tight">
-        {title}
-      </h2>
-
-      <div>{children}</div>
-    </section>
+    <h2 className="border-border text-secondary-foreground border-b pb-4 text-2xl font-medium tracking-tight">
+      {children}
+    </h2>
   );
 }
+
+function PageSectionContent({ children }: ComponentProps<"div">) {
+  return <div>{children}</div>;
+}
+
+export { PageSection, PageSectionTitle, PageSectionContent };

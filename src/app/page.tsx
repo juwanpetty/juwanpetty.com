@@ -1,6 +1,14 @@
 import { CraftList } from "@/components/craft-list";
-import { PageHeader } from "@/components/page-header";
-import { PageSection } from "@/components/page-section";
+import {
+  PageHeader,
+  PageHeaderTitle,
+  PageHeaderDescription,
+} from "@/components/page-header";
+import {
+  PageSection,
+  PageSectionContent,
+  PageSectionTitle,
+} from "@/components/page-section";
 import { ComponentProps } from "react";
 
 export default function HomeIndex() {
@@ -8,8 +16,8 @@ export default function HomeIndex() {
     <div className="mx-auto max-w-2xl py-14">
       <div className="space-y-16">
         <PageHeader>
-          <PageHeader.Title>Welcome</PageHeader.Title>
-          <PageHeader.Description>
+          <PageHeaderTitle>Welcome</PageHeaderTitle>
+          <PageHeaderDescription>
             <p>
               Design-minded dev and dev-minded designer. I obsess over the
               details that make digital products feel <i>just right</i>—bridging
@@ -32,13 +40,17 @@ export default function HomeIndex() {
               </ExternalLink>
               .
             </p>
-          </PageHeader.Description>
+          </PageHeaderDescription>
         </PageHeader>
 
-        <PageSection title="Crafts">
-          <div className="mt-8">
-            <CraftList />
-          </div>
+        <PageSection>
+          <PageSectionTitle>Crafts</PageSectionTitle>
+
+          <PageSectionContent>
+            <div className="mt-8">
+              <CraftList />
+            </div>
+          </PageSectionContent>
         </PageSection>
       </div>
     </div>
