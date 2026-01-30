@@ -9,9 +9,14 @@ import {
   PageSectionContent,
   PageSectionTitle,
 } from "@/components/page-section";
+import { getPages } from "@/lib/queries";
 import { ComponentProps } from "react";
 
-export default function HomeIndex() {
+export default async function HomeIndex() {
+  const data = await getPages();
+
+  console.log({ data });
+
   return (
     <div className="mx-auto max-w-2xl py-14">
       <div className="space-y-16">
