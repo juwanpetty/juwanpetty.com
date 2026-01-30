@@ -6,7 +6,7 @@ export function PageHeader({ children }: ComponentProps<"header">) {
 
 function PageHeaderTitle({ children }: ComponentProps<"h1">) {
   return (
-    <h1 className="text-secondary-foreground text-3xl tracking-tight">
+    <h1 className="text-secondary-foreground text-2xl font-medium tracking-tight">
       {children}
     </h1>
   );

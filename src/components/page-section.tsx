@@ -6,7 +6,7 @@ function PageSection({ children }: ComponentProps<"section">) {
 
 function PageSectionTitle({ children }: ComponentProps<"h2">) {
   return (
-    <h2 className="border-border text-secondary-foreground border-b pb-4 text-2xl font-medium tracking-tight">
+    <h2 className="text-secondary-foreground text-base font-medium">
       {children}
     </h2>
   );
