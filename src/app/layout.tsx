@@ -9,7 +9,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: {
     template: "%s | Juwan Petty",
-    default: "Juwan Petty",
+    default: "Juwan Petty — Design Engineer",
   },
 };
 
