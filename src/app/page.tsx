@@ -1,22 +1,20 @@
 import { CraftList } from "@/components/craft-list";
-import {
-  PageHeader,
-  PageHeaderTitle,
-  PageHeaderDescription,
-} from "@/components/page-header";
+import { PageHeader, PageHeaderDescription } from "@/components/page-header";
 import {
   PageSection,
   PageSectionContent,
   PageSectionTitle,
 } from "@/components/page-section";
+import { ProfileHeader } from "@/components/profile-header";
 import { ComponentProps } from "react";
 
 export default function HomeIndex() {
   return (
-    <div className="mx-auto max-w-2xl py-14">
+    <div className="mx-auto max-w-2xl pb-14">
+      <ProfileHeader />
+
       <div className="space-y-16">
         <PageHeader>
-          <PageHeaderTitle>Welcome</PageHeaderTitle>
           <PageHeaderDescription>
             <p>
               Design-minded dev and dev-minded designer. I obsess over the
@@ -26,11 +24,11 @@ export default function HomeIndex() {
             </p>
 
             <p>
-              Previously, I worked at Shopify and a few{" "}
+              Previously, I worked at Shopify and am currently seeking my{" "}
               <ExternalLink href="https://linkedin.com/in/juwanpetty">
-                other
-              </ExternalLink>{" "}
-              companies. You can reach me via{" "}
+                next opportunity
+              </ExternalLink>
+              . You can reach me via{" "}
               <ExternalLink href="mailto:jchpetty@gmail.com">
                 email
               </ExternalLink>{" "}
