@@ -1,4 +1,5 @@
 import { CraftList } from "@/components/craft-list";
+import { Icon } from "@/components/icon";
 import { PageHeader, PageHeaderDescription } from "@/components/page-header";
 import {
   PageSection,
@@ -30,11 +31,13 @@ export default function HomeIndex() {
               </ExternalLink>
               . You can reach me via{" "}
               <ExternalLink href="mailto:jchpetty@gmail.com">
-                email
+                <Icon name="mail" className="mr-1 mb-0.5 inline size-4" />
+                <span>email</span>
               </ExternalLink>{" "}
               or see my code on{" "}
               <ExternalLink href="https://github.com/juwanpetty">
-                GitHub
+                <Icon name="github" className="mr-1 mb-0.5 inline size-4" />
+                <span>GitHub</span>
               </ExternalLink>
               .
             </p>
