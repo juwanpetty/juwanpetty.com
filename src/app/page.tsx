@@ -10,7 +10,7 @@ import { ComponentProps } from "react";
 
 export default function HomeIndex() {
   return (
-    <div className="mx-auto max-w-2xl pb-14">
+    <div className="mx-auto max-w-2xl py-14">
       <ProfileHeader />
 
       <div className="space-y-16">
