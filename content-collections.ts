@@ -32,13 +32,37 @@ const crafts = defineCollection({
   directory: "src/content/crafts",
   include: "**/*.md",
   schema: z.object({
+    title: z.string(),
     published: z.coerce.date(),
-    title: z.string().optional(),
-    tags: z.array(z.string()).optional(),
+    previewURL: z.string(),
+    repositoryURL: z.string(),
     content: z.string(),
   }),
 });
 
+const jobs = defineCollection({
+  name: "jobs",
+  directory: "src/content/jobs",
+  include: "**/*.md",
+  schema: z.object({
+    title: z.string(),
+    company: z.string(),
+    startDate: z.coerce.date(),
+    endDate: z.coerce.date().optional(),
+    tools: z.array(z.string()).optional(),
+    projects: z
+      .array(
+        z.object({
+          title: z.string(),
+          description: z.string().optional(),
+          link: z.string(),
+          published: z.coerce.date().optional(),
+        })
+      )
+      .optional(),
+  }),
+});
+
 export default defineConfig({
-  collections: [articles, notes, crafts],
+  collections: [articles, notes, crafts, jobs],
 });
