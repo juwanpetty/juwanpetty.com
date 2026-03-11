@@ -1,15 +1,16 @@
 import { Icon, IconName } from "@/components/icon";
 import { buttonVariants } from "@/components/ui/button";
-import { Craft } from "@/data/crafts";
+import type { Craft } from "content-collections";
 
 type CraftItemProps = {
   craft: Craft;
 };
 
 export function CraftItem({ craft }: CraftItemProps) {
-  const { id, previewUrl, repositoryUrl } = craft;
+  const { previewURL, repositoryURL } = craft;
+  const id = craft._meta.path;
 
-  const fileSrc = `/crafts/${craft.id}.mp4`;
+  const fileSrc = `/crafts/${id}.mp4`;
 
   return (
     <div className="border-border bg-muted flex flex-col rounded-xl border p-2 pt-0">
@@ -17,17 +18,17 @@ export function CraftItem({ craft }: CraftItemProps) {
         <span className="text-muted-foreground font-medium">{id}</span>
 
         <div className="flex gap-1">
-          {repositoryUrl ? (
+          {repositoryURL ? (
             <ExternalIconLink
-              href={repositoryUrl}
+              href={repositoryURL}
               icon="github"
               label="Repository URL"
             />
           ) : null}
 
-          {previewUrl ? (
+          {previewURL ? (
             <ExternalIconLink
-              href={previewUrl}
+              href={previewURL}
               icon="globe"
               label="Preview URL"
             />
