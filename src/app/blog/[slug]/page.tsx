@@ -17,8 +17,6 @@ export default async function ArticlesDetail({ params }: ArticlesDetailProps) {
   const { slug } = await params;
   const article = allArticles.find((article) => article._meta.path === slug);
 
-  console.log(article);
-
   if (!article) {
     return notFound();
   }
@@ -36,13 +34,13 @@ export default async function ArticlesDetail({ params }: ArticlesDetailProps) {
 
       <div className="space-y-16">
         <div className="flex w-full flex-col gap-1.5 sm:w-auto">
-          <h1 className="font-heading scroll-m-28 text-2xl font-medium tracking-tight">
+          <h1 className="font-heading scroll-m-28 text-3xl tracking-tight">
             {title}
           </h1>
 
           <div className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
-            {/* <p>8 min read</p>
-            <span>•</span> */}
+            <span>8 min read</span>
+            <span>•</span>
             <span>{formattedPublishedDate}</span>
           </div>
         </div>

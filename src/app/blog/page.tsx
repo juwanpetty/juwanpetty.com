@@ -12,8 +12,6 @@ export default function ArticlesDetail() {
             How I built a Next.js MDX table of contents
           </h1>
           <div className="text-muted-foreground -mt-0.5 -ml-px flex items-center gap-2 text-sm font-medium">
-            {/* <p>8 min read</p>
-            <span>•</span> */}
             <span>Nov 2025</span>
           </div>
         </div>

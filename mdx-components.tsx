@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, generateId } from "@/lib/utils";
 
 export const mdxComponents = {
   h1: ({ className, ...props }: React.ComponentProps<"h1">) => (
@@ -13,16 +13,8 @@ export const mdxComponents = {
   h2: ({ className, ...props }: React.ComponentProps<"h2">) => {
     return (
       <h2
-        id={props.children
-          ?.toString()
-          .replace(/ /g, "-")
-          .replace(/'/g, "")
-          .replace(/\?/g, "")
-          .toLowerCase()}
-        className={cn(
-          "font-heading [&+]*:[code]:text-xl mt-10 scroll-m-28 text-xl font-medium tracking-tight first:mt-0 lg:mt-12 [&+.steps]:mt-0! [&+.steps>h3]:mt-4! [&+h3]:mt-6! [&+p]:mt-4!",
-          className
-        )}
+        id={generateId(props.children)}
+        className={cn("mt-15 text-xl/7 font-medium tracking-tight", className)}
         {...props}
       />
     );
@@ -35,7 +27,10 @@ export const mdxComponents = {
   ),
   p: ({ className, ...props }: React.ComponentProps<"p">) => (
     <p
-      className={cn("text-base/7 [&:not(:first-child)]:mt-6", className)}
+      className={cn(
+        "text-muted-foreground text-base/7 [&:not(:first-child)]:mt-6",
+        className
+      )}
       {...props}
     />
   ),
