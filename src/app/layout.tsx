@@ -1,5 +1,4 @@
-import { MainLayout } from "@/components/layouts/main-layout";
-import { geistMono, geistSans } from "@/lib/fonts";
+import { geistMono, geistSans, inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme";
 import { Metadata } from "next";
@@ -25,14 +24,13 @@ export default function RootLayout({
       className={cn(
         "text-secondary-foreground font-sans antialiased",
         geistSans.variable,
-        geistMono.variable
+        geistMono.variable,
+        inter.variable
       )}
     >
       <body>
         <ThemeProvider>
-          <div className="isolate">
-            <MainLayout>{children}</MainLayout>
-          </div>
+          <div className="isolate">{children}</div>
         </ThemeProvider>
       </body>
     </html>
