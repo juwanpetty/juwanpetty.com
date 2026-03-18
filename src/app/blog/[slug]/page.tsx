@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { PageSection } from "@/components/page-section";
 import { formatDate, FULL_DATE_FORMAT } from "@/lib/utils";
-import { allArticles } from "content-collections";
+import { allPosts } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { mdxComponents } from "mdx-components";
@@ -21,13 +21,13 @@ type BlogDetailProps = {
 
 export default async function BlogDetail({ params }: BlogDetailProps) {
   const { slug } = await params;
-  const article = allArticles.find((article) => article._meta.path === slug);
+  const post = allPosts.find((post) => post._meta.path === slug);
 
-  if (!article) {
+  if (!post) {
     return notFound();
   }
 
-  const { title, published } = article;
+  const { title, published } = post;
 
   const formattedPublishedDate = formatDate(
     published.toDateString(),
@@ -52,7 +52,7 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
 
       <PageSection>
         <div className="prose mt-10">
-          <MDXContent components={mdxComponents} code={article.mdx} />
+          <MDXContent components={mdxComponents} code={post.mdx} />
         </div>
       </PageSection>
 
