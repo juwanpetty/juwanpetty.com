@@ -1,4 +1,6 @@
+import { ArrowLeftIcon } from "@/icons/arrow-left-icon";
 import { ArrowRightIcon } from "@/icons/arrow-right-icon";
+import { BackIcon } from "@/icons/back-icon";
 import { GitHubIcon } from "@/icons/github-icon";
 import { GlobeIcon } from "@/icons/globe-icon";
 import { MailIcon } from "@/icons/mail-icon";
@@ -6,7 +8,9 @@ import { cn } from "@/lib/utils";
 import { ComponentProps } from "react";
 
 const icons = {
+  "arrow-left": ArrowLeftIcon,
   "arrow-right": ArrowRightIcon,
+  back: BackIcon,
   github: GitHubIcon,
   globe: GlobeIcon,
   mail: MailIcon,
