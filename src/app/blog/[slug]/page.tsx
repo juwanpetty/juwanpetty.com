@@ -23,6 +23,8 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
   const { slug } = await params;
   const post = allPosts.find((post) => post._meta.path === slug);
 
+  const { previous, next } = getAdjacentPosts(slug);
+
   if (!post) {
     return notFound();
   }
@@ -51,28 +53,53 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
       </PageHeader>
 
       <PageSection>
-        <div className="prose mt-10">
+        <div className="prose text-secondary-foreground mt-10">
           <MDXContent components={mdxComponents} code={post.mdx} />
         </div>
       </PageSection>
 
       <footer className="mt-16">
         <div className="flex items-center justify-between gap-2">
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="/" className="text-secondary-foreground -ml-2">
-              <Icon name="arrow-left" className="size-4" />
-              <span>Installation</span>
-            </Link>
-          </Button>
+          {previous && (
+            <Button variant="ghost" size="sm" asChild>
+              <Link
+                href={`/blog/${previous._meta.path}`}
+                className="text-secondary-foreground -ml-2"
+              >
+                <Icon name="arrow-left" className="size-4" />
+                <span>{previous.title}</span>
+              </Link>
+            </Button>
+          )}
 
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="/" className="text-secondary-foreground -mr-2">
-              <span>Compatibility</span>
-              <Icon name="arrow-right" className="size-4" />
-            </Link>
-          </Button>
+          {next && (
+            <Button variant="ghost" size="sm" asChild className="ml-auto">
+              <Link
+                href={`/blog/${next._meta.path}`}
+                className="text-secondary-foreground -mr-2"
+              >
+                <span>{next.title}</span>
+                <Icon name="arrow-right" className="size-4" />
+              </Link>
+            </Button>
+          )}
         </div>
       </footer>
     </div>
   );
+}
+
+export const getSortedPosts = () => {
+  return allPosts.sort((a, b) => (a.published < b.published ? 1 : -1));
+};
+
+function getAdjacentPosts(slug: string) {
+  const sortedPosts = getSortedPosts();
+
+  const index = sortedPosts.findIndex((post) => post._meta.path === slug);
+
+  return {
+    previous: sortedPosts[index - 1] || null,
+    next: sortedPosts[index + 1] || null,
+  };
 }
