@@ -35,7 +35,7 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
   );
 
   return (
-    <div>
+    <div className="mx-auto max-w-2xl">
       <div className="mb-10 flex items-center">
         <Button variant="ghost" size="sm" asChild>
           <Link href="/" className="text-secondary-foreground -ml-2">
