@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { format } from "date-fns";
+import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -14,4 +15,12 @@ export function formatDate(
   formatString: string = SHORTHAND_DATE_FORMAT
 ): string {
   return format(new Date(date), formatString);
+}
+
+export function generateId(text: ReactNode) {
+  return text
+    ?.toString()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
 }
