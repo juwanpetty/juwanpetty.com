@@ -1,12 +1,12 @@
 import { ComponentProps } from "react";
 
 export function PageHeader({ children }: ComponentProps<"header">) {
-  return <div className="space-y-6">{children}</div>;
+  return <div className="space-y-1">{children}</div>;
 }
 
 function PageHeaderTitle({ children }: ComponentProps<"h1">) {
   return (
-    <h1 className="text-secondary-foreground text-2xl font-medium tracking-tight">
+    <h1 className="text-secondary-foreground text-2xl font-semibold tracking-tight">
       {children}
     </h1>
   );
