@@ -23,7 +23,8 @@
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
-    "@content-collections/core": "^0.13.1",
+    "@content-collections/core": "^0.14.2",
+    "@content-collections/mdx": "^0.2.2",
     "@content-collections/next": "^0.2.10",
     "@tailwindcss/postcss": "^4.1.7",
     "@types/node": "^20",

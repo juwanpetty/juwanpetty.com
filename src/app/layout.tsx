@@ -1,5 +1,5 @@
 import { MainLayout } from "@/components/layouts/main-layout";
-import { geistMono, geistSans } from "@/lib/fonts";
+import { geistMono, inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme";
 import { Metadata } from "next";
@@ -24,7 +24,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(
         "text-secondary-foreground font-sans antialiased",
-        geistSans.variable,
+        inter.variable,
         geistMono.variable
       )}
     >
