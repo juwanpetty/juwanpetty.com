@@ -12,6 +12,25 @@ import {
   PageHeaderDescription,
   PageHeaderTitle,
 } from "@/components/page-header";
+import { Metadata } from "next";
+
+type MetadataProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({
+  params,
+}: MetadataProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = allPosts.find((post) => post._meta.path === slug);
+
+  if (!post) notFound();
+
+  return {
+    title: post.title,
+    description: post.description,
+  };
+}
 
 type BlogDetailProps = {
   params: Promise<{
