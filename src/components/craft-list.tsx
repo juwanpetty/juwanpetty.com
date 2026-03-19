@@ -5,7 +5,7 @@ export function CraftList() {
   const crafts = getSortedCrafts();
 
   return (
-    <div className="grid w-full grid-cols-1 gap-x-6 gap-y-8">
+    <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
       {crafts.map((craft) => (
         <CraftItem key={craft._meta.path} craft={craft} />
       ))}

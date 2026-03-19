@@ -38,7 +38,7 @@ const notes = defineCollection({
 const crafts = defineCollection({
   name: "crafts",
   directory: "src/content/crafts",
-  include: "**/*.md",
+  include: "**/*.mdx",
   schema: z.object({
     title: z.string(),
     published: z.coerce.date(),
@@ -46,6 +46,13 @@ const crafts = defineCollection({
     repositoryURL: z.string(),
     content: z.string(),
   }),
+  transform: async (document, context) => {
+    const mdx = await compileMDX(context, document);
+    return {
+      ...document,
+      mdx,
+    };
+  },
 });
 
 const jobs = defineCollection({
