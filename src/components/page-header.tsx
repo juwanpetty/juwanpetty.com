@@ -14,7 +14,7 @@ function PageHeaderTitle({ children }: ComponentProps<"h1">) {
 
 function PageHeaderDescription({ children }: ComponentProps<"div">) {
   return (
-    <div className="text-muted-foreground flex flex-col gap-6 text-base/7">
+    <div className="text-muted-foreground flex flex-col gap-6 text-base/7 text-pretty">
       {children}
     </div>
   );
