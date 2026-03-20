@@ -41,9 +41,8 @@ const crafts = defineCollection({
   include: "**/*.mdx",
   schema: z.object({
     title: z.string(),
+    description: z.string(),
     published: z.coerce.date(),
-    previewURL: z.string(),
-    repositoryURL: z.string(),
     content: z.string(),
   }),
   transform: async (document, context) => {
