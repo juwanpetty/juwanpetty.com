@@ -19,7 +19,7 @@ export function PatternItem({ pattern }: PatternItemProps) {
           alt={title}
           width={800}
           height={600}
-          className="rounded-xl border border-black/10 object-cover dark:border-white/10"
+          className="h-full w-full rounded-xl border border-black/10 dark:border-white/10"
         />
       </div>
 
