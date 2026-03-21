@@ -26,7 +26,7 @@ export function FloatingToolbar() {
           <TooltipTrigger asChild>
             <Button variant="ghost" size="icon-sm">
               <span className="sr-only">Bold</span>
-              <BoldIcon className="size-5 shrink-0" />
+              <BoldIcon className="size-5" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
@@ -44,7 +44,7 @@ export function FloatingToolbar() {
           <TooltipTrigger asChild>
             <Button variant="ghost" size="icon-sm">
               <span className="sr-only">Italicize</span>
-              <ItalicIcon className="size-5 shrink-0" />
+              <ItalicIcon className="size-5" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
@@ -62,7 +62,7 @@ export function FloatingToolbar() {
           <TooltipTrigger asChild>
             <Button variant="ghost" size="icon-sm">
               <span className="sr-only">Underline</span>
-              <UnderlineIcon className="size-5 shrink-0" />
+              <UnderlineIcon className="size-5" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
@@ -80,7 +80,7 @@ export function FloatingToolbar() {
           <TooltipTrigger asChild>
             <Button variant="ghost" size="icon-sm">
               <span className="sr-only">Strike-through</span>
-              <StrikethroughIcon className="size-5 shrink-0" />
+              <StrikethroughIcon className="size-5" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
@@ -99,7 +99,7 @@ export function FloatingToolbar() {
           <TooltipTrigger asChild>
             <Button variant="ghost" size="icon-sm">
               <span className="sr-only">Mark as code</span>
-              <CodeIcon className="size-5 shrink-0" />
+              <CodeIcon className="size-5" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
@@ -117,7 +117,7 @@ export function FloatingToolbar() {
           <TooltipTrigger asChild>
             <Button variant="ghost" size="icon-sm">
               <span className="sr-only">Mark as equation</span>
-              <RadicalIcon className="size-5 shrink-0" />
+              <RadicalIcon className="size-5" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
@@ -137,7 +137,7 @@ export function FloatingToolbar() {
         <Tooltip>
           <TooltipTrigger asChild>
             <Button variant="ghost" size="sm">
-              <MessageSquareTextIcon className="size-5 shrink-0" />
+              <MessageSquareTextIcon className="size-5" />
               <span className="px-0.5 text-sm font-medium">Comment</span>
             </Button>
           </TooltipTrigger>
@@ -158,7 +158,7 @@ export function FloatingToolbar() {
         <Tooltip>
           <TooltipTrigger asChild>
             <Button variant="ghost" size="sm">
-              <SparklesIcon className="fill-foreground size-5 shrink-0" />
+              <SparklesIcon className="fill-foreground size-5" />
               <span className="px-0.5 text-sm font-medium">Ask AI</span>
             </Button>
           </TooltipTrigger>
