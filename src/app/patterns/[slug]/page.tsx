@@ -6,7 +6,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { PageSection } from "@/components/page-section";
-import { allCrafts } from "content-collections";
+import { allPatterns } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { mdxComponents } from "mdx-components";
@@ -17,9 +17,9 @@ import {
 } from "@/components/page-header";
 import { Metadata } from "next";
 import { Preview } from "@/components/preview";
-import { EmptyState } from "@/components/craft/empty-state";
-import { SnoozeDropdown } from "@/components/craft/snooze-dropdown";
-import { FloatingToolbar } from "@/components/craft/floating-toolbar";
+import { EmptyState } from "@/components/pattern/empty-state";
+import { SnoozeDropdown } from "@/components/pattern/snooze-dropdown";
+import { FloatingToolbar } from "@/components/pattern/floating-toolbar";
 
 type MetadataProps = {
   params: Promise<{ slug: string }>;
@@ -29,32 +29,33 @@ export async function generateMetadata({
   params,
 }: MetadataProps): Promise<Metadata> {
   const { slug } = await params;
-  const craft = allCrafts.find((craft) => craft._meta.path === slug);
+  const pattern = allPatterns.find((pattern) => pattern._meta.path === slug);
 
-  if (!craft) notFound();
+  if (!pattern) notFound();
 
   return {
-    title: craft.title,
+    title: pattern.title,
+    description: pattern.description,
   };
 }
 
-type CraftDetailProps = {
+type PatternDetailProps = {
   params: Promise<{
     slug: string;
   }>;
 };
 
-export default async function CraftDetail({ params }: CraftDetailProps) {
+export default async function PatternDetail({ params }: PatternDetailProps) {
   const { slug } = await params;
-  const craft = allCrafts.find((craft) => craft._meta.path === slug);
+  const pattern = allPatterns.find((pattern) => pattern._meta.path === slug);
 
-  const { previous, next } = getAdjacentCrafts(slug);
+  const { previous, next } = getAdjacentPatterns(slug);
 
-  if (!craft) {
+  if (!pattern) {
     return notFound();
   }
 
-  const { title, description } = craft;
+  const { title, description } = pattern;
 
   return (
     <div className="mx-auto max-w-2xl">
@@ -84,7 +85,7 @@ export default async function CraftDetail({ params }: CraftDetailProps) {
               SnoozeDropdown,
               FloatingToolbar,
             }}
-            code={craft.mdx}
+            code={pattern.mdx}
           />
         </div>
       </PageSection>
@@ -94,7 +95,7 @@ export default async function CraftDetail({ params }: CraftDetailProps) {
           {previous && (
             <Button variant="ghost" size="sm" asChild>
               <Link
-                href={`/crafts/${previous._meta.path}`}
+                href={`/patterns/${previous._meta.path}`}
                 className="text-secondary-foreground -ml-2"
               >
                 <IconArrowLeftOutline18 className="size-4" />
@@ -106,7 +107,7 @@ export default async function CraftDetail({ params }: CraftDetailProps) {
           {next && (
             <Button variant="ghost" size="sm" asChild className="ml-auto">
               <Link
-                href={`/crafts/${next._meta.path}`}
+                href={`/patterns/${next._meta.path}`}
                 className="text-secondary-foreground -mr-2"
               >
                 <span>{next.title}</span>
@@ -120,17 +121,19 @@ export default async function CraftDetail({ params }: CraftDetailProps) {
   );
 }
 
-export const getSortedCrafts = () => {
-  return allCrafts.sort((a, b) => (a.published < b.published ? 1 : -1));
+export const getSortedPatterns = () => {
+  return allPatterns.sort((a, b) => (a.published < b.published ? 1 : -1));
 };
 
-function getAdjacentCrafts(slug: string) {
-  const sortedCrafts = getSortedCrafts();
+function getAdjacentPatterns(slug: string) {
+  const sortedPatterns = getSortedPatterns();
 
-  const index = sortedCrafts.findIndex((craft) => craft._meta.path === slug);
+  const index = sortedPatterns.findIndex(
+    (pattern) => pattern._meta.path === slug
+  );
 
   return {
-    previous: sortedCrafts[index - 1] || null,
-    next: sortedCrafts[index + 1] || null,
+    previous: sortedPatterns[index - 1] || null,
+    next: sortedPatterns[index + 1] || null,
   };
 }

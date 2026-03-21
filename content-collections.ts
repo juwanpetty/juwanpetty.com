@@ -22,22 +22,9 @@ const posts = defineCollection({
   },
 });
 
-const notes = defineCollection({
-  name: "notes",
-  directory: "src/content/notes",
-  include: "**/*.md",
-  schema: z.object({
-    published: z.coerce.date(),
-    title: z.string().optional(),
-    link: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    content: z.string(),
-  }),
-});
-
-const crafts = defineCollection({
-  name: "crafts",
-  directory: "src/content/crafts",
+const patterns = defineCollection({
+  name: "patterns",
+  directory: "src/content/patterns",
   include: "**/*.mdx",
   schema: z.object({
     title: z.string(),
@@ -54,29 +41,6 @@ const crafts = defineCollection({
   },
 });
 
-const jobs = defineCollection({
-  name: "jobs",
-  directory: "src/content/jobs",
-  include: "**/*.md",
-  schema: z.object({
-    title: z.string(),
-    company: z.string(),
-    startDate: z.coerce.date(),
-    endDate: z.coerce.date().optional(),
-    tools: z.array(z.string()).optional(),
-    projects: z
-      .array(
-        z.object({
-          title: z.string(),
-          description: z.string().optional(),
-          link: z.string(),
-          published: z.coerce.date().optional(),
-        })
-      )
-      .optional(),
-  }),
-});
-
 export default defineConfig({
-  content: [posts, notes, crafts, jobs],
+  content: [posts, patterns],
 });

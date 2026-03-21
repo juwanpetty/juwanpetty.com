@@ -1,4 +1,4 @@
-import { CraftList } from "@/components/craft-list";
+import { PatternList } from "@/components/pattern-list";
 import { IconGithub } from "nucleo-social-media";
 import { IconEnvelopeFill18 } from "nucleo-ui-fill-18";
 import { PageHeader, PageHeaderDescription } from "@/components/page-header";
@@ -46,11 +46,11 @@ export default function HomeIndex() {
         </PageHeader>
 
         <PageSection>
-          <PageSectionTitle>Crafts</PageSectionTitle>
+          <PageSectionTitle>Patterns</PageSectionTitle>
 
           <PageSectionContent>
             <div className="mt-8">
-              <CraftList />
+              <PatternList />
             </div>
           </PageSectionContent>
         </PageSection>
