@@ -1,8 +1,9 @@
 import { MainLayout } from "@/components/layouts/main-layout";
-import { geistMono, geistSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme";
 import { Metadata } from "next";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/jetbrains-mono";
 
 import "./globals.css";
 
@@ -22,11 +23,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn(
-        "text-secondary-foreground font-sans antialiased",
-        geistSans.variable,
-        geistMono.variable
-      )}
+      className={cn("text-secondary-foreground font-sans antialiased")}
     >
       <body>
         <ThemeProvider>
