@@ -1,4 +1,8 @@
-import { Icon } from "@/components/icon";
+import {
+  IconArrowLeftOutline18,
+  IconArrowRightOutline18,
+  IconUTurnToLeftOutline18,
+} from "nucleo-ui-outline-18";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { PageSection } from "@/components/page-section";
@@ -60,7 +64,7 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
       <div className="mb-10 flex items-center">
         <Button variant="ghost" size="sm" asChild>
           <Link href="/" className="text-secondary-foreground -ml-2">
-            <Icon name="back" className="size-4.5" />
+            <IconUTurnToLeftOutline18 className="size-4.5" />
             <span>Home</span>
           </Link>
         </Button>
@@ -85,7 +89,7 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
                 href={`/blog/${previous._meta.path}`}
                 className="text-secondary-foreground -ml-2"
               >
-                <Icon name="arrow-left" className="size-4" />
+                <IconArrowLeftOutline18 className="size-4" />
                 <span>{previous.title}</span>
               </Link>
             </Button>
@@ -98,7 +102,7 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
                 className="text-secondary-foreground -mr-2"
               >
                 <span>{next.title}</span>
-                <Icon name="arrow-right" className="size-4" />
+                <IconArrowRightOutline18 className="size-4" />
               </Link>
             </Button>
           )}

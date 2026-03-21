@@ -1,5 +1,6 @@
 import { CraftList } from "@/components/craft-list";
-import { Icon } from "@/components/icon";
+import { IconGithub } from "nucleo-social-media";
+import { IconEnvelopeFill18 } from "nucleo-ui-fill-18";
 import { PageHeader, PageHeaderDescription } from "@/components/page-header";
 import {
   PageSection,
@@ -31,12 +32,12 @@ export default function HomeIndex() {
               </ExternalLink>
               . You can reach me via{" "}
               <ExternalLink href="mailto:jchpetty@gmail.com">
-                <Icon name="mail" className="mr-1 mb-0.5 inline size-4" />
+                <IconEnvelopeFill18 className="mr-1 mb-0.5 inline size-4" />
                 <span>email</span>
               </ExternalLink>{" "}
               or see my code on{" "}
               <ExternalLink href="https://github.com/juwanpetty">
-                <Icon name="github" className="mr-1 mb-0.5 inline size-4" />
+                <IconGithub className="mr-1 mb-0.5 inline size-4" />
                 <span>GitHub</span>
               </ExternalLink>
               .
