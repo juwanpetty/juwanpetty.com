@@ -9,11 +9,8 @@ import {
 } from "@/components/ui/tooltip";
 import {
   BoldIcon,
-  CodeIcon,
   ItalicIcon,
   MessageSquareTextIcon,
-  RadicalIcon,
-  SparklesIcon,
   StrikethroughIcon,
   UnderlineIcon,
 } from "lucide-react";
@@ -95,43 +92,6 @@ export function FloatingToolbar() {
           </TooltipContent>
         </Tooltip>
 
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button variant="ghost" size="icon-sm">
-              <span className="sr-only">Mark as code</span>
-              <CodeIcon className="size-5" />
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <div className="flex items-center gap-2">
-              <span className="font-medium">Mark as code</span>
-              <KbdGroup>
-                <Kbd>⌘</Kbd>
-                <Kbd>E</Kbd>
-              </KbdGroup>
-            </div>
-          </TooltipContent>
-        </Tooltip>
-
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button variant="ghost" size="icon-sm">
-              <span className="sr-only">Mark as equation</span>
-              <RadicalIcon className="size-5" />
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <div className="flex items-center gap-2">
-              <span className="font-medium">Mark as equation</span>
-              <KbdGroup>
-                <Kbd>⌘</Kbd>
-                <Kbd>⇧</Kbd>
-                <Kbd>E</Kbd>
-              </KbdGroup>
-            </div>
-          </TooltipContent>
-        </Tooltip>
-
         <Separator />
 
         <Tooltip>
@@ -148,26 +108,6 @@ export function FloatingToolbar() {
                 <Kbd>⌘</Kbd>
                 <Kbd>⇧</Kbd>
                 <Kbd>M</Kbd>
-              </KbdGroup>
-            </div>
-          </TooltipContent>
-        </Tooltip>
-
-        <Separator />
-
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button variant="ghost" size="sm">
-              <SparklesIcon className="fill-foreground size-5" />
-              <span className="px-0.5 text-sm font-medium">Ask AI</span>
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <div className="flex items-center gap-2">
-              <span className="font-medium">Ask AI</span>
-              <KbdGroup>
-                <Kbd>⌘</Kbd>
-                <Kbd>J</Kbd>
               </KbdGroup>
             </div>
           </TooltipContent>
