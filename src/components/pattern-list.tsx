@@ -1,5 +1,5 @@
 import { PatternItem } from "@/components/pattern-item";
-import { allPatterns } from "content-collections";
+import { getSortedPatterns } from "@/lib/content";
 
 export function PatternList() {
   const patterns = getSortedPatterns();
@@ -12,7 +12,3 @@ export function PatternList() {
     </div>
   );
 }
-
-export const getSortedPatterns = () => {
-  return allPatterns.sort((a, b) => (a.published < b.published ? 1 : -1));
-};

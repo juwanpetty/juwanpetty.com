@@ -1,13 +1,6 @@
-import {
-  IconArrowLeftOutline18,
-  IconArrowRightOutline18,
-  IconUTurnToLeftOutline18,
-} from "nucleo-ui-outline-18";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { PageSection } from "@/components/page-section";
-import { formatDate, FULL_DATE_FORMAT } from "@/lib/utils";
 import { allPosts } from "content-collections";
+import { formatDate, FULL_DATE_FORMAT } from "@/lib/dates";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { mdxComponents } from "mdx-components";
@@ -17,6 +10,14 @@ import {
   PageHeaderTitle,
 } from "@/components/page-header";
 import { Metadata } from "next";
+import { getAdjacentItems, getSortedPosts } from "@/lib/content";
+import { DetailLayout } from "@/components/layouts/detail-layout";
+
+export async function generateStaticParams() {
+  return allPosts.map((post) => ({
+    slug: post._meta.path,
+  }));
+}
 
 type MetadataProps = {
   params: Promise<{ slug: string }>;
@@ -46,7 +47,8 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
   const { slug } = await params;
   const post = allPosts.find((post) => post._meta.path === slug);
 
-  const { previous, next } = getAdjacentPosts(slug);
+  const sortedPosts = getSortedPosts();
+  const { previous, next } = getAdjacentItems(sortedPosts, slug);
 
   if (!post) {
     return notFound();
@@ -60,16 +62,7 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
   );
 
   return (
-    <div className="mx-auto max-w-2xl">
-      <div className="mb-10 flex items-center">
-        <Button variant="ghost" size="sm" asChild>
-          <Link href="/" className="text-secondary-foreground -ml-2">
-            <IconUTurnToLeftOutline18 className="size-4.5" />
-            <span>Home</span>
-          </Link>
-        </Button>
-      </div>
-
+    <DetailLayout baseUrl="/blog" previous={previous} next={next}>
       <PageHeader>
         <PageHeaderTitle>{title}</PageHeaderTitle>
         <PageHeaderDescription>{formattedPublishedDate}</PageHeaderDescription>
@@ -80,49 +73,6 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
           <MDXContent components={mdxComponents} code={post.mdx} />
         </div>
       </PageSection>
-
-      <footer className="mt-16">
-        <div className="flex items-center justify-between gap-2">
-          {previous && (
-            <Button variant="ghost" size="sm" asChild>
-              <Link
-                href={`/blog/${previous._meta.path}`}
-                className="text-secondary-foreground -ml-2"
-              >
-                <IconArrowLeftOutline18 className="size-4" />
-                <span>{previous.title}</span>
-              </Link>
-            </Button>
-          )}
-
-          {next && (
-            <Button variant="ghost" size="sm" asChild className="ml-auto">
-              <Link
-                href={`/blog/${next._meta.path}`}
-                className="text-secondary-foreground -mr-2"
-              >
-                <span>{next.title}</span>
-                <IconArrowRightOutline18 className="size-4" />
-              </Link>
-            </Button>
-          )}
-        </div>
-      </footer>
-    </div>
+    </DetailLayout>
   );
-}
-
-export const getSortedPosts = () => {
-  return allPosts.sort((a, b) => (a.published < b.published ? 1 : -1));
-};
-
-function getAdjacentPosts(slug: string) {
-  const sortedPosts = getSortedPosts();
-
-  const index = sortedPosts.findIndex((post) => post._meta.path === slug);
-
-  return {
-    previous: sortedPosts[index - 1] || null,
-    next: sortedPosts[index + 1] || null,
-  };
 }
