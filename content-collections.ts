@@ -8,8 +8,8 @@ const posts = defineCollection({
   include: "**/*.mdx",
   schema: z.object({
     published: z.coerce.date(),
-    title: z.string(),
-    description: z.string(),
+    title: z.string().max(60),
+    description: z.string().max(160),
     tags: z.array(z.string()).optional(),
     content: z.string(),
   }),
@@ -27,8 +27,8 @@ const patterns = defineCollection({
   directory: "src/content/patterns",
   include: "**/*.mdx",
   schema: z.object({
-    title: z.string(),
-    description: z.string(),
+    title: z.string().max(60),
+    description: z.string().max(160),
     published: z.coerce.date(),
     content: z.string(),
   }),

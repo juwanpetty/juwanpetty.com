@@ -34,6 +34,13 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: `https://juwanpetty.com/blog/${slug}`,
+      siteName: "Juwan Petty",
+      type: "article",
+    },
   };
 }
 

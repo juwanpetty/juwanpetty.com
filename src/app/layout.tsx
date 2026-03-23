@@ -9,8 +9,21 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Juwan Petty",
-    default: "Juwan Petty — Design Engineer",
+    template: "%s — Juwan Petty",
+    default: "Juwan Petty",
+  },
+  description:
+    "Design engineer sharing projects, writing, and experiments across frontend engineering and UI systems.",
+  openGraph: {
+    title: "Juwan Petty",
+    description:
+      "Design engineer sharing projects, writing, and experiments across frontend engineering and UI systems.",
+    url: "https://juwanpetty.com",
+    siteName: "Juwan Petty",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://juwanpetty.com",
   },
 };
 

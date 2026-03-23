@@ -37,6 +37,13 @@ export async function generateMetadata({
   return {
     title: pattern.title,
     description: pattern.description,
+    openGraph: {
+      title: pattern.title,
+      description: pattern.description,
+      url: `https://juwanpetty.com/patterns/${slug}`,
+      siteName: "Juwan Petty",
+      type: "article",
+    },
   };
 }
 
