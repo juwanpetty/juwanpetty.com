@@ -5,7 +5,7 @@ export const mdxComponents = {
   h1: ({ className, ...props }: ComponentProps<"h1">) => (
     <h1
       className={cn(
-        "text-secondary-foreground mt-2 text-2xl font-semibold tracking-tight",
+        "text-secondary-foreground mt-2 text-base/7 font-[550] tracking-tight",
         className
       )}
       {...props}
@@ -32,7 +32,8 @@ export const mdxComponents = {
   p: ({ className, ...props }: ComponentProps<"p">) => (
     <p
       className={cn(
-        "text-secondary-foreground text-base/7 text-pretty",
+        "text-secondary-foreground text-[0.9375rem]/[1.6875rem] text-pretty",
+        // "text-secondary-foreground text-base/7 text-pretty",
         className
       )}
       {...props}

@@ -1,6 +1,5 @@
 import { PageSection } from "@/components/page-section";
 import { allPosts } from "content-collections";
-import { formatDate, FULL_DATE_FORMAT } from "@/lib/dates";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { mdxComponents } from "mdx-components";
@@ -61,18 +60,13 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
     return notFound();
   }
 
-  const { title, published } = post;
-
-  const formattedPublishedDate = formatDate(
-    published.toDateString(),
-    FULL_DATE_FORMAT
-  );
+  const { title, description } = post;
 
   return (
     <DetailLayout baseUrl="/blog" previous={previous} next={next}>
       <PageHeader>
         <PageHeaderTitle>{title}</PageHeaderTitle>
-        <PageHeaderDescription>{formattedPublishedDate}</PageHeaderDescription>
+        <PageHeaderDescription>{description}</PageHeaderDescription>
       </PageHeader>
 
       <PageSection>
