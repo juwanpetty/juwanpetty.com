@@ -1,10 +1,16 @@
 import { allPatterns, allPosts } from "content-collections";
 
 export const getSortedPatterns = () =>
-  allPatterns.sort((a, b) => (a.published < b.published ? 1 : -1));
+  allPatterns.sort((a, b) => {
+    const dateDiff = b.published.getTime() - a.published.getTime();
+    return dateDiff || a.title.localeCompare(b.title);
+  });
 
 export const getSortedPosts = () =>
-  allPosts.sort((a, b) => (a.published < b.published ? 1 : -1));
+  allPosts.sort((a, b) => {
+    const dateDiff = b.published.getTime() - a.published.getTime();
+    return dateDiff || a.title.localeCompare(b.title);
+  });
 
 export function getAdjacentItems<T extends { _meta: { path: string } }>(
   items: T[],

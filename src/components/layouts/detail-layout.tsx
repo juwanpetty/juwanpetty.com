@@ -22,7 +22,7 @@ export function DetailLayout({
 }: DetailLayoutProps) {
   return (
     <div className="mx-auto max-w-2xl">
-      <div className="mb-10 flex items-center">
+      <div className="mb-32 flex items-center">
         <PageBackLink href="/" label="Home" />
       </div>
 
