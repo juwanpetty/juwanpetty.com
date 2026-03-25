@@ -46,13 +46,10 @@
 }
 
 :root {
-  font-sythesis: none;
+  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  --font-inter: "Inter Variable", sans-serif;
-  --font-jetbrains-mono: "JetBrains Mono Variable", monospace;
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);
