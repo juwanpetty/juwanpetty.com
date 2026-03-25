@@ -2,8 +2,7 @@ import { MainLayout } from "@/components/layouts/main-layout";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme";
 import { Metadata } from "next";
-import "@fontsource-variable/inter";
-import "@fontsource-variable/jetbrains-mono";
+import { inter, jetBrainsMono } from "@/lib/fonts";
 
 import "./globals.css";
 
@@ -36,7 +35,11 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("text-secondary-foreground font-sans antialiased")}
+      className={cn(
+        "text-secondary-foreground font-sans antialiased",
+        inter.variable,
+        jetBrainsMono.variable
+      )}
     >
       <body>
         <ThemeProvider>
