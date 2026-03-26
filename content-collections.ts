@@ -1,9 +1,13 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { compileMDX } from "@content-collections/mdx";
-import { rehypePrettyCode, type Options } from "rehype-pretty-code";
+import {
+  rehypePrettyCode,
+  type Options as PrettyCodeOptions,
+} from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
 import { z } from "zod";
 
-const rehypeOptions: Options = {
+const rehypePrettyCodeOptions: PrettyCodeOptions = {
   theme: {
     dark: "github-dark",
     light: "github-light",
@@ -24,7 +28,7 @@ const posts = defineCollection({
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document, {
-      rehypePlugins: [[rehypePrettyCode, rehypeOptions]],
+      rehypePlugins: [rehypeSlug, [rehypePrettyCode, rehypePrettyCodeOptions]],
     });
     return {
       ...document,
@@ -45,7 +49,7 @@ const patterns = defineCollection({
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document, {
-      rehypePlugins: [[rehypePrettyCode, rehypeOptions]],
+      rehypePlugins: [rehypeSlug, [rehypePrettyCode, rehypePrettyCodeOptions]],
     });
     return {
       ...document,

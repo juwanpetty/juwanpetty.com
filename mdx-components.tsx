@@ -1,4 +1,6 @@
-import { cn, generateId } from "@/lib/utils";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { IconLinkOutline18 } from "nucleo-ui-outline-18";
 import { ComponentProps, HTMLAttributes } from "react";
 
 export const mdxComponents = {
@@ -14,24 +16,57 @@ export const mdxComponents = {
   h2: ({ className, ...props }: ComponentProps<"h2">) => {
     return (
       <h2
-        id={generateId(props.children)}
         className={cn(
-          "text-secondary-foreground mt-14 mb-5 inline-block text-base font-[550] no-underline",
+          "mt-14 mb-5 flex scroll-mt-8 flex-row items-center gap-2",
           className
         )}
         {...props}
-      />
+      >
+        <a
+          href={`#${props.id}`}
+          className="group not-prose text-secondary-foreground relative text-base font-[550] no-underline"
+        >
+          <IconLinkOutline18
+            className="text-muted-foreground/75 absolute top-1 -left-6 size-4 shrink-0 -translate-y-px rotate-90 opacity-0 transition-opacity group-hover:opacity-100"
+            aria-label="Link to section"
+          />
+
+          {props.children}
+        </a>
+      </h2>
     );
   },
-  a: ({ className, ...props }: ComponentProps<"a">) => (
-    <a
-      className={cn(
-        "decoration-muted-foreground/25 font-normal underline decoration-2 underline-offset-2",
-        className
-      )}
-      {...props}
-    />
-  ),
+  a: ({ className, href, children, ...props }: ComponentProps<"a">) => {
+    if (!href) return <>{children}</>;
+    const isExternal = href.startsWith("http");
+
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          className={cn(
+            "text-secondary-foreground/80 decoration-muted-foreground/25 font-normal underline decoration-2 underline-offset-2",
+            className
+          )}
+          {...props}
+        >
+          {children}
+        </a>
+      );
+    }
+    return (
+      <Link
+        href={href}
+        className={cn(
+          "text-secondary-foreground/80 decoration-muted-foreground/25 font-normal underline decoration-2 underline-offset-2",
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </Link>
+    );
+  },
   p: ({ className, ...props }: ComponentProps<"p">) => (
     <p
       className={cn(
