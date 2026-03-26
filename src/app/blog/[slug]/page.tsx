@@ -3,11 +3,7 @@ import { allPosts } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { mdxComponents } from "mdx-components";
-import {
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderTitle,
-} from "@/components/page-header";
+import { PageHeader, PageHeaderTitle } from "@/components/page-header";
 import { Metadata } from "next";
 import { getAdjacentItems, getSortedPosts } from "@/lib/content";
 import { DetailLayout } from "@/components/layouts/detail-layout";
@@ -60,13 +56,12 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
     return notFound();
   }
 
-  const { title, description } = post;
+  const { title } = post;
 
   return (
     <DetailLayout baseUrl="/blog" previous={previous} next={next}>
       <PageHeader>
         <PageHeaderTitle>{title}</PageHeaderTitle>
-        <PageHeaderDescription>{description}</PageHeaderDescription>
       </PageHeader>
 
       <PageSection>
