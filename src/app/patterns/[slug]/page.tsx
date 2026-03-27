@@ -15,6 +15,7 @@ import { SnoozeDropdown } from "@/components/pattern/snooze-dropdown";
 import { FloatingToolbar } from "@/components/pattern/floating-toolbar";
 import { getAdjacentItems, getSortedPatterns } from "@/lib/content";
 import { DetailLayout } from "@/components/layouts/detail-layout";
+import { CopyButton } from "@/components/pattern/copy-button";
 
 export async function generateStaticParams() {
   return allPatterns.map((pattern) => ({
@@ -80,10 +81,11 @@ export default async function PatternDetail({ params }: PatternDetailProps) {
           <MDXContent
             components={{
               ...mdxComponents,
-              Preview,
+              CopyButton,
               EmptyState,
-              SnoozeDropdown,
               FloatingToolbar,
+              Preview,
+              SnoozeDropdown,
             }}
             code={pattern.mdx}
           />
