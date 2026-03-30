@@ -4,7 +4,6 @@ import { IconEnvelopeOutline18 } from "nucleo-ui-outline-18";
 import { IconGithub, IconLinkedin } from "nucleo-social-media";
 import { ComponentProps } from "react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import Image from "next/image";
 
 export function ProfileHeader() {
@@ -33,6 +32,7 @@ export function ProfileHeader() {
               width={400}
               height={400}
               alt="Picture of the author"
+              preload
             />
           </div>
 
