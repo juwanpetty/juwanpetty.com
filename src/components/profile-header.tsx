@@ -39,22 +39,34 @@ export function ProfileHeader() {
           <div className="flex gap-2.5">
             <div className="flex items-center gap-1">
               <Button variant="ghost" size="icon" asChild>
-                <Link href="https://linkedin.com/in/juwanpetty">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://linkedin.com/in/juwanpetty"
+                >
                   <IconLinkedin />
-                </Link>
+                </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <Link href="https://github.com/juwanpetty">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://github.com/juwanpetty"
+                >
                   <IconGithub className="size-6" />
-                </Link>
+                </a>
               </Button>
             </div>
 
             <Button asChild>
-              <Link href="https://github.com/juwanpetty">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="mailto:jchpetty@gmail.com"
+              >
                 <IconEnvelopeOutline18 />
                 <span>Email</span>
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
