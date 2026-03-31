@@ -53,7 +53,7 @@ export function ProfileHeader() {
                   rel="noopener noreferrer"
                   href="https://github.com/juwanpetty"
                 >
-                  <IconGithub className="size-6" />
+                  <IconGithub />
                 </a>
               </Button>
             </div>
@@ -65,7 +65,7 @@ export function ProfileHeader() {
                 href="mailto:jchpetty@gmail.com"
               >
                 <IconEnvelopeOutline18 />
-                <span>Email</span>
+                <span className="px-0.5">Email</span>
               </a>
             </Button>
           </div>
