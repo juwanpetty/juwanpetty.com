@@ -1,4 +1,4 @@
-import { JetBrains_Mono } from "next/font/google";
+import { Geist, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 export const inter = localFont({
@@ -8,5 +8,10 @@ export const inter = localFont({
 
 export const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+});
+
+export const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
 });

@@ -1,21 +1,18 @@
-import { PageSection } from "@/components/page-section";
 import { allPatterns } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { mdxComponents } from "mdx-components";
-import {
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderTitle,
-} from "@/components/page-header";
 import { Metadata } from "next";
 import { Preview } from "@/components/preview";
 import { EmptyState } from "@/components/pattern/empty-state";
 import { SnoozeDropdown } from "@/components/pattern/snooze-dropdown";
 import { FloatingToolbar } from "@/components/pattern/floating-toolbar";
 import { getAdjacentItems, getSortedPatterns } from "@/lib/content";
-import { DetailLayout } from "@/components/layouts/detail-layout";
 import { CopyButton } from "@/components/pattern/copy-button";
+import { Page } from "@/components/page";
+import { LucideArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { PrevNextNavigation } from "@/components/prev-next-navigation";
 
 export async function generateStaticParams() {
   return allPatterns.map((pattern) => ({
@@ -68,29 +65,41 @@ export default async function PatternDetail({ params }: PatternDetailProps) {
   const { title, description } = pattern;
 
   return (
-    <DetailLayout baseUrl="/patterns" previous={previous} next={next}>
-      <PageHeader>
-        <PageHeaderTitle>{title}</PageHeaderTitle>
-        <PageHeaderDescription>
-          <p>{description}</p>
-        </PageHeaderDescription>
-      </PageHeader>
+    <Page.Root>
+      <Link
+        href="/"
+        className="text-muted-foreground mb-8 flex items-center gap-2 text-base"
+      >
+        <LucideArrowLeft className="size-4" />
+        <span>Back</span>
+      </Link>
 
-      <PageSection>
-        <div className="prose text-secondary-foreground mt-10">
-          <MDXContent
-            components={{
-              ...mdxComponents,
-              CopyButton,
-              EmptyState,
-              FloatingToolbar,
-              Preview,
-              SnoozeDropdown,
-            }}
-            code={pattern.mdx}
-          />
-        </div>
-      </PageSection>
-    </DetailLayout>
+      <header className="mb-8 flex flex-col gap-1">
+        <h1 className="text-base font-[550]">{title}</h1>
+        <div className="text-muted-foreground text-base">{description}</div>
+      </header>
+
+      <div className="prose text-secondary-foreground">
+        <MDXContent
+          components={{
+            ...mdxComponents,
+            CopyButton,
+            EmptyState,
+            FloatingToolbar,
+            Preview,
+            SnoozeDropdown,
+          }}
+          code={pattern.mdx}
+        />
+      </div>
+
+      <footer className="mt-16">
+        <PrevNextNavigation
+          baseUrl="/patterns"
+          previous={previous ?? undefined}
+          next={next ?? undefined}
+        />
+      </footer>
+    </Page.Root>
   );
 }

@@ -1,12 +1,14 @@
-import { PageSection } from "@/components/page-section";
 import { allPosts } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { mdxComponents } from "mdx-components";
-import { PageHeader, PageHeaderTitle } from "@/components/page-header";
 import { Metadata } from "next";
 import { getAdjacentItems, getSortedPosts } from "@/lib/content";
-import { DetailLayout } from "@/components/layouts/detail-layout";
+import { Page } from "@/components/page";
+import { formatDate, FULL_DATE_FORMAT } from "@/lib/dates";
+import { LucideArrowLeft } from "lucide-react";
+import { PrevNextNavigation } from "@/components/prev-next-navigation";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -56,19 +58,36 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
     return notFound();
   }
 
-  const { title } = post;
+  const { title, published } = post;
+
+  const formmattedDate = formatDate(published.toDateString(), FULL_DATE_FORMAT);
 
   return (
-    <DetailLayout baseUrl="/blog" previous={previous} next={next}>
-      <PageHeader>
-        <PageHeaderTitle>{title}</PageHeaderTitle>
-      </PageHeader>
+    <Page.Root>
+      <Link
+        href="/"
+        className="text-muted-foreground mb-8 flex items-center gap-2 text-base"
+      >
+        <LucideArrowLeft className="size-4" />
+        <span>Back</span>
+      </Link>
 
-      <PageSection>
-        <div className="prose text-secondary-foreground mt-10">
-          <MDXContent components={mdxComponents} code={post.mdx} />
-        </div>
-      </PageSection>
-    </DetailLayout>
+      <header className="mb-8 flex flex-col gap-1">
+        <h1 className="text-base font-[550]">{title}</h1>
+        <div className="text-muted-foreground text-base">{formmattedDate}</div>
+      </header>
+
+      <div className="prose text-secondary-foreground">
+        <MDXContent components={mdxComponents} code={post.mdx} />
+      </div>
+
+      <footer className="mt-16">
+        <PrevNextNavigation
+          baseUrl="/blog"
+          previous={previous ?? undefined}
+          next={next ?? undefined}
+        />
+      </footer>
+    </Page.Root>
   );
 }
