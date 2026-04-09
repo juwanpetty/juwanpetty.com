@@ -1,27 +1,26 @@
 import { PatternList } from "@/components/pattern-list";
-import {
-  PageSection,
-  PageSectionContent,
-  PageSectionTitle,
-} from "@/components/page-section";
 import { ProfileHeader } from "@/components/profile-header";
+import { Page } from "@/components/page";
+import { Section } from "@/components/section";
 
 export default function HomeIndex() {
   return (
-    <div className="mx-auto grid grid-cols-[16px_minmax(0,672px)_16px] space-y-16 pt-0 pb-24 min-[720px]:pt-10 sm:grid-cols-[24px_minmax(0,672px)_24px]">
-      <ProfileHeader />
+    <Page.Root>
+      <div className="space-y-16">
+        <ProfileHeader />
 
-      <div className="col-start-2">
-        <PageSection>
-          <PageSectionTitle>Patterns</PageSectionTitle>
+        <Page.Content className="space-y-16">
+          <Section.Root>
+            <Section.Header>
+              <Section.Title>Patterns</Section.Title>
+            </Section.Header>
 
-          <PageSectionContent>
-            <div className="mt-8">
+            <Section.Content>
               <PatternList />
-            </div>
-          </PageSectionContent>
-        </PageSection>
+            </Section.Content>
+          </Section.Root>
+        </Page.Content>
       </div>
-    </div>
+    </Page.Root>
   );
 }

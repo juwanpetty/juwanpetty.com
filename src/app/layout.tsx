@@ -2,7 +2,7 @@ import { MainLayout } from "@/components/layouts/main-layout";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme";
 import { Metadata } from "next";
-import { inter, jetBrainsMono } from "@/lib/fonts";
+import { geist, jetBrainsMono } from "@/lib/fonts";
 
 import "./globals.css";
 
@@ -37,7 +37,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(
         "text-secondary-foreground font-sans antialiased",
-        inter.variable,
+        geist.variable,
         jetBrainsMono.variable
       )}
     >
