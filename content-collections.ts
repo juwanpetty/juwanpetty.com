@@ -58,6 +58,29 @@ const patterns = defineCollection({
   },
 });
 
+const jobs = defineCollection({
+  name: "jobs",
+  directory: "src/content/jobs",
+  include: "**/*.md",
+  schema: z.object({
+    title: z.string(),
+    company: z.string(),
+    startDate: z.coerce.date(),
+    endDate: z.coerce.date().optional(),
+    tools: z.array(z.string()).optional(),
+    projects: z
+      .array(
+        z.object({
+          title: z.string(),
+          description: z.string().optional(),
+          link: z.string(),
+          published: z.coerce.date().optional(),
+        })
+      )
+      .optional(),
+  }),
+});
+
 export default defineConfig({
-  content: [posts, patterns],
+  content: [posts, patterns, jobs],
 });

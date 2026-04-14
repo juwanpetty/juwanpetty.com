@@ -2,7 +2,7 @@ import { MainLayout } from "@/components/layouts/main-layout";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme";
 import { Metadata } from "next";
-import { geist, jetBrainsMono } from "@/lib/fonts";
+import { inter, jetBrainsMono } from "@/lib/fonts";
 
 import "./globals.css";
 
@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     default: "Juwan Petty",
   },
   description:
-    "Design engineer sharing projects, writing, and experiments across frontend engineering and UI systems.",
+    "UI engineer sharing projects, writing, and experiments across frontend engineering and UI systems.",
   openGraph: {
     title: "Juwan Petty",
     description:
-      "Design engineer sharing projects, writing, and experiments across frontend engineering and UI systems.",
+      "UI engineer sharing projects, writing, and experiments across frontend engineering and UI systems.",
     url: "https://juwanpetty.com",
     siteName: "Juwan Petty",
     type: "website",
@@ -37,7 +37,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(
         "text-secondary-foreground font-sans antialiased",
-        geist.variable,
+        inter.variable,
         jetBrainsMono.variable
       )}
     >
