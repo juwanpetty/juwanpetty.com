@@ -7,7 +7,7 @@ export function ProfileHeader() {
     <section className="space-y-8">
       <div>
         <h1 className="text-heading text-base font-semibold">Juwan Petty</h1>
-        <p className="text-gray-11 text-base/relaxed">Design Engineer</p>
+        <p className="text-gray-11 text-base/relaxed">UI Engineer</p>
       </div>
 
       <div className="text-gray-11 max-w-3xl space-y-4 text-base/relaxed">
