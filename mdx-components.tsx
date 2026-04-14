@@ -3,13 +3,12 @@ import Link from "next/link";
 import { IconLinkOutline18 } from "nucleo-ui-outline-18";
 import { ComponentProps, HTMLAttributes } from "react";
 
-export const mdxComponents = {
+import type { MDXComponents } from "mdx/types";
+
+export const components: MDXComponents = {
   h1: ({ className, ...props }: ComponentProps<"h1">) => (
     <h1
-      className={cn(
-        "text-secondary-foreground mt-2 text-base/7 font-[550] tracking-tight",
-        className
-      )}
+      className={cn("max-w-3xl text-xl font-semibold text-balance", className)}
       {...props}
     />
   ),
@@ -17,14 +16,14 @@ export const mdxComponents = {
     return (
       <h2
         className={cn(
-          "mt-14 mb-5 flex scroll-mt-8 flex-row items-center gap-2",
+          "flex scroll-mt-8 flex-row items-center gap-2",
           className
         )}
         {...props}
       >
         <a
           href={`#${props.id}`}
-          className="group not-prose text-secondary-foreground relative text-base font-[550] no-underline"
+          className="group not-prose relative text-base font-semibold no-underline"
         >
           <IconLinkOutline18
             className="text-muted-foreground/75 absolute top-1 -left-6 size-4 shrink-0 -translate-y-px rotate-90 opacity-0 transition-opacity group-hover:opacity-100"
@@ -45,7 +44,7 @@ export const mdxComponents = {
         <a
           href={href}
           className={cn(
-            "text-secondary-foreground/80 decoration-muted-foreground/25 font-normal underline decoration-2 underline-offset-2",
+            "text-gray-12 decoration-gray-11/25 font-medium underline underline-offset-3",
             className
           )}
           {...props}
@@ -58,7 +57,7 @@ export const mdxComponents = {
       <Link
         href={href}
         className={cn(
-          "text-secondary-foreground/80 decoration-muted-foreground/25 font-normal underline decoration-2 underline-offset-2",
+          "text-gray-12 decoration-gray-11/25 font-medium underline underline-offset-3",
           className
         )}
         {...props}
@@ -68,13 +67,7 @@ export const mdxComponents = {
     );
   },
   p: ({ className, ...props }: ComponentProps<"p">) => (
-    <p
-      className={cn(
-        "text-secondary-foreground/80 mb-6.5 text-base leading-[1.65] text-pretty",
-        className
-      )}
-      {...props}
-    />
+    <p className={cn("mb-4 text-base leading-relaxed", className)} {...props} />
   ),
   strong: ({ className, ...props }: HTMLAttributes<HTMLElement>) => (
     <strong className={cn("font-medium", className)} {...props} />
@@ -96,3 +89,7 @@ export const mdxComponents = {
     </>
   ),
 };
+
+export function useMDXComponents(): MDXComponents {
+  return components;
+}

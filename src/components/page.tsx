@@ -15,21 +15,21 @@ export type PageHeaderProps = {
   breadcrumbs?: BreadcrumbItem[];
 } & ComponentProps<"header">;
 
-function PageHeader({ children }: PageHeaderProps) {
-  return <header className="max-w-3xl">{children}</header>;
+function PageHeader({ children, className }: PageHeaderProps) {
+  return <header className={cn("max-w-3xl", className)}>{children}</header>;
 }
 
 function PageTitle({ children }: ComponentProps<"h1">) {
   return (
-    <h1 className="text-secondary-foreground text-xl font-semibold md:text-2xl">
+    <h1 className="text-gray-12 max-w-3xl text-lg font-semibold text-balance">
       {children}
     </h1>
   );
 }
 
-function PageDescription({ children }: ComponentProps<"div">) {
+function PageDescription({ children, className }: ComponentProps<"div">) {
   return (
-    <div className="text-muted-foreground mt-3 flex flex-col gap-6 text-base/7 text-pretty">
+    <div className={cn("text-gray-11 max-w-3xl text-base/relaxed", className)}>
       {children}
     </div>
   );

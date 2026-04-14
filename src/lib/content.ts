@@ -1,4 +1,4 @@
-import { allPatterns, allPosts } from "content-collections";
+import { allJobs, allPatterns, allPosts } from "content-collections";
 
 export const getSortedPatterns = () =>
   allPatterns.sort((a, b) => {
@@ -10,6 +10,11 @@ export const getSortedPosts = () =>
   allPosts.sort((a, b) => {
     const dateDiff = b.published.getTime() - a.published.getTime();
     return dateDiff || a.title.localeCompare(b.title);
+  });
+
+export const getSortedJobs = () =>
+  allJobs.sort((a, b) => {
+    return b.startDate.getTime() - a.startDate.getTime();
   });
 
 export function getAdjacentItems<T extends { _meta: { path: string } }>(
