@@ -47,15 +47,15 @@ function EmptyStateIllustration() {
     <div>
       <div className="relative h-24 w-52" aria-hidden="true">
         {/* Back card */}
-        <div className="bg-muted/60 dark:bg-muted/30 border-border/50 absolute inset-x-6 top-0 h-6 rounded-t-lg border" />
+        <div className="bg-gray-11/60 dark:bg-gray-11/30 border-border/50 absolute inset-x-6 top-0 h-6 rounded-t-lg border" />
         {/* Middle card */}
-        <div className="bg-muted/80 dark:bg-muted/50 border-border/60 absolute inset-x-3 top-3 h-6 rounded-t-lg border" />
+        <div className="bg-gray-11/80 dark:bg-gray-11/50 border-border/60 absolute inset-x-3 top-3 h-6 rounded-t-lg border" />
         {/* Front card */}
         <div className="bg-background border-border absolute inset-x-0 top-6 flex h-16 items-center gap-3 rounded-lg border px-4 shadow-sm">
-          <div className="bg-muted size-8 shrink-0 rounded" />
+          <div className="bg-gray-11 size-8 shrink-0 rounded" />
           <div className="flex flex-1 flex-col gap-1.5">
-            <div className="bg-muted h-2.5 w-3/4 rounded" />
-            <div className="bg-muted/60 h-2 w-1/2 rounded" />
+            <div className="bg-gray-11 h-2.5 w-3/4 rounded" />
+            <div className="bg-gray-11/60 h-2 w-1/2 rounded" />
           </div>
         </div>
         {/* Fade overlay */}

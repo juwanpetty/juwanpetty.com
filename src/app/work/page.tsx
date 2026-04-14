@@ -9,7 +9,7 @@ export default function WorkIndex() {
         <Page.Header className="space-y-1">
           <Page.Title>Juwan Petty</Page.Title>
           <Page.Description>
-            <p>UI Engineer in Atlanta, GA</p>
+            <p>Design Engineer in Atlanta, GA</p>
           </Page.Description>
         </Page.Header>
 

@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     default: "Juwan Petty",
   },
   description:
-    "UI engineer sharing projects, writing, and experiments across frontend engineering and UI systems.",
+    "Design engineer sharing projects, writing, and experiments across frontend engineering and UI systems.",
   openGraph: {
     title: "Juwan Petty",
     description:
-      "UI engineer sharing projects, writing, and experiments across frontend engineering and UI systems.",
+      "Design engineer sharing projects, writing, and experiments across frontend engineering and UI systems.",
     url: "https://juwanpetty.com",
     siteName: "Juwan Petty",
     type: "website",
