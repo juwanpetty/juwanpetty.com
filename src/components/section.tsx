@@ -13,16 +13,12 @@ function SectionHeader({ children }: ComponentProps<"div">) {
 }
 
 function SectionTitle({ children }: ComponentProps<"h2">) {
-  return (
-    <h2 className="text-secondary-foreground text-base font-[550]">
-      {children}
-    </h2>
-  );
+  return <h2 className="text-gray-12 text-base font-[550]">{children}</h2>;
 }
 
 function SectionDescription({ children }: ComponentProps<"div">) {
   return (
-    <div className="text-muted-foreground mt-1.5 max-w-140 text-base/7 text-pretty">
+    <div className="text-gray-11 mt-1.5 max-w-140 text-base/7 text-pretty">
       {children}
     </div>
   );

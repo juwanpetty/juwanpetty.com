@@ -5,7 +5,7 @@ export function SiteHeader() {
   return (
     <div
       className={cn(
-        "bg-background flex h-14 items-center justify-between gap-x-8 px-4 sm:px-6",
+        "bg-gray-1 flex h-14 items-center justify-between gap-x-8 px-4 sm:px-6",
         "sticky top-0 z-50 w-full"
       )}
     >

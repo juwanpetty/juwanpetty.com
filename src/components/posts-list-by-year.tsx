@@ -51,7 +51,7 @@ function EmptyStateIllustration() {
         {/* Middle card */}
         <div className="bg-gray-3/80 dark:bg-gray-3/50 border-border/60 absolute inset-x-3 top-3 h-6 rounded-t-lg border" />
         {/* Front card */}
-        <div className="bg-background border-border absolute inset-x-0 top-6 flex h-16 items-center gap-3 rounded-lg border px-4 shadow-sm">
+        <div className="bg-gray-1 border-border absolute inset-x-0 top-6 flex h-16 items-center gap-3 rounded-lg border px-4 shadow-sm">
           <div className="bg-gray-3 size-8 shrink-0 rounded" />
           <div className="flex flex-1 flex-col gap-1.5">
             <div className="bg-gray-3 h-2.5 w-3/4 rounded" />
@@ -59,7 +59,7 @@ function EmptyStateIllustration() {
           </div>
         </div>
         {/* Fade overlay */}
-        <div className="from-background/0 via-background/60 to-background pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-linear-to-b" />
+        <div className="from-gray-1/0 via-gray-1/60 to-gray-1 pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-linear-to-b" />
       </div>
     </div>
   );
