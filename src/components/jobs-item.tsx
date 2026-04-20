@@ -41,7 +41,6 @@ export function JobsItem({ job }: JobsItemProps) {
         ) : null}
 
         {hasProjects && (
-          // <ul className="mt-5 list-disc ps-6">
           <ul className="mt-5">
             {projects.map((project, index) => (
               <li key={index} className="not-first:mt-2">
@@ -58,9 +57,9 @@ export function JobsItem({ job }: JobsItemProps) {
           </ul>
         )}
 
-        {hasTools && (
+        {/* {hasTools && (
           <p className="text-gray-11 mt-5 text-pretty">{tools.join(", ")}</p>
-        )}
+        )} */}
       </div>
     </div>
   );

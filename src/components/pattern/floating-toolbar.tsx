@@ -17,7 +17,7 @@ import {
 
 export function FloatingToolbar() {
   return (
-    <div className="border-border flex items-center justify-start rounded-lg border p-1">
+    <div className="border-border flex items-center justify-start rounded-[0.875rem] border bg-white p-1">
       <TooltipProvider delayDuration={700} skipDelayDuration={300}>
         <Tooltip>
           <TooltipTrigger asChild>

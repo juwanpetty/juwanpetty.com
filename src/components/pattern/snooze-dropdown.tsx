@@ -20,7 +20,7 @@ export function SnoozeDropdown() {
     <ButtonGroup>
       <Button variant="outline">
         <AlarmClockIcon className="size-5 shrink-0 text-amber-600" />
-        <span>Snooze</span>
+        <span className="px-1">Snooze</span>
       </Button>
 
       <DropdownMenu open={open} onOpenChange={setOpen}>

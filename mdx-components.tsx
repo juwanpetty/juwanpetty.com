@@ -83,11 +83,23 @@ export const components: MDXComponents = {
   pre: ({ ...props }: ComponentProps<"pre">) => (
     <>
       <pre
-        className="bg-secondary/20 border-border relative my-6 overflow-auto rounded-xl border p-6 text-[0.8125rem]/5 md:p-4"
+        className="bg-gray-1 dark:bg-gray-2 border-gray-6 relative my-6 overflow-auto rounded-xl border p-4 py-8 text-[0.8125rem]/5 md:p-6"
         {...props}
       />
     </>
   ),
+  code: ({ ...props }: ComponentProps<"code">) => {
+    if (typeof props.children === "string") {
+      return (
+        <code
+          className="border-gray-6 bg-gray-1 dark:bg-gray-2 text-s text-gray-11 rounded-md border px-1.5 py-0.5 leading-relaxed font-normal"
+          {...props}
+        />
+      );
+    }
+
+    return <code {...props} />;
+  },
 };
 
 export function useMDXComponents(): MDXComponents {
