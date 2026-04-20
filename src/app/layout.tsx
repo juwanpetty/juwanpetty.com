@@ -36,7 +36,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={cn(
-        "text-gray-12 bg-gray-1 font-sans antialiased",
+        "text-gray-12 dark:bg-gray-1 bg-white font-sans antialiased",
         inter.variable,
         jetBrainsMono.variable
       )}
