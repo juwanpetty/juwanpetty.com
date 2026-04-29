@@ -1,6 +1,6 @@
 import type { Pattern } from "content-collections";
-import Image from "next/image";
 import Link from "next/link";
+import { IconCodeFill18 } from "nucleo-ui-fill-18";
 
 type PatternItemProps = {
   pattern: Pattern;
@@ -9,28 +9,21 @@ type PatternItemProps = {
 export function PatternItem({ pattern }: PatternItemProps) {
   const { title } = pattern;
   const path = pattern._meta.path;
-  const fileSrc = `/patterns/${path}.png`;
 
   return (
-    <div className="border-border bg-muted relative aspect-[4/3] rounded-2xl border p-0.5 pb-0">
-      <div className="bg-background relative h-full w-full rounded-xl">
-        <Image
-          src={fileSrc}
-          alt={title}
-          width={800}
-          height={600}
-          className="h-full w-full rounded-xl border border-black/10 dark:border-white/10"
-        />
+    <Link
+      href={`/components/${path}`}
+      className="flex w-full items-center justify-between py-2 opacity-100 transition-opacity duration-200 group-hover/list:opacity-40 hover:opacity-100"
+    >
+      <div className="flex max-w-4/5 min-w-0 items-center gap-2">
+        <div className="border-gray-4 flex h-6.5 w-6 items-center justify-center rounded-md border">
+          <IconCodeFill18 className="text-gray-11 size-3" />
+        </div>
+        <span className="truncate text-base">{title}</span>
       </div>
-
-      <div className="flex items-center justify-between px-3 py-2.5">
-        <h3 className="text-foreground text-base font-medium tracking-tight">
-          <Link href={`/patterns/${path}`}>
-            {title}
-            <span className="absolute inset-0" />
-          </Link>
-        </h3>
-      </div>
-    </div>
+      {/* <span className="text-muted-foreground text-base whitespace-nowrap">
+        {formattedDate}
+      </span> */}
+    </Link>
   );
 }

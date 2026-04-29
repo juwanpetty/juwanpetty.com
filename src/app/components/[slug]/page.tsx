@@ -3,12 +3,7 @@ import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { components as mdxComponents } from "mdx-components";
 import { Metadata } from "next";
-import { Preview } from "@/components/preview";
-import { EmptyState } from "@/components/pattern/empty-state";
-import { SnoozeDropdown } from "@/components/pattern/snooze-dropdown";
-import { FloatingToolbar } from "@/components/pattern/floating-toolbar";
 import { getAdjacentItems, getSortedPatterns } from "@/lib/content";
-import { CopyButton } from "@/components/pattern/copy-button";
 import { Page } from "@/components/page";
 
 export async function generateStaticParams() {
@@ -35,7 +30,7 @@ export async function generateMetadata({
     openGraph: {
       title: pattern.title,
       description: pattern.description,
-      url: `https://juwanpetty.com/patterns/${slug}`,
+      url: `https://juwanpetty.com/components/${slug}`,
       siteName: "Juwan Petty",
       type: "article",
     },
@@ -73,11 +68,6 @@ export default async function PatternDetail({ params }: PatternDetailProps) {
             <MDXContent
               components={{
                 ...mdxComponents,
-                CopyButton,
-                EmptyState,
-                FloatingToolbar,
-                Preview,
-                SnoozeDropdown,
               }}
               code={pattern.mdx}
             />
