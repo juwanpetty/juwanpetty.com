@@ -68,13 +68,13 @@ export function SharedLayoutTabs() {
         return (
           <div
             key={id}
-            className={cn("relative", index >= 3 && "hidden sm:contents")}
+            className={cn("relative", index >= 3 && "hidden sm:block")}
           >
             <TabButton
               icon={icon}
               label={label}
               onClick={() => handleTabClick(id)}
-              className={cn(isActive ? "text-white" : "text-gray-12")}
+              className={cn(isActive ? "text-gray-1" : "text-gray-12")}
             />
 
             {isActive ? (

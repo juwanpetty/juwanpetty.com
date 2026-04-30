@@ -65,7 +65,7 @@ export function ClipPathTabs() {
     <div className="relative">
       <div className="relative z-0 flex items-center gap-2">
         {TABS.map(({ id, label, icon }, index) => (
-          <div key={id} className={cn(index >= 3 && "hidden sm:contents")}>
+          <div key={id} className={cn(index >= 3 && "hidden sm:block")}>
             <TabButton
               icon={icon}
               label={label}
@@ -86,12 +86,12 @@ export function ClipPathTabs() {
         )}
       >
         {TABS.map(({ id, label, icon }, index) => (
-          <div key={id} className={cn(index >= 3 && "hidden sm:contents")}>
+          <div key={id} className={cn(index >= 3 && "hidden sm:block")}>
             <TabButton
               icon={icon}
               label={label}
               onClick={() => handleTabClick(id)}
-              className="bg-transparent text-white"
+              className="text-gray-1 bg-transparent"
             />
           </div>
         ))}
