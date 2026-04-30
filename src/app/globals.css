@@ -7,9 +7,10 @@
 
 @theme {
   --color-gray-*: initial;
+  --color-blue-*: initial;
 }
 
-@import "radix-colors-tailwind/dist/gray.css";
+@import "radix-colors-tailwind";
 
 @theme inline {
   --font-sans: var(--font-inter);

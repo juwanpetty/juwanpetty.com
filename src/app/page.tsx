@@ -12,7 +12,7 @@ export default function HomeIndex() {
         <Page.Content className="space-y-16">
           <Section.Root>
             <Section.Header>
-              <Section.Title>Patterns</Section.Title>
+              <Section.Title>Components</Section.Title>
             </Section.Header>
 
             <Section.Content>

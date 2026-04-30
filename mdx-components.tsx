@@ -1,7 +1,16 @@
-import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { IconLinkOutline18 } from "nucleo-ui-outline-18";
 import { ComponentProps, HTMLAttributes } from "react";
+import { cn } from "@/lib/utils";
+import { IconLinkOutline18 } from "nucleo-ui-outline-18";
+
+import { CopyButton } from "@/components/pattern/copy-button";
+import { Preview } from "@/components/preview";
+import { EmptyState } from "@/components/pattern/empty-state";
+import { SnoozeDropdown } from "@/components/pattern/snooze-dropdown";
+import { FloatingToolbar } from "@/components/pattern/floating-toolbar";
+import { MultiSelectPills } from "@/components/pattern/multi-select-pills";
+import { ClipPathTabs } from "@/components/pattern/clip-path-tabs";
+import { SharedLayoutTabs } from "@/components/pattern/shared-layout-tabs";
 
 import type { MDXComponents } from "mdx/types";
 
@@ -100,6 +109,14 @@ export const components: MDXComponents = {
 
     return <code {...props} />;
   },
+  CopyButton,
+  EmptyState,
+  FloatingToolbar,
+  Preview,
+  SnoozeDropdown,
+  MultiSelectPills,
+  ClipPathTabs,
+  SharedLayoutTabs,
 };
 
 export function useMDXComponents(): MDXComponents {
