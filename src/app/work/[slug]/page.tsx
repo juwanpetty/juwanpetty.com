@@ -45,9 +45,7 @@ type ExperimentDetailProps = {
   }>;
 };
 
-export default async function ExperimentDetail({
-  params,
-}: ExperimentDetailProps) {
+export default async function WorkDetail({ params }: ExperimentDetailProps) {
   const { slug } = await params;
   const experiment = allExperiments.find(
     (experiment) => experiment._meta.path === slug

@@ -78,6 +78,7 @@ const jobs = defineCollection({
         })
       )
       .optional(),
+    content: z.string(),
   }),
 });
 
