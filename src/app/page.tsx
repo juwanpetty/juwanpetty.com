@@ -1,6 +1,6 @@
 import { JobsList } from "@/components/jobs-list";
 import { Page } from "@/components/page";
-import { PatternList } from "@/components/pattern-list";
+import { ExperimentsList } from "@/components/experiments-list";
 import { Section } from "@/components/section";
 import Link from "next/link";
 import { IconGithub } from "nucleo-social-media";
@@ -71,7 +71,7 @@ export default function WorkIndex() {
             </Section.Header>
 
             <Section.Content>
-              <PatternList limit={2} />
+              <ExperimentsList limit={2} />
             </Section.Content>
           </Section.Root>
 

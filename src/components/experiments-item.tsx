@@ -1,14 +1,14 @@
 import { formatDate, SHORTHAND_DATE_FORMAT } from "@/lib/dates";
-import type { Pattern } from "content-collections";
+import type { Experiment } from "content-collections";
 import Link from "next/link";
 
-type PatternItemProps = {
-  pattern: Pattern;
+type ExperimentsItemProps = {
+  experiment: Experiment;
 };
 
-export function PatternItem({ pattern }: PatternItemProps) {
-  const { title, published } = pattern;
-  const path = pattern._meta.path;
+export function ExperimentsItem({ experiment }: ExperimentsItemProps) {
+  const { title, published } = experiment;
+  const path = experiment._meta.path;
 
   const formattedDate = formatDate(
     published.toDateString(),

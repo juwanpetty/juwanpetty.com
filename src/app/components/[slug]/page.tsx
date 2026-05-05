@@ -1,14 +1,14 @@
-import { allPatterns } from "content-collections";
+import { allExperiments } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { components as mdxComponents } from "mdx-components";
 import { Metadata } from "next";
-import { getAdjacentItems, getSortedPatterns } from "@/lib/content";
+import { getAdjacentItems, getSortedExperiments } from "@/lib/content";
 import { Page } from "@/components/page";
 
 export async function generateStaticParams() {
-  return allPatterns.map((pattern) => ({
-    slug: pattern._meta.path,
+  return allExperiments.map((experiment) => ({
+    slug: experiment._meta.path,
   }));
 }
 
@@ -20,16 +20,18 @@ export async function generateMetadata({
   params,
 }: MetadataProps): Promise<Metadata> {
   const { slug } = await params;
-  const pattern = allPatterns.find((pattern) => pattern._meta.path === slug);
+  const experiment = allExperiments.find(
+    (experiment) => experiment._meta.path === slug
+  );
 
-  if (!pattern) notFound();
+  if (!experiment) notFound();
 
   return {
-    title: pattern.title,
-    description: pattern.description,
+    title: experiment.title,
+    description: experiment.description,
     openGraph: {
-      title: pattern.title,
-      description: pattern.description,
+      title: experiment.title,
+      description: experiment.description,
       url: `https://juwanpetty.com/components/${slug}`,
       siteName: "Juwan Petty",
       type: "article",
@@ -37,24 +39,28 @@ export async function generateMetadata({
   };
 }
 
-type PatternDetailProps = {
+type ExperimentDetailProps = {
   params: Promise<{
     slug: string;
   }>;
 };
 
-export default async function PatternDetail({ params }: PatternDetailProps) {
+export default async function ExperimentDetail({
+  params,
+}: ExperimentDetailProps) {
   const { slug } = await params;
-  const pattern = allPatterns.find((pattern) => pattern._meta.path === slug);
+  const experiment = allExperiments.find(
+    (experiment) => experiment._meta.path === slug
+  );
 
-  const sortedPatterns = getSortedPatterns();
-  const {} = getAdjacentItems(sortedPatterns, slug);
+  const sortedExperiments = getSortedExperiments();
+  const {} = getAdjacentItems(sortedExperiments, slug);
 
-  if (!pattern) {
+  if (!experiment) {
     return notFound();
   }
 
-  const { title } = pattern;
+  const { title } = experiment;
 
   return (
     <Page.Root>
@@ -69,7 +75,7 @@ export default async function PatternDetail({ params }: PatternDetailProps) {
               components={{
                 ...mdxComponents,
               }}
-              code={pattern.mdx}
+              code={experiment.mdx}
             />
           </div>
         </Page.Content>

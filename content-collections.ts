@@ -37,9 +37,9 @@ const posts = defineCollection({
   },
 });
 
-const patterns = defineCollection({
-  name: "patterns",
-  directory: "src/content/patterns",
+const experiments = defineCollection({
+  name: "experiments",
+  directory: "src/content/experiments",
   include: "**/*.mdx",
   schema: z.object({
     title: z.string().max(60),
@@ -82,5 +82,5 @@ const jobs = defineCollection({
 });
 
 export default defineConfig({
-  content: [posts, patterns, jobs],
+  content: [posts, experiments, jobs],
 });

@@ -1,5 +1,5 @@
 import { Page } from "@/components/page";
-import { PatternList } from "@/components/pattern-list";
+import { ExperimentsList } from "@/components/experiments-list";
 import { Section } from "@/components/section";
 
 export default function WorkIndex() {
@@ -17,7 +17,7 @@ export default function WorkIndex() {
 
         <Page.Content className="space-y-16">
           <Section.Root>
-            <PatternList className="md:grid-cols-3" />
+            <ExperimentsList className="md:grid-cols-3" />
           </Section.Root>
         </Page.Content>
       </div>

@@ -1,7 +1,7 @@
-import { allJobs, allPatterns, allPosts } from "content-collections";
+import { allJobs, allExperiments, allPosts } from "content-collections";
 
-export const getSortedPatterns = () =>
-  allPatterns.sort((a, b) => {
+export const getSortedExperiments = () =>
+  allExperiments.sort((a, b) => {
     const dateDiff = b.published.getTime() - a.published.getTime();
     return dateDiff || a.title.localeCompare(b.title);
   });

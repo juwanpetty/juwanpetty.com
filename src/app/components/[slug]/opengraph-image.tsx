@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { allPatterns } from "content-collections";
+import { allExperiments } from "content-collections";
 
 export const alt = "Juwan Petty";
 export const size = {
@@ -24,7 +24,9 @@ export default async function Image({
   const bgImageSrc = `data:image/png;base64,${bgImage.toString("base64")}`;
 
   const { slug } = await params;
-  const pattern = allPatterns.find((pattern) => pattern._meta.path === slug);
+  const experiment = allExperiments.find(
+    (experiment) => experiment._meta.path === slug
+  );
 
   return new ImageResponse(
     (
@@ -32,12 +34,12 @@ export default async function Image({
         <img
           src={bgImageSrc}
           tw="absolute inset-0 w-full h-full object-cover"
-          alt={pattern?.title || "Juwan Petty"}
+          alt={experiment?.title || "Juwan Petty"}
         />
 
         <div tw="flex w-full h-full p-17.5 pb-22.5 flex-col justify-end relative">
           <h1 tw="font-sans text-white text-7xl font-bold leading-[1.2] text-balance">
-            {pattern?.title || "Juwan Petty"}
+            {experiment?.title || "Juwan Petty"}
           </h1>
         </div>
       </div>
