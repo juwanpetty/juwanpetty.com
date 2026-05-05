@@ -45,12 +45,12 @@ const experiments = defineCollection({
     title: z.string().max(60),
     description: z.string().max(160),
     published: z.coerce.date(),
+    technologies: z.array(z.string()).optional(),
+    githubUrl: z.url(),
     content: z.string(),
   }),
   transform: async (document, context) => {
-    const mdx = await compileMDX(context, document, {
-      rehypePlugins: [rehypeSlug, [rehypePrettyCode, rehypePrettyCodeOptions]],
-    });
+    const mdx = await compileMDX(context, document);
     return {
       ...document,
       mdx,

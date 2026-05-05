@@ -32,7 +32,7 @@ export async function generateMetadata({
     openGraph: {
       title: experiment.title,
       description: experiment.description,
-      url: `https://juwanpetty.com/components/${slug}`,
+      url: `https://juwanpetty.com/work/${slug}`,
       siteName: "Juwan Petty",
       type: "article",
     },
@@ -72,40 +72,14 @@ export default async function ExperimentDetail({
         <Page.Content>
           <div className="prose">
             <MDXContent
+              code={experiment.mdx}
               components={{
                 ...mdxComponents,
               }}
-              code={experiment.mdx}
             />
           </div>
         </Page.Content>
       </div>
-
-      {/* <div>
-        <header>
-          <h1 className="max-w-3xl text-xl font-semibold text-balance">
-            Infinite card stack
-          </h1>
-        </header>
-
-        <Page.Content className="mt-20">
-          <p className="text-secondary-foreground/65 mb-4 text-base leading-relaxed">
-            I recently shared{" "}
-            <a
-              href="http://"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-secondary-foreground decoration-muted-foreground/25 font-medium underline underline-offset-3"
-            >
-              this component
-            </a>{" "}
-            on X, and a lot of people liked it. This article briefly explains
-            how it’s built.
-          </p>
-
-          <div className="my-8 aspect-video rounded-xl border border-black/10 bg-neutral-50/50 dark:border-white/10" />
-        </Page.Content>
-      </div> */}
     </Page.Root>
   );
 }
