@@ -5,8 +5,8 @@ export type PageProps = {
   children: React.ReactNode;
 } & ComponentProps<"div">;
 
-function PageRoot({ children }: PageProps) {
-  return <div className="mx-auto max-w-2xl">{children}</div>;
+function PageRoot({ children, className }: PageProps) {
+  return <div className={cn("mx-auto max-w-2xl", className)}>{children}</div>;
 }
 
 type BreadcrumbItem = { label: string; href: string };

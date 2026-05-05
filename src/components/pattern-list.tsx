@@ -1,12 +1,23 @@
 import { PatternItem } from "@/components/pattern-item";
 import { getSortedPatterns } from "@/lib/content";
+import { cn } from "@/lib/utils";
 
-export function PatternList() {
-  const components = getSortedPatterns();
+type PatternListProps = {
+  className?: string;
+  limit?: number;
+};
+
+export function PatternList({ className, limit }: PatternListProps) {
+  const allPatterns = getSortedPatterns();
+  const components = limit ? allPatterns.slice(0, limit) : allPatterns;
 
   return (
-    // <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
-    <div className="group/list flex flex-col justify-between">
+    <div
+      className={cn(
+        "grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 md:gap-y-15",
+        className
+      )}
+    >
       {components.map((pattern) => (
         <PatternItem key={pattern._meta.path} pattern={pattern} />
       ))}

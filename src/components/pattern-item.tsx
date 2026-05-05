@@ -1,29 +1,39 @@
+import { formatDate, SHORTHAND_DATE_FORMAT } from "@/lib/dates";
 import type { Pattern } from "content-collections";
 import Link from "next/link";
-import { IconCodeFill18 } from "nucleo-ui-fill-18";
 
 type PatternItemProps = {
   pattern: Pattern;
 };
 
 export function PatternItem({ pattern }: PatternItemProps) {
-  const { title } = pattern;
+  const { title, published } = pattern;
   const path = pattern._meta.path;
 
+  const formattedDate = formatDate(
+    published.toDateString(),
+    SHORTHAND_DATE_FORMAT
+  );
+
   return (
-    <Link
-      href={`/components/${path}`}
-      className="flex w-full items-center justify-between py-2 opacity-100 transition-opacity duration-200 group-hover/list:opacity-40 hover:opacity-100"
-    >
-      <div className="flex max-w-4/5 min-w-0 items-center gap-2">
-        <div className="border-gray-4 flex h-6.5 w-6 items-center justify-center rounded-md border">
-          <IconCodeFill18 className="text-gray-11 size-3" />
+    <div className="flex flex-col gap-y-3">
+      <Link href={`/work/${path}`}>
+        <div className="bg-gray-1 dark:bg-gray-2 border-black-a2 dark:border-white-a2 aspect-4/3 w-full rounded-xl border shadow-xs dark:shadow-none" />
+      </Link>
+
+      <div className="flex flex-col gap-y-1 text-base">
+        <Link href={`/work/${path}`}>
+          <div className="text-gray-12 flex items-center gap-x-2 font-medium">
+            <h3 className="flex-1">{title}</h3>
+          </div>
+        </Link>
+
+        <div className="text-gray-11 text-sm">
+          <Link href={`/work/${path}`}>
+            <p>{formattedDate}</p>
+          </Link>
         </div>
-        <span className="truncate text-base">{title}</span>
       </div>
-      {/* <span className="text-muted-foreground text-base whitespace-nowrap">
-        {formattedDate}
-      </span> */}
-    </Link>
+    </div>
   );
 }
