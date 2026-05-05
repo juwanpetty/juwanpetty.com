@@ -1,4 +1,3 @@
-import { MainLayout } from "@/components/layouts/main-layout";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme";
 import { Metadata } from "next";
@@ -43,9 +42,7 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <div className="isolate">
-            <MainLayout>{children}</MainLayout>
-          </div>
+          <div className="isolate">{children}</div>
         </ThemeProvider>
       </body>
     </html>
