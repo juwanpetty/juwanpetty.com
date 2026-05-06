@@ -30,7 +30,7 @@ export function CopyButton() {
   }
 
   return (
-    <div>
+    <div className="flex min-h-[calc(100vh-10rem)] items-center justify-center">
       <Button
         variant="outline"
         size="lg"

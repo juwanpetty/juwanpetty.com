@@ -27,53 +27,55 @@ export function EmptyState() {
   };
 
   return (
-    <div className="flex flex-col items-center gap-8">
-      <div
-        className="mb-4 grid place-items-center"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <StackedCard
-          className="z-10 shadow-sm"
-          initial={{ transform: "scale(1)" }}
-          animate={{
-            transform: isHovered ? "scale(1.05)" : "scale(1)",
-          }}
-        />
-        <StackedCard
-          initial="initial"
-          animate={isHovered ? "hovered" : "initial"}
-          custom={CARD_DIRECTION.LEFT}
-          variants={variants}
-        />
-        <StackedCard
-          initial="initial"
-          animate={isHovered ? "hovered" : "initial"}
-          custom={CARD_DIRECTION.RIGHT}
-          variants={variants}
-        />
-      </div>
-
-      <div className="flex flex-col gap-1 text-center text-sm">
-        <h1 className="text-secondary-foreground font-medium">
-          No collections
-        </h1>
-        <p className="text-muted-foreground">
-          Create a collection to organize your writing.
-        </p>
-      </div>
-      <Button variant="outline" asChild>
-        <motion.button
-          whileTap={{
-            scale: 0.97,
-          }}
-          transition={{
-            duration: 0.01,
-          }}
+    <div className="flex min-h-[calc(100vh-10rem)] items-center justify-center">
+      <div className="flex flex-col items-center gap-8">
+        <div
+          className="mb-4 grid place-items-center"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
-          <span>Create collection</span>
-        </motion.button>
-      </Button>
+          <StackedCard
+            className="z-10 shadow-sm"
+            initial={{ transform: "scale(1)" }}
+            animate={{
+              transform: isHovered ? "scale(1.05)" : "scale(1)",
+            }}
+          />
+          <StackedCard
+            initial="initial"
+            animate={isHovered ? "hovered" : "initial"}
+            custom={CARD_DIRECTION.LEFT}
+            variants={variants}
+          />
+          <StackedCard
+            initial="initial"
+            animate={isHovered ? "hovered" : "initial"}
+            custom={CARD_DIRECTION.RIGHT}
+            variants={variants}
+          />
+        </div>
+
+        <div className="flex flex-col gap-1 text-center text-sm">
+          <h1 className="text-secondary-foreground font-medium">
+            No collections
+          </h1>
+          <p className="text-muted-foreground">
+            Create a collection to organize your writing.
+          </p>
+        </div>
+        <Button variant="outline" asChild>
+          <motion.button
+            whileTap={{
+              scale: 0.97,
+            }}
+            transition={{
+              duration: 0.01,
+            }}
+          >
+            <span>Create collection</span>
+          </motion.button>
+        </Button>
+      </div>
     </div>
   );
 }

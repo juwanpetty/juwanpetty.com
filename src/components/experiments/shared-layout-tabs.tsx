@@ -61,36 +61,38 @@ export function SharedLayoutTabs() {
   }
 
   return (
-    <div className="relative z-0 flex items-center gap-2">
-      {TABS.map(({ id, label, icon }, index) => {
-        const isActive = id === activeTab;
+    <div className="flex min-h-[calc(100vh-10rem)] items-center justify-center">
+      <div className="relative z-0 flex items-center gap-2">
+        {TABS.map(({ id, label, icon }, index) => {
+          const isActive = id === activeTab;
 
-        return (
-          <div
-            key={id}
-            className={cn("relative", index >= 3 && "hidden sm:block")}
-          >
-            <TabButton
-              icon={icon}
-              label={label}
-              onClick={() => handleTabClick(id)}
-              className={cn(isActive ? "text-gray-1" : "text-gray-12")}
-            />
-
-            {isActive ? (
-              <motion.div
-                layoutId="button-background"
-                className="bg-gray-12 absolute inset-0 z-0 h-8 w-full rounded-full"
-                transition={{
-                  type: "tween",
-                  duration: 0.15,
-                  ease: [0.4, 0, 0.2, 1],
-                }}
+          return (
+            <div
+              key={id}
+              className={cn("relative", index >= 3 && "hidden sm:block")}
+            >
+              <TabButton
+                icon={icon}
+                label={label}
+                onClick={() => handleTabClick(id)}
+                className={cn(isActive ? "text-gray-1" : "text-gray-12")}
               />
-            ) : null}
-          </div>
-        );
-      })}
+
+              {isActive ? (
+                <motion.div
+                  layoutId="button-background"
+                  className="bg-gray-12 absolute inset-0 z-0 h-8 w-full rounded-full"
+                  transition={{
+                    type: "tween",
+                    duration: 0.15,
+                    ease: [0.4, 0, 0.2, 1],
+                  }}
+                />
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

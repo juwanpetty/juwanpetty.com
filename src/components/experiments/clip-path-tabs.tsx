@@ -62,39 +62,41 @@ export function ClipPathTabs() {
   }
 
   return (
-    <div className="relative">
-      <div className="relative z-0 flex items-center gap-2">
-        {TABS.map(({ id, label, icon }, index) => (
-          <div key={id} className={cn(index >= 3 && "hidden sm:block")}>
-            <TabButton
-              icon={icon}
-              label={label}
-              onClick={() => handleTabClick(id)}
-              ref={activeTab === id ? activeTabElementRef : null}
-            />
-          </div>
-        ))}
-      </div>
+    <div className="flex min-h-[calc(100vh-10rem)] items-center justify-center">
+      <div className="relative">
+        <div className="relative z-0 flex items-center gap-2">
+          {TABS.map(({ id, label, icon }, index) => (
+            <div key={id} className={cn(index >= 3 && "hidden sm:block")}>
+              <TabButton
+                icon={icon}
+                label={label}
+                onClick={() => handleTabClick(id)}
+                ref={activeTab === id ? activeTabElementRef : null}
+              />
+            </div>
+          ))}
+        </div>
 
-      <div
-        aria-hidden
-        ref={containerRef}
-        className={cn(
-          "bg-gray-12 absolute top-0 left-0 z-10 flex w-full items-center gap-2 overflow-hidden",
-          "transition-[clip-path] duration-250 ease-in-out",
-          "[clip-path:inset(0px_79.5%_0px_0%_round_32px)]"
-        )}
-      >
-        {TABS.map(({ id, label, icon }, index) => (
-          <div key={id} className={cn(index >= 3 && "hidden sm:block")}>
-            <TabButton
-              icon={icon}
-              label={label}
-              onClick={() => handleTabClick(id)}
-              className="text-gray-1 bg-transparent"
-            />
-          </div>
-        ))}
+        <div
+          aria-hidden
+          ref={containerRef}
+          className={cn(
+            "bg-gray-12 absolute top-0 left-0 z-10 flex w-full items-center gap-2 overflow-hidden",
+            "transition-[clip-path] duration-250 ease-in-out",
+            "[clip-path:inset(0px_79.5%_0px_0%_round_32px)]"
+          )}
+        >
+          {TABS.map(({ id, label, icon }, index) => (
+            <div key={id} className={cn(index >= 3 && "hidden sm:block")}>
+              <TabButton
+                icon={icon}
+                label={label}
+                onClick={() => handleTabClick(id)}
+                className="text-gray-1 bg-transparent"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

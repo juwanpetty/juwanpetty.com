@@ -36,17 +36,19 @@ export function MultiSelectPills() {
   }
 
   return (
-    <motion.div className="flex w-full max-w-lg flex-wrap justify-center gap-3">
-      {pills.map((pill, index) => (
-        <div key={pill.id} className={cn(index >= 5 && "hidden sm:block")}>
-          <Pill
-            label={pill.label}
-            selected={selectedPills.includes(pill.id)}
-            onClick={() => togglePill(pill.id)}
-          />
-        </div>
-      ))}
-    </motion.div>
+    <div className="flex min-h-[calc(100vh-10rem)] items-center justify-center">
+      <motion.div className="flex w-full max-w-lg flex-wrap justify-center gap-3">
+        {pills.map((pill, index) => (
+          <div key={pill.id} className={cn(index >= 5 && "hidden sm:block")}>
+            <Pill
+              label={pill.label}
+              selected={selectedPills.includes(pill.id)}
+              onClick={() => togglePill(pill.id)}
+            />
+          </div>
+        ))}
+      </motion.div>
+    </div>
   );
 }
 
