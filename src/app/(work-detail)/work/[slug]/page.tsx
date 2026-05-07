@@ -78,13 +78,13 @@ export default async function WorkDetail({ params }: ExperimentDetailProps) {
           <span className="px-0.5">Back</span>
         </Link>
 
-        <button
+        {/* <button
           className={cn(
             "border-gray-6 text-gray-12 bg-gray-a3 flex h-10 items-center gap-1.5 rounded-full border px-3.5 text-sm font-medium backdrop-blur-lg"
           )}
         >
           <span className="px-0.5">View Details</span>
-        </button>
+        </button> */}
       </header>
 
       <main>
