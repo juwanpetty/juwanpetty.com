@@ -37,20 +37,20 @@ const posts = defineCollection({
   },
 });
 
-const patterns = defineCollection({
-  name: "patterns",
-  directory: "src/content/patterns",
+const experiments = defineCollection({
+  name: "experiments",
+  directory: "src/content/experiments",
   include: "**/*.mdx",
   schema: z.object({
     title: z.string().max(60),
     description: z.string().max(160),
     published: z.coerce.date(),
+    technologies: z.array(z.string()).optional(),
+    githubUrl: z.url(),
     content: z.string(),
   }),
   transform: async (document, context) => {
-    const mdx = await compileMDX(context, document, {
-      rehypePlugins: [rehypeSlug, [rehypePrettyCode, rehypePrettyCodeOptions]],
-    });
+    const mdx = await compileMDX(context, document);
     return {
       ...document,
       mdx,
@@ -78,9 +78,29 @@ const jobs = defineCollection({
         })
       )
       .optional(),
+    content: z.string(),
   }),
 });
 
+const components = defineCollection({
+  name: "components",
+  directory: "src/content/components",
+  include: "**/*.mdx",
+  schema: z.object({
+    title: z.string().max(60),
+    description: z.string().max(160),
+    draft: z.boolean().optional(),
+    content: z.string(),
+  }),
+  transform: async (document, context) => {
+    const mdx = await compileMDX(context, document);
+    return {
+      ...document,
+      mdx,
+    };
+  },
+});
+
 export default defineConfig({
-  content: [posts, patterns, jobs],
+  content: [posts, experiments, jobs, components],
 });

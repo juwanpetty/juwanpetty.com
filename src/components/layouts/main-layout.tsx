@@ -7,9 +7,7 @@ export function MainLayout({ className, children }: ComponentProps<"div">) {
     <div className={cn("flex min-h-screen flex-col", className)}>
       <SiteHeader />
 
-      <div className="px-4 pt-16 pb-24 sm:px-6">
-        <div className="mx-auto max-w-6xl">{children}</div>
-      </div>
+      <div className="px-4 pt-16 pb-24 sm:px-6">{children}</div>
     </div>
   );
 }
