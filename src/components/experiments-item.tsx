@@ -18,7 +18,15 @@ export function ExperimentsItem({ experiment }: ExperimentsItemProps) {
   return (
     <div className="flex flex-col gap-y-3">
       <Link href={`/work/${path}`}>
-        <div className="bg-gray-1 dark:bg-gray-2 border-black-a2 dark:border-white-a2 aspect-4/3 w-full rounded-xl border shadow-xs dark:shadow-none" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={`/assets/images/experiments/${path}.png`}
+          src={`/assets/videos/experiments/${path}.mp4`}
+          className="bg-gray-1 dark:bg-gray-2 border-black-a2 dark:border-white-a2 aspect-4/3 w-full rounded-xl border shadow-xs dark:shadow-none"
+        />
       </Link>
 
       <div className="flex flex-col gap-y-1 text-base">

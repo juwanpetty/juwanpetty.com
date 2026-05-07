@@ -2,11 +2,10 @@ import { JobsList } from "@/components/jobs-list";
 import { Page } from "@/components/page";
 import { ExperimentsList } from "@/components/experiments-list";
 import { Section } from "@/components/section";
-import Link from "next/link";
 import { IconGithub } from "nucleo-social-media";
 import { IconEnvelopeFill18 } from "nucleo-ui-fill-18";
-import { IconShapeCircleOutline18 } from "nucleo-ui-outline-18";
 import { ComponentProps } from "react";
+import { ComponentsList } from "@/components/components-list";
 
 export default function WorkIndex() {
   return (
@@ -81,53 +80,12 @@ export default function WorkIndex() {
             </Section.Header>
 
             <Section.Content>
-              <div className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
-                <Card
-                  title="Illustrations"
-                  description="Dimensional elements"
-                />
-                <Card
-                  title="Framer Templates"
-                  description="Easy-to-edit websites"
-                />
-                <Card title="3D Assets" description="Immersive elements" />
-                <Card
-                  title="Webflow Templates"
-                  description="Perfect looking websites"
-                />
-                <Card title="Figma Templates" description="User interfaces" />
-                <Card title="UX / UI Kits" description="Design with purpose" />
-              </div>
+              <ComponentsList limit={6} />
             </Section.Content>
           </Section.Root>
         </Page.Content>
       </div>
     </Page.Root>
-  );
-}
-
-type CardProps = {
-  title: string;
-  description: string;
-};
-
-function Card({ title, description }: CardProps) {
-  return (
-    <Link
-      href="/work"
-      className="hover:bg-gray-2 flex items-center gap-x-3 rounded-lg p-1 transition-colors"
-    >
-      <div className="bg-gray-1 dark:bg-gray-2 flex size-12.5 shrink-0 items-center justify-center rounded-md border border-black/10 dark:border-white/10">
-        <IconShapeCircleOutline18 className="text-gray-11 size-6" />
-      </div>
-
-      {/*<div className="flex flex-col gap-y-0.5"> */}
-      <div className="flex flex-col">
-        <h3 className="text-gray-12 text-base font-medium">{title}</h3>
-        <p className="text-gray-11 text-sm">{description}</p>
-        {/*<p className="text-gray-11 text-base">{description}</p>*/}
-      </div>
-    </Link>
   );
 }
 
