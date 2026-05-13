@@ -5,7 +5,6 @@ import { Section } from "@/components/section";
 import { IconGithub } from "nucleo-social-media";
 import { IconEnvelopeFill18 } from "nucleo-ui-fill-18";
 import { ComponentProps } from "react";
-import { ComponentsList } from "@/components/components-list";
 
 export default function WorkIndex() {
   return (
@@ -71,16 +70,6 @@ export default function WorkIndex() {
 
             <Section.Content>
               <ExperimentsList limit={2} />
-            </Section.Content>
-          </Section.Root>
-
-          <Section.Root>
-            <Section.Header>
-              <Section.Title>Components</Section.Title>
-            </Section.Header>
-
-            <Section.Content>
-              <ComponentsList limit={6} />
             </Section.Content>
           </Section.Root>
         </Page.Content>
