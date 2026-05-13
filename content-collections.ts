@@ -82,25 +82,6 @@ const jobs = defineCollection({
   }),
 });
 
-const components = defineCollection({
-  name: "components",
-  directory: "src/content/components",
-  include: "**/*.mdx",
-  schema: z.object({
-    title: z.string().max(60),
-    description: z.string().max(160),
-    draft: z.boolean().optional(),
-    content: z.string(),
-  }),
-  transform: async (document, context) => {
-    const mdx = await compileMDX(context, document);
-    return {
-      ...document,
-      mdx,
-    };
-  },
-});
-
 export default defineConfig({
-  content: [posts, experiments, jobs, components],
+  content: [posts, experiments, jobs],
 });

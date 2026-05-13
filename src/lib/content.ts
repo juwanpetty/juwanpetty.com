@@ -1,9 +1,4 @@
-import {
-  allJobs,
-  allExperiments,
-  allPosts,
-  allComponents,
-} from "content-collections";
+import { allJobs, allExperiments, allPosts } from "content-collections";
 
 export const getSortedExperiments = () =>
   allExperiments.sort((a, b) => {
@@ -20,11 +15,6 @@ export const getSortedPosts = () =>
 export const getSortedJobs = () =>
   allJobs.sort((a, b) => {
     return b.startDate.getTime() - a.startDate.getTime();
-  });
-
-export const getSortedComponents = () =>
-  allComponents.sort((a, b) => {
-    return a.title.localeCompare(b.title);
   });
 
 export function getAdjacentItems<T extends { _meta: { path: string } }>(
