@@ -39,12 +39,6 @@ export function SiteHeader() {
           >
             <span>Works</span>
           </Link>
-          <Link
-            href="/blog"
-            className="text-gray-11 hover:text-gray-12 flex items-center rounded-lg text-sm font-medium transition-colors"
-          >
-            <span>Blog</span>
-          </Link>
         </nav>
       </div>
     </div>
