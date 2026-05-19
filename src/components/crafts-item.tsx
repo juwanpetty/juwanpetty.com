@@ -1,14 +1,14 @@
 import { formatDate, SHORTHAND_DATE_FORMAT } from "@/lib/dates";
-import type { Experiment } from "content-collections";
+import type { Craft } from "content-collections";
 import Link from "next/link";
 
-type ExperimentsItemProps = {
-  experiment: Experiment;
+type CraftsItemProps = {
+  craft: Craft;
 };
 
-export function ExperimentsItem({ experiment }: ExperimentsItemProps) {
-  const { title, published } = experiment;
-  const path = experiment._meta.path;
+export function CraftsItem({ craft }: CraftsItemProps) {
+  const { title, published } = craft;
+  const path = craft._meta.path;
 
   const formattedDate = formatDate(
     published.toDateString(),
@@ -23,8 +23,8 @@ export function ExperimentsItem({ experiment }: ExperimentsItemProps) {
           muted
           loop
           playsInline
-          poster={`/assets/images/experiments/${path}.png`}
-          src={`/assets/videos/experiments/${path}.mp4`}
+          poster={`/assets/images/crafts/${path}.png`}
+          src={`/assets/videos/crafts/${path}.mp4`}
           className="bg-gray-1 dark:bg-gray-2 border-black-a2 dark:border-white-a2 aspect-4/3 w-full rounded-xl border shadow-xs dark:shadow-none"
         />
       </Link>

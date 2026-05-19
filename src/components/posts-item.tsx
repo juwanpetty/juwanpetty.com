@@ -6,7 +6,7 @@ type PostItemProps = {
   post: Post;
 };
 
-export function PostItem({ post }: PostItemProps) {
+export function PostsItem({ post }: PostItemProps) {
   const { title, published } = post;
   const path = post._meta.path;
 

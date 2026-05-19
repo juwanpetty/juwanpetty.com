@@ -1,4 +1,4 @@
-import { PostItem } from "@/components/post-item";
+import { PostsItem } from "@/components/posts-item";
 import { getSortedPosts } from "@/lib/content";
 
 export function PostsList() {
@@ -7,7 +7,7 @@ export function PostsList() {
   return (
     <div className="group/list flex flex-col justify-between">
       {posts.map((post) => (
-        <PostItem key={post._meta.path} post={post} />
+        <PostsItem key={post._meta.path} post={post} />
       ))}
     </div>
   );

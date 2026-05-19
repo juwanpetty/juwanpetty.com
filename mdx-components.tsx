@@ -3,14 +3,14 @@ import { ComponentProps, HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 import { IconLinkOutline18 } from "nucleo-ui-outline-18";
 
-import { CopyButton } from "@/components/experiments/copy-button";
+import { CopyButton } from "@/components/crafts/copy-button";
 import { Preview } from "@/components/preview";
-import { EmptyState } from "@/components/experiments/empty-state";
-import { SnoozeDropdown } from "@/components/experiments/snooze-dropdown";
-import { FloatingToolbar } from "@/components/experiments/floating-toolbar";
-import { MultiSelectPills } from "@/components/experiments/multi-select-pills";
-import { ClipPathTabs } from "@/components/experiments/clip-path-tabs";
-import { SharedLayoutTabs } from "@/components/experiments/shared-layout-tabs";
+import { EmptyState } from "@/components/crafts/empty-state";
+import { SnoozeDropdown } from "@/components/crafts/snooze-dropdown";
+import { FloatingToolbar } from "@/components/crafts/floating-toolbar";
+import { MultiSelectPills } from "@/components/crafts/multi-select-pills";
+import { ClipPathTabs } from "@/components/crafts/clip-path-tabs";
+import { SharedLayoutTabs } from "@/components/crafts/shared-layout-tabs";
 
 import type { MDXComponents } from "mdx/types";
 

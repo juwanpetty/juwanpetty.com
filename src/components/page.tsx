@@ -29,7 +29,7 @@ function PageTitle({ children }: ComponentProps<"h1">) {
 
 function PageDescription({ children, className }: ComponentProps<"div">) {
   return (
-    <div className={cn("text-gray-11 max-w-3xl text-base/relaxed", className)}>
+    <div className={cn("text-gray-11 max-w-xl text-base/relaxed", className)}>
       {children}
     </div>
   );
@@ -40,7 +40,9 @@ function PageContent({ children, className }: ComponentProps<"div">) {
 }
 
 function PageActions({ children }: ComponentProps<"div">) {
-  return <div className="mt-6 flex items-center gap-3">{children}</div>;
+  return (
+    <div className="mt-6 flex flex-wrap items-center gap-3">{children}</div>
+  );
 }
 
 export const Page = {

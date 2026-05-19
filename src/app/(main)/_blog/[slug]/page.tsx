@@ -1,7 +1,7 @@
 import { allPosts } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
-import { components as mdxComponents } from "mdx-components";
+import { components as mdxComponents } from "@/../mdx-components";
 import { Metadata } from "next";
 import { getAdjacentItems, getSortedPosts } from "@/lib/content";
 import { Page } from "@/components/page";
