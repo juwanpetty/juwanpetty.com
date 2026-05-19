@@ -77,7 +77,7 @@ export default function WorkIndex() {
                       Works
                     </h3>
                     <div className="text-gray-11 max-w-3xl text-base/relaxed">
-                      <p className="max-w-4/5 text-pretty sm:max-w-3/5">
+                      <p className="max-w-11/12 text-pretty sm:max-w-3/5">
                         A collection of designs and prototypes that I&apos;ve
                         crafted to explore new ideas and push my skills.
                       </p>
