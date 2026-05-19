@@ -3,15 +3,6 @@ import { ComponentProps, HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 import { IconLinkOutline18 } from "nucleo-ui-outline-18";
 
-import { CopyButton } from "@/components/crafts/copy-button";
-import { Preview } from "@/components/preview";
-import { EmptyState } from "@/components/crafts/empty-state";
-import { SnoozeDropdown } from "@/components/crafts/snooze-dropdown";
-import { FloatingToolbar } from "@/components/crafts/floating-toolbar";
-import { MultiSelectPills } from "@/components/crafts/multi-select-pills";
-import { ClipPathTabs } from "@/components/crafts/clip-path-tabs";
-import { SharedLayoutTabs } from "@/components/crafts/shared-layout-tabs";
-
 import type { MDXComponents } from "mdx/types";
 
 export const components: MDXComponents = {
@@ -109,14 +100,6 @@ export const components: MDXComponents = {
 
     return <code {...props} />;
   },
-  CopyButton,
-  EmptyState,
-  FloatingToolbar,
-  Preview,
-  SnoozeDropdown,
-  MultiSelectPills,
-  ClipPathTabs,
-  SharedLayoutTabs,
 };
 
 export function useMDXComponents(): MDXComponents {
