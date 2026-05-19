@@ -37,25 +37,39 @@ const posts = defineCollection({
   },
 });
 
-const experiments = defineCollection({
-  name: "experiments",
-  directory: "src/content/experiments",
-  include: "**/*.mdx",
+const projects = defineCollection({
+  name: "projects",
+  directory: "src/content/projects",
+  include: "**/*.md",
   schema: z.object({
     title: z.string().max(60),
     description: z.string().max(160),
     published: z.coerce.date(),
-    technologies: z.array(z.string()).optional(),
-    githubUrl: z.url(),
+    url: z.url(),
+    image: z.object({
+      src: z.string(),
+      width: z.number(),
+      height: z.number(),
+    }),
     content: z.string(),
   }),
-  transform: async (document, context) => {
-    const mdx = await compileMDX(context, document);
-    return {
-      ...document,
-      mdx,
-    };
-  },
+});
+
+const works = defineCollection({
+  name: "works",
+  directory: "src/content/works",
+  include: "**/*.md",
+  schema: z.object({
+    title: z.string().max(60),
+    published: z.coerce.date(),
+    image: z.object({
+      src: z.string(),
+      width: z.number(),
+      height: z.number(),
+    }),
+    previewUrl: z.url().optional(),
+    content: z.string(),
+  }),
 });
 
 const jobs = defineCollection({
@@ -65,6 +79,7 @@ const jobs = defineCollection({
   schema: z.object({
     title: z.string(),
     company: z.string(),
+    logo: z.string().optional(),
     startDate: z.coerce.date(),
     endDate: z.coerce.date().optional(),
     tools: z.array(z.string()).optional(),
@@ -83,5 +98,5 @@ const jobs = defineCollection({
 });
 
 export default defineConfig({
-  content: [posts, experiments, jobs],
+  content: [posts, jobs, projects, works],
 });
