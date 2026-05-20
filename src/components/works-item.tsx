@@ -14,11 +14,8 @@ export function WorksItem({ work }: WorksItemProps) {
     _meta: { path },
   } = work;
 
-  return (
-    <div
-      key={path}
-      className="mb-8 flex break-inside-avoid flex-col gap-3 sm:mb-4"
-    >
+  const content = (
+    <>
       <Image
         src={image}
         alt={title}
@@ -29,11 +26,31 @@ export function WorksItem({ work }: WorksItemProps) {
         <h3 className="flex-1">{title}</h3>
 
         {previewUrl && (
-          <div className="border-gray-4 dark:bg-gray-1 flex size-10 items-center justify-center rounded-full border bg-white">
-            <IconShareUpRightOutline18 className="text-gray-12 size-4.5" />
+          <div className="text-gray-9 flex size-6 items-center justify-center rounded-md [&_svg]:size-4">
+            <IconShareUpRightOutline18 />
           </div>
         )}
       </div>
+    </>
+  );
+
+  return (
+    <div
+      key={path}
+      className="mb-8 flex break-inside-avoid flex-col gap-3 sm:mb-4"
+    >
+      {previewUrl ? (
+        <a
+          href={previewUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col gap-3 rounded-xl"
+        >
+          {content}
+        </a>
+      ) : (
+        content
+      )}
     </div>
   );
 }
