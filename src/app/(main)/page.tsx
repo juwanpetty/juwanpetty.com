@@ -85,7 +85,7 @@ export default function WorkIndex() {
                   </div>
                   <Link
                     href="/work"
-                    className="text-gray-12 border-gray-4 inline-flex h-10 items-center gap-1 rounded-xl border bg-white px-3.5 text-sm font-medium shadow-xs [&_svg]:size-4.5"
+                    className="text-gray-12 border-gray-4 dark:bg-gray-4 dark:border-gray-6 inline-flex h-10 items-center gap-1 rounded-xl border bg-white px-3.5 text-sm font-medium shadow-xs [&_svg]:size-4.5"
                   >
                     <span>View work</span>
                     <LucideChevronRight className="text-gray-9" />
