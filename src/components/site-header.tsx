@@ -1,45 +1,125 @@
+"use client";
+
+import { Fragment } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
+import { usePathname } from "next/navigation";
+
+const NAV_ITEMS: {
+  label: string;
+  href: string;
+}[] = [
+  {
+    label: "About",
+    href: "/",
+  },
+  {
+    label: "Work",
+    href: "/work",
+  },
+];
+
 export function SiteHeader() {
+  const pathName = usePathname();
+
+  function isCurrent(path: string, href: string) {
+    return Boolean(path === href);
+  }
+
   return (
-    <div
+    <>
+      <div className="fixed top-7.5 left-1/2 z-2 -translate-x-1/2">
+        <nav className="flex items-center gap-1.5 rounded-full bg-[#656565] p-2 text-base font-medium tracking-tight backdrop-blur-lg">
+          {NAV_ITEMS.map((item, index) => {
+            const isLastItem = NAV_ITEMS.length === index + 1;
+
+            return (
+              <Fragment key={item.label}>
+                <NavLink
+                  label={item.label}
+                  href={item.href}
+                  isActive={isCurrent(pathName, item.href)}
+                />
+                {!isLastItem && (
+                  <span className="pointer-events-none text-[#fff]/14">/</span>
+                )}
+              </Fragment>
+            );
+          })}
+        </nav>
+      </div>
+      <ProgressiveBlur />
+    </>
+  );
+}
+
+type NavLinkProps = {
+  label: string;
+  href: string;
+  isActive: boolean;
+};
+
+function NavLink({ label, href, isActive }: NavLinkProps) {
+  return (
+    <Link
+      href={href}
       className={cn(
-        "dark:bg-gray-1 flex items-center justify-between gap-x-8 bg-white px-4 sm:px-6",
-        "sticky top-0 z-50 w-full",
-        "border-gray-4 border-b"
+        "rounded-full px-3 py-1.5 text-[#fff]/14 transition-colors hover:bg-[#fff]/14 hover:text-[#fff]",
+        isActive && "text-[#fff]"
       )}
     >
-      <div className="mx-auto flex h-12.5 w-full max-w-7xl items-center justify-between">
-        <div>
-          <Link
-            href="/"
-            className="flex size-8 items-center justify-center rounded-lg"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-gray-12 size-7"
-            >
-              <path
-                d="M10.2188 4.875C10.2188 7.82625 7.82625 10.2188 4.875 10.2188V13.7812H10.2188V19.125H13.7812C13.7812 16.1737 16.1737 13.7812 19.125 13.7812V10.2188H13.7812V4.875H10.2188Z"
-                fill="currentColor"
-              />
-            </svg>
-          </Link>
-        </div>
+      {label}
+    </Link>
+  );
+}
 
-        <nav className="flex items-center gap-4">
-          <Link
-            href="/work"
-            className="text-gray-11 hover:text-gray-12 flex items-center rounded-lg text-sm font-medium transition-colors"
-          >
-            <span>Works</span>
-          </Link>
-        </nav>
+interface BlurLayerProps {
+  blur: number;
+  maskStart: number;
+  maskEnd: number;
+  zIndex: number;
+}
+
+function BlurLayer({ blur, maskStart, maskEnd, zIndex }: BlurLayerProps) {
+  return (
+    <div
+      className="absolute inset-0 h-full w-full rounded-none"
+      style={{
+        backdropFilter: `blur(${blur}px)`,
+        maskImage: `linear-gradient(to top, rgba(0,0,0,0) ${maskStart}%, rgb(0,0,0) ${maskEnd}%)`,
+        zIndex,
+      }}
+    />
+  );
+}
+
+const LAYERS = [
+  { blur: 33.3333, maskStart: 90, maskEnd: 100 },
+  { blur: 26.3374, maskStart: 80, maskEnd: 100 },
+  { blur: 20.1646, maskStart: 70, maskEnd: 90 },
+  { blur: 14.8148, maskStart: 60, maskEnd: 80 },
+  { blur: 10.2881, maskStart: 50, maskEnd: 70 },
+  { blur: 6.58436, maskStart: 40, maskEnd: 60 },
+  { blur: 3.7037, maskStart: 30, maskEnd: 50 },
+  { blur: 1.64609, maskStart: 20, maskEnd: 40 },
+  { blur: 0.411523, maskStart: 10, maskEnd: 30 },
+  { blur: 0, maskStart: 0, maskEnd: 20 },
+];
+
+function ProgressiveBlur() {
+  return (
+    <div className="fixed top-0 right-0 left-0 isolate z-1 h-30">
+      <div className="pointer-events-none relative h-full w-full">
+        {LAYERS.map(({ blur, maskStart, maskEnd }, i) => (
+          <BlurLayer
+            key={i}
+            blur={blur}
+            maskStart={maskStart}
+            maskEnd={maskEnd}
+            zIndex={i + 1}
+          />
+        ))}
       </div>
     </div>
   );

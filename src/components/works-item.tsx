@@ -37,7 +37,7 @@ export function WorksItem({ work }: WorksItemProps) {
   return (
     <div
       key={path}
-      className="mb-8 flex break-inside-avoid flex-col gap-3 sm:mb-4"
+      className="mb-8 flex break-inside-avoid flex-col gap-3 sm:mb-8"
     >
       {previewUrl ? (
         <a
