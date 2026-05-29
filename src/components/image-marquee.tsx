@@ -21,6 +21,8 @@ export function ImageMarquee() {
               autoPlay
               loop
               preload="none"
+              playsInline
+              webkit-playsinline="true"
               className="h-50 w-auto rounded-lg object-cover"
             >
               <source src={work.image.src} type="video/mp4" />

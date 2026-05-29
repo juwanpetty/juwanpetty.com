@@ -24,6 +24,8 @@ export function WorksItem({ work }: WorksItemProps) {
       autoPlay
       loop
       preload="none"
+      playsInline
+      webkit-playsinline="true"
       className="dark:bg-gray-2 border-black-a2 dark:border-white-a2 rounded-xl border"
     >
       <source src={image.src} type="video/mp4" />
