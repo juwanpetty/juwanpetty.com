@@ -13,30 +13,33 @@ export function ImageMarquee() {
     >
       {works.map((work) => (
         <li key={work._meta.path}>
-          {work.image.src.endsWith(".mp4") ? (
-            <video
-              width={work.image.width}
-              height={work.image.height}
-              muted
-              autoPlay
-              loop
-              preload="none"
-              playsInline
-              webkit-playsinline="true"
-              className="h-50 w-auto rounded-lg object-cover"
-            >
-              <source src={work.image.src} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          ) : (
-            <Image
-              src={work.image.src}
-              width={work.image.width}
-              height={work.image.height}
-              alt={work.title}
-              className="h-50 w-auto rounded-lg object-cover"
-            />
-          )}
+          <div className="relative rounded-lg">
+            {work.image.src.endsWith(".mp4") ? (
+              <video
+                width={work.image.width}
+                height={work.image.height}
+                muted
+                autoPlay
+                loop
+                preload="none"
+                playsInline
+                webkit-playsinline="true"
+                className="h-50 w-auto rounded-lg object-cover"
+              >
+                <source src={work.image.src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <Image
+                src={work.image.src}
+                width={work.image.width}
+                height={work.image.height}
+                alt={work.title}
+                className="h-50 w-auto rounded-lg object-cover"
+              />
+            )}
+            <div className="pointer-events-none absolute inset-0 rounded-lg inset-ring-1 inset-ring-black/10 dark:inset-ring-white/10" />
+          </div>
         </li>
       ))}
     </ul>

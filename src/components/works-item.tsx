@@ -26,7 +26,7 @@ export function WorksItem({ work }: WorksItemProps) {
       preload="none"
       playsInline
       webkit-playsinline="true"
-      className="dark:bg-gray-2 border-black-a2 dark:border-white-a2 rounded-xl border"
+      className="rounded-xl"
     >
       <source src={image.src} type="video/mp4" />
       Your browser does not support the video tag.
@@ -37,13 +37,16 @@ export function WorksItem({ work }: WorksItemProps) {
       width={image.width}
       height={image.height}
       alt={title}
-      className="dark:bg-gray-2 border-black-a2 dark:border-white-a2 rounded-xl border"
+      className="rounded-xl"
     />
   );
 
   const content = (
     <>
-      {file}
+      <div className="relative rounded-xl">
+        {file}
+        <div className="pointer-events-none absolute inset-0 rounded-xl inset-ring-1 inset-ring-black/10 dark:inset-ring-white/10" />
+      </div>
 
       <div className="text-gray-12 flex items-center gap-x-2 px-1 font-medium">
         <h3 className="flex-1">{title}</h3>

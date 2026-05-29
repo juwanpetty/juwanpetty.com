@@ -74,7 +74,7 @@ export default function WorkIndex() {
                 <div className="space-y-5 p-6">
                   <div className="space-y-1">
                     <h3 className="text-gray-12 max-w-3xl text-lg font-semibold text-balance">
-                      Works
+                      Work
                     </h3>
                     <div className="text-gray-11 max-w-3xl text-base/relaxed">
                       <p className="max-w-11/12 text-pretty sm:max-w-3/5">

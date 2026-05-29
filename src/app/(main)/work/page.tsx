@@ -7,7 +7,7 @@ export default function WorkIndex() {
     <Page.Root className="max-w-6xl">
       <div className="space-y-24">
         <Page.Header className="space-y-1">
-          <Page.Title>Works</Page.Title>
+          <Page.Title>Work</Page.Title>
           <Page.Description>
             <p>
               A collection of designs and prototypes that I&apos;ve crafted to
