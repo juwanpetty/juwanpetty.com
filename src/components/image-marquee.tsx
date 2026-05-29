@@ -13,13 +13,28 @@ export function ImageMarquee() {
     >
       {works.map((work) => (
         <li key={work._meta.path}>
-          <Image
-            src={work.image.src}
-            width={work.image.width}
-            height={work.image.height}
-            alt={work.title}
-            className="h-50 w-auto rounded-lg object-cover"
-          />
+          {work.image.src.endsWith(".mp4") ? (
+            <video
+              width={work.image.width}
+              height={work.image.height}
+              muted
+              autoPlay
+              loop
+              preload="none"
+              className="h-50 w-auto rounded-lg object-cover"
+            >
+              <source src={work.image.src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <Image
+              src={work.image.src}
+              width={work.image.width}
+              height={work.image.height}
+              alt={work.title}
+              className="h-50 w-auto rounded-lg object-cover"
+            />
+          )}
         </li>
       ))}
     </ul>

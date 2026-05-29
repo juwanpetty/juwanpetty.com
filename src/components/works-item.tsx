@@ -14,13 +14,34 @@ export function WorksItem({ work }: WorksItemProps) {
     _meta: { path },
   } = work;
 
+  const isVideo = image.src.endsWith(".mp4");
+
+  const file = isVideo ? (
+    <video
+      width={image.width}
+      height={image.height}
+      muted
+      autoPlay
+      loop
+      preload="none"
+      className="dark:bg-gray-2 border-black-a2 dark:border-white-a2 rounded-xl border"
+    >
+      <source src={image.src} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  ) : (
+    <Image
+      src={image.src}
+      width={image.width}
+      height={image.height}
+      alt={title}
+      className="dark:bg-gray-2 border-black-a2 dark:border-white-a2 rounded-xl border"
+    />
+  );
+
   const content = (
     <>
-      <Image
-        src={image}
-        alt={title}
-        className="dark:bg-gray-2 border-black-a2 dark:border-white-a2 rounded-xl border"
-      />
+      {file}
 
       <div className="text-gray-12 flex items-center gap-x-2 px-1 font-medium">
         <h3 className="flex-1">{title}</h3>
