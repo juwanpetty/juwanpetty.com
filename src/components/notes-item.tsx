@@ -2,8 +2,9 @@ import { Note } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { components as mdxComponents } from "@/../mdx-components";
 import { formatDate, FULL_DATE_FORMAT } from "@/lib/dates";
-import { IconLink4Outline18, IconMsgOutline18 } from "nucleo-ui-outline-18";
+import { IconMsgOutline18 } from "nucleo-ui-outline-18";
 import Link from "next/link";
+import { NotesItemCopyButton } from "@/components/notes-item-copy-button";
 
 type NotesItemProp = {
   note: Note;
@@ -34,10 +35,10 @@ export function NotesItem({ note }: NotesItemProp) {
         <MDXContent components={mdxComponents} code={note.mdx} />
       </div>
 
-      <div className="text-gray-11 -ml-2.5 flex gap-1 text-sm">
-        <button className="hover:bg-gray-2 flex size-9 items-center justify-center rounded-full transition-colors">
-          <IconLink4Outline18 className="rotate-45" />
-        </button>
+      <div className="text-gray-11 flex gap-1 text-sm">
+        <NotesItemCopyButton
+          valueToCopy={`https://www.juwanpetty.com/notes/${path}`}
+        />
         <a
           href={`mailto:jchpetty@gmail.com?subject=Reply: Note ${path}`}
           target="_blank"
