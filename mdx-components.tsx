@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ComponentProps, HTMLAttributes } from "react";
+import Image from "next/image";
+import { Children, ComponentProps, HTMLAttributes, isValidElement } from "react";
 import { cn } from "@/lib/utils";
 import { IconLinkOutline18 } from "nucleo-ui-outline-18";
 
@@ -66,9 +67,21 @@ export const components: MDXComponents = {
       </Link>
     );
   },
-  p: ({ className, ...props }: ComponentProps<"p">) => (
-    <p className={cn("mb-4 text-base leading-relaxed", className)} {...props} />
-  ),
+  p: ({ className, children, ...props }: ComponentProps<"p">) => {
+    const childArray = Children.toArray(children);
+    if (
+      childArray.length === 1 &&
+      isValidElement(childArray[0]) &&
+      "src" in (childArray[0].props as object)
+    ) {
+      return <>{children}</>;
+    }
+    return (
+      <p className={cn("mb-4 text-base leading-relaxed", className)} {...props}>
+        {children}
+      </p>
+    );
+  },
   strong: ({ className, ...props }: HTMLAttributes<HTMLElement>) => (
     <strong className={cn("font-medium", className)} {...props} />
   ),
@@ -88,11 +101,26 @@ export const components: MDXComponents = {
       />
     </>
   ),
+  img: ({ src, alt, ...props }: ComponentProps<typeof Image>) => (
+    <div className="relative w-full overflow-hidden rounded-xl">
+      <Image
+        src={src}
+        alt={alt}
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="object-contain"
+        style={{ width: "100%", height: "auto" }}
+        {...props}
+      />
+      <div className="pointer-events-none absolute inset-0 rounded-xl inset-ring-1 inset-ring-black/10 dark:inset-ring-white/10" />
+    </div>
+  ),
   code: ({ ...props }: ComponentProps<"code">) => {
     if (typeof props.children === "string") {
       return (
         <code
-          className="border-gray-6 bg-gray-1 dark:bg-gray-2 text-s text-gray-11 rounded-md border px-1.5 py-0.5 leading-relaxed font-normal"
+          className="border-gray-6 bg-gray-1 dark:bg-gray-2 text-s text-gray-11 inline-block rounded-md border px-1.5 py-0.5 leading-relaxed font-normal"
           {...props}
         />
       );

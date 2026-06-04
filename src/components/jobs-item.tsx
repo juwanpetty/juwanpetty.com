@@ -14,14 +14,8 @@ export function JobsItem({ job }: JobsItemProps) {
   const hasTools = tools && tools.length > 0;
   const hasContent = Boolean(content);
 
-  const formattedStartDate = formatDate(
-    startDate.toDateString(),
-    FORMAT_STRING
-  );
-
-  const formattedEndDate = endDate
-    ? formatDate(endDate.toDateString(), FORMAT_STRING)
-    : null;
+  const formattedStartDate = formatDate(startDate, FORMAT_STRING);
+  const formattedEndDate = endDate ? formatDate(endDate, FORMAT_STRING) : null;
 
   return (
     <div className="grid grid-cols-1 gap-y-2 md:grid-cols-[9.375rem_1fr]">
