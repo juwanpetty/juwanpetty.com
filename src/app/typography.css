@@ -171,8 +171,10 @@
     width: 100%;
     object-fit: cover;
 
-    margin-top: calc(var(--spacing) * 8);
-    margin-bottom: calc(var(--spacing) * 8);
+    margin-block: 0;
+
+    /* margin-top: calc(var(--spacing) * 8);
+    margin-bottom: calc(var(--spacing) * 8); */
   }
   &:where(video) {
     margin-top: calc(var(--spacing) * 8);

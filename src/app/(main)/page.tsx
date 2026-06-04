@@ -12,7 +12,7 @@ export default function WorkIndex() {
   return (
     <Page.Root>
       <div className="space-y-24">
-        <Page.Header className="space-y-1">
+        <Page.Header>
           <Page.Title>Juwan Petty</Page.Title>
           <Page.Description>
             <p>UI Engineer in Atlanta, GA</p>

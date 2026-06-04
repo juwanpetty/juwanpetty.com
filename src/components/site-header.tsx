@@ -18,13 +18,19 @@ const NAV_ITEMS: {
     label: "Work",
     href: "/work",
   },
+  {
+    label: "Notes",
+    href: "/notes",
+  },
 ];
 
 export function SiteHeader() {
   const pathName = usePathname();
 
   function isCurrent(path: string, href: string) {
-    return Boolean(path === href);
+    if (href === "/" && path === "/") return true;
+
+    return path.includes(`${href}`) && href !== "/";
   }
 
   return (
@@ -65,7 +71,7 @@ function NavLink({ label, href, isActive }: NavLinkProps) {
     <Link
       href={href}
       className={cn(
-        "rounded-full px-3 py-1.5 text-[#fff]/14 transition-colors hover:bg-[#fff]/14 hover:text-[#fff]",
+        "rounded-full px-3 py-1.5 text-[#fff]/25 transition-colors hover:bg-[#fff]/14 hover:text-[#fff]",
         isActive && "text-[#fff]"
       )}
     >

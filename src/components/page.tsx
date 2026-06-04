@@ -16,7 +16,9 @@ export type PageHeaderProps = {
 } & ComponentProps<"header">;
 
 function PageHeader({ children, className }: PageHeaderProps) {
-  return <header className={cn("max-w-3xl", className)}>{children}</header>;
+  return (
+    <header className={cn("max-w-3xl space-y-1", className)}>{children}</header>
+  );
 }
 
 function PageTitle({ children }: ComponentProps<"h1">) {
@@ -29,7 +31,12 @@ function PageTitle({ children }: ComponentProps<"h1">) {
 
 function PageDescription({ children, className }: ComponentProps<"div">) {
   return (
-    <div className={cn("text-gray-11 max-w-xl text-base/relaxed", className)}>
+    <div
+      className={cn(
+        "text-gray-11 max-w-xl text-base/relaxed text-pretty",
+        className
+      )}
+    >
       {children}
     </div>
   );

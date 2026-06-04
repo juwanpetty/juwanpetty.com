@@ -1,10 +1,10 @@
+import { parseDate } from "@/lib/dates";
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { compileMDX } from "@content-collections/mdx";
 import {
   rehypePrettyCode,
   type Options as PrettyCodeOptions,
 } from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
 import { z } from "zod";
 
 const rehypePrettyCodeOptions: PrettyCodeOptions = {
@@ -15,20 +15,17 @@ const rehypePrettyCodeOptions: PrettyCodeOptions = {
   keepBackground: false,
 };
 
-const posts = defineCollection({
-  name: "posts",
-  directory: "src/content/posts",
+const notes = defineCollection({
+  name: "notes",
+  directory: "src/content/notes",
   include: "**/*.mdx",
   schema: z.object({
-    published: z.coerce.date(),
-    title: z.string().max(60),
-    description: z.string().max(160),
-    tags: z.array(z.string()).optional(),
+    published: z.string().transform((str) => parseDate(str)),
     content: z.string(),
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document, {
-      rehypePlugins: [rehypeSlug, [rehypePrettyCode, rehypePrettyCodeOptions]],
+      rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
     });
     return {
       ...document,
@@ -44,7 +41,7 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string().max(60),
     description: z.string().max(160),
-    published: z.coerce.date(),
+    published: z.string().transform((str) => parseDate(str)),
     url: z.url(),
     image: z.object({
       src: z.string(),
@@ -61,7 +58,7 @@ const works = defineCollection({
   include: "**/*.md",
   schema: z.object({
     title: z.string().max(60),
-    published: z.coerce.date(),
+    published: z.string().transform((str) => parseDate(str)),
     image: z.object({
       src: z.string(),
       width: z.number(),
@@ -80,8 +77,11 @@ const jobs = defineCollection({
     title: z.string(),
     company: z.string(),
     logo: z.string().optional(),
-    startDate: z.coerce.date(),
-    endDate: z.coerce.date().optional(),
+    startDate: z.string().transform((str) => parseDate(str)),
+    endDate: z
+      .string()
+      .transform((str) => parseDate(str))
+      .optional(),
     tools: z.array(z.string()).optional(),
     projects: z
       .array(
@@ -89,7 +89,10 @@ const jobs = defineCollection({
           title: z.string(),
           description: z.string().optional(),
           link: z.string(),
-          published: z.coerce.date().optional(),
+          published: z
+            .string()
+            .transform((str) => parseDate(str))
+            .optional(),
         })
       )
       .optional(),
@@ -98,5 +101,5 @@ const jobs = defineCollection({
 });
 
 export default defineConfig({
-  content: [posts, jobs, projects, works],
+  content: [notes, jobs, projects, works],
 });
