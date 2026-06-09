@@ -1,6 +1,6 @@
 import { Work } from "content-collections";
 import Image from "next/image";
-import { IconShareUpRightOutline18 } from "nucleo-ui-outline-18";
+import { IconArrowUpRightOutline18 } from "nucleo-ui-outline-18";
 
 type WorksItemProps = {
   work: Work;
@@ -43,34 +43,28 @@ export function WorksItem({ work }: WorksItemProps) {
 
   const content = (
     <>
-      <div className="relative rounded-xl">
+      <div className="relative isolate rounded-xl">
         {file}
         <div className="pointer-events-none absolute inset-0 rounded-xl inset-ring-1 inset-ring-black/10 dark:inset-ring-white/10" />
-      </div>
-
-      <div className="text-gray-12 flex items-center gap-x-2 px-1 font-medium">
-        <h3 className="flex-1">{title}</h3>
 
         {previewUrl && (
-          <div className="text-gray-9 flex size-6 items-center justify-center rounded-md [&_svg]:size-4">
-            <IconShareUpRightOutline18 />
-          </div>
+          <span className="absolute bottom-2.5 left-2.5 flex h-7 items-center gap-1 rounded-lg bg-[#333] px-2.5 text-sm font-medium text-white opacity-100 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100 group-focus:opacity-100 sm:opacity-0">
+            Live Preview
+            <IconArrowUpRightOutline18 className="size-4 text-white" />
+          </span>
         )}
       </div>
     </>
   );
 
   return (
-    <div
-      key={path}
-      className="mb-8 flex break-inside-avoid flex-col gap-3 sm:mb-8"
-    >
+    <div key={path} className="mb-4 flex break-inside-avoid flex-col gap-3">
       {previewUrl ? (
         <a
           href={previewUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col gap-3 rounded-xl"
+          className="group flex flex-col gap-3 rounded-xl"
         >
           {content}
         </a>
