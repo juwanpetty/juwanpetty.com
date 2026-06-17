@@ -2,7 +2,7 @@ import { Note } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { components as mdxComponents } from "@/../mdx-components";
 import { formatDate, FULL_DATE_FORMAT } from "@/lib/dates";
-import { IconMsgOutline18 } from "nucleo-ui-outline-18";
+import { IconMessageOutline18 } from "nucleo-ui-outline-18";
 import Link from "next/link";
 import { NotesItemCopyButton } from "@/components/notes-item-copy-button";
 
@@ -43,9 +43,10 @@ export function NotesItem({ note }: NotesItemProp) {
           href={`mailto:jchpetty@gmail.com?subject=Reply: Note ${path}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:bg-gray-2 flex size-9 items-center justify-center rounded-full transition-colors"
+          className="hover:bg-gray-2 flex h-9 items-center justify-center gap-0.5 rounded-full px-3 transition-colors"
         >
-          <IconMsgOutline18 />
+          <IconMessageOutline18 className="size-4" />
+          <span className="px-1 text-sm font-medium">Reply by email</span>
         </a>
       </div>
     </article>
