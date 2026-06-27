@@ -21,7 +21,7 @@ export function JobsItem({ job }: JobsItemProps) {
     <div className="grid grid-cols-1 gap-y-2 md:grid-cols-[9.375rem_1fr]">
       <div>
         <span className="text-gray-11">
-          {formattedStartDate} — {formattedEndDate ?? "Curent"}
+          {formattedStartDate} — {formattedEndDate ?? "Present"}
         </span>
       </div>
 
