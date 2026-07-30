@@ -15,7 +15,7 @@ export const getSortedProjects = () =>
 export const getSortedNotes = () =>
   allNotes.sort((a, b) => {
     const dateDiff = b.published.getTime() - a.published.getTime();
-    return dateDiff || a._meta.path.localeCompare(b._meta.path);
+    return dateDiff || b._meta.path.localeCompare(a._meta.path);
   });
 
 export const getSortedJobs = () =>
