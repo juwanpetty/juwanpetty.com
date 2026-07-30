@@ -4,6 +4,9 @@ import { withContentCollections } from "@content-collections/next";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+  images: {
+    contentDispositionType: "inline",
+  },
 };
 
 const withMDX = createMDX({
