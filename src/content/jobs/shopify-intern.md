@@ -9,6 +9,9 @@ tools:
   - GraphQL
   - CSS Modules
   - Jest
+projects:
+  - title: Facebook Dynamic Ads Integration
+    link: https://www.shopify.com/news/marketing-in-shopify-expands-with-new-features
 ---
 
 Worked on first-party Facebook Ads tools within Shopify’s Marketing section, helping merchants create and manage ad campaigns directly in-platform.

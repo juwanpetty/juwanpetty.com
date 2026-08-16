@@ -1,5 +1,6 @@
 import { formatDate } from "@/lib/dates";
 import { Job } from "content-collections";
+import { IconShareUpRightOutline18 } from "nucleo-ui-outline-18";
 
 const FORMAT_STRING = "yyyy";
 
@@ -35,16 +36,19 @@ export function JobsItem({ job }: JobsItemProps) {
         ) : null}
 
         {hasProjects && (
-          <ul className="mt-5">
+          <ul className="mt-5 pl-6">
             {projects.map((project, index) => (
-              <li key={index} className="not-first:mt-2">
+              <li key={index} className="list-disc pl-1.5 not-first:mt-2">
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-12 decoration-gray-11/25 font-medium underline underline-offset-3"
+                  className="text-gray-12 decoration-gray-11/25 relative inline-block pr-[1.25em] font-medium underline underline-offset-3"
                 >
                   {project.title}
+                  <span className="text-gray-12/50 absolute ml-[.25em] inline-flex h-[1lh] items-center">
+                    <IconShareUpRightOutline18 className="size-[1em]" />
+                  </span>
                 </a>
               </li>
             ))}
